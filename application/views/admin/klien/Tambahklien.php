@@ -54,7 +54,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/dataKlien')?>">Data klien</a>
+                            <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -74,7 +74,6 @@
                             <span class="title font-weight-bold">TAMBAH KLIEN</span>
                         </div>
                     </div>
-                    <?php $this->load->view("admin/_partials/breadcrumb.php") ?>
 
                     <?php if($this->session->flashdata('success')): ?> 
                     <div class="alert alert-success" role="alert">
@@ -84,14 +83,14 @@
 
                     <div class="col-md-12">
 
-                        <form action="<?php base_url('admin/Dataklien/add') ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php base_url('Dataklien_controller/add') ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
                                 <input
                                     type="text"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Tina">
+                                    placeholder="Ika Natasya">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nama') ?>
                                 </div>
@@ -195,7 +194,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Pengusaha">
+                                    placeholder="Mahasiswa">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('pekerjaan') ?>
                                 </div>
@@ -219,7 +218,7 @@
                                     type="email"
                                     class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Tina">
+                                    placeholder="nkhotimah159@gmail.com">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('email') ?>
                                 </div>
@@ -231,7 +230,7 @@
                                     type="text"
                                     class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Tina">
+                                    placeholder="Ikanataysa">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('username') ?>
                                 </div>

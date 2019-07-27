@@ -17,7 +17,7 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function add() {
-        $klien = $this->Dataklien;
+        $klien = $this->Dataklien_model;
         $validation = $this->form_validation;
         $validation->set_rules($klien->rules());
 
@@ -31,7 +31,7 @@ class Dataklien_controller extends CI_Controller {
     public function edit($id = null) {
         if(!isset($id)) redirect('admin/klien/Dataklien');
 
-        $klien = $this->Dataklien;
+        $klien = $this->Dataklien_model;
         $validation = $this->form_validation;
         $validation->set_rules($klien->rules());
 
@@ -49,7 +49,7 @@ class Dataklien_controller extends CI_Controller {
     public function delete ($id=null) {
         if(!isset($id)) show_404();
 
-        if ($this->Dataklien->delete($id)) {
+        if ($this->Dataklien_model->delete($id)) {
             redirect(site_url('admin/klien/Dataklien'));
         }
 

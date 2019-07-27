@@ -2,13 +2,6 @@
 
 class Dataklien_model extends CI_Model {
 
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     $this->load->model('Dataklien_model');
-
-    // }
-
     private $_table = "user";
 
     public $id;
@@ -22,7 +15,7 @@ class Dataklien_model extends CI_Model {
     public $username; 
 
     public function getAll() {
-        //  $this->load->database();
+         $this->load->database();
         return $this->db->get($this->_table)->result();
     }
 

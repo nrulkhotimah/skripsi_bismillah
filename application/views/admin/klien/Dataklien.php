@@ -53,7 +53,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/dataKlien')?>">Data klien</a>
+                            <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -143,7 +143,7 @@
                             </table>
                         </form>
 
-                        <a href="<?php echo site_url('Admin/Dataklien/tambahKlien')?>">
+                        <a href="<?php echo site_url('Dataklien_controller/add')?>">
                             <button type="button" class="btn btn-primary" style="float:right;">Tambah klien</button>
                         </a>
                     </div>

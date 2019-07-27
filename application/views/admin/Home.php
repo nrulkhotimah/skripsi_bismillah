@@ -55,7 +55,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/dataKlien')?>">Data klien</a>
+                            <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
                         </li>
                         
                         <li>
