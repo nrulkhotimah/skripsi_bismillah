@@ -104,14 +104,24 @@
                                         <th scope="col">Nama</th>
                                         <th scope="col">Nomor Telepon</th>
                                         <th scope="col">Jenis Kelamin</th>
-                                        <th scope="col">Tempat Tanggal Lahir</th>
+                                        <th scope="col">Tanggal Lahir</th>
+                                        <th scope="col">Username</th>
                                         <th scope="col">Hak Akses</th>
                                         <th scope="col">Edit</th>
                                         <th scope="col">Hapus</th>
                                     </tr>
-
                                 </thead>
                                 <tbody>
+                                    <?php 
+                                    foreach($user as $DataPakar):
+                                    ?>
+
+                                    <tr>
+                                    <td><?php echo $DataPakar->id ?> </td>
+                                    
+                                    
+                                    </tr>
+
                                     <tr>
                                         <th>1</th>
                                         <td>Mark</td>
@@ -173,6 +183,7 @@
                                             </button>
                                         </td>
                                     </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </form>
