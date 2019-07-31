@@ -11,7 +11,7 @@ class Dataklien_controller extends CI_Controller {
 
     public function index() {
         $data["user"] = $this->Dataklien_model->getAll();
-        print_r($data);
+        // print_r($data);
         // exit();
         $this->load->view("admin/klien/Dataklien", $data);
     }
@@ -24,6 +24,8 @@ class Dataklien_controller extends CI_Controller {
         if($validation->run()) {
             $klien->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+        } else {
+            var_dump(validation_errors());
         }
         $this->load->view("admin/klien/Tambahklien");
     }

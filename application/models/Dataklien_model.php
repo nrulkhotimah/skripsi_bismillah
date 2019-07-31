@@ -25,6 +25,11 @@ class Dataklien_model extends CI_Model {
 
     public function rules() {
         return [
+            ['field' => 'id',
+            'label' => 'ID',
+            'rules' => 'required'
+            ],
+
             ['field' => 'nama',
             'label' => 'Nama',
             'rules' => 'required'
@@ -37,6 +42,11 @@ class Dataklien_model extends CI_Model {
 
             ['field' => 'jenis_kelamin',
             'label' => 'Jenis Kelamin',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'agama',
+            'label' => 'Agama',
             'rules' => 'required'
             ],
 
@@ -54,6 +64,11 @@ class Dataklien_model extends CI_Model {
             'label' => 'pekerjaan',
             'rules' => 'required'
             ],
+
+            ['field' => 'marital_status',
+            'label' => 'Marital Status',
+            'rules' => 'required'
+        ],
 
             ['field' => 'email',
             'label' => 'Email',

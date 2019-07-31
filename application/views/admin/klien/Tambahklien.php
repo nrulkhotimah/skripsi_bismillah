@@ -75,7 +75,7 @@
                         </div>
                     </div>
 
-                    <?php if($this->session->flashdata('success')): ?> 
+                    <?php if($this->session->flashdata('success')): ?>
                     <div class="alert alert-success" role="alert">
                         <?php echo $this->session->flashdata('success'); ?>
                     </div>
@@ -84,9 +84,24 @@
                     <div class="col-md-12">
 
                         <form action="<?php base_url('Dataklien_controller/add') ?>" method="post" enctype="multipart/form-data">
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">ID</label>
+                                <input
+                                    type="text"
+                                    name="id"
+                                    class="form-control <?php echo form_error('id') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    placeholder="0001">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('id') ?>
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
                                 <input
+                                    name="nama"
                                     type="text"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -97,7 +112,7 @@
                             </div>
 
                             <div class="input-group date form-group" data-provide="datepicker">
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="tanggal_lahir">
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th">Tanggal Lahir</span>
                                 </div>
@@ -111,7 +126,7 @@
                                             <input
                                                 class="form-check-input"
                                                 type="radio"
-                                                name="gridRadios"
+                                                name="jenis_kelamin"
                                                 id="gridRadios1"
                                                 value="option1"
                                                 checked="checked">
@@ -123,7 +138,7 @@
                                             <input
                                                 class="form-check-input"
                                                 type="radio"
-                                                name="gridRadios"
+                                                name="jenis_kelamin"
                                                 id="gridRadios2"
                                                 value="option2">
                                             <label class="form-check-label" for="gridRadios2">
@@ -137,6 +152,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Alamat</label>
                                 <input
+                                    name="alamat"
                                     type="text"
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -148,7 +164,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Agama</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
+                                <select class="form-control" id="exampleFormControlSelect1" name="agama" >
                                     <option>Islam</option>
                                     <option>Kristen</option>
                                     <option>Hindu</option>
@@ -165,7 +181,7 @@
                                             <input
                                                 class="form-check-input"
                                                 type="radio"
-                                                name="gridRadios"
+                                                name="marital_status"
                                                 id="gridRadios3"
                                                 value="option3"
                                                 checked="checked">
@@ -177,7 +193,7 @@
                                             <input
                                                 class="form-check-input"
                                                 type="radio"
-                                                name="gridRadios"
+                                                name="marital_status"
                                                 id="gridRadios4"
                                                 value="option4">
                                             <label class="form-check-label" for="gridRadios4">
@@ -191,6 +207,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Pekerjaan</label>
                                 <input
+                                    name = "pekerjaan"
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -203,6 +220,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nomor Telepon</label>
                                 <input
+                                    name="nomor_telepon"
                                     type="number"
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -215,6 +233,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Email</label>
                                 <input
+                                    name="email"
                                     type="email"
                                     class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -227,6 +246,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Username</label>
                                 <input
+                                    name="username"
                                     type="text"
                                     class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -237,19 +257,20 @@
                             </div>
 
                             <input
-                            type="submit"
-                            class="btn btn-primary btn-success"
-                            name="btn"
-                            value="Save"
-                            onclick="myFunction()"
-                            style="float:right;" Simpan />
+                                type="submit"
+                                class="btn btn-primary btn-success"
+                                name="btn"
+                                value="Save"
+                                onclick="myFunction()"
+                                style="float:right;"
+                                simpan="Simpan"/>
 
-                            <script>
-                            function myFunction() {
-                                alert("Perubahan telah tersimpan");
-                            }
-                        </script>
-                        </form>                       
+                            <!-- <script>
+                                function myFunction() {
+                                    alert("Perubahan telah tersimpan");
+                                }
+                            </script> -->
+                        </form>
                     </div>
 
                 </div>

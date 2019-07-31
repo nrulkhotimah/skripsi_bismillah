@@ -110,8 +110,8 @@
                                         <th rowspan="2">Jenis Kelamin</th>
                                         <th rowspan="2">Tempat Tanggal Lahir</th>
                                         <th rowspan="2">Approve</th>
-                                        <th scope="col">Hapus</th>
                                         <th scope="col">Edit</th>
+                                        <th scope="col">Hapus</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -120,19 +120,20 @@
                                  ?>
 
                                     <tr>
+                                        <td><?php echo $DataKlien->id ?></td>
                                         <td><?php echo $DataKlien->nama ?></td>
                                         <td><?php echo $DataKlien->nomor_telepon ?></td>
                                         <td><?php echo $DataKlien->jenis_kelamin ?></td>
                                         <td><?php echo $DataKlien->tanggal_lahir ?></td>
                                         <td>icon centang</td>
                                         <td>
-                                            <a href="<?php echo site_url('admin/Dataklien/Editdataklien') ?>">
-                                                <i class="fas fa-edit"></i>
+                                            <a href="<?php echo site_url('Dataklien_controller/edit') ?>">
+                                                <i class="fas fa-edit"></i> 
                                             </a>
                                         </td>
                                         <td>
                                             <a
-                                                onclick="deleteConfirm('<?php echo site_url('admin/Dataklien/delete/'.$DataKlien->id) ?>')"
+                                                onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
                                                 href="#1">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
