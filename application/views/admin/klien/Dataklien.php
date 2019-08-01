@@ -127,7 +127,7 @@
                                         <td><?php echo $DataKlien->tanggal_lahir ?></td>
                                         <td>icon centang</td>
                                         <td>
-                                            <a href="<?php echo site_url('Dataklien_controller/edit'.$Dataklien->id) ?>">
+                                            <a href="<?php echo site_url('Dataklien_controller/edit'.$DataKlien->id) ?>">
                                                 <i class="fas fa-edit"></i> 
                                             </a>
                                         </td>

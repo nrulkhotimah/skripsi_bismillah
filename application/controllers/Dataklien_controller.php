@@ -13,6 +13,7 @@ class Dataklien_controller extends CI_Controller {
 
     public function index() {
         $data["user"] = $this->Dataklien_model->getAll();
+
         // print_r($data);
         // exit();
         $this->load->view("admin/klien/Dataklien", $data);

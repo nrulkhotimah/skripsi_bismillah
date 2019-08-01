@@ -68,7 +68,7 @@ class Dataklien_model extends CI_Model {
             ['field' => 'marital_status',
             'label' => 'Marital Status',
             'rules' => 'required'
-        ],
+            ],
 
             ['field' => 'email',
             'label' => 'Email',
