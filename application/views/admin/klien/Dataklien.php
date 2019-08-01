@@ -127,16 +127,23 @@
                                         <td><?php echo $DataKlien->tanggal_lahir ?></td>
                                         <td>icon centang</td>
                                         <td>
-                                            <a href="<?php echo site_url('Dataklien_controller/edit'.$DataKlien->id) ?>">
+                                            <a href="<?php echo site_url('Dataklien/edit/'.$DataKlien->id) ?>">
                                                 <i class="fas fa-edit"></i> 
                                             </a>
                                         </td>
                                         <td>
                                             <a
                                                 onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
-                                                href="#1">
+                                                href="#!" class="btn tbn-small text-danger">
                                                 <i class="fas fa-trash-alt"></i>
                                             </a>
+
+                                            <script>
+                                            function deleteConfirm(url) {
+                                                $('#btn-delete').attr('href', url);
+                                                $('#deleteModal').modal();
+                                            }
+                                            </script>
                                         </td>
                                     </tr>
                                     <?php  endforeach; ?>

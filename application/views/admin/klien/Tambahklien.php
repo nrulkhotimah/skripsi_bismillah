@@ -82,21 +82,8 @@
                     <?php endif; ?>
 
                     <div class="col-md-12">
-
+                        <?php echo validation_errors(); ?>
                         <form action="<?php base_url('Dataklien_controller/add') ?>" method="post" enctype="multipart/form-data">
-
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">ID</label>
-                                <input
-                                    type="text"
-                                    name="id"
-                                    class="form-control <?php echo form_error('id') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    placeholder="0001">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('id') ?>
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>

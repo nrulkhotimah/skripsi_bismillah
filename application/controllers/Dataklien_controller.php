@@ -5,21 +5,22 @@ class Dataklien_controller extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        $this->load->helper(array('form', 'url'));
-        $this->load->model("Dataklien_model");
-        $this->load->library('form_validation');
+        $this->load->helper('url_helper');
+        $this->load->model('Dataklien_model');
         $this->load->library('session');
     }
 
     public function index() {
-        $data["user"] = $this->Dataklien_model->getAll();
-
+        $data['user'] = $this->Dataklien_model->getAll();
         // print_r($data);
         // exit();
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
     public function add() {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
         $klien = $this->Dataklien_model;
         $validation = $this->form_validation;
         $validation->set_rules($klien->rules());
@@ -34,6 +35,9 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function edit($id = null) {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
         if(!isset($id)) redirect('admin/klien/Dataklien');
 
         $klien = $this->Dataklien_model;
@@ -54,7 +58,7 @@ class Dataklien_controller extends CI_Controller {
     public function delete ($id=null) {
         if(!isset($id)) show_404();
 
-        if ($this->Dataklien_model->delete($id)) {
+        if ($this->Dataklien->delete($id)) {
             redirect(site_url('admin/klien/Dataklien'));
         }
 
