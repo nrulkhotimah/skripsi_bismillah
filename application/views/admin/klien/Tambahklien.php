@@ -75,15 +75,40 @@
                         </div>
                     </div>
 
-                    <?php if($this->session->flashdata('success')): ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                    <?php endif; ?>
-
                     <div class="col-md-12">
-                        <?php echo validation_errors(); ?>
-                        <form action="<?php base_url('Dataklien_controller/add') ?>" method="post" enctype="multipart/form-data">
+
+                        <form
+                            action="save"
+                            method="post"
+                            enctype="multipart/form-data">
+
+                            <?php echo form_open('admin/klien/Dataklien'); ?>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">ID</label>
+                                <input
+                                    name="id"
+                                    type="numeric"
+                                    class="form-control <?php echo form_error('id') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('id') ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Kode klien</label>
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control <?php echo
+                                    form_error('kode') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('K0001') ?>
+                                </div>
+                            </div>
+                            
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
@@ -105,7 +130,7 @@
                                 </div>
                             </div>
 
-                            <fieldset class="form-group">
+                            <fieldset class="form-group ">
                                 <div class="row">
                                     <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>
                                     <div class="col-sm-10">
@@ -115,7 +140,7 @@
                                                 type="radio"
                                                 name="jenis_kelamin"
                                                 id="gridRadios1"
-                                                value="option1"
+                                                value="pria"
                                                 checked="checked">
                                             <label class="form-check-label" for="gridRadios1">
                                                 Pria
@@ -127,7 +152,7 @@
                                                 type="radio"
                                                 name="jenis_kelamin"
                                                 id="gridRadios2"
-                                                value="option2">
+                                                value="wanita">
                                             <label class="form-check-label" for="gridRadios2">
                                                 Wanita
                                             </label>
@@ -151,7 +176,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Agama</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="agama" >
+                                <select class="form-control" id="exampleFormControlSelect1" name="agama">
                                     <option>Islam</option>
                                     <option>Kristen</option>
                                     <option>Hindu</option>
@@ -170,7 +195,7 @@
                                                 type="radio"
                                                 name="marital_status"
                                                 id="gridRadios3"
-                                                value="option3"
+                                                value="menikah"
                                                 checked="checked">
                                             <label class="form-check-label" for="gridRadios3">
                                                 Menikah
@@ -182,7 +207,7 @@
                                                 type="radio"
                                                 name="marital_status"
                                                 id="gridRadios4"
-                                                value="option4">
+                                                value="lajang">
                                             <label class="form-check-label" for="gridRadios4">
                                                 Lajang
                                             </label>
@@ -194,7 +219,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Pekerjaan</label>
                                 <input
-                                    name = "pekerjaan"
+                                    name="pekerjaan"
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -208,12 +233,12 @@
                                 <label for="exampleFormControlInput1">Nomor Telepon</label>
                                 <input
                                     name="nomor_telepon"
-                                    type="number"
+                                    type="numeric"
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     placeholder="0853121323">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('nomor-telepon') ?>
+                                    <?php echo form_error('nomor_telepon') ?>
                                 </div>
                             </div>
 
@@ -252,12 +277,11 @@
                                 style="float:right;"
                                 simpan="Simpan"/>
 
-                            <!-- <script>
-                                function myFunction() {
-                                    alert("Perubahan telah tersimpan");
-                                }
+                            <!-- <script> function myFunction() { alert("Perubahan telah tersimpan"); }
                             </script> -->
                         </form>
+
+                        <?php echo form_close(); ?>
                     </div>
 
                 </div>

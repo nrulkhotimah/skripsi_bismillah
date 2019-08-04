@@ -77,6 +77,11 @@
 
                     <!-- data klien -->
                     <div class="col-md-12">
+                    <?php if($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
                         <!-- kolom search -->
                         <form class="form-inline " style="margin-left:20px;">
                             <input
@@ -89,67 +94,99 @@
                         </form>
 
                         <!-- data tabel -->
-                        <form>
-                            <table class="table table-striped" style="margin-top:20px;">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th colspan="2" clas="text-center">
-                                            <span>Aksi</span>
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th rowspan="2">ID</th>
-                                        <th rowspan="2">Nama</th>
-                                        <th rowspan="2">Nomor Telepon</th>
-                                        <th rowspan="2">Jenis Kelamin</th>
-                                        <th rowspan="2">Tempat Tanggal Lahir</th>
-                                        <th rowspan="2">Approve</th>
-                                        <th scope="col">Edit</th>
-                                        <th scope="col">Hapus</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
+
+                        <table class="table table-striped" style="margin-top:20px;">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                    <th colspan="2" clas="text-center">
+                                        <span>Aksi</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2">ID</th>
+                                    <th rowspan="2">Nama</th>
+                                    <th rowspan="2">Marital status</th>
+                                    <th rowspan="2">Nomor Telepon</th>
+                                    <th rowspan="2">Jenis Kelamin</th>
+                                    <th rowspan="2">Tempat Tanggal Lahir</th>
+                                    <th rowspan="2">Approve</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Hapus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <?php
                                     foreach($user as $DataKlien):
-                                 ?>
+                                        // print_r($DataKlien);
+                                        // exit();
+                                    ?>
 
-                                    <tr>
-                                        <td><?php echo $DataKlien->id ?></td>
-                                        <td><?php echo $DataKlien->nama ?></td>
-                                        <td><?php echo $DataKlien->nomor_telepon ?></td>
-                                        <td><?php echo $DataKlien->jenis_kelamin ?></td>
-                                        <td><?php echo $DataKlien->tanggal_lahir ?></td>
-                                        <td>icon centang</td>
-                                        <td>
-                                            <a href="<?php echo site_url('Dataklien/edit/'.$DataKlien->id) ?>">
-                                                <i class="fas fa-edit"></i> 
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a
-                                                onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
-                                                href="#!" class="btn tbn-small text-danger">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
 
-                                            <script>
+                                <tr>
+                                    <td><?php echo $DataKlien->id ?></td>
+                                    <td><?php echo $DataKlien->nama ?></td>
+                                    <td><?php echo $DataKlien->marital_status ?></td> 
+                                    <td><?php echo $DataKlien->nomor_telepon ?></td>
+                                    <td><?php echo $DataKlien->jenis_kelamin ?></td>
+                                    <td><?php echo $DataKlien->tanggal_lahir ?></td>
+                                    <td>icon centang</td>
+                                    <td>
+                                        <a href="<?php echo site_url('Dataklien/edit/'.$DataKlien->id) ?>">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a
+                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
+                                            href="#!"
+                                            class="btn tbn-small text-danger">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <script>
                                             function deleteConfirm(url) {
                                                 $('#btn-delete').attr('href', url);
                                                 $('#deleteModal').modal();
                                             }
-                                            </script>
-                                        </td>
-                                    </tr>
-                                    <?php  endforeach; ?>
-                                </tbody>
-                            </table>
-                        </form>
+                                        </script>
+
+                                        <!-- Logout Delete Confirmation-->
+                                        <div
+                                            class="modal fade"
+                                            id="deleteModal"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <?php  endforeach; ?>
+                            </tbody>
+                        </table>
 
                         <a href="<?php echo site_url('Dataklien_controller/add')?>">
                             <button type="button" class="btn btn-primary" style="float:right;">Tambah klien</button>
