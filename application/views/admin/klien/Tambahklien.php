@@ -84,7 +84,7 @@
 
                             <?php echo form_open('admin/klien/Dataklien'); ?>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="exampleFormControlInput1">ID</label>
                                 <input
                                     name="id"
@@ -94,7 +94,7 @@
                                 <div class="invalid-feedback">
                                     <?php echo form_error('id') ?>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Kode klien</label>

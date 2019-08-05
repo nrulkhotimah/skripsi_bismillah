@@ -51,7 +51,7 @@ class Dataklien_model extends CI_Model {
         $this->db->insert($this->_table, $user);
 
         $id_user = $this->db->insert_id();
-        $klien->kode = $post["kode"]; 
+       // $klien->kode = $post["kode"]; 
         $klien->id_user = $id_user;
         $klien->marital_status = $post["marital_status"];
         $klien->pekerjaan = $post["pekerjaan"];
