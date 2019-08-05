@@ -99,7 +99,7 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Kode klien</label>
                                 <input
-                                    name="nama"
+                                    name="kode"
                                     type="text"
                                     class="form-control <?php echo
                                     form_error('kode') ? 'is-invalid':'' ?>"

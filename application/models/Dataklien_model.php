@@ -21,13 +21,11 @@ class Dataklien_model extends CI_Model {
 
     public function getAll() {
         $this->load->database();
-        // return $this->db->get($this->_table)->result();
-        // return $this->db->get('user')->result();
+
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->join('klien','user.id=klien.id');
-        // $data = $this->db->from('klien');
-        // return $data->get()->row();
+        $this->db->join('klien','user.id=klien.id_user');
+
         $query = $this->db->get();
         return $query->result();
     }
@@ -41,23 +39,25 @@ class Dataklien_model extends CI_Model {
         // print_r($post['nomor_telepon']);
         // exit();
         // $post = $this->input->post();
-       $this->id =  $post["id"];
-        $this->nama = $post["nama"];
-        $this->nomor_telepon = $post["nomor_telepon"];
-        $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->tanggal_lahir = $post["tanggal_lahir"];
-        $this->alamat = $post["alamat"];
-        $this->email = $post["email"];
-        $this->username = $post["username"];
+        $user->id =  $post["id"];
+        $user->nama = $post["nama"];
+        $user->nomor_telepon = $post["nomor_telepon"];
+        $user->jenis_kelamin = $post["jenis_kelamin"];
+        $user->tanggal_lahir = $post["tanggal_lahir"];
+        $user->alamat = $post["alamat"];
+        $user->email = $post["email"];
+        $user->username = $post["username"];
 
-        $this->db->insert($this->_table, $this);
+        $this->db->insert($this->_table, $user);
 
         $id_user = $this->db->insert_id();
-       // $this->kode = $post["kode"]; 
-        $this->marital_status = $post["marital_status"];
-        $this->pekerjaan = $post["pekerjaan"];
-        $this->agama = $post["agama"];
-        $this->db->insert('klien', $this);
+        $klien->kode = $post["kode"]; 
+        $klien->id_user = $id_user;
+        $klien->marital_status = $post["marital_status"];
+        $klien->pekerjaan = $post["pekerjaan"];
+        $klien->agama = $post["agama"];
+
+        $this->db->insert('klien', $klien);
     }
 
     public function update() {

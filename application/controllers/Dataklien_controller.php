@@ -96,17 +96,15 @@ class Dataklien_controller extends CI_Controller {
             // $klien->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
-            $this->load->view("admin/klien/Dataklien", $data);
+            // $this->load->view("admin/klien/Dataklien", $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
             $this->load->view("admin/klien/Tambahklien");
-            // var_dump(validation_errors());
-            
+            // var_dump(validation_errors());   
         }
-
-
     }
+
     public function add() {
         $this->load->view("admin/klien/Tambahklien");
 
@@ -123,8 +121,15 @@ class Dataklien_controller extends CI_Controller {
         $validation->set_rules($klien->rules());
 
         if($validation->run()) {
-            $klien->save();
+            $this->Dataklien_model->save($post);
+            // $klien->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $data['user'] = $this->Dataklien_model->getAll();
+            $this->load->view("admin/klien/Dataklien", $data);
+        } else {
+            $error=validation_errors();
+            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view("admin/klien/Editdataklien");
         }
 
         $data["klien"] = $klien->getById($id);

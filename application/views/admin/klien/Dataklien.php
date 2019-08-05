@@ -128,7 +128,6 @@
                                         // exit();
                                     ?>
 
-
                                 <tr>
                                     <td><?php echo $DataKlien->id ?></td>
                                     <td><?php echo $DataKlien->nama ?></td>
@@ -142,6 +141,7 @@
                                             <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
+                                    
                                     <td>
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
