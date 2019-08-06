@@ -3,7 +3,7 @@
 class Dataklien_model extends CI_Model {
 
     private $_table = "user";
-    private $klien = "klien";
+    //private $klien = "klien";
 
     public $id;
     public $kode;
@@ -39,23 +39,39 @@ class Dataklien_model extends CI_Model {
         // print_r($post['nomor_telepon']);
         // exit();
         // $post = $this->input->post();
-        $user->id =  $post["id"];
-        $user->nama = $post["nama"];
-        $user->nomor_telepon = $post["nomor_telepon"];
-        $user->jenis_kelamin = $post["jenis_kelamin"];
-        $user->tanggal_lahir = $post["tanggal_lahir"];
-        $user->alamat = $post["alamat"];
-        $user->email = $post["email"];
-        $user->username = $post["username"];
+        $this->nama = $this->input->post('nama');
+        $this->nomor_telepon = $this->input->post('nomor_telepon');
+        $this->jenis_kelamin = $this->input->post('jenis_kelamin');
+        $this->tanggal_lahir = $this->input->post('tanggal_lahir');
+        $this->alamat = $this->input->post('alamat');
+        $this->email = $this->input->post('email');
+        $this->username = $this->input->post('username');
 
-        $this->db->insert($this->_table, $user);
+        // $user->id =  $post["id"];
+        // $user->nama = $post["nama"];
+        // $user->nomor_telepon = $post["nomor_telepon"];
+        // $user->jenis_kelamin = $post["jenis_kelamin"];
+        // $user->tanggal_lahir = $post["tanggal_lahir"];
+        // $user->alamat = $post["alamat"];
+        // $user->email = $post["email"];
+        // $user->username = $post["username"];
 
+        $this->db->insert($this->_table, $this);
+
+        $klien = new \stdClass();
         $id_user = $this->db->insert_id();
-       // $klien->kode = $post["kode"]; 
+        $klien->kode = $this->input->post('kode');
         $klien->id_user = $id_user;
-        $klien->marital_status = $post["marital_status"];
-        $klien->pekerjaan = $post["pekerjaan"];
-        $klien->agama = $post["agama"];
+        $klien->marital_status = $this->input->post('marital_status');
+        $klien->pekerjaan = $this->input->post('pekerjaan');
+        $klien->agama = $this->input->post('agama');
+
+        //$id_user = $this->db->insert_id();
+       // $klien->kode = $post["kode"]; 
+        // $klien->id_user = $id_user;
+        // $klien->marital_status = $post["marital_status"];
+        // $klien->pekerjaan = $post["pekerjaan"];
+        // $klien->agama = $post["agama"];
 
         $this->db->insert('klien', $klien);
     }
