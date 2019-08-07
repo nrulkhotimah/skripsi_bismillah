@@ -139,9 +139,12 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function delete ($id) {
-        $this->Dataklien_model->id = $id;
-        $this->Dataklien_model->delete();
-        redirect(site_url('admin/klien/Dataklien'));
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+        $this->load->view("admin/klien/Dataklien");
+
+        // $this->Dataklien_model->delete($id);
+        // $this->load->view("admin/klien/Dataklien");
 
         // if(!isset($id)) show_404();
 

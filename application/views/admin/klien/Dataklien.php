@@ -124,6 +124,7 @@
 
                                 
                                 <?php
+                                       
                                     foreach($user as $DataKlien):
                                         // print_r($DataKlien);
                                         // exit();
@@ -145,9 +146,10 @@
                                     <td>
                                     
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id) ?>')"
                                             href="#!"
-                                            class="btn tbn-small text-danger">
+                                            class="btn tbn-small text-danger"
+                                            method="delete">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
 

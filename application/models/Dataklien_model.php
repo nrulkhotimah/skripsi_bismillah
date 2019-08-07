@@ -18,7 +18,6 @@ class Dataklien_model extends CI_Model {
     public $email;
     public $username; 
 
-
     public function getAll() {
         $this->load->database();
 
@@ -30,7 +29,6 @@ class Dataklien_model extends CI_Model {
         return $query->result();
     }
     
-
     public function getById($id) {
         return $this->db->get_where($this->_table, ['id' => $id]) -> row();
     }
@@ -95,7 +93,7 @@ class Dataklien_model extends CI_Model {
 
     public function delete($id){
         $this->db->where('id', $id);
-        return $this->db->delete($this->_table, ['id' => $id]) -> row(); 
+        return $this->db->delete($this->_table, array('id' => $id)); 
 
     }
 
