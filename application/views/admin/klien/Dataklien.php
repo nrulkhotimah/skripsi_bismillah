@@ -143,6 +143,7 @@
                                     </td>
                                     
                                     <td>
+                                    
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete'.$DataKlien->id) ?>')"
                                             href="#!"
@@ -157,7 +158,7 @@
                                             }
                                         </script>
 
-                                        <!-- Logout Delete Confirmation-->
+                                        <!-- modal Delete Confirmation-->
                                         <div
                                             class="modal fade"
                                             id="deleteModal"

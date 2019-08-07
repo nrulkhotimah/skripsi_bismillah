@@ -138,12 +138,18 @@ class Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Editdataklien", $data);
     }
 
-    public function delete ($id=null) {
-        if(!isset($id)) show_404();
+    public function delete ($id) {
+        $this->Dataklien_model->id = $id;
+        $this->Dataklien_model->delete();
+        redirect(site_url('admin/klien/Dataklien'));
 
-        if ($this->Dataklien->delete($id)) {
-            redirect(site_url('admin/klien/Dataklien'));
-        }
+        // if(!isset($id)) show_404();
+
+        // if ($this->Dataklien_model->delete($id)) {
+        //    redirect(base_url('admin/klien/Dataklien'));
+           // $this->load->view("admin/klien/Dataklien");
+
+        // }
 
 
     }

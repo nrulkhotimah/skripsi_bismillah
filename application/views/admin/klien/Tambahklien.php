@@ -77,24 +77,9 @@
 
                     <div class="col-md-12">
 
-                        <form
-                            action="save"
-                            method="post"
-                            enctype="multipart/form-data">
+                        <form action="save" method="post" enctype="multipart/form-data">
 
                             <?php echo form_open('admin/klien/Dataklien'); ?>
-
-                            <!-- <div class="form-group">
-                                <label for="exampleFormControlInput1">ID</label>
-                                <input
-                                    name="id"
-                                    type="numeric"
-                                    class="form-control <?php echo form_error('id') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('id') ?>
-                                </div>
-                            </div> -->
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Kode klien</label>
@@ -108,7 +93,6 @@
                                     <?php echo form_error('K0001') ?>
                                 </div>
                             </div>
-                            
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>

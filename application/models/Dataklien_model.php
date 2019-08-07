@@ -93,8 +93,10 @@ class Dataklien_model extends CI_Model {
         $this->db->update($this->_table, $this, ['id'=>$this->id]);
     }
 
-    public function delete(){
-        $this->db->delete($this->_table, $this, ['id'=>$this->id]);
+    public function delete($id){
+        $this->db->where('id', $id);
+        return $this->db->delete($this->_table, ['id' => $id]) -> row(); 
+
     }
 
 }
