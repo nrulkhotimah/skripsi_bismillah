@@ -122,12 +122,12 @@
                             </thead>
                             <tbody>
 
+                                
                                 <?php
                                     foreach($user as $DataKlien):
                                         // print_r($DataKlien);
                                         // exit();
                                     ?>
-
                                 <tr>
                                     <td><?php echo $DataKlien->id ?></td>
                                     <td><?php echo $DataKlien->nama ?></td>
