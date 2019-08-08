@@ -141,7 +141,8 @@ class Dataklien_controller extends CI_Controller {
     public function delete ($id) {
         $this->db->where('id', $id);
         $this->db->delete('user');
-        $this->load->view("admin/klien/Dataklien");
+        $data['user'] = $this->Dataklien_model->getAll();
+        $this->load->view("admin/klien/Dataklien", $data);
 
         // $this->Dataklien_model->delete($id);
         // $this->load->view("admin/klien/Dataklien");

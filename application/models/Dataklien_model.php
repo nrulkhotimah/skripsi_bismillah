@@ -57,14 +57,6 @@ class Dataklien_model extends CI_Model {
      
         $klien = new stdClass();
         $id_user = $this->db->insert_id();
-        //$klien->kode = $this->input->post('kode');
-        // $klien->id_user = $id_user;
-        // $klien->marital_status = $this->input->post('marital_status');
-        // $klien->pekerjaan = $this->input->post('pekerjaan');
-        // $klien->agama = $this->input->post('agama');
-        // $klien->tanggal_lahir = $this->input->post('tanggal_lahir');
-
-        $id_user = $this->db->insert_id();
        //$klien->kode = $post['kode']; 
         $klien->id_user = $id_user;
         $klien->tanggal_lahir = $post['tanggal_lahir'];

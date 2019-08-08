@@ -130,7 +130,7 @@
                                         // exit();
                                     ?>
                                 <tr>
-                                    <td><?php echo $DataKlien->id ?></td>
+                                    <td><?php echo $DataKlien->id_user ?></td>
                                     <td><?php echo $DataKlien->nama ?></td>
                                     <td><?php echo $DataKlien->marital_status ?></td> 
                                     <td><?php echo $DataKlien->nomor_telepon ?></td>
@@ -146,7 +146,7 @@
                                     <td>
                                     
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
                                             href="#!"
                                             class="btn tbn-small text-danger"
                                             method="delete">
