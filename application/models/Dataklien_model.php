@@ -43,7 +43,7 @@ class Dataklien_model extends CI_Model {
         // $this->email = $this->input->post('email');
         // $this->username = $this->input->post('username');
 
-        $user = new \stdClass();
+        $user = new stdClass();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
@@ -55,7 +55,7 @@ class Dataklien_model extends CI_Model {
 
         $this->db->insert($this->_table, $user);
      
-        $klien = new \stdClass();
+        $klien = new stdClass();
         $id_user = $this->db->insert_id();
         //$klien->kode = $this->input->post('kode');
         // $klien->id_user = $id_user;
