@@ -111,7 +111,6 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function update($id) {
-        $post = $this->input->post();
         if(!isset($id)) redirect('admin/klien/Dataklien');
 
         //$klien = $this->Dataklien_model;
