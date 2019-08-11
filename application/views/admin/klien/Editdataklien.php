@@ -83,25 +83,22 @@
 
                     <div class="col-md-12">
 
-                    <?php
-$user = $DataKlien;
+                        <?php
+                            //$DataKlien = new stdClass();
+                            //var_dump($DataKlien);
+                        ?>
+                        
+                        <form
+                            action="<?php base_url('Dataklien_controller/update'.$DataKlien['id_user']) ?>"
+                            method="post"
+                            enctype="multipart/form-data">
 
-?>
-                        <form action="<?php base_url('Dataklien_controller/update'.$DataKlien['id_user']) ?>" method="post" enctype="multipart/form-data">
-                       
-                        <!-- <div class="form-group">
-                                <label for="exampleFormControlInput1">Kode klien</label>
-                                <input
-                                    name="kode"
-                                    type="text"
-                                    class="form-control <?php echo
-                                    form_error('kode') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('K0001') ?>
-                                </div>
-                            </div> -->
+                            <!-- <div class="form-group"> <label for="exampleFormControlInput1">Kode
+                            klien</label> <input name="kode" type="text" class="form-control <?php echo
+                            form_error('kode') ? 'is-invalid':'' ?>" id="exampleFormControlInput1"> <div
+                            class="invalid-feedback"> <?php echo form_error('K0001') ?> </div> </div> -->
 
+                            
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
@@ -175,7 +172,11 @@ $user = $DataKlien;
 
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Agama</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="agama" value="<?php echo $DataKlien->agama?>" >
+                                <select
+                                    class="form-control"
+                                    id="exampleFormControlSelect1"
+                                    name="agama"
+                                    value="<?php echo $DataKlien->agama?>">
                                     <option>Islam</option>
                                     <option>Kristen</option>
                                     <option>Hindu</option>
@@ -218,7 +219,7 @@ $user = $DataKlien;
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Pekerjaan</label>
                                 <input
-                                    name = "pekerjaan"
+                                    name="pekerjaan"
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
@@ -276,19 +277,14 @@ $user = $DataKlien;
                                 style="float:right;"
                                 simpan="Simpan"/>
 
-                            <!-- <script>
-                                function myFunction() {
-                                    alert("Perubahan telah tersimpan");
-                                }
+                            <!-- <script> function myFunction() { alert("Perubahan telah tersimpan"); }
                             </script> -->
-                            
+
                         </form>
 
-                     
                     </div>
-                    </div>
-                    </div>
-            
+                </div>
+            </div>
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->
             <script

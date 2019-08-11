@@ -111,6 +111,7 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function update($id) {
+        $post = $this->input->post();
         if(!isset($id)) redirect('admin/klien/Dataklien');
 
         //$klien = $this->Dataklien_model;
@@ -135,8 +136,11 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function edit($id) {
-        $this->db->where('id', $id);
+        // $this->db->where('id', $id);
+        $query = $this->db->get_where('user', array('id'=>$id));
         $data['user'] = $this->Dataklien_model->getById($id);
+        // print_r($data);
+        // exit();
         $this->load->view("admin/klien/Editdataklien", $data);
 
     }
