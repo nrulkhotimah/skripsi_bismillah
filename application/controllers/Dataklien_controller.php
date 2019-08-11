@@ -136,10 +136,7 @@ class Dataklien_controller extends CI_Controller {
 
     public function edit($id) {
         $this->db->where('id', $id);
-        // print_r($id);
-        // exit();
-        $this->db->update('user', $data);
-        $data['user'] = $this->Dataklien_model->getAll();
+        $data['user'] = $this->Dataklien_model->getById($id);
         $this->load->view("admin/klien/Editdataklien", $data);
 
     }

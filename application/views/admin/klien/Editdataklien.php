@@ -83,15 +83,12 @@
 
                     <div class="col-md-12">
 
-                        <form action="<?php base_url('Dataklien_controller/edit'.$DataKlien['id_user']) ?>" method="post" enctype="multipart/form-data">
-                        <?php
-                        foreach($user as $DataKlien):
-                                        // print_r($DataKlien);
-                                        // exit();
-                                    ?>
+                    <?php
+$user = $DataKlien;
 
-                        <?php echo form_open('admin/klien/Dataklien'); ?>
-
+?>
+                        <form action="<?php base_url('Dataklien_controller/update'.$DataKlien['id_user']) ?>" method="post" enctype="multipart/form-data">
+                       
                         <!-- <div class="form-group">
                                 <label for="exampleFormControlInput1">Kode klien</label>
                                 <input
@@ -284,9 +281,10 @@
                                     alert("Perubahan telah tersimpan");
                                 }
                             </script> -->
+                            
                         </form>
 
-                        <?php echo form_close(); ?>
+                     
                     </div>
                     </div>
                     </div>

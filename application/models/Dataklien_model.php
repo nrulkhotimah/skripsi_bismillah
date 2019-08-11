@@ -29,18 +29,11 @@ class Dataklien_model extends CI_Model {
     }
     
     public function getById($id) {
-        return $this->db->get_where($this->_table, ['id' => $id]) -> row();
+         return $this->db->get_where($this->_table,['id'=>$id])->row();
+        
     }
 
     public function save($post) {
-        // $post = $this->input->post();
-        // $this->nama = $this->input->post('nama');
-        // $this->nomor_telepon = $this->input->post('nomor_telepon');
-        // $this->jenis_kelamin = $this->input->post('jenis_kelamin');
-        // $this->alamat = $this->input->post('alamat');
-        // $this->email = $this->input->post('email');
-        // $this->username = $this->input->post('username');
-
         $user = new stdClass();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
@@ -48,8 +41,6 @@ class Dataklien_model extends CI_Model {
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
-        // print_r($post($user));
-        // exit();
 
         $this->db->insert($this->_table, $user);
      
@@ -65,9 +56,6 @@ class Dataklien_model extends CI_Model {
         $this->db->insert('klien', $klien);
     }
 
-        // print_r($post($user));
-        // exit();
-
     public function update($id) {
         
         $user = new stdClass();
@@ -82,7 +70,7 @@ class Dataklien_model extends CI_Model {
         $this->db->update($this->_table, $user);
      
         $klien = new stdClass();
-        $id_user = $this->db->insert_id();
+        $id_user = $this->db->id();
        //$klien->kode = $post['kode']; 
         $klien->id_user = $id_user;
         $klien->tanggal_lahir = $post['tanggal_lahir'];
@@ -90,7 +78,7 @@ class Dataklien_model extends CI_Model {
         $klien->pekerjaan = $post['pekerjaan'];
         $klien->agama = $post['agama'];
 
-        $this->db->where('id', $id);
+        $this->db->where('klien', $klien);
         $this->db->update('klien', $klien);
 
         // $post = $this->input->post();
