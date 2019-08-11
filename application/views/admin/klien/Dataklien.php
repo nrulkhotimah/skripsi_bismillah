@@ -83,44 +83,34 @@
                     </div>
                     <?php endif; ?>
                         <!-- kolom search -->
-                        <form class="form-inline " style="margin-left:20px;">
-                            <input
-                                class="form-control form-control-sm mr-3 w-75 col-md-11"
-                                type="text"
-                                placeholder="Search"
-                                aria-label="Search"
-                                style="border-radius:13px;">
-                            <i class="fas fa-search" aria-hidden="true"></i>
+                        <form class="form-inline ">
+                            <div class="search" style="width:100%;">
+                            <input class="form-control form-control w-100" type="text" placeholder="Search . . ."
+                                aria-label="Search" style="border-radius:5px; border: 1px solid #ddd !important">
+                            </div>
                         </form>
 
                         <!-- data tabel -->
 
-                        <table class="table table-striped" style="margin-top:20px;">
-                            <thead>
+                        <table class="table table-sm table-bordered" style="margin-top:20px;">
+                            <thead class="text-center">
                                 <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th colspan="2" clas="text-center">
-                                        <span>Aksi</span>
-                                    </th>
+                                    <th class="align-middle" rowspan="2">No</th>
+                                    <th class="align-middle" rowspan="2">Nama Lengkap</th>
+                                    <th class="align-middle" rowspan="2">Status</th>
+                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
+                                    <th class="align-middle" rowspan="2">JK</th>
+                                    <th class="align-middle" rowspan="2">Tempat / Tgl Lahir</th>
+                                    <th colspan="3">Aksi</th>
                                 </tr>
                                 <tr>
-                                    <th rowspan="2">ID</th>
-                                    <th rowspan="2">Nama</th>
-                                    <th rowspan="2">Marital status</th>
-                                    <th rowspan="2">Nomor Telepon</th>
-                                    <th rowspan="2">Jenis Kelamin</th>
-                                    <th rowspan="2">Tempat Tanggal Lahir</th>
-                                    <th rowspan="2">Approve</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Hapus</th>
+                                    <th>Approve</th>
+                                    <th>Edit</th>
+                                    <th>Hapus</th>
                                 </tr>
                             </thead>
-                            <tbody>
+
+                            <tbody class="text-center">
 
                                 
                                 <?php
@@ -130,25 +120,29 @@
                                         // exit();
                                     ?>
                                 <tr>
-                                    <td><?php echo $DataKlien->id_user ?></td>
-                                    <td><?php echo $DataKlien->nama ?></td>
-                                    <td><?php echo $DataKlien->marital_status ?></td> 
-                                    <td><?php echo $DataKlien->nomor_telepon ?></td>
-                                    <td><?php echo $DataKlien->jenis_kelamin ?></td>
-                                    <td><?php echo $DataKlien->tanggal_lahir ?></td>
-                                    <td>icon centang</td>
-                                    <td>
-                                        <a href="<?php echo site_url('Dataklien/edit/'.$DataKlien->id) ?>">
-                                            <i class="fas fa-edit"></i>
+                                    <td class="align-middle"><?php echo $DataKlien->id_user ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->marital_status ?></td> 
+                                    <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
+                                    <td class="align-middle">
+                                        <a href=""><i class=" mr-3 text-success fas fa-check"></i></a>
+                                        <a href=""><i class=" text-danger fas fa-times"></i></a>
+                                        
+                                        </td>
+                                    <td class="align-middle">
+                                        <a href="<?php echo site_url('Dataklien_controller/edit/'.$DataKlien->id_user) ?>">
+                                            <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
                                     
-                                    <td>
+                                    <td class="align-middle">
                                     
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
                                             href="#!"
-                                            class="btn tbn-small text-danger"
+                                            class="btn tbn-small text-secondary"
                                             method="delete">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>

@@ -102,18 +102,14 @@
                                             </td>
                                             <td><input id="name" class="form-control" type="text" placeholder="Nama"></td>
                                         </tr>
+                                        
                                         <tr>
                                             <td>
                                                 <label for="name">Username</label>
                                             </td>
                                             <td><input id="name" class="form-control" type="text" placeholder="Username"></td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="name">Usia</label>
-                                            </td>
-                                            <td><input id="name" class="form-control" type="text" placeholder="Usia"></td>
-                                        </tr>
+
                                         <tr>
                                             <td>
                                                 <fieldset class="form-group">

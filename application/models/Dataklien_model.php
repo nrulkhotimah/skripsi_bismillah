@@ -3,7 +3,6 @@
 class Dataklien_model extends CI_Model {
 
     private $_table = "user";
-    //private $klien = "klien";
 
     public $id;
     public $kode;
@@ -34,7 +33,6 @@ class Dataklien_model extends CI_Model {
     }
 
     public function save($post) {
-
         // $post = $this->input->post();
         // $this->nama = $this->input->post('nama');
         // $this->nomor_telepon = $this->input->post('nomor_telepon');
@@ -67,20 +65,47 @@ class Dataklien_model extends CI_Model {
         $this->db->insert('klien', $klien);
     }
 
-    public function update() {
-        $post = $this->input->post();
-        $this->id = $post["id"];
-        $this->kode = $post["kode"];
-        $this->nama = $post["nama"];
-        $this->nomor_telepon = $post["nomor_telepon"];
-        $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->tanggal_lahir = $post["tanggal_lahir"];
-        $this->alamat = $post["alamat"];
-        $this->pekerjaan = $post["pekerjaan"];
-        $this->email = $post["email"];
-        $this->username = $post["username"];
+        // print_r($post($user));
+        // exit();
 
-        $this->db->update($this->_table, $this, ['id'=>$this->id]);
+    public function update($id) {
+        
+        $user = new stdClass();
+        $user->nama = $post['nama'];
+        $user->nomor_telepon = $post['nomor_telepon'];
+        $user->jenis_kelamin = $post['jenis_kelamin'];
+        $user->alamat = $post['alamat'];
+        $user->email = $post['email'];
+        $user->username = $post['username'];
+
+        $this->db->where('id', $id);
+        $this->db->update($this->_table, $user);
+     
+        $klien = new stdClass();
+        $id_user = $this->db->insert_id();
+       //$klien->kode = $post['kode']; 
+        $klien->id_user = $id_user;
+        $klien->tanggal_lahir = $post['tanggal_lahir'];
+        $klien->marital_status = $post['marital_status'];
+        $klien->pekerjaan = $post['pekerjaan'];
+        $klien->agama = $post['agama'];
+
+        $this->db->where('id', $id);
+        $this->db->update('klien', $klien);
+
+        // $post = $this->input->post();
+        // $this->id = $post["id"];
+        // $this->kode = $post["kode"];
+        // $this->nama = $post["nama"];
+        // $this->nomor_telepon = $post["nomor_telepon"];
+        // $this->jenis_kelamin = $post["jenis_kelamin"];
+        // $this->tanggal_lahir = $post["tanggal_lahir"];
+        // $this->alamat = $post["alamat"];
+        // $this->pekerjaan = $post["pekerjaan"];
+        // $this->email = $post["email"];
+        // $this->username = $post["username"];
+
+        // $this->db->update($this->_table, $this, ['id'=>$this->id]);
     }
 
     public function delete($id){

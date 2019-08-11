@@ -101,22 +101,27 @@
                                     type="text"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Ika Natasya">
+                                    placeholder="Masukkan nama...">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nama') ?>
                                 </div>
                             </div>
 
-                            <div class="input-group date form-group" data-provide="datepicker">
-                                <input type="text" class="form-control" name="tanggal_lahir">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-th">Tanggal Lahir</span>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Tanggal-lahir</label>
+                                <input
+                                    name="tanggal_lahir"
+                                    type="date"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nama') ?>
                                 </div>
                             </div>
-
+                            
                             <fieldset class="form-group ">
                                 <div class="row">
-                                    <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>
+                                    <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend><br>
                                     <div class="col-sm-10">
                                         <div class="form-check">
                                             <input
@@ -254,17 +259,19 @@
 
                             <input
                                 type="submit"
-                                class="btn btn-primary btn-success"
+                                class="btn btn-primary"
                                 name="btn"
                                 value="Save"
                                 onclick="myFunction()"
-                                style="float:right;"
+                                style="float:right; width:100px;"
                                 simpan="Simpan"/>
 
                             <!-- <script> function myFunction() { alert("Perubahan telah tersimpan"); }
                             </script> -->
                         </form>
-
+                        <br>    
+                        <br>
+                        <br>
                         <?php echo form_close(); ?>
                     </div>
 

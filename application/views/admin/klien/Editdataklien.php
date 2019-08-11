@@ -71,7 +71,7 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">TAMBAH KLIEN</span>
+                            <span class="title font-weight-bold">EDIT KLIEN</span>
                         </div>
                     </div>
 
@@ -83,20 +83,28 @@
 
                     <div class="col-md-12">
 
-                        <form action="<?php base_url('Dataklien_controller/edit'.$DataKlien['id']) ?>" method="post" enctype="multipart/form-data">
+                        <form action="<?php base_url('Dataklien_controller/edit'.$DataKlien['id_user']) ?>" method="post" enctype="multipart/form-data">
+                        <?php
+                        foreach($user as $DataKlien):
+                                        // print_r($DataKlien);
+                                        // exit();
+                                    ?>
 
+                        <?php echo form_open('admin/klien/Dataklien'); ?>
 
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">ID</label>
+                        <!-- <div class="form-group">
+                                <label for="exampleFormControlInput1">Kode klien</label>
                                 <input
+                                    name="kode"
                                     type="text"
-                                    name="id"
-                                    class="form-control <?php echo $DataKlien->id?> "
+                                    class="form-control <?php echo
+                                    form_error('kode') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('id') ?>
+                                    <?php echo form_error('K0001') ?>
                                 </div>
-                            </div>
+                            </div> -->
+
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
@@ -111,10 +119,15 @@
                                 </div>
                             </div>
 
-                            <div class="input-group date form-group" data-provide="datepicker">
-                                <input type="text" class="form-control" name="tanggal_lahir">
-                                <div class="input-group-addon">
-                                    <span class="glyphicon glyphicon-th">Tanggal Lahir</span>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Tanggal-lahir</label>
+                                <input
+                                    name="tanggal_lahir"
+                                    type="date"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nama') ?>
                                 </div>
                             </div>
 
@@ -266,16 +279,18 @@
                                 style="float:right;"
                                 simpan="Simpan"/>
 
-                            <script>
+                            <!-- <script>
                                 function myFunction() {
                                     alert("Perubahan telah tersimpan");
                                 }
-                            </script>
+                            </script> -->
                         </form>
-                    </div>
 
-                </div>
-            </div>
+                        <?php echo form_close(); ?>
+                    </div>
+                    </div>
+                    </div>
+            
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->
             <script
@@ -312,5 +327,4 @@
                 }
             </script>
         </body>
-
     </html>

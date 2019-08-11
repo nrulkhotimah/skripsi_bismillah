@@ -110,19 +110,15 @@ class Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Tambahklien");
     }
 
-    public function edit($id = null) {
-        // $this->load->helper('form');
-        $this->load->library('form_validation');
-
+    public function update($id) {
         if(!isset($id)) redirect('admin/klien/Dataklien');
 
-        $klien = $this->Dataklien_model;
+        //$klien = $this->Dataklien_model;
         $validation = $this->form_validation;
         $validation->set_rules($klien->rules());
 
         if($validation->run()) {
-            $this->Dataklien_model->save($post);
-            // $klien->save();
+            $this->Dataklien_model->update($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
             $this->load->view("admin/klien/Dataklien", $data);
@@ -138,29 +134,23 @@ class Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Editdataklien", $data);
     }
 
+    public function edit($id) {
+        $this->db->where('id', $id);
+        // print_r($id);
+        // exit();
+        $this->db->update('user', $data);
+        $data['user'] = $this->Dataklien_model->getAll();
+        $this->load->view("admin/klien/Editdataklien", $data);
+
+    }
+
     public function delete ($id) {
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Dataklien_model->getAll();
         $this->load->view("admin/klien/Dataklien", $data);
-
-        // $this->Dataklien_model->delete($id);
-        // $this->load->view("admin/klien/Dataklien");
-
-        // if(!isset($id)) show_404();
-
-        // if ($this->Dataklien_model->delete($id)) {
-        //    redirect(base_url('admin/klien/Dataklien'));
-           // $this->load->view("admin/klien/Dataklien");
-
-        // }
-
-
     }
-    
 
-
-   
 }
 
 ?>
