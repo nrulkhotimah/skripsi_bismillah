@@ -18,6 +18,7 @@
             rel="stylesheet"
             type="text/css"
             href="<?php echo base_url();?>assets/css/custom.css">
+
         <!-- Font Awesome JS -->
         <script
             type='text/javascript'
@@ -29,7 +30,6 @@
     </head>
 
     <body>
-
         <div class="wrapper">
             <!-- Sidebar -->
             <nav id="sidebar">
@@ -55,7 +55,7 @@
                         <li>
                             <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
                         </li>
-                        
+
                         <li>
                             <a href="<?php echo site_url('Admin/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
@@ -75,123 +75,118 @@
 
                     </div>
 
+                    <!-- data klien -->
                     <div class="col-md-12">
+                    <?php if($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
                         <!-- kolom search -->
                         <form class="form-inline ">
-                            <input
-                                class="search form-control form-control-sm mr-3 w-75 col-md-11"
-                                type="text"
-                                placeholder="Search"
-                                aria-label="Search"
-                                style="border-radius:13px;">
-                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <div class="search" style="width:100%;">
+                            <input class="form-control form-control w-100" type="text" placeholder="Search . . ."
+                                aria-label="Search" style="border-radius:5px; border: 1px solid #ddd !important">
+                            </div>
                         </form>
 
-                        <form>
-                            <table class="table table-striped" style="margin-top:20px;">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th colspan="2">Aksi</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Nama</th>
-                                        <th scope="col">Nomor Telepon</th>
-                                        <th scope="col">Jenis Kelamin</th>
-                                        <th scope="col">Tanggal Lahir</th>
-                                        <th scope="col">Username</th>
-                                        <th scope="col">Hak Akses</th>
-                                        <th scope="col">Edit</th>
-                                        <th scope="col">Hapus</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php 
-                                    foreach($user as $DataPakar):
+                        <!-- data tabel -->
+
+                        <table class="table table-sm table-bordered" style="margin-top:20px;">
+                            <thead class="text-center">
+                                <tr>
+                                    <th class="align-middle" rowspan="2">No</th>
+                                    <th class="align-middle" rowspan="2">Nama Lengkap</th>
+                                    <th class="align-middle" rowspan="2">Hak Akses</th>
+                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
+                                    <th class="align-middle" rowspan="2">JK</th>
+                                    <th class="align-middle" rowspan="2">Tempat / Tgl Lahir</th>
+                                    <th colspan="3">Aksi</th>
+                                </tr>
+                                <tr>
+                                    <th>Approve</th>
+                                    <th>Edit</th>
+                                    <th>Hapus</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="text-center">
+                                <?php
+                                    foreach($user as $DataKlien):
+                                        // print_r($DataKlien);
+                                        // exit();
                                     ?>
-
-                                    <tr>
-                                    <td><?php echo $DataPakar->id ?> </td>
+                                <tr>
+                                    <td class="align-middle"><?php echo $DataKlien->id_user ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->marital_status ?></td> 
+                                    <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
+                                    <td class="align-middle">
+                                        <a href=""><i class=" mr-3 text-success fas fa-check"></i></a>
+                                        <a href=""><i class=" text-danger fas fa-times"></i></a>
+                                        
+                                        </td>
+                                    <td class="align-middle">
+                                        <a href="<?php echo site_url('Dataklien_controller/edit/'.$DataKlien->id_user) ?>">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                    </td>
                                     
+                                    <td class="align-middle">
                                     
-                                    </tr>
+                                        <a
+                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
+                                            href="#!"
+                                            class="btn tbn-small text-secondary"
+                                            method="delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
 
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td>end</td>
-                                        <td>dasdsa</td>
-                                        <td>
-                                            <a href="<?php echo site_url('Admin/editDataPakar')?>">
-                                                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </td>
+                                        <script>
+                                            function deleteConfirm(url) {
+                                                $('#btn-delete').attr('href', url);
+                                                $('#deleteModal').modal();
+                                            }
+                                        </script>
 
-                                    </tr>
-                                    <tr>
-                                        <th>2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>end</td>
-                                        <td>dasdsa</td>
-                                        <td>
-                                            <a href="<?php echo site_url('Admin/editDataPakar')?>">
-                                                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>end</td>
-                                        <td>dasdsa</td>
-                                        <td>
-                                            <a href="<?php echo site_url('Admin/editDataPakar')?>">
-                                                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                <i class="fas fa-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </form>
+                                        <!-- modal Delete Confirmation-->
+                                        <div
+                                            class="modal fade"
+                                            id="deleteModal"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <?php  endforeach; ?>
+                            </tbody>
+                        </table>
 
+                        <a href="<?php echo site_url('Dataklien_controller/add')?>">
+                            <button type="button" class="btn btn-primary" style="float:right;">Tambah klien</button>
+                        </a>
                     </div>
-
                 </div>
-
             </div>
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->
