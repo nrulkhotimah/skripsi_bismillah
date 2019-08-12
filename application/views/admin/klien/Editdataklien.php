@@ -84,15 +84,18 @@
                     <div class="col-md-12">
 
                         <?php
-                            // $DataKlien = new stdClass();
+                            // $DataKlien = new $user;
                             // var_dump($DataKlien);
-
                             // $object = array($DataKlien);
                             // var_dump($object->id);
+
+                            foreach($user as $DataKlien):
+                                // print_r($DataKlien);
+                                // exit();
                         ?>
                         
                         <form
-                            action="<?php base_url('Dataklien_controller/update'.$user['id_user']) ?>"
+                            action="<?php base_url('Dataklien_controller/update'.$DataKlien->$id_user) ?>"
                             method="post"
                             enctype="multipart/form-data">
 
@@ -110,7 +113,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="<?php echo $user->nama ?>">
+                                    value="<?php echo $DataKlien->nama ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nama') ?>
                                 </div>
@@ -138,7 +141,7 @@
                                                 type="radio"
                                                 name="jenis_kelamin"
                                                 id="gridRadios1"
-                                                value="<?php echo $user->jenis_kelamin?>"
+                                                value="<?php echo $DataKlien->jenis_kelamin?>"
                                                 checked="checked">
                                             <label class="form-check-label" for="gridRadios1">
                                                 Pria
@@ -150,7 +153,7 @@
                                                 type="radio"
                                                 name="jenis_kelamin"
                                                 id="gridRadios2"
-                                                value="<?php echo $user->jenis_kelamin?>">
+                                                value="<?php echo $DataKlien->jenis_kelamin?>">
                                             <label class="form-check-label" for="gridRadios2">
                                                 Wanita
                                             </label>
@@ -167,7 +170,7 @@
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     placeholder="Jl. Kaliurang km 14,5"
-                                    value="<?php echo $user->alamat ?>">
+                                    value="<?php echo $DataKlien->alamat ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('alamat') ?>
                                 </div>
@@ -179,7 +182,7 @@
                                     class="form-control"
                                     id="exampleFormControlSelect1"
                                     name="agama"
-                                    value="<?php echo $user->agama?>">
+                                    value="<?php echo $DataKlien->agama?>">
                                     <option>Islam</option>
                                     <option>Kristen</option>
                                     <option>Hindu</option>
@@ -198,7 +201,7 @@
                                                 type="radio"
                                                 name="marital_status"
                                                 id="gridRadios3"
-                                                value="<?php echo $user->marital_status?>"
+                                                value="<?php echo $DataKlien->marital_status?>"
                                                 checked="checked">
                                             <label class="form-check-label" for="gridRadios3">
                                                 Menikah
@@ -210,7 +213,7 @@
                                                 type="radio"
                                                 name="marital_status"
                                                 id="gridRadios4"
-                                                value="<?php echo $user->marital_status?>">
+                                                value="<?php echo $DataKlien->marital_status?>">
                                             <label class="form-check-label" for="gridRadios4">
                                                 Lajang
                                             </label>
@@ -226,7 +229,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="<?php echo $user->pekerjaan?>">
+                                    value="<?php echo $DataKlien->pekerjaan?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('pekerjaan') ?>
                                 </div>
@@ -239,7 +242,7 @@
                                     type="number"
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="<?php echo $user->nomor_telepon?>">
+                                    value="<?php echo $DataKlien->nomor_telepon?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nomor-telepon') ?>
                                 </div>
@@ -252,7 +255,7 @@
                                     type="email"
                                     class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="<?php echo $user->email?>">
+                                    value="<?php echo $DataKlien->email?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('email') ?>
                                 </div>
@@ -265,7 +268,7 @@
                                     type="text"
                                     class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="<?php echo $user->username?>">
+                                    value="<?php echo $DataKlien->username?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('username') ?>
                                 </div>
@@ -284,7 +287,7 @@
                             </script> -->
 
                         </form>
-
+                        <?php  endforeach; ?>
                     </div>
                 </div>
             </div>

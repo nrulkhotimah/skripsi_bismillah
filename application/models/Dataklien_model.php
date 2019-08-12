@@ -29,7 +29,7 @@ class Dataklien_model extends CI_Model {
     }
     
     public function getById($id) {
-         return $this->db->get_where($this->_table,['id'=>$id])->row();
+         return $this->db->get_where($this->_table,['id'=>$id])->result();
         
     }
 
@@ -58,7 +58,7 @@ class Dataklien_model extends CI_Model {
 
     public function update($id) {
         
-        $user = new stdClass();
+        $user = new \stdClass();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
@@ -69,7 +69,7 @@ class Dataklien_model extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update($this->_table, $user);
      
-        $klien = new stdClass();
+        $klien = new \stdClass();
         $id_user = $this->db->id();
        //$klien->kode = $post['kode']; 
         $klien->id_user = $id_user;

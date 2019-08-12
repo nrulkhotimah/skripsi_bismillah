@@ -110,7 +110,7 @@ class Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Tambahklien");
     }
 
-    public function update($id) {
+    public function update($id=null) {
         if(!isset($id)) redirect('admin/klien/Dataklien');
 
         //$klien = $this->Dataklien_model;
