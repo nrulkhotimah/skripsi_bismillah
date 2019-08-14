@@ -96,7 +96,7 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Lengkap</th>
+                                    <th class="align-middle" rowspan="2">Nama Klien</th>
                                     <th class="align-middle" rowspan="2">Status</th>
                                     <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th class="align-middle" rowspan="2">JK</th>

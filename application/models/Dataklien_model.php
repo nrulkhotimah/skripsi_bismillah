@@ -27,11 +27,21 @@ class Dataklien_model extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
-    
+
     public function getById($id) {
-         return $this->db->get_where($this->_table,['id'=>$id])->first_row();
-        
+
+        // $this->db->select('marital_status, agama, pekerjaan, tanggal_lahir');
+        // $this->db->from('klien');
+        // $this->db->join('user','klien.id_user=user.id');
+        // $this->db->where('id_user', 95);
+
+        return $this->db->get_where($this->_table,['id'=>$id])->first_row();
+
+        // print_r($id);
+        // exit();
     }
+
+    
 
     public function save($post) {
         $user = new stdClass();
@@ -74,32 +84,17 @@ class Dataklien_model extends CI_Model {
        //$klien->kode = $post['kode']; 
         $klien->id_user = $id_user;
         $klien->tanggal_lahir = $post['tanggal_lahir'];
+        $klien->agama = $post['agama'];
         $klien->marital_status = $post['marital_status'];
         $klien->pekerjaan = $post['pekerjaan'];
-        $klien->agama = $post['agama'];
 
         $this->db->where('klien', $klien);
         $this->db->update('klien', $klien);
-
-        // $post = $this->input->post();
-        // $this->id = $post["id"];
-        // $this->kode = $post["kode"];
-        // $this->nama = $post["nama"];
-        // $this->nomor_telepon = $post["nomor_telepon"];
-        // $this->jenis_kelamin = $post["jenis_kelamin"];
-        // $this->tanggal_lahir = $post["tanggal_lahir"];
-        // $this->alamat = $post["alamat"];
-        // $this->pekerjaan = $post["pekerjaan"];
-        // $this->email = $post["email"];
-        // $this->username = $post["username"];
-
-        // $this->db->update($this->_table, $this, ['id'=>$this->id]);
     }
 
     public function delete($id){
         $this->db->where('id', $id);
-        return $this->db->delete($this->_table, array('id' => $id)); 
-
+        return $this->db->delete($this->_table, array('id' => $id));
     }
 
 }

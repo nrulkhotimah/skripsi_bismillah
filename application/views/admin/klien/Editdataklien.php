@@ -82,15 +82,6 @@
                     <?php endif; ?>
 
                     <div class="col-md-12">
-
-                        <?php
-                            // $DataKlien = new $user;
-                            // var_dump($DataKlien);
-                            // $object = array($DataKlien);
-                            // var_dump($object->id);
-                                // print_r($DataKlien);
-                                // exit();
-                        ?>
                         
                         <form
                             action="<?php base_url('Dataklien_controller/edit'.$user->id) ?>"
@@ -218,20 +209,21 @@
                                         </div>
                                     </div>
                                 </div>
-                            </fieldset>
+                            </fieldset> -->
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Pekerjaan</label>
                                 <input
-                                    name="pekerjaan"
+                                    name="alamat"
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
+                                    placeholder="Jl. Kaliurang km 14,5"
                                     value="<?php echo $user->pekerjaan ?>">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('pekerjaan') ?>
+                                    <?php echo form_error('alamat') ?>
                                 </div>
-                            </div> -->
+                            </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nomor Telepon</label>
