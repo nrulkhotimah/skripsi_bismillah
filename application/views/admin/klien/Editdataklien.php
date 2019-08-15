@@ -158,7 +158,6 @@
                                     type="text"
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Jl. Kaliurang km 14,5"
                                     value="<?php echo $user->alamat ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('alamat') ?>
@@ -218,7 +217,6 @@
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Jl. Kaliurang km 14,5"
                                     value="<?php echo $user->pekerjaan ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('alamat') ?>

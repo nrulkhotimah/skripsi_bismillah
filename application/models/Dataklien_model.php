@@ -3,6 +3,7 @@
 class Dataklien_model extends CI_Model {
 
     private $_table = "user";
+    private $tabel = "klien";
 
     public $id;
     public $kode;
@@ -30,18 +31,16 @@ class Dataklien_model extends CI_Model {
 
     public function getById($id) {
 
-        // $this->db->select('marital_status, agama, pekerjaan, tanggal_lahir');
-        // $this->db->from('klien');
-        // $this->db->join('user','klien.id_user=user.id');
-        // $this->db->where('id_user', 95);
+        $this->db->select('marital_status, agama, pekerjaan, tanggal_lahir');
+        $this->db->from('klien');
+        $this->db->join('user','klien.id_user=user.id');
+        $this->db->where('id_user');
 
         return $this->db->get_where($this->_table,['id'=>$id])->first_row();
 
-        // print_r($id);
-        // exit();
+            // print_r($id);
+            // exit();
     }
-
-    
 
     public function save($post) {
         $user = new stdClass();
