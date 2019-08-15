@@ -24,23 +24,19 @@ class Dataklien_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->join('klien','klien.id_user=user.id');
-
+        
         $query = $this->db->get();
         return $query->result();
     }
 
     public function getById($id) {
 
-        $this->db->select('marital_status, agama, pekerjaan, tanggal_lahir');
+        $this->db->select('*');
         $this->db->from('klien');
-        $this->db->join('user','klien.id_user=user.id');
+        $this->db->join('user','user.id=klien.id_user');
+        $this->db->where('id_user', $id);
 
-        $this->db->where('id_user',$id);
-        return $this->db->row();
-
-        // $this->db->where('id_user');
-
-        // return $this->db->get_where($this->_table,['id'=>$id])->first_row();
+        return $this->db->get()->first_row();
 
             // print_r($id);
             // exit();

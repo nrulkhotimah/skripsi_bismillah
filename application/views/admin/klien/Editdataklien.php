@@ -114,7 +114,9 @@
                                     name="tanggal_lahir"
                                     type="date"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1">
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $user->tanggal_lahir ?>"
+                                    >
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nama') ?>
                                 </div>
@@ -130,8 +132,8 @@
                                                 type="radio"
                                                 name="jenis_kelamin"
                                                 id="gridRadios1"
-                                                value="<?php echo $user->jenis_kelamin ?>"
-                                                checked="checked">
+                                                value="pria" <?php echo ($user->jenis_kelamin=='pria' ? 'checked':'');?>
+                                                >
                                             <label class="form-check-label" for="gridRadios1">
                                                 Pria
                                             </label>
@@ -142,7 +144,8 @@
                                                 type="radio"
                                                 name="jenis_kelamin"
                                                 id="gridRadios2"
-                                                value="<?php echo $user->jenis_kelamin ?>">
+                                                value="wanita" <?php echo  ($user->jenis_kelamin=='wanita' ? 'checked':''); ?>
+                                                >
                                             <label class="form-check-label" for="gridRadios2">
                                                 Wanita
                                             </label>
@@ -170,7 +173,8 @@
                                     class="form-control"
                                     id="exampleFormControlSelect1"
                                     name="agama"
-                                    value="<?php echo $user->agama?>">
+                                    value='' <?php if($user=='0') {echo 'selected';} ?>
+                                    >
                                     <option>Islam</option>
                                     <option>Kristen</option>
                                     <option>Hindu</option>
@@ -179,7 +183,7 @@
                                 </select>
                             </div>
 
-                            <!-- <fieldset class="form-group">
+                             <fieldset class="form-group">
                                 <div class="row">
                                     <legend class="col-form-label col-sm-2 pt-0">Marital Status</legend>
                                     <div class="col-sm-10">
@@ -189,8 +193,7 @@
                                                 type="radio"
                                                 name="marital_status"
                                                 id="gridRadios3"
-                                                value="<?php echo $user->marital_status ?>"
-                                                checked="checked">
+                                                value="menikah" <?php echo ($user->marital_status=='menikah' ? 'checked':'');?>>
                                             <label class="form-check-label" for="gridRadios3">
                                                 Menikah
                                             </label>
@@ -201,14 +204,14 @@
                                                 type="radio"
                                                 name="marital_status"
                                                 id="gridRadios4"
-                                                value="<?php echo  $user->marital_status ?>">
+                                                value="lajang" <?php echo ($user->marital_status=='lajang' ? 'checked':'');?>>
                                             <label class="form-check-label" for="gridRadios4">
                                                 Lajang
                                             </label>
                                         </div>
                                     </div>
                                 </div>
-                            </fieldset> -->
+                            </fieldset>
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Pekerjaan</label>

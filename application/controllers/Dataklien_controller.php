@@ -11,14 +11,6 @@ class Dataklien_controller extends CI_Controller {
         $this->load->library('session');
     }
 
-    public function index() {
-        // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
-        $data['user'] = $this->Dataklien_model->getAll();
-        // print_r($data);
-        // exit();
-        $this->load->view("admin/klien/Dataklien", $data);
-    }
-
    public function rules() {
         return [
             ['field' => 'id',
@@ -81,6 +73,14 @@ class Dataklien_controller extends CI_Controller {
         ];
     }
 
+    public function index() {
+        // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
+        $data['user'] = $this->Dataklien_model->getAll();
+        // print_r($data);
+        // exit();
+        $this->load->view("admin/klien/Dataklien", $data);
+    }
+
     public function save() {
         $post = $this->input->post();
         $this->load->helper('form');
@@ -136,9 +136,10 @@ class Dataklien_controller extends CI_Controller {
 
     public function edit($id) {
         $data['user'] = $this->Dataklien_model->getById($id);
+        
+        $this->load->view("admin/klien/Editdataklien", $data);
         // print_r($data);
         // exit();
-        $this->load->view("admin/klien/Editdataklien", $data);
 
     }
 
