@@ -34,9 +34,13 @@ class Dataklien_model extends CI_Model {
         $this->db->select('marital_status, agama, pekerjaan, tanggal_lahir');
         $this->db->from('klien');
         $this->db->join('user','klien.id_user=user.id');
-        $this->db->where('id_user');
 
-        return $this->db->get_where($this->_table,['id'=>$id])->first_row();
+        $this->db->where('id_user',$id);
+        return $this->db->row();
+
+        // $this->db->where('id_user');
+
+        // return $this->db->get_where($this->_table,['id'=>$id])->first_row();
 
             // print_r($id);
             // exit();
