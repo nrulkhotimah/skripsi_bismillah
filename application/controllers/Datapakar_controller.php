@@ -6,10 +6,54 @@ class Datapakar_controller extends CI_Controller {
         parent::__construct();
 
         $this->load->model("Datapakar_model");
+        $this->load->helper('url_helper');
+        $this->model = $this->Datapakar_model;
+        $this->load->library('session');
+    }
+
+    public function rules() {
+        return [
+            ['field' => 'id',
+            'label' => 'ID',
+            ],
+
+
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'nomor_telepon',
+            'label' => 'Nomor Telepon',
+            'rules' => 'numeric', 'required'
+            ],
+
+            ['field' => 'jenis_kelamin',
+            'label' => 'Jenis Kelamin',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'alamat',
+            'label' => 'Alamat',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'email',
+            'label' => 'Email',
+            'rules' => 'valid_email', 'required'
+            ],
+
+            ['field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required'
+            ],
+        ];
     }
 
     public function index() {
-        $data["user"] = $this->Datapakar_model->getAll();
+        $data['user'] = $this->Datapakar_model->getAll();
+        print_r($data);
+        exit();
         $this->load->view("admin/klien/Datapakar", $data);
     }
 

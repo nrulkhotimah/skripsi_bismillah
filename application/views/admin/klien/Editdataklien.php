@@ -168,18 +168,19 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Agama</label>
+                                <label for="agama">Agama</label>
+                                <?php $agama = $user->agama; ?>
                                 <select
+                                    type="select"
                                     class="form-control"
                                     id="exampleFormControlSelect1"
                                     name="agama"
-                                    value='' <?php if($user=='0') {echo 'selected';} ?>
                                     >
-                                    <option>Islam</option>
-                                    <option>Kristen</option>
-                                    <option>Hindu</option>
-                                    <option>Budha</option>
-                                    <option>Kong hu cu</option>
+                                    <option <?php echo ($agama == 'islam') ? "selected": "" ?>>Islam</option>
+                                    <option <?php echo ($agama == 'kristen') ? "selected": "" ?>>Kristen</option>
+                                    <option <?php echo ($agama == 'hindu') ? "selected": "" ?>>Hindu</option>
+                                    <option <?php echo ($agama == 'budha') ? "selected": "" ?>>Budha</option>
+                                    <option <?php echo ($agama == 'konghucu') ? "selected": "" ?>>Kong hu cu</option>
                                 </select>
                             </div>
 
