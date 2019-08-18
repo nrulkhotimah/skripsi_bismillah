@@ -112,12 +112,14 @@
 
                             <tbody class="text-center">
                                 <?php
+                                $i=0;
                                     foreach($user as $DataKlien):
                                         // print_r($DataKlien);
                                         // exit();
+                                        $i++;
                                     ?>
                                 <tr>
-                                    <td class="align-middle"><?php echo $DataKlien->id_user ?></td>
+                                    <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle"><?php echo $DataKlien->nama ?></td>
                                     <td class="align-middle"><?php echo $DataKlien->marital_status ?></td> 
                                     <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
@@ -177,7 +179,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
                                 <?php  endforeach; ?>
                             </tbody>
                         </table>

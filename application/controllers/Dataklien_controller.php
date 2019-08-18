@@ -81,6 +81,10 @@ class Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
+    public function add() {
+        $this->load->view("admin/klien/Tambahklien");
+    }
+
     public function save() {
         $post = $this->input->post();
         $this->load->helper('form');
@@ -93,10 +97,8 @@ class Dataklien_controller extends CI_Controller {
 
         if($validation->run()) {
             $this->Dataklien_model->save($post);
-            // $klien->save();
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
-            // redirect(base_url('Dataklien_controller'));
            $this->load->view("admin/klien/Dataklien", $data);
         } else {
             $error=validation_errors();
@@ -106,8 +108,13 @@ class Dataklien_controller extends CI_Controller {
 
     }
 
-    public function add() {
-        $this->load->view("admin/klien/Tambahklien");
+    public function edit($id) {
+        $data['user'] = $this->Dataklien_model->getById($id);
+        
+        $this->load->view("admin/klien/Editdataklien", $data);
+        // print_r($data);
+        // exit();
+
     }
 
     public function update($id=null) {
@@ -131,16 +138,7 @@ class Dataklien_controller extends CI_Controller {
         $data["klien"] = $klien->getById($id);
         if(!data["klien"]) show_404();
 
-        $this->load->view("admin/klien/Editdataklien", $data);
-    }
-
-    public function edit($id) {
-        $data['user'] = $this->Dataklien_model->getById($id);
-        
-        $this->load->view("admin/klien/Editdataklien", $data);
-        // print_r($data);
-        // exit();
-
+        // $this->load->view("admin/klien/Dataklien", $data);
     }
 
     public function delete ($id) {

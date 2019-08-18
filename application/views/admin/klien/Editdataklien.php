@@ -88,13 +88,6 @@
                             method="post"
                             enctype="multipart/form-data">
 
-                            <!-- <div class="form-group"> <label for="exampleFormControlInput1">Kode
-                            klien</label> <input name="kode" type="text" class="form-control <?php echo
-                            form_error('kode') ? 'is-invalid':'' ?>" id="exampleFormControlInput1"> <div
-                            class="invalid-feedback"> <?php echo form_error('K0001') ?> </div> </div> -->
-
-                            
-
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
                                 <input

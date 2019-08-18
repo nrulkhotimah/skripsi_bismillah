@@ -81,18 +81,9 @@
 
                             <?php echo form_open('admin/klien/Dataklien'); ?>
 
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Kode klien</label>
-                                <input
-                                    name="kode"
-                                    type="text"
-                                    class="form-control <?php echo
-                                    form_error('kode') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('K0001') ?>
-                                </div>
-                            </div>
+                        <span class="font-weight-bold">Kode Klien : </span>
+                        <br>
+                        <br>
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
