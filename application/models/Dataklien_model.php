@@ -127,7 +127,7 @@ class Dataklien_model extends CI_Model {
         $this->db->insert('klien', $klien);
     }
 
-    public function update($id) {
+    public function update($post,$id) {
         
         $user = new stdClass();
         $user->nama = $post['nama'];
@@ -137,22 +137,23 @@ class Dataklien_model extends CI_Model {
         $user->email = $post['email'];
         $user->username = $post['username'];
 
+        $this->db->set($user);
         $this->db->where('id', $id);
 
-        
         $this->db->update($this->_table, $user);
      
         $klien = new stdClass();
-        $id_user = $this->db->id();
+        //$id_user = $this->db->id();
        //$klien->kode = $post['kode']; 
-        $klien->id_user = $id_user;
+        $klien->id_user = $id;
         $klien->tanggal_lahir = $post['tanggal_lahir'];
         $klien->agama = $post['agama'];
         $klien->marital_status = $post['marital_status'];
         $klien->pekerjaan = $post['pekerjaan'];
 
-        $this->db->where('klien', $klien);
-        $this->db->update('klien', $data);
+        $this->db->set($klien);
+        $this->db->where('id_user', $id);
+        $this->db->update('klien', $klien);
     }
 
     public function delete($id){

@@ -107,12 +107,12 @@
                                 <input
                                     name="tanggal_lahir"
                                     type="date"
-                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    class="form-control <?php echo form_error('tanggal_lahir') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->tanggal_lahir ?>"
                                     >
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('nama') ?>
+                                    <?php echo form_error('tanggal_lahir') ?>
                                 </div>
                             </div>
 
@@ -211,13 +211,13 @@
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Pekerjaan</label>
                                 <input
-                                    name="alamat"
+                                    name="pekerjaan"
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->pekerjaan ?>">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('alamat') ?>
+                                    <?php echo form_error('pekerjaan') ?>
                                 </div>
                             </div>
 

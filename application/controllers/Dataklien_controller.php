@@ -11,6 +11,67 @@ class Dataklien_controller extends CI_Controller {
         $this->load->library('session');
     }
 
+    public function rules() {
+        return [
+            ['field' => 'id',
+            'label' => 'ID',
+            ],
+
+            ['field' => 'kode',
+            'label' => 'Kode',
+            ],
+
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'nomor_telepon',
+            'label' => 'Nomor Telepon',
+            'rules' => 'numeric', 'required'
+            ],
+
+            ['field' => 'jenis_kelamin',
+            'label' => 'Jenis Kelamin',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'agama',
+            'label' => 'Agama',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'tanggal_lahir',
+            'label' => 'Tanggal Lahir',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'alamat',
+            'label' => 'Alamat',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'pekerjaan',
+            'label' => 'pekerjaan',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'marital_status',
+            'label' => 'Marital Status',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'email',
+            'label' => 'Email',
+            'rules' => 'valid_email', 'required'
+            ],
+
+            ['field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required'
+            ],
+        ];
+    }
   
 
     public function index() {
@@ -65,12 +126,13 @@ class Dataklien_controller extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
       
-        if($validation->run()) {
-            $this->Dataklien_model->update($post);
+        // if($validation->run()) {
+            echo "a";
+            $this->Dataklien_model->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
             $this->load->view("admin/klien/Dataklien", $data);
-        } 
+        // } 
         // else {
         //     $error=validation_errors();
         //     $this->session->set_flashdata('errors', 'Gagal disimpan');
@@ -78,7 +140,8 @@ class Dataklien_controller extends CI_Controller {
         // }
      
         $data['user'] = $user->getById($id);
-      
+    //   print_r($data);
+    //     exit();
         if(!$data['user']) show_404();
 
         // $this->load->view("admin/klien/Dataklien", $data);
