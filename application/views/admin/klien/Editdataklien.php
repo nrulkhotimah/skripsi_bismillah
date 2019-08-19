@@ -84,7 +84,8 @@
                     <div class="col-md-12">
                         
                         <form
-                            action="<?php base_url('Dataklien_controller/edit'.$user->id) ?>"
+                            action="<?php echo base_url( 'index.php/Dataklien_controller/update/'.$user->id) ?>"
+                           
                             method="post"
                             enctype="multipart/form-data">
 
@@ -173,7 +174,7 @@
                                     <option <?php echo ($agama == 'kristen') ? "selected": "" ?>>Kristen</option>
                                     <option <?php echo ($agama == 'hindu') ? "selected": "" ?>>Hindu</option>
                                     <option <?php echo ($agama == 'budha') ? "selected": "" ?>>Budha</option>
-                                    <option <?php echo ($agama == 'konghucu') ? "selected": "" ?>>Kong hu cu</option>
+                                    <option <?php echo ($agama == 'konghucu') ? "selected": "" ?>>Konghucu</option>
                                 </select>
                             </div>
 
@@ -264,14 +265,11 @@
                                 class="btn btn-primary"
                                 name="btn"
                                 value="Save"
-                                onclick="myFunction()"
                                 style="float:right;"
-                                simpan="Simpan"/>
-
-                            <!-- <script> function myFunction() { alert("Perubahan telah tersimpan"); }
-                            </script> -->
+                                />
 
                         </form>
+                        
 
                     </div>
                 </div>

@@ -92,7 +92,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Masukkan nama...">
+                                    placeholder="Masukkan nama . . . ">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nama') ?>
                                 </div>
@@ -148,7 +148,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Jl. Kaliurang km 14,5">
+                                    placeholder="alamat . . . ">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('alamat') ?>
                                 </div>
@@ -161,7 +161,7 @@
                                     <option>Kristen</option>
                                     <option>Hindu</option>
                                     <option>Budha</option>
-                                    <option>Kong hu cu</option>
+                                    <option>Konghucu</option>
                                 </select>
                             </div>
 
@@ -203,7 +203,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Mahasiswa">
+                                    placeholder="pekerjaan . . . ">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('pekerjaan') ?>
                                 </div>
@@ -216,7 +216,7 @@
                                     type="numeric"
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="0853121323">
+                                    placeholder="nomor telepon . . . ">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('nomor_telepon') ?>
                                 </div>
@@ -229,7 +229,7 @@
                                     type="email"
                                     class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="nkhotimah159@gmail.com">
+                                    placeholder="email . . . ">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('email') ?>
                                 </div>
@@ -242,7 +242,7 @@
                                     type="text"
                                     class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Ikanataysa">
+                                    placeholder="username . . .">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('username') ?>
                                 </div>
@@ -253,16 +253,9 @@
                                 class="btn btn-primary"
                                 name="btn"
                                 value="Save"
-                                onclick="myFunction()"
                                 style="float:right; width:100px;"
-                                simpan="Simpan"/>
-
-                            <!-- <script> function myFunction() { alert("Perubahan telah tersimpan"); }
-                            </script> -->
+                                />
                         </form>
-                        <br>    
-                        <br>
-                        <br>
                         <?php echo form_close(); ?>
                     </div>
 

@@ -3,7 +3,7 @@
 class Dataklien_model extends CI_Model {
 
     private $_table = "user";
-    private $tabel = "klien";
+    // private $tabel = "klien";
 
     public $id;
     public $kode;
@@ -17,6 +17,68 @@ class Dataklien_model extends CI_Model {
     public $pekerjaan;
     public $email;
     public $username; 
+
+    public function rules() {
+        return [
+            ['field' => 'id',
+            'label' => 'ID',
+            ],
+
+            ['field' => 'kode',
+            'label' => 'Kode',
+            ],
+
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'nomor_telepon',
+            'label' => 'Nomor Telepon',
+            'rules' => 'numeric', 'required'
+            ],
+
+            ['field' => 'jenis_kelamin',
+            'label' => 'Jenis Kelamin',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'agama',
+            'label' => 'Agama',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'tanggal_lahir',
+            'label' => 'Tanggal Lahir',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'alamat',
+            'label' => 'Alamat',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'pekerjaan',
+            'label' => 'pekerjaan',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'marital_status',
+            'label' => 'Marital Status',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'email',
+            'label' => 'Email',
+            'rules' => 'valid_email', 'required'
+            ],
+
+            ['field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required'
+            ],
+        ];
+    }
 
     public function getAll() {
         $this->load->database();
@@ -76,6 +138,8 @@ class Dataklien_model extends CI_Model {
         $user->username = $post['username'];
 
         $this->db->where('id', $id);
+
+        
         $this->db->update($this->_table, $user);
      
         $klien = new stdClass();
@@ -88,7 +152,7 @@ class Dataklien_model extends CI_Model {
         $klien->pekerjaan = $post['pekerjaan'];
 
         $this->db->where('klien', $klien);
-        $this->db->update('klien', $klien);
+        $this->db->update('klien', $data);
     }
 
     public function delete($id){
@@ -96,6 +160,23 @@ class Dataklien_model extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
+//     public function search($nama) {
+//         // $cari = $this->input->GET('cari', TRUE);
+//         // $data = $this->db->query("select * from user where nama like '%$cari%' ");
+//         // return $data->result();
+
+//         $this->db->select("*");
+//         $this->db->from("user");
+//         if($nama != '') {
+//             $this->db->like('nama', $nama);
+//         }
+//         // print_r($this);
+//         // exit();
+//         $this->db->order_by('id', 'DESC'); 
+//         return $this->db->get();
+
+        
+// }
 }
 
 ?>

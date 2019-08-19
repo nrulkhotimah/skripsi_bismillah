@@ -27,6 +27,8 @@
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
 
+        <script> src="/Applications/XAMPP/xamppfiles/htdocs/skripsi/assets/jquery/jquery.min.js" </script>
+
     </head>
 
     <body>
@@ -77,30 +79,40 @@
 
                     <!-- data klien -->
                     <div class="col-md-12">
-                    <?php if($this->session->flashdata('success')): ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                    <?php endif; ?>
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
+
                         <!-- kolom search -->
-                        <form class="form-inline ">
+                        <form class="form-inline" >
                             <div class="search" style="width:100%;">
-                            <input class="form-control form-control w-100" type="text" placeholder="Search . . ."
-                                aria-label="Search" style="border-radius:5px; border: 1px solid #ddd !important">
+                                <input
+                                    class="form-control w-100"
+                                    type="text"
+                                    name="search_text"
+                                    placeholder="Search . . ."
+                                    aria-label="Search"
+                                    style="border-radius:5px; border: 1px solid #ddd !important"
+                                    id="search_text">
                             </div>
                         </form>
+                        <div id="result"></div>
 
                         <!-- data tabel -->
-
-                        <table class="table table-sm table-bordered" style="margin-top:20px;">
+                        <table
+                            class="table table-sm table-bordered"
+                            style="margin-top:20px;"
+                            id="result">
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
                                     <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Status</th>
-                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th class="align-middle" rowspan="2">JK</th>
-                                    <th class="align-middle" rowspan="2">Tempat / Tgl Lahir</th>
+                                    <th class="align-middle" rowspan="2">Status</th>
+                                    <th class="align-middle" rowspan="2">Tanggal Lahir</th>
+                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th colspan="3">Aksi</th>
                                 </tr>
                                 <tr>
@@ -121,23 +133,29 @@
                                 <tr>
                                     <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle"><?php echo $DataKlien->nama ?></td>
-                                    <td class="align-middle"><?php echo $DataKlien->marital_status ?></td> 
-                                    <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
                                     <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->marital_status ?></td>
                                     <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
+
                                     <td class="align-middle">
-                                        <a href=""><i class=" mr-3 text-success fas fa-check"></i></a>
-                                        <a href=""><i class=" text-danger fas fa-times"></i></a>
-                                        
-                                        </td>
+                                        <a href="">
+                                            <i class=" mr-3 text-success fas fa-check"></i>
+                                        </a>
+                                        <a href="">
+                                            <i class=" text-danger fas fa-times"></i>
+                                        </a>
+
+                                    </td>
+
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('Dataklien_controller/edit/'.$DataKlien->id_user) ?>">
+                                        <a
+                                            href="<?php echo site_url('Dataklien_controller/edit/'.$DataKlien->id_user) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
-                                    
+
                                     <td class="align-middle">
-                                    
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
                                             href="#!"
@@ -178,6 +196,7 @@
                                             </div>
                                         </div>
                                     </td>
+                                    
                                 </tr>
                                 <?php  endforeach; ?>
                             </tbody>
@@ -223,6 +242,35 @@
                 function test() {
                     alert("Hello! I am an alert box!");
                 }
+            </script>
+
+            <!-- script buat ajax search -->
+            <script>
+                $(document).ready(function ()) {
+                    load_data();
+
+                    function load_data(query) {
+                        $.ajax({
+                            url: "<?php echo base_url(); ?>Dataklien_controller/search",
+                            method: "POST",
+                            data: {
+                                query: query;
+                            },
+                            success: function (data) {
+                                $('#result').html(data);
+                            }
+                        })
+                    }
+
+                    $('#search_text').keyup(function () {
+                        var search = $(this).val();
+                        if (search != '') {
+                            load_data(search);
+                        } else {
+                            load_data();
+                        }
+                    })
+                });
             </script>
         </body>
 
