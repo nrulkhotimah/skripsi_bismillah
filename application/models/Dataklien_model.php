@@ -161,23 +161,15 @@ class Dataklien_model extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-//     public function search($nama) {
-//         // $cari = $this->input->GET('cari', TRUE);
-//         // $data = $this->db->query("select * from user where nama like '%$cari%' ");
-//         // return $data->result();
+    public function search($id) {
+        $this->db->like('nama', $kid);
+        $query = $this->db->get('nama');
+        return $query->get()->result();
+        // print_r($query);
+        // exit();
+    }
 
-//         $this->db->select("*");
-//         $this->db->from("user");
-//         if($nama != '') {
-//             $this->db->like('nama', $nama);
-//         }
-//         // print_r($this);
-//         // exit();
-//         $this->db->order_by('id', 'DESC'); 
-//         return $this->db->get();
 
-        
-// }
 }
 
 ?>

@@ -152,82 +152,16 @@ class Dataklien_controller extends CI_Controller {
         $this->db->delete('user');
         $data['user'] = $this->Dataklien_model->getAll();
 
-
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
-    // public function search() {
-    //     //$this->load->view('search');
+    public function search() {
+        $keyword = $this->input->post('nama');
+        $data['user'] = $this->Dataklien_model->search($keyword);
+         
+        $this->load->view('Dataklien', $data);
+    }
 
-    //     $output = '';
-    //     $nama = '';
-
-    //     $this->load->model('Dataklien_model');
-
-    //     if($this->input->post('query')) {
-    //         $query = $this->input->post('query');
-    //     }
-    //     $data = $this->Dataklien_model->search($nama);
-    //     $data = $this->Dataklien_model->search($jenis_kelamin);
-    //     $data = $this->Dataklien_model->search($marital_status);
-    //     $data = $this->Dataklien_model->search($tanggal_lahir);
-    //     $data = $this->Dataklien_model->search($nomor_telepon);
-
-        
-    //     $output .= '
-    //     <table
-    //     class="table table-sm table-bordered"
-    //     style="margin-top:20px;"
-    //     id="result">
-    //     <thead class="text-center">
-    //         <tr>
-    //             <th class="align-middle" rowspan="2">No</th>
-    //             <th class="align-middle" rowspan="2">Nama Klien</th>
-    //             <th class="align-middle" rowspan="2">JK</th>
-    //             <th class="align-middle" rowspan="2">Status</th>
-    //             <th class="align-middle" rowspan="2">Tanggal Lahir</th>
-    //             <th class="align-middle" rowspan="2">Nomor Telepon</th>
-    //             <th colspan="3">Aksi</th>
-    //         </tr>
-    //         <tr>
-    //             <th>Approve</th>
-    //             <th>Edit</th>
-    //             <th>Hapus</th>
-    //         </tr>
-    //     </thead>
-    //     ';
-    //     if($data->num_rows() > 0) {
-    //         foreach($data->result() as $DataKlien) {
-    //             $output .= '
-    //             <tr>
-    //             <th class="align-middle" rowspan="2">No</th>
-    //             <th class="align-middle" rowspan="2">Nama Klien</th>
-    //             <th class="align-middle" rowspan="2">JK</th>
-    //             <th class="align-middle" rowspan="2">Status</th>
-    //             <th class="align-middle" rowspan="2">Tanggal Lahir</th>
-    //             <th class="align-middle" rowspan="2">Nomor Telepon</th>
-    //             <th colspan="3">Aksi</th>
-    //         </tr>
-    //         <tr>
-    //             <th>Approve</th>
-    //             <th>Edit</th>
-    //             <th>Hapus</th>
-    //         </tr>
-    //             ';
-    //         }
-    //     } else {
-    //         $output .= '
-    //         <th class="align-middle" rowspan="2">No Data Found</th>
-    //         ';
-    //     }
-    //     $output .= '</table>';
-    //     echo $output;
-    // }
-
-    // public function hasil() {
-    //     $data['cari']=$this->Dataklien_model->search();
-    //     $this->load->view('result', $data);
-    // }
 
 }
 

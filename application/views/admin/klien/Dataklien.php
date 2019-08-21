@@ -27,7 +27,9 @@
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
 
-        <script> src="/Applications/XAMPP/xamppfiles/htdocs/skripsi/assets/jquery/jquery.min.js" </script>
+        <script>
+            src = "/Applications/XAMPP/xamppfiles/htdocs/skripsi/assets/jquery/jquery.min.js"
+        </script>
 
     </head>
 
@@ -86,19 +88,40 @@
                         <?php endif; ?>
 
                         <!-- kolom search -->
-                        <form class="form-inline" >
+                        <form
+                            class="form-inline"
+                            action="<?php echo site_url('Dataklien_controller/search'); ?>">
                             <div class="search" style="width:100%;">
                                 <input
                                     class="form-control w-100"
                                     type="text"
-                                    name="search_text"
                                     placeholder="Search . . ."
                                     aria-label="Search"
-                                    style="border-radius:5px; border: 1px solid #ddd !important"
-                                    id="search_text">
+                                    style="border-radius:5px; border: 1px solid #ddd !important">
+                                <input type="submit" class="btn btn-primary" value="search">
                             </div>
                         </form>
-                        <div id="result"></div>
+                        <table>
+                            <?php foreach($result as $row) { ?>
+                            <tr>
+                                <td>
+                                    <?php echo $row->nama ?>
+                                </td>
+                                <td>
+                                    <?php echo $row->jenis_kelamin ?>
+                                </td>
+                                <td>
+                                    <?php echo $row->status ?>
+                                </td>
+                                <td>
+                                    <?php echo $row->tanggal_lahir ?>
+                                </td>
+                                <td>
+                                    <?php echo $row->nomor_telepon ?>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </table>
 
                         <!-- data tabel -->
                         <table
@@ -196,7 +219,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    
+
                                 </tr>
                                 <?php  endforeach; ?>
                             </tbody>
@@ -244,34 +267,6 @@
                 }
             </script>
 
-            <!-- script buat ajax search -->
-            <script>
-                $(document).ready(function ()) {
-                    load_data();
-
-                    function load_data(query) {
-                        $.ajax({
-                            url: "<?php echo base_url(); ?>Dataklien_controller/search",
-                            method: "POST",
-                            data: {
-                                query: query;
-                            },
-                            success: function (data) {
-                                $('#result').html(data);
-                            }
-                        })
-                    }
-
-                    $('#search_text').keyup(function () {
-                        var search = $(this).val();
-                        if (search != '') {
-                            load_data(search);
-                        } else {
-                            load_data();
-                        }
-                    })
-                });
-            </script>
         </body>
 
     </html>
