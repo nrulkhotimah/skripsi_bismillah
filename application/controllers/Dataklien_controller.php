@@ -151,6 +151,8 @@ class Dataklien_controller extends CI_Controller {
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Dataklien_model->getAll();
+
+
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
