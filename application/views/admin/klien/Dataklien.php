@@ -90,7 +90,7 @@
                         <!-- kolom search -->
                         <form
                             class="form-inline"
-                            action="<?php echo site_url('Dataklien_controller/search'); ?>">
+                            action="<?php echo site_url('Datakliencari_controller/search/') ?>">
                             <div class="search" style="width:100%;">
                                 <input
                                     class="form-control w-100"
@@ -101,27 +101,6 @@
                                 <input type="submit" class="btn btn-primary" value="search">
                             </div>
                         </form>
-                        <table>
-                            <?php foreach($result as $row) { ?>
-                            <tr>
-                                <td>
-                                    <?php echo $row->nama ?>
-                                </td>
-                                <td>
-                                    <?php echo $row->jenis_kelamin ?>
-                                </td>
-                                <td>
-                                    <?php echo $row->status ?>
-                                </td>
-                                <td>
-                                    <?php echo $row->tanggal_lahir ?>
-                                </td>
-                                <td>
-                                    <?php echo $row->nomor_telepon ?>
-                                </td>
-                            </tr>
-                            <?php } ?>
-                        </table>
 
                         <!-- data tabel -->
                         <table

@@ -162,11 +162,13 @@ class Dataklien_model extends CI_Model {
     }
 
     public function search($id) {
-        $this->db->like('nama', $kid);
-        $query = $this->db->get('nama');
-        return $query->get()->result();
-        // print_r($query);
+        $this->db->like('user', $id);
+        // $this->db->where('nama LIKE', $user);
+        $data = $this->db->get('user')->row();
+        // print_r($id);
         // exit();
+        return $data->result();
+        
     }
 
 
