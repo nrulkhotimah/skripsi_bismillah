@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>SPK Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
@@ -50,13 +50,13 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/dataPakar')?>">Data pakar</a>
+                            <a href="<?php echo site_url('Datapakar_controller/index')?>">Data pakar</a>
                         </li>
 
                         <li>
                             <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
                         </li>
-                        
+
                         <li>
                             <a href="<?php echo site_url('Admin/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
@@ -71,123 +71,193 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">EDIT DATA PAKAR</span>
+                            <span class="title font-weight-bold">EDIT KLIEN</span>
                         </div>
-
                     </div>
+
+                    <?php if($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
 
                     <div class="col-md-12">
-                        <form>
-                            <table class="col-md-8">
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Pakar</label>
-                                    <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                    </div>
-                                </div>
+                        
+                        <form
+                            action="<?php echo base_url( 'index.php/Dataklien_controller/update/'.$user->id) ?>"
+                           
+                            method="post"
+                            enctype="multipart/form-data">
 
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">No. Telepon</label>
-                                    <div class="col-sm-10">
-                                        <input
-                                            type="email"
-                                            class="form-control"
-                                            id="inputEmail3"
-                                            placeholder="No. Telepon">
-                                    </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Nama</label>
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $user->nama ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nama') ?>
                                 </div>
+                            </div>
 
-                                <fieldset class="form-group">
-                                    <div class="row">
-                                        <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>
-                                        <div class="col-sm-10">
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input"
-                                                    type="radio"
-                                                    name="gridRadios"
-                                                    id="gridRadios1"
-                                                    value="option1"
-                                                    checked="checked">
-                                                <label class="form-check-label" for="gridRadios1">
-                                                    Pria
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input
-                                                    class="form-check-input"
-                                                    type="radio"
-                                                    name="gridRadios"
-                                                    id="gridRadios2"
-                                                    value="option2">
-                                                <label class="form-check-label" for="gridRadios2">
-                                                    Wanita
-                                                </label>
-                                            </div>
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="jenis_kelamin"
+                                                id="gridRadios1"
+                                                value="pria" <?php echo ($user->jenis_kelamin=='pria' ? 'checked':'');?>
+                                                >
+                                            <label class="form-check-label" for="gridRadios1">
+                                                Pria
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="jenis_kelamin"
+                                                id="gridRadios2"
+                                                value="wanita" <?php echo  ($user->jenis_kelamin=='wanita' ? 'checked':''); ?>
+                                                >
+                                            <label class="form-check-label" for="gridRadios2">
+                                                Wanita
+                                            </label>
                                         </div>
                                     </div>
-                                </fieldset>
+                                </div>
+                            </fieldset>
 
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Alamat</label>
+                                <input
+                                    name="alamat"
+                                    type="text"
+                                    class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $user->alamat ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('alamat') ?>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="agama">Agama</label>
+                                <?php $agama = $user->agama; ?>
+                                <select
+                                    type="select"
+                                    class="form-control"
+                                    id="exampleFormControlSelect1"
+                                    name="agama"
+                                    >
+                                    <option <?php echo ($agama == 'islam') ? "selected": "" ?>>Islam</option>
+                                    <option <?php echo ($agama == 'kristen') ? "selected": "" ?>>Kristen</option>
+                                    <option <?php echo ($agama == 'hindu') ? "selected": "" ?>>Hindu</option>
+                                    <option <?php echo ($agama == 'budha') ? "selected": "" ?>>Budha</option>
+                                    <option <?php echo ($agama == 'konghucu') ? "selected": "" ?>>Konghucu</option>
+                                </select>
+                            </div>
+
+                             <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">Marital Status</legend>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="marital_status"
+                                                id="gridRadios3"
+                                                value="menikah" <?php echo ($user->marital_status=='menikah' ? 'checked':'');?>>
+                                            <label class="form-check-label" for="gridRadios3">
+                                                Menikah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="marital_status"
+                                                id="gridRadios4"
+                                                value="lajang" <?php echo ($user->marital_status=='lajang' ? 'checked':'');?>>
+                                            <label class="form-check-label" for="gridRadios4">
+                                                Lajang
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
+                            </fieldset>
 
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Tempat Tanggal Lahir</label>
-                                    <div class="col-sm-10">
-                                        <input
-                                            type="email"
-                                            class="form-control"
-                                            id="inputEmail3"
-                                            placeholder="Tempat Tanggal Lahir">
-                                    </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Pekerjaan</label>
+                                <input
+                                    name="pekerjaan"
+                                    type="text"
+                                    class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $user->pekerjaan ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('pekerjaan') ?>
                                 </div>
+                            </div>
 
-                                <div class="form-group row">
-                                    <label for="inputEmail3" class="col-md-2 col-form-label">Username</label>
-                                    <div class="col-sm-10">
-                                        <input
-                                            type="email"
-                                            class="form-control"
-                                            id="inputEmail3"
-                                            placeholder="Username">
-                                    </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Nomor Telepon</label>
+                                <input
+                                    name="nomor_telepon"
+                                    type="number"
+                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo  $user->nomor_telepon?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nomor-telepon') ?>
                                 </div>
+                            </div>
 
-                                <form class="form-inline row">
-                                    <div class="form-group row">
-                                        <label for="inputPassword6" class="col-md-2 col-form-label">Password</label>
-                                        <input
-                                            type="password"
-                                            id="inputPassword6"
-                                            class="form-control col-md-10"
-                                            aria-describedby="passwordHelpInline">
-                                        <small id="passwordHelpInline" class="text-muted col-md-12">
-                                            Must be 8-20 characters long.
-                                        </small>
-                                    </div>
-                                </form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Email</label>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $user->email ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('email') ?>
+                                </div>
+                            </div>
 
-                            </form>
-                        </table>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Username</label>
+                                <input
+                                    name="username"
+                                    type="text"
+                                    class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo  $user->username ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('username') ?>
+                                </div>
+                            </div>
+
+                            <input
+                                type="submit"
+                                class="btn btn-primary"
+                                name="btn"
+                                value="Save"
+                                style="float:right;"
+                                />
+
+                        </form>
+                        
+
                     </div>
-
-                    <div class="modal-footer">
-                        <a href="<?php echo site_url('Admin/dataPakar')?>">
-                            <button type="button" class="btn btn-primary">Cancel</button>
-                        </a>
-                        <button type="button" class="btn btn-primary" onclick="myFunction()">Save</button>
-                        <script>
-                            function myFunction() {
-                                alert("Perubahan berhasil ditambahkan");
-                            }
-                        </script>
-
-                    </div>
-
                 </div>
             </div>
 
@@ -220,7 +290,10 @@
                         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
                 });
+
+                function test() {
+                    alert("Hello! I am an alert box!");
+                }
             </script>
         </body>
-
     </html>

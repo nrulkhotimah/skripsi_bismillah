@@ -77,16 +77,20 @@
 
                     <!-- data klien -->
                     <div class="col-md-12">
-                    <?php if($this->session->flashdata('success')): ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                    <?php endif; ?>
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
                         <!-- kolom search -->
                         <form class="form-inline ">
                             <div class="search" style="width:100%;">
-                            <input class="form-control form-control w-100" type="text" placeholder="Search . . ."
-                                aria-label="Search" style="border-radius:5px; border: 1px solid #ddd !important">
+                                <input
+                                    class="form-control form-control w-100"
+                                    type="text"
+                                    placeholder="Search . . ."
+                                    aria-label="Search"
+                                    style="border-radius:5px; border: 1px solid #ddd !important">
                             </div>
                         </form>
 
@@ -100,10 +104,9 @@
                                     <th class="align-middle" rowspan="2">JK</th>
                                     <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th class="align-middle" rowspan="2">Hak Akses</th>
-                                    <th colspan="3">Aksi</th>
+                                    <th colspan="2">Aksi</th>
                                 </tr>
                                 <tr>
-                                    <th>Approve</th>
                                     <th>Edit</th>
                                     <th>Hapus</th>
                                 </tr>
@@ -124,18 +127,13 @@
                                     <td class="align-middle"><?php echo $DataPakar->nomor_telepon ?></td>
                                     <td class="align-middle"><?php echo $DataPakar->role ?></td>
                                     <td class="align-middle">
-                                        <a href=""><i class=" mr-3 text-success fas fa-check"></i></a>
-                                        <a href=""><i class=" text-danger fas fa-times"></i></a>
-                                        
-                                        </td>
-                                    <td class="align-middle">
                                         <a href="<?php echo site_url('Dataklien_controller/edit/'.$DataPakar->id) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
-                                    
+
                                     <td class="align-middle">
-                                    
+
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataPakar->id) ?>')"
                                             href="#!"
@@ -177,14 +175,11 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
+
                                 <?php  endforeach; ?>
                             </tbody>
                         </table>
 
-                        <a href="<?php echo site_url('Dataklien_controller/add')?>">
-                            <button type="button" class="btn btn-primary" style="float:right;">Tambah klien</button>
-                        </a>
                     </div>
                 </div>
             </div>

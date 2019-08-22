@@ -84,11 +84,13 @@ class Datapakar_controller extends CI_Controller {
         $this->load->view("admin/pakar/Editdatapakar", $data);
     }
 
-    // public function delete ($id=null) {
-    //     if(!isset($id)) show_404() {
+    public function delete($id) {
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+        $data['user'] = $this->Datapakar_model->getAll();
 
-    //     }
-    // }
+        $this->load->view("admin/pakar/Datapakar", $data);
+    }
 
 
 }
