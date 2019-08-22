@@ -95,8 +95,9 @@
                                 <input
                                     class="form-control w-100"
                                     type="text"
+                                    name="keyword"
                                     placeholder="Search . . ."
-                                    aria-label="Search"
+                                    
                                     style="border-radius:5px; border: 1px solid #ddd !important">
                                 <input type="submit" class="btn btn-primary" value="search">
                             </div>

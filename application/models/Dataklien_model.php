@@ -99,9 +99,7 @@ class Dataklien_model extends CI_Model {
         $this->db->where('id_user', $id);
 
         return $this->db->get()->first_row();
-
-            // print_r($id);
-            // exit();
+        
     }
 
     public function save($post) {
@@ -161,13 +159,14 @@ class Dataklien_model extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-    public function search($id) {
-        $this->db->like('user', $id);
-        // $this->db->where('nama LIKE', $user);
-        $data = $this->db->get('user')->row();
-        // print_r($id);
+    public function search($keyword) {
+       $this->db->select('*');
+       $this->db->from('user');
+       $this->db->join('klien','klien.id_user=user.id');
+       $this->db->like('nama', $keyword);
+       return $this->db->get()->result();
+       // print_r($data);
         // exit();
-        return $data->result();
         
     }
 

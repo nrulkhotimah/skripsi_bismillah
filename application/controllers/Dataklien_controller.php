@@ -140,11 +140,8 @@ class Dataklien_controller extends CI_Controller {
         // }
      
         $data['user'] = $user->getById($id);
-    //   print_r($data);
-    //     exit();
-        if(!$data['user']) show_404();
 
-        // $this->load->view("admin/klien/Dataklien", $data);
+        if(!$data['user']) show_404();
     }
 
     public function delete ($id) {
