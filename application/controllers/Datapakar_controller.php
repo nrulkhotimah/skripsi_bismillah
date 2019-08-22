@@ -5,7 +5,7 @@ class Datapakar_controller extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
-        $this->load->model("Datapakar_model");
+        $this->load->model('Datapakar_model');
         $this->load->helper('url_helper');
         $this->model = $this->Datapakar_model;
         $this->load->library('session');
@@ -33,14 +33,9 @@ class Datapakar_controller extends CI_Controller {
             'rules' => 'required'
             ],
 
-            ['field' => 'alamat',
-            'label' => 'Alamat',
+            ['field' => 'role',
+            'label' => 'Hak Akses',
             'rules' => 'required'
-            ],
-
-            ['field' => 'email',
-            'label' => 'Email',
-            'rules' => 'valid_email', 'required'
             ],
 
             ['field' => 'username',
@@ -52,9 +47,9 @@ class Datapakar_controller extends CI_Controller {
 
     public function index() {
         $data['user'] = $this->Datapakar_model->getAll();
-        print_r($data);
-        exit();
-        $this->load->view("admin/klien/Datapakar", $data);
+        // print_r($data);
+        // exit();
+        $this->load->view("admin/pakar/Datapakar", $data);
     }
 
     public function add() {

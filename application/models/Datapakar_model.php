@@ -17,7 +17,13 @@ class Datapakar_model extends CI_Model {
     public function getAll () {
         $this->load->database();
 
-        return $this->db->get($this->_table)->result();
+        $this->db->select('*');
+        $this->db->from('user');
+        // $this->db->where('role !=', 'admin');
+        // $this->db->or_where('role !=', 'klien');
+
+        $query = $this->db->get();
+        return $query->result();
         // print_r('_table');
         // exit();
     }

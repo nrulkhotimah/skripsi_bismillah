@@ -51,7 +51,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/dataPakar')?>">Data pakar</a>
+                            <a href="<?php echo site_url('Datapakar_controller/index')?>">Data pakar</a>
                         </li>
 
                         <li>

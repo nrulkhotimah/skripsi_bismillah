@@ -97,9 +97,9 @@
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
                                     <th class="align-middle" rowspan="2">Nama Lengkap</th>
-                                    <th class="align-middle" rowspan="2">Hak Akses</th>
-                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th class="align-middle" rowspan="2">JK</th>
+                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
+                                    <th class="align-middle" rowspan="2">Hak Akses</th>
                                     <th colspan="3">Aksi</th>
                                 </tr>
                                 <tr>
@@ -111,23 +111,25 @@
 
                             <tbody class="text-center">
                                 <?php
+                                $i=0;
                                     foreach($user as $DataPakar):
-                                        print_r($DataPakar);
-                                        exit();
+                                        // print_r($DataPakar);
+                                        // exit();
+                                        $i++;
                                     ?>
                                 <tr>
-                                    <td class="align-middle"><?php echo $DataPakar->id ?></td>
+                                    <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle"><?php echo $DataPakar->nama ?></td>
-                                    <td class="align-middle"><?php echo $DataPakar->role ?></td> 
-                                    <td class="align-middle"><?php echo $DataPakar->nomor_telepon ?></td>
                                     <td class="align-middle"><?php echo $DataPakar->jenis_kelamin ?></td>
+                                    <td class="align-middle"><?php echo $DataPakar->nomor_telepon ?></td>
+                                    <td class="align-middle"><?php echo $DataPakar->role ?></td>
                                     <td class="align-middle">
                                         <a href=""><i class=" mr-3 text-success fas fa-check"></i></a>
                                         <a href=""><i class=" text-danger fas fa-times"></i></a>
                                         
                                         </td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('Dataklien_controller/edit/'.$DataPakar->id_user) ?>">
+                                        <a href="<?php echo site_url('Dataklien_controller/edit/'.$DataPakar->id) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
@@ -135,7 +137,7 @@
                                     <td class="align-middle">
                                     
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataPakar->id_user) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataPakar->id) ?>')"
                                             href="#!"
                                             class="btn tbn-small text-secondary"
                                             method="delete">
