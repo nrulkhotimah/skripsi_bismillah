@@ -127,7 +127,7 @@
                                     <td class="align-middle"><?php echo $DataPakar->nomor_telepon ?></td>
                                     <td class="align-middle"><?php echo $DataPakar->role ?></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('Ad_Dataklien_controller/edit/'.$DataPakar->id) ?>">
+                                        <a href="<?php echo site_url('Ad_Datapakar_controller/edit/'.$DataPakar->id) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
@@ -135,7 +135,7 @@
                                     <td class="align-middle">
 
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('Ad_Dataklien_controller/delete/'.$DataPakar->id) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('Ad_Datapakar_controller/delete/'.$DataPakar->id) ?>')"
                                             href="#!"
                                             class="btn tbn-small text-secondary"
                                             method="delete">

@@ -52,36 +52,27 @@ class Ad_Datapakar_controller extends CI_Controller {
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 
-    public function add() {
-        $pakar = $this->Datapakar_model;
-        $validation = $this->form_validation;
-        $validation->set_rules($pakar->rules());
-
-        if($validation->run()) {
-            $pakar->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        } else {
-            var_dump(validation_errors());
-        }
-        $this->load->view("admin/pakar/Datapakar");
+    public function edit($id) {
+        $data['user'] = $this->Datapakar_model->getById($id);
+        // print_r($data);
+        // exit();
+        $this->load->view("admin/pakar/Editdatapakar", $data);
     }
 
-    public function edit($id = null) {
+    public function update($id) {
         if(!isset($id)) redirect('admin/pakar/Datapakar');
+        $post = $this->input->post();
 
-        $pakar = $this->Datapakar_model;
+        $user = $this->Datapakar_model;
         $validation = $this->form_validation;
-        $validation->set_rules($pakar->rules());
+        $validation->set_rules($user->rules());
 
-        if($validation->run()) {
-            $pakar->save();
-            $this->sssion->set_flashdata('success', 'Berhasil disimpan');
-        }
+        echo "a";
+        $this->Datapakar_model->update($post, $id);
+        $this->session->set_flashdata('success', '');
 
-        $data["pakar"] = $pakar->getById($id);
-        if(!data["pakar"]) show_404();
-
-        $this->load->view("admin/pakar/Editdatapakar", $data);
+        $data['user'] = $user->getById($id);
+        if(!$data['user']) show_404();
     }
 
     public function delete($id) {

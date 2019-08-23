@@ -14,6 +14,40 @@ class Datapakar_model extends CI_Model {
     public $role;
     public $password;
 
+    public function rules() {
+        return [
+            ['field' => 'id',
+            'label' => 'ID',
+            ],
+
+
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'nomor_telepon',
+            'label' => 'Nomor Telepon',
+            'rules' => 'numeric', 'required'
+            ],
+
+            ['field' => 'jenis_kelamin',
+            'label' => 'Jenis Kelamin',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'role',
+            'label' => 'Hak Akses',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required'
+            ],
+        ];
+    }
+
     public function getAll () {
         $this->load->database();
 
@@ -24,12 +58,32 @@ class Datapakar_model extends CI_Model {
 
         $query = $this->db->get();
         return $query->result();
-        // print_r('_table');
+        // print_r('query');
         // exit();
     }
 
     public function getById() {
-        return $this->db->get_where($this->_table, ["id" => $id])->first_row();
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('id', $id);
+
+        return $this->db->get()->first_row();
+    }
+
+    public function update($post,$id) {
+        $user = new stdClass();
+        $user->nama = $post['nama'];
+        $user->jenis_kelamin = $post['jenis_kelamin'];
+        $user->nomor_telepon = $post['nomor_telepon'];
+        $user->role = $post['role'];
+         print_r('user');
+        exit();
+
+        $this->db->set($user);
+        $this->db->where('id', $id);
+
+        $this->db->update($this->_table, $user);
+
     }
 
 
