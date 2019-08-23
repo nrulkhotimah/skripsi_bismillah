@@ -90,7 +90,7 @@
                         <!-- kolom search -->
                         <form
                             class="form-inline"
-                            action="<?php echo site_url('Datakliencari_controller/search/') ?>">
+                            action="<?php echo site_url('Dataklien_controller/search/') ?>">
                             <div class="search" style="width:100%;">
                                 <input
                                     class="form-control w-100"

@@ -165,8 +165,7 @@ class Dataklien_model extends CI_Model {
        $this->db->join('klien','klien.id_user=user.id');
        $this->db->like('nama', $keyword);
        return $this->db->get()->result();
-       // print_r($data);
-        // exit();
+       
         
     }
 

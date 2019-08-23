@@ -152,6 +152,21 @@ class Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
+    public function search() {
+        // $data['user'] = $this->Dataklien_model->getAll();
+        $data['user'] = $this->Dataklien_model->getAll();
+      $keyword = $this->input->post('keyword', true);
+
+        if($this->input->post('keyword')) {
+        $data['user'] = $this->Dataklien_model->search($keyword);
+        }
+        print_r($keyword);
+        exit();
+        
+        $this->load->view('admin/klien/Dataklien', $data);
+    }
+
+
 }
 
 ?>

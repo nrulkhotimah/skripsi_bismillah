@@ -13,30 +13,6 @@ class Admin extends CI_Controller {
 			$this->load->view('admin/Editprofil.php');
 	}
 	
-	public function dataKlien() 
-	{
-			$this->load->view('admin/klien/Dataklien.php');
-	}
-
-	public function tambahKlien()
-	{
-		$this->load->view('admin/klien/Tambahklien.php');
-	}
-
-	public function editDataKlien() 
-	{
-			$this->load->view('admin/klien/Editdataklien.php');
-	}
-	
-	public function dataPakar()
-	{
-		$this->load->view('admin/pakar/Datapakar.php');
-	}
-
-	public function editDataPakar()
-	{
-		$this->load->view('admin/pakar/Editdatapakar.php');
-	}
 
 	public function penjadwalan()
 	{
