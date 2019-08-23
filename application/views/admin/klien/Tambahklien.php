@@ -50,11 +50,11 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Datapakar_controller/index')?>">Data pakar</a>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data pakar</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>

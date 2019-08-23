@@ -53,11 +53,11 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Datapakar_controller/index')?>">Data pakar</a>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data pakar</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Dataklien_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -90,7 +90,7 @@
                         <!-- kolom search -->
                         <form
                             class="form-inline"
-                            action="<?php echo site_url('Dataklien_controller/search/') ?>"
+                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
                             method="get">
                             <div class="search" style="width:100%;">
                                 <input
@@ -154,14 +154,14 @@
 
                                     <td class="align-middle">
                                         <a
-                                            href="<?php echo site_url('Dataklien_controller/edit/'.$DataKlien->id_user) ?>">
+                                            href="<?php echo site_url('Ad_Dataklien_controller/edit/'.$DataKlien->id_user) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
 
                                     <td class="align-middle">
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('Ad_Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
                                             href="#!"
                                             class="btn tbn-small text-secondary"
                                             method="delete">
@@ -206,7 +206,7 @@
                             </tbody>
                         </table>
 
-                        <a href="<?php echo site_url('Dataklien_controller/add')?>">
+                        <a href="<?php echo site_url('Ad_Dataklien_controller/add')?>">
                             <button type="button" class="btn btn-primary" style="float:right;">Tambah klien</button>
                         </a>
                     </div>
