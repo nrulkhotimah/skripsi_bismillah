@@ -153,9 +153,8 @@ class Dataklien_controller extends CI_Controller {
     }
 
     public function search() {
-        // $data['user'] = $this->Dataklien_model->getAll();
-        $data['user'] = $this->Dataklien_model->getAll();
-      $keyword = $this->input->post('keyword', true);
+       $data['user'] = $this->Dataklien_model->getAll();
+       $keyword = $this->input->get('keyword');
 
         if($this->input->get('keyword')) {
         $data['user'] = $this->Dataklien_model->search($keyword);
