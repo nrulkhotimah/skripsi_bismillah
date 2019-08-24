@@ -69,7 +69,9 @@ class Ad_Datapakar_controller extends CI_Controller {
 
         echo "a";
         $this->Datapakar_model->update($post, $id);
-        $this->session->set_flashdata('success', '');
+        $this->session->set_flashdata('success', 'Berhasil');
+        $data['user'] = $this->Datapakar_model->getAll();
+        $this->load->view("admin/pakar/Datapakar", $data);
 
         $data['user'] = $user->getById($id);
         if(!$data['user']) show_404();

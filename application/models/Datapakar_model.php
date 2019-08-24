@@ -77,8 +77,8 @@ class Datapakar_model extends CI_Model {
         $user->jenis_kelamin = $post['jenis_kelamin'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->role = $post['role'];
-         print_r('user');
-        exit();
+        //  print_r('user');
+        // exit();
 
         $this->db->set($user);
         $this->db->where('id', $id);
