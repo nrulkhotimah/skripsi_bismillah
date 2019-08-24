@@ -62,11 +62,12 @@ class Datapakar_model extends CI_Model {
         // exit();
     }
 
-    public function getById() {
+    public function getById($id) {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('id', $id);
-
+// print_r($id);
+//         exit();
         return $this->db->get()->first_row();
     }
 
