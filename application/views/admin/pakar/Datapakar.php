@@ -82,15 +82,21 @@
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
                         <?php endif; ?>
+
                         <!-- kolom search -->
-                        <form class="form-inline ">
+                        <form
+                            class="form-inline"
+                            action="<?php echo site_url('Ad_Datapakar_controller/search/') ?>"
+                            method="get">
                             <div class="search" style="width:100%;">
                                 <input
-                                    class="form-control form-control w-100"
+                                    class="form-control w-100"
                                     type="text"
+                                    name="keyword"
                                     placeholder="Search . . ."
-                                    aria-label="Search"
+                                    
                                     style="border-radius:5px; border: 1px solid #ddd !important">
+                                <input type="submit" class="btn btn-primary" value="search">
                             </div>
                         </form>
 

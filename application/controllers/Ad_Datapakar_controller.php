@@ -85,6 +85,17 @@ class Ad_Datapakar_controller extends CI_Controller {
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 
+    public function search() {
+        $data['user'] = $this->Datapakar_model->getAll();
+        $keyword = $this->input->get('keyword');
+
+        if($this->input->get('keyword')) {
+            $data['user'] = $this->Datapakar_model->search($keyword);
+        }
+
+        $this->load->view('admin/pakar/Datapakar', $data);
+    }
+
 
 }
 
