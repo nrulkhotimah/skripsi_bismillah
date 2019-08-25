@@ -37,20 +37,9 @@
                 action="<?php echo base_url('auth/post_login') ?>"
                 method="post"
                 accept-charset="utf-8">
+                
                 <input class="un " type="text" align="center" name="email" placeholder="email">
-                <?php echo form_error('email'); ?>
-                <input
-                    class="pass"
-                    type="password"
-                    align="center"
-                    name="password"
-                    placeholder="Password">
-                <?php echo form_error('password'); ?>
-                <button type="submit" align="center" class="submit">Sign in</button>
-
-                <p class="forgot" align="center">
-                <a href="#">Register here</a>
-                </p>
+                
 
             </form>
         </div>

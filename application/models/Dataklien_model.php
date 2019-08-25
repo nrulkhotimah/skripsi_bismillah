@@ -17,6 +17,7 @@ class Dataklien_model extends CI_Model {
     public $pekerjaan;
     public $email;
     public $username; 
+    public $password;
 
     public function rules() {
         return [
@@ -77,6 +78,12 @@ class Dataklien_model extends CI_Model {
             'label' => 'Username',
             'rules' => 'required'
             ],
+
+            ['field' => 'password',
+            'label' => 'Password',
+            'rules' => 'required'
+            ],
+
         ];
     }
 
@@ -101,7 +108,6 @@ class Dataklien_model extends CI_Model {
         // exit();
 
         return $this->db->get()->first_row();
-        
     }
 
     public function save($post) {
@@ -128,7 +134,6 @@ class Dataklien_model extends CI_Model {
     }
 
     public function update($post,$id) {
-        
         $user = new stdClass();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
@@ -166,10 +171,10 @@ class Dataklien_model extends CI_Model {
        $this->db->from('user');
        $this->db->join('klien','klien.id_user=user.id');
        $this->db->like('nama', $keyword);
-       return $this->db->get()->result();
-       
-        
+       return $this->db->get()->result();   
     }
+
+    
 
 
 }
