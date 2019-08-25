@@ -32,13 +32,39 @@
 
     <body>
         <div class="main">
-            <p class="sign" align="center">Sign in</p>
+            <p class="sign" align="center">Sign Up</p>
             <form
-                action="<?php echo base_url('auth/post_login') ?>"
+                action="<?php echo site_url('Register_controller/index') ?>"
                 method="post"
                 accept-charset="utf-8">
+                <input
+                    class="un "
+                    type="text"
+                    align="center"
+                    name="first_name"
+                    placeholder="first name">
+                <?php echo form_error('first_name'); ?>
+
+                <input
+                    class="un "
+                    type="text"
+                    align="center"
+                    name="last_name"
+                    placeholder="last name">
+                <?php echo form_error('last_name'); ?>
+
+                <input
+                    class="un "
+                    type="text"
+                    align="center"
+                    name="contact_no"
+                    placeholder="contact number"
+                    maxlength="10">
+                <?php echo form_error('contact_no'); ?>
+
                 <input class="un " type="text" align="center" name="email" placeholder="email">
                 <?php echo form_error('email'); ?>
+
                 <input
                     class="pass"
                     type="password"
@@ -46,15 +72,13 @@
                     name="password"
                     placeholder="Password">
                 <?php echo form_error('password'); ?>
-                <button type="submit" align="center" class="submit">Sign in</button>
+                <button type="submit" align="center" class="submit">Sign Up</button>
 
                 <p class="forgot" align="center">
-                <a href="#">Register here</a>
+                <a href="#"> Login here</a>
                 </p>
-
             </form>
         </div>
-
     </body>
 
 </html>
