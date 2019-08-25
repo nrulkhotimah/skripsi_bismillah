@@ -18,7 +18,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/css/register.css">
+            href="<?php echo base_url();?>assets/css/custom.css">
 
         <!-- Font Awesome JS -->
         <script
@@ -31,53 +31,171 @@
     </head>
 
     <body>
-        <div class="main">
-            <p class="sign" align="center">Sign Up</p>
-            <form
-                action="<?php echo site_url('Register_controller/index') ?>"
-                method="post"
-                accept-charset="utf-8">
-                <input
-                    class="un "
-                    type="text"
-                    align="center"
-                    name="first_name"
-                    placeholder="first name">
-                <?php echo form_error('first_name'); ?>
+        <div class="container-fluid">
+            <div class="row justify-content-md-center">
+                <div class="col-md-12 text-center pt-5">
+                    <h2 class="login-part font-weight-bold">Pendaftaran</h2>
+                </div>
+            </div>
 
-                <input
-                    class="un "
-                    type="text"
-                    align="center"
-                    name="last_name"
-                    placeholder="last name">
-                <?php echo form_error('last_name'); ?>
+            <div class="row justify-content-md-center pt-4">
+                <div class="col-md-5">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="Nama">
+                            </div>
+                        </div>
 
-                <input
-                    class="un "
-                    type="text"
-                    align="center"
-                    name="contact_no"
-                    placeholder="contact number"
-                    maxlength="10">
-                <?php echo form_error('contact_no'); ?>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <input
+                                    name="tanggal_lahir"
+                                    type="date"
+                                    class="form-control"
+                                    id="exampleFormControlInput1">
+                            </div>
+                        </div>
 
-                <input class="un " type="text" align="center" name="email" placeholder="email">
-                <?php echo form_error('email'); ?>
+                        <fieldset class="form-group ">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-4 pt-0">Jenis Kelamin</legend><br>
+                                <div class="col-sm-8">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="jenis_kelamin"
+                                            id="gridRadios1"
+                                            value="pria"
+                                            checked="checked">
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Pria
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="jenis_kelamin"
+                                            id="gridRadios2"
+                                            value="wanita">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            Wanita
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
 
-                <input
-                    class="pass"
-                    type="password"
-                    align="center"
-                    name="password"
-                    placeholder="Password">
-                <?php echo form_error('password'); ?>
-                <button type="submit" align="center" class="submit">Sign Up</button>
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                <label for="exampleFormControlInput1">Agama</label>
+                                <select class="form-control" id="exampleFormControlSelect1" name="agama">
+                                    <option>Islam</option>
+                                    <option>Kristen</option>
+                                    <option>Hindu</option>
+                                    <option>Budha</option>
+                                    <option>Konghucu</option>
+                                </select>
+                            </div>
+                        </div>
 
-                <p class="forgot" align="center">
-                <a href="#"> Login here</a>
-                </p>
-            </form>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-4 pt-0 ">Marital Status</legend>
+                                <div class="col-sm-8">
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="marital_status"
+                                            id="gridRadios3"
+                                            value="menikah"
+                                            checked="checked">
+                                        <label class="form-check-label" for="gridRadios3">
+                                            Menikah
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input
+                                            class="form-check-input"
+                                            type="radio"
+                                            name="marital_status"
+                                            id="gridRadios4"
+                                            value="lajang">
+                                        <label class="form-check-label" for="gridRadios4">
+                                            Lajang
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="alamat">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="pekerjaan">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="nomor telepon">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="inputPassword3"
+                                    placeholder="password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <a href="<?php echo site_url('Login_controller/index')?>" class="btn btn-block btn-secondary" >Login</a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
         </div>
     </body>
 

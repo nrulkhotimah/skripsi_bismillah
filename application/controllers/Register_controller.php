@@ -14,12 +14,10 @@ class Register_controller extends CI_Controller {
         $this->load->view('admin/register/registrasi');
     }
 
-    
+
 
 
 
 }
-
-
 
 ?>

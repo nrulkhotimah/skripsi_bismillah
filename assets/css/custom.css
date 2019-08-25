@@ -12,6 +12,9 @@ p {
     line-height: 1.7em;
     color: #999;
 }
+.login-part{
+    font-size: 30px !important;
+}
 
 a,
 a:hover,
