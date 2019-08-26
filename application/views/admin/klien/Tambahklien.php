@@ -103,10 +103,10 @@
                                 <input
                                     name="tanggal_lahir"
                                     type="date"
-                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    class="form-control <?php echo form_error('tanggal_lahir') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('nama') ?>
+                                    <?php echo form_error('tanggal_lahir') ?>
                                 </div>
                             </div>
                             

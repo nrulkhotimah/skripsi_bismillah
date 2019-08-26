@@ -73,7 +73,6 @@ class Ad_Dataklien_controller extends CI_Controller {
         ];
     }
   
-
     public function index() {
         // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
         $data['user'] = $this->Dataklien_model->getAll();
@@ -115,7 +114,6 @@ class Ad_Dataklien_controller extends CI_Controller {
         $this->load->view("admin/klien/Editdataklien", $data);
         // print_r($data);
         // exit();
-
     }
 
     public function update($id) {
@@ -162,6 +160,39 @@ class Ad_Dataklien_controller extends CI_Controller {
         
         $this->load->view('admin/klien/Dataklien', $data);
     }
+
+    public function open_register() {
+        $this->load->view('admin/register/registrasi');
+    }
+
+    public function post_register() {
+        $post = $this->input->post();
+        $this->load->library('form_validation');
+        $this->load->helper(array('url', 'html', 'form'));
+       // $this->id = $this->session->userdata('id');
+
+        $validation = $this->form_validation;
+        $validation->set_rules($this->rules());
+        
+
+        if($validation->run()) {
+            $this->Dataklien_model->save($post);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $data['user'] = $this->Dataklien_model->getAll();
+           $this->load->view("admin/register/Pageverif", $data);
+        } else {
+            $error=validation_errors();
+            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view("admin/register/Registrasi");
+        }
+
+    }
+
+    public function open_verif() {
+        $this->load->view('admin/register/Pageverif');
+    }
+
+    
 
 
 

@@ -60,7 +60,7 @@ class Dataklien_model extends CI_Model {
             ],
 
             ['field' => 'pekerjaan',
-            'label' => 'pekerjaan',
+            'label' => 'Pekerjaan',
             'rules' => 'required'
             ],
 
@@ -172,6 +172,31 @@ class Dataklien_model extends CI_Model {
        $this->db->join('klien','klien.id_user=user.id');
        $this->db->like('nama', $keyword);
        return $this->db->get()->result();   
+    }
+
+    public function tambah_user($post) {
+        $user = new stdClass();
+        $user->nama = $post['nama'];
+        $user->nomor_telepon = $post['nomor_telepon'];
+        $user->jenis_kelamin = $post['jenis_kelamin'];
+        $user->alamat = $post['alamat'];
+        $user->email = $post['email'];
+        $user->username = $post['username'];
+        $user->password = $post['password'];
+
+        $this->db->insert($this->_table, $user);
+     
+        $klien = new stdClass();
+        $id_user = $this->db->insert_id();
+       //$klien->kode = $post['kode']; 
+        $klien->id_user = $id_user;
+        $klien->tanggal_lahir = $post['tanggal_lahir'];
+        $klien->marital_status = $post['marital_status'];
+        $klien->pekerjaan = $post['pekerjaan'];
+        $klien->agama = $post['agama'];
+
+        $this->db->insert('klien', $klien);
+        return $this->db->insert_id();
     }
 
     

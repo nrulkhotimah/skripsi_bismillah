@@ -16,6 +16,10 @@ p {
     font-size: 30px !important;
 }
 
+.daftar {
+    text-decoration: none !important;
+}
+
 a,
 a:hover,
 a:focus {

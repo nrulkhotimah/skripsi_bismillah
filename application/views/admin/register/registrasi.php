@@ -40,27 +40,43 @@
 
             <div class="row justify-content-md-center pt-4">
                 <div class="col-md-5">
-                    <form>
+                    <form action="post_register" method="post" enctype="multipart/form-data">
+
+                        <?php echo form_open('Ad_Dataklien_controller/post_register'); ?>
+
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Nama">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    id="inputnama"
+                                    placeholder="Nama"></div>
+                            <div class="invalid-feedback">
+                                <?php echo form_error('nama') ?>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-md-12">
+                                <label for="exampleFormControlInput1">Tanggal Lahir</label>
                                 <input
                                     name="tanggal_lahir"
                                     type="date"
-                                    class="form-control"
+                                    class="form-control  <?php echo form_error('tanggal_lahir') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('tanggal_lahir') ?>
+                                </div>
                             </div>
                         </div>
 
                         <fieldset class="form-group ">
                             <div class="row">
                                 <legend class="col-form-label col-sm-4 pt-0">Jenis Kelamin</legend><br>
-                                <div class="col-sm-8">
+                                <div
+                                    class="col-sm-8"
+                                    <?php echo form_error('jenis_kelamin') ? 'is-invalid':'' ?>>
                                     <div class="form-check">
                                         <input
                                             class="form-check-input"
@@ -85,26 +101,36 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('jenis_kelamin') ?>
+                                </div>
                             </div>
                         </fieldset>
 
                         <div class="form-group row">
                             <div class="col-md-12">
                                 <label for="exampleFormControlInput1">Agama</label>
-                                <select class="form-control" id="exampleFormControlSelect1" name="agama">
+                                <select
+                                    class="form-control   <?php echo form_error('agama') ? 'is-invalid':'' ?>"
+                                    id="inputagama"
+                                    name="agama">
                                     <option>Islam</option>
                                     <option>Kristen</option>
                                     <option>Hindu</option>
                                     <option>Budha</option>
                                     <option>Konghucu</option>
                                 </select>
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('agama') ?>
+                                </div>
                             </div>
                         </div>
 
                         <fieldset class="form-group">
                             <div class="row">
                                 <legend class="col-form-label col-sm-4 pt-0 ">Marital Status</legend>
-                                <div class="col-sm-8">
+                                <div
+                                    class="col-sm-8   <?php echo form_error('marital_status') ? 'is-invalid':'' ?>">
                                     <div class="form-check">
                                         <input
                                             class="form-check-input"
@@ -129,55 +155,93 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('marital_status') ?>
+                                </div>
                             </div>
                         </fieldset>
 
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <input
+                                    name="alamat"
                                     type="text"
-                                    class="form-control"
+                                    class="form-control  <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="inputPassword3"
-                                    placeholder="alamat">
+                                    placeholder="Alamat">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('alamat') ?>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <input
+                                    name="pekerjaan"
                                     type="text"
-                                    class="form-control"
+                                    class="form-control  <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="inputPassword3"
-                                    placeholder="pekerjaan">
+                                    placeholder="Pekerjaan">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('pekerjaan') ?>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <input
+                                    name="nomor telepon"
                                     type="number"
-                                    class="form-control"
+                                    class="form-control  <?php echo form_error('nomor telepon') ? 'is-invalid':'' ?>"
                                     id="inputPassword3"
-                                    placeholder="nomor telepon">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-12">
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="inputPassword3"
-                                    placeholder="email">
+                                    placeholder="Nomor Telepon">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nomor telepon') ?>
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-12">
                                 <input
-                                    type="password"
-                                    class="form-control"
+                                    name="email"
+                                    type="email"
+                                    class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="inputPassword3"
-                                    placeholder="password">
+                                    placeholder="Email">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('email') ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    name="username"
+                                    type="type"
+                                    class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
+                                    id="inputPassword3"
+                                    placeholder="Username">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('username') ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <input
+                                    name="password"
+                                    type="password"
+                                    class="form-control  <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="inputPassword"
+                                    placeholder="Password">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('password') ?>
+                                </div>
                             </div>
                         </div>
 
@@ -189,11 +253,14 @@
 
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <a href="<?php echo site_url('Login_controller/index')?>" class="btn btn-block btn-secondary" >Login</a>
+                                <a
+                                    href="<?php echo site_url('Login_controller/index')?>"
+                                    class="btn btn-block btn-secondary">Login</a>
                             </div>
                         </div>
 
                     </form>
+                    <?php echo form_close(); ?>
                 </div>
             </div>
         </div>
