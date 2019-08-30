@@ -38,7 +38,7 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Admin/editProfil')?>" class="btn profile">
+                            <a href="<?php echo site_url('Ad_Home/edit_Profil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
@@ -48,7 +48,7 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
+                            <a href="<?php echo site_url('Ad_Home/index')?>">Home</a>
                         </li>
 
                         <li>
@@ -60,7 +60,7 @@
                         </li>
                         
                         <li>
-                            <a href="<?php echo site_url('Admin/penjadwalan')?>">Pendaftaran klien</a>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
                     </ul>
                 </nav>
@@ -88,6 +88,7 @@
                     </div>
                 </div>
             </div>
+
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->
             <script

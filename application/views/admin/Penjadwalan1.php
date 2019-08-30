@@ -37,7 +37,7 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Admin/editProfil')?>" class="btn profile">
+                            <a href="<?php echo site_url('Ad_Home/edit_profil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
@@ -46,7 +46,7 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
+                            <a href="<?php echo site_url('Ad_Home/index')?>">Home</a>
                         </li>
 
                         <li>
@@ -58,7 +58,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/penjadwalan')?>">Pendaftaran klien</a>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
                     </ul>
                 </nav>
@@ -118,7 +118,7 @@
                                     <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle">Nurul</td>
                                     <td>
-                                        <a href="<?php echo site_url('Admin/pilihJadwal')?>">
+                                        <a href="<?php echo site_url('Ad_Home/pilihJadwal')?>">
                                             <button type="button" class="btn btn-primary btn-sm">Pilih Jadwal</button>
                                         </a>
                                     </td>

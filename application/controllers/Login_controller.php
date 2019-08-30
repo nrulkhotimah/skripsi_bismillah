@@ -34,11 +34,11 @@ class Login_controller extends CI_Controller {
         $this->session->set_userdata($session_data);
 
         if($role === 'admin') {
-            redirect('page');
+            redirect('Ad_Dataklien_controller/index');
         } elseif($role === 'koordinator') {
-            redirect('');
+            redirect('Ad_Datapakar_controller/index');
         } elseif($role === 'anggota') {
-            redirect('');
+            redirect('Ad');
         } else {
             redirect('');
         }
