@@ -6,6 +6,7 @@ class Dataklien_model extends CI_Model {
     // private $tabel = "klien";
 
     public $id;
+    public $id_user;
     public $kode;
     public $nama;
     public $nomor_telepon;
@@ -18,6 +19,7 @@ class Dataklien_model extends CI_Model {
     public $email;
     public $username; 
     public $password;
+    public $approve;
 
     public function rules() {
         return [
@@ -83,6 +85,11 @@ class Dataklien_model extends CI_Model {
             'label' => 'Password',
             'rules' => 'required'
             ],
+
+            ['field' => 'approve',
+            'label' => 'Approve',
+            'rules' => 'required'
+        ],
 
         ];
     }
@@ -199,8 +206,11 @@ class Dataklien_model extends CI_Model {
         return $this->db->insert_id();
     }
 
-    
+    public function approve($id, $user, $post) {
+       
+        
 
+    }
 
 }
 

@@ -77,56 +77,56 @@
                     </div>
 
                     <!-- Search form -->
-                    <form class="form-inline " style="margin-left:20px;">
-                        <input
-                            class="form-control form-control-sm mr-3 w-75 col-md-11"
-                            type="text"
-                            placeholder="Search"
-                            aria-label="Search"
-                            style="border-radius:13px;">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </form>
+                    <form
+                            class="form-inline"
+                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                            method="get">
+                            <div class="search" style="width:100%;">
+                                <input
+                                    class="form-control w-100"
+                                    type="text"
+                                    name="keyword"
+                                    placeholder="Search . . ."
+                                    
+                                    style="border-radius:5px; border: 1px solid #ddd !important">
+                                <input type="submit" class="btn btn-primary" value="search">
+                            </div>
+                        </form>
 
-                    <div class="col-md-12">
-                        <table class="table table-striped" style="margin-top:20px;">
-                            <thead>
+                            <!-- data tabel -->
+                            <table
+                            class="table table-sm table-bordered"
+                            style="margin-top:20px;"
+                            id="result">
+                            <thead class="text-center">
                                 <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Aksi</th>
+                                    <th class="align-middle">No</th>
+                                    <th class="align-middle">Nama Klien</th>
+                                    <th colspan="3">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
+
+                            <tbody class="text-center">
+                                <?php
+                                $i=0;
+
+                                        // print_r($DataKlien);
+                                        // exit();
+                                        $i++;
+                                    ?>
                                 <tr>
-                                    <th>1</th>
-                                    <td>Mark</td>
+                                    <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle">Nurul</td>
                                     <td>
                                         <a href="<?php echo site_url('Admin/pilihJadwal')?>">
                                             <button type="button" class="btn btn-primary btn-sm">Pilih Jadwal</button>
                                         </a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th>2</th>
-                                    <td>Jacob</td>
-                                    <td>
-                                        <a href="<?php echo site_url('Admin/pilihJadwal')?>">
-                                            <button type="button" class="btn btn-primary btn-sm">Pilih Jadwal</button>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>3</th>
-                                    <td>Larry</td>
-                                    <td>
-                                        <a href="<?php echo site_url('Admin/pilihJadwal')?>">
-                                            <button type="button" class="btn btn-primary btn-sm">Pilih Jadwal</button>
-                                        </a>
-                                    </td>
-                                </tr>
+                               
                             </tbody>
                         </table>
-                    </div>
+
                 </div>
             </div>
 

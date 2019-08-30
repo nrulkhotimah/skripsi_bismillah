@@ -147,7 +147,7 @@ class Ad_Dataklien_controller extends CI_Controller {
         $this->db->delete('user');
         $data['user'] = $this->Dataklien_model->getAll();
 
-        $this->load->view("admin/klien/Dataklien", $data);
+        $this->load->view('admin/klien/Dataklien', $data);
     }
 
     public function search() {
@@ -179,7 +179,7 @@ class Ad_Dataklien_controller extends CI_Controller {
             $this->Dataklien_model->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
-           $this->load->view("admin/register/Pageverif", $data);
+            $this->load->view("admin/register/Pageverif", $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
@@ -190,10 +190,19 @@ class Ad_Dataklien_controller extends CI_Controller {
 
     public function open_verif() {
         $this->load->view('admin/register/Pageverif');
+
     }
 
-    
+    public function approve($id) {
+       // $id=$this->uri->('3');
+        // print_r($id);
+        // exit();
 
+        $data['user'] = $this->Dataklien_model->getAll();
+        $this->db->insert('user', $data);
+        return $this->db->insert();
+
+    }
 
 
 }

@@ -143,12 +143,14 @@
                                     <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
 
                                     <td class="align-middle">
-                                        <a href="">
+                                    <form action="">
+                                        <a href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>">
                                             <i class=" mr-3 text-success fas fa-check"></i>
                                         </a>
-                                        <a href="">
+                                        </form>
+                                        <!-- <a href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>">
                                             <i class=" text-danger fas fa-times"></i>
-                                        </a>
+                                        </a> -->
 
                                     </td>
 
