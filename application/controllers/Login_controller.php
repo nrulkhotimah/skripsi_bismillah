@@ -3,49 +3,55 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 
 class Login_controller extends CI_Controller {
     
-    // public function __construct() {
-    //     parent::__construct();
+    public function __construct() {
+        parent::__construct();
 
-    //     $this->load->model('login');
-    // }
-
-    public function index() {
-        // if ($this->session->userdata('authenticated')) {
-        //     redirect('page/welcome');
-
-            $this->load->view('login/Login');
-        // }
+        $this->load->model('Login_model');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->load->library('session');
     }
 
-    // public function login () {
-    //     $username = $this->input->post('username');
-    //     $password = md5 ($this->input->post('password'));
-    //     $user = $this->Login->get($username);
+    public function index() {
+            $this->load->view('login/Login');
+    }
 
-    //     if (empty($user)) {
-    //         $this->session->set_flashdata('message', 'Username tidak ditemukan');
-    //         redirect ('Login');
-    //     } else {
-    //         if($password == $user-> password) {
-    //             $session = array (
-    //                 'authenticated'=>true,
-    //                 'username'=> $user->username,
-    //                 'nama'=> $user->nama
-    //             );
+    public function user_login() {
+      $username = $this->input->post('username', TRUE);
+      $password = $this->input->post('password', TRUE);
+      $validate = $this->Login_model->validate($username, $password);
 
-    //             $this->session->set_userdata($session);
-    //             redirect('page/welcome');
-    //         } else {
-    //             $this->session->set_flashdata ('message', 'Password salah');
-    //             redirect ('Login');
-    //         }
-    //     }
-    // }
+      if ($validate->num_rows() > 0) {
+          $data = $validate->row_array();
+          $nama = $data['nama'];
+          $username = $data['username'];
+          $role = $data['role'];
+          $session_data =  array(
+              'nama' => $nama,
+              'username' => $username,
+              'role' => $role,
+              'logged_in' => TRUE);
+        $this->session->set_userdata($session_data);
 
-    // public function logout () {
-    //     $this->session->sess_destroy();
-    //     redirect ('Login');
-    // }
+        if($role === 'admin') {
+            redirect('page');
+        } elseif($role === 'koordinator') {
+            redirect('');
+        } elseif($role === 'anggota') {
+            redirect('');
+        } else {
+            redirect('');
+        }
+      } else {
+          echo $this->session->set_flashdata('msg', 'Username or Password is Wrong');
+          redirect('login');
+      }
+    }
+
+    public function logout() {
+        $this->session->session_destroy();
+        redirect('login');
+    }
 
     
 }
