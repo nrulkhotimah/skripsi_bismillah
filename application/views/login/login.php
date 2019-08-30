@@ -39,7 +39,7 @@
             </div>
             <div class="row justify-content-md-center pt-4">
                 <div class="col-md-5">
-                    <form class="form-signin" action="<?php echo site_url('Login_controller/index'); ?>" method="post">
+                    <form class="form-signin" action="<?php echo site_url('Login_controller/user_login'); ?>" method="post">
                         <?php echo $this->session->flashdata('msg'); ?>
 
                         <div class="form-group row">
