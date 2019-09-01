@@ -13,7 +13,7 @@
             rel="stylesheet"
             type="text/css"
             href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-            
+
         <!-- Our Custom CSS -->
         <link
             rel="stylesheet"
@@ -42,6 +42,9 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
+                            <!-- <a href="" class="logout text-center">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a> -->
                             <p class="text-center" style="font:12px !important;">Hello! Admin</p>
                             <!-- <span >Hello! Admin</span> -->
                         </li>
@@ -58,9 +61,16 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Data klien</a>
                         </li>
-                        
+
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
                         </li>
                     </ul>
                 </nav>
@@ -78,17 +88,18 @@
                     </div>
 
                     <div class="col-md-12">
-                    <h2>SISTEM PENDUKUNG KEPUTUSAN</h2>
-                    <h2>DIAGNOSIS BANDING GANGGUAN AFEKTIF</h2> <br><br>
+                        <h2>SISTEM PENDUKUNG KEPUTUSAN</h2>
+                        <h2>DIAGNOSIS BANDING GANGGUAN AFEKTIF</h2>
+                        <br><br>
 
-                    <span >Selamat Datang </span> <span style="color:blue;">Admin</span> <br>
-
-
+                        <span >Selamat Datang
+                        </span>
+                        <span style="color:blue;">Admin</span>
+                        <br>
 
                     </div>
                 </div>
             </div>
-
 
             <!-- jQuery CDN - Slim version (=without AJAX) -->
             <script

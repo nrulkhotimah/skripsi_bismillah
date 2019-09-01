@@ -77,89 +77,99 @@
                     </div>
 
                     <!-- Search form -->
+                    <div class="col-md-12">
                     <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
-                            <div class="search" style="width:100%;">
-                                <input
-                                    class="form-control w-100"
-                                    type="text"
-                                    name="keyword"
-                                    placeholder="Search . . ."
-                                    
-                                    style="border-radius:5px; border: 1px solid #ddd !important">
-                                <input type="submit" class="btn btn-primary" value="search">
+                        class="form-inline"
+                        action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                        method="get">
+                        <div class="search container">
+                            <div class="row">
+                                <div style="width:90%">
+                                    <input
+                                        class="form-control w-100"
+                                        type="text"
+                                        name="keyword"
+                                        placeholder="Search . . ."
+                                        autocomplate="off">
+                                </div>
+
+                                <div style="width:2%"></div>
+
+                                <div style="width:8%">
+                                    <input type="submit" class="btn btn-primary form-control w-100" value="search">
+                                </div>
                             </div>
-                        </form>
 
-                            <!-- data tabel -->
-                            <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle">No</th>
-                                    <th class="align-middle">Nama Klien</th>
-                                    <th colspan="3">Aksi</th>
-                                </tr>
-                            </thead>
+                        </div>
+                    </form>
 
-                            <tbody class="text-center">
-                                <?php
+                    <!-- data tabel -->
+                    <table
+                        class="table table-sm table-bordered"
+                        style="margin-top:20px;"
+                        id="result">
+                        <thead class="text-center">
+                            <tr>
+                                <th class="align-middle">No</th>
+                                <th class="align-middle">Nama Klien</th>
+                                <th colspan="3">Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="text-center">
+                            <?php
                                 $i=0;
 
                                         // print_r($DataKlien);
                                         // exit();
                                         $i++;
                                     ?>
-                                <tr>
-                                    <td class="align-middle"><?php echo $i ?></td>
-                                    <td class="align-middle">Nurul</td>
-                                    <td>
-                                        <a href="<?php echo site_url('Ad_Home/pilihJadwal')?>">
-                                            <button type="button" class="btn btn-primary btn-sm">Pilih Jadwal</button>
-                                        </a>
-                                    </td>
-                                </tr>
-                               
-                            </tbody>
-                        </table>
-
+                            <tr>
+                                <td class="align-middle"><?php echo $i ?></td>
+                                <td class="align-middle">Nurul</td>
+                                <td>
+                                    <a href="<?php echo site_url('Ad_Home/pilihJadwal')?>">
+                                        <button type="button" class="btn btn-primary btn-sm">Pilih Jadwal</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+</div>
                 </div>
             </div>
+        </div>
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script
-                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <!-- Popper.JS -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                crossorigin="anonymous"></script>
-            <!-- Bootstrap JS -->
-            <script
-                type='text/javascript'
-                src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script
+            type='text/javascript'
+            src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
-            <!-- jQuery Custom Scroller CDN | button menu -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- jQuery Custom Scroller CDN | button menu -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#sidebar").mCustomScrollbar({theme: "minimal"});
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-                    $('#sidebarCollapse').on('click', function () {
-                        $('#sidebar, #content').toggleClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                    });
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                 });
-            </script>
-        </body>
+            });
+        </script>
+    </body>
 
-    </html>
+</html>

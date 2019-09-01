@@ -92,15 +92,24 @@
                             class="form-inline"
                             action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
                             method="get">
-                            <div class="search" style="width:100%;">
-                                <input
-                                    class="form-control w-100"
-                                    type="text"
-                                    name="keyword"
-                                    placeholder="Search . . ."
-                                    
-                                    style="border-radius:5px; border: 1px solid #ddd !important">
-                                <input type="submit" class="btn btn-primary" value="search">
+                            <div class="search container">
+                                <div class="row">
+                                    <div style="width:90%">
+                                        <input
+                                            class="form-control w-100"
+                                            type="text"
+                                            name="keyword"
+                                            placeholder="Search . . ."
+                                            autocomplate="off">
+                                    </div>
+
+                                    <div style="width:2%"></div>
+
+                                    <div style="width:8%">
+                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
+                                    </div>
+                                </div>
+
                             </div>
                         </form>
 
@@ -143,14 +152,15 @@
                                     <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
 
                                     <td class="align-middle">
-                                    <form action="">
-                                        <a href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>">
-                                            <i class=" mr-3 text-success fas fa-check"></i>
-                                        </a>
+                                        <form action="">
+                                            <a
+                                                href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>">
+                                                <i class=" mr-3 text-success fas fa-check"></i>
+                                            </a>
                                         </form>
-                                        <!-- <a href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>">
-                                            <i class=" text-danger fas fa-times"></i>
-                                        </a> -->
+                                        <!-- <a href="<?php echo
+                                        site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>"> <i class="
+                                        text-danger fas fa-times"></i> </a> -->
 
                                     </td>
 

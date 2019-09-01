@@ -56,7 +56,7 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Data klien</a>
                         </li>
-                        
+
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
@@ -76,74 +76,39 @@
 
                     </div>
 
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="picture col-md-12">
-                                    <a href="#" class="btn profile">
-                                        <img
-                                            src="../../assets/img/user.png"
-                                            alt="Avatar"
-                                            style="height:250px;width:250px;"><br>
-                                    </a>
-                                </div>
-                    
-                                <div class="col-md-12">
-                                <i class="fas fa-camera"></i>   
-                                </div>
+                        <div class="col-md-12">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nama</label>
+                                <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nama">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Username</label>
+                                <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Username">
                             </div>
 
-                            <div class="col-md-8 offset-md-1">
-                                <form>
-                                    <table class="col-md-12">
-                                        <tr>
-                                            <td>
-                                                <label for="name">Nama</label>
-                                            </td>
-                                            <td><input id="name" class="form-control" type="text" placeholder="Nama"></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>
-                                                <label for="name">Username</label>
-                                            </td>
-                                            <td><input id="name" class="form-control" type="text" placeholder="Username"></td>
-                                        </tr>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-right:auto; float:right;">Simpan</button>
+                        </form>
 
-                                        <tr>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <div class="row">
-                                                        <label class="col-form-label col-sm-2 pt-0">Jenis Kelamin</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="radio"
-                                                                name="gridRadios"
-                                                                id="gridRadios1"
-                                                                value="option1"
-                                                                checked="checked">
-                                                            <label class="form-check-label" for="gridRadios1">
-                                                                Pria
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="radio"
-                                                                name="gridRadios"
-                                                                id="gridRadios2"
-                                                                value="option2">
-                                                            <label class="form-check-label" for="gridRadios2">
-                                                                Wanita
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </div>
-                                            </fieldset>
+                            <!-- <form>
+                                <table class="col-md-12">
+                                    <tr>
+                                        <td>
+                                            <label for="name">Nama</label>
                                         </td>
+                                        <td><input id="name" class="form-control" type="text" placeholder="Nama"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <label for="name">Username</label>
+                                        </td>
+                                        <td><input id="name" class="form-control" type="text" placeholder="Username"></td>
                                     </tr>
 
                                     <tr>
@@ -237,7 +202,7 @@
                                     style="margin-right:auto; float:right;"
                                     onclick="myFunction()">
                                     Simpan
-                                </button>
+                                </button> -->
                                 <script>
                                     function myFunction() {
                                         alert("Perubahan berhasil di simpan");
@@ -245,7 +210,6 @@
                                 </script>
                             </div>
 
-                        </div>
 
                     </div>
 

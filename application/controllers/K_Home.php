@@ -5,22 +5,22 @@ class K_Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('koordinator/Homekoor.php');
+		$this->load->view('koordinator/Home.php');
 	}
 	
-	public function editProfilKoor() 
+	public function editProfil() 
 	{
-			$this->load->view('koordinator/Editprofilkoor.php');
+			$this->load->view('koordinator/Editprofil.php');
 	}
 
-	public function dataKlienKoor() 
+	public function dataKlien() 
 	{
-			$this->load->view('koordinator/Dataklienkoor.php');
+			$this->load->view('koordinator/klien/Dataklien.php');
 	}
 
 	public function riwayat() 
 	{
-			$this->load->view('koordinator/Riwayatdiagnosiskoor.php');
+			$this->load->view('koordinator/Riwayatdiagnosis.php');
 	}
 
 	public function lihatRiwayat() 
@@ -30,32 +30,32 @@ class K_Home extends CI_Controller {
 
 	public function penjadwalanPsi() 
 	{
-			$this->load->view('koordinator/Penjadwalankoor.php');
+			$this->load->view('koordinator/jadwal/Penjadwalankoor.php');
 	}
 
 	public function editPenjadwalanPsi() 
 	{
-			$this->load->view('koordinator/Editpenjadwalanpsi.php');
+			$this->load->view('koordinator/jadwal/Editpenjadwalanpsi.php');
 	}
 
 	public function inputJadwal() 
 	{
-			$this->load->view('koordinator/Inputjadwalkoor.php');
+			$this->load->view('koordinator/jadwal/Inputjadwalkoor.php');
 	}
 
 	public function daftarJadwalKonseling() 
 	{
-			$this->load->view('koordinator/Daftarjadwalkonsel.php');
+			$this->load->view('koordinator/jadwal/Daftarjadwalkonsel.php');
 	}
 
 	public function anggotaPsikolog() 
 	{
-			$this->load->view('koordinator/Angpsikologkoor.php');
+			$this->load->view('koordinator/angpsi/Angpsikolog.php');
 	}
 
 	public function kriteriaKeputusan() 
 	{
-			$this->load->view('koordinator/Kriteriakeputusankoor.php');
+			$this->load->view('koordinator/kriteriakeputusan/Kriteriakeputusan.php');
 	}
 
 	public function catatanKonseling() 
@@ -65,12 +65,12 @@ class K_Home extends CI_Controller {
 
 	public function tambahAnggotaPsi() 
 	{
-			$this->load->view('koordinator/Tambahangpsi.php');
+			$this->load->view('koordinator/angpsi/Tambahangpsi.php');
 	}
 
 	public function editAnggotaPsi() 
 	{
-			$this->load->view('koordinator/Editangpsi.php');
+			$this->load->view('koordinator/angpsi/Editangpsi.php');
 	}
 
     

@@ -76,8 +76,6 @@ class Ad_Dataklien_controller extends CI_Controller {
     public function index() {
         // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
         $data['user'] = $this->Dataklien_model->getAll();
-        // print_r($data);
-        // exit();
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
@@ -124,19 +122,12 @@ class Ad_Dataklien_controller extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
       
-        // if($validation->run()) {
             echo "a";
             $this->Dataklien_model->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
             $this->load->view("admin/klien/Dataklien", $data);
-        // } 
-        // else {
-        //     $error=validation_errors();
-        //     $this->session->set_flashdata('errors', 'Gagal disimpan');
-        //     $this->load->view("admin/klien/Editdataklien");
-        // }
-     
+       
         $data['user'] = $user->getById($id);
 
         if(!$data['user']) show_404();

@@ -58,7 +58,12 @@ a:focus {
     display: flex;
     width: 100%;
 }
-
+a .logout{
+    padding: 0 !important
+}
+.fas{
+    margin-right: 20px !important; 
+}
 #sidebar {
     width: 200px;
     position: fixed;
@@ -297,4 +302,3 @@ a.article:hover {
     font-size: 13px;
 }
 
-     

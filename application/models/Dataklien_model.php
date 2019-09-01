@@ -141,8 +141,8 @@ class Dataklien_model extends CI_Model {
     }
 
     public function update($post,$id) {
-        $user = new stdClass();
-        $user->nama = $post['nama'];
+        $user = new stdClass(); //ini adalah objek
+        $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
         $user->alamat = $post['alamat'];
@@ -207,14 +207,20 @@ class Dataklien_model extends CI_Model {
     }
 
     public function approve($id) {
+      $klien = new stdClass();
+      $klien->approve = '1';
+    //   print_r($klien);
+    //     exit();
 
-        $this->db->select('*');
-        $this->db->from('user');
-        $this->db->where('id', $id);
-        
-        $query = $this->db->get()->first_row();
+       // $this->db->set($klien);
+        $this->db->where('id_user', $id);
+        $this->db->update('klien', $klien);
+ 
+        $query = $this->db->get('klien')->first_row();
+
         print_r($query);
         exit();
+
         return $query->result();   
       
     
