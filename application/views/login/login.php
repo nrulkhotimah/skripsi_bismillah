@@ -39,12 +39,20 @@
             </div>
             <div class="row justify-content-md-center pt-4">
                 <div class="col-md-5">
-                    <form class="form-signin" action="<?php echo site_url('Login_controller/user_login'); ?>" method="post">
+                    <form
+                        action="<?php echo site_url('Login_controller/user_login'); ?>"
+                        method="post">
                         <?php echo $this->session->flashdata('msg'); ?>
 
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <input type="text" class="form-control" id="inputEmail3" placeholder="Username">
+                                <input
+                                    type="text"
+                                    name="username"
+                                    class="form-control"
+                                    id="inputEmail3"
+                                    placeholder="Username"
+                                    required>
                             </div>
                         </div>
 
@@ -52,9 +60,11 @@
                             <div class="col-sm-12">
                                 <input
                                     type="password"
+                                    name="password"
                                     class="form-control"
                                     id="inputPassword3"
-                                    placeholder="Password">
+                                    placeholder="Password"
+                                    required>
                             </div>
                         </div>
 
@@ -70,7 +80,7 @@
 
                         <div class="form-group row">
                             <div class="col-sm-12">
-                                <button type="submit" class="btn btn-block btn-primary">Login</button>
+                                <button type="submit" name="login" class="btn btn-block btn-primary">Login</button>
                             </div>
                         </div>
 

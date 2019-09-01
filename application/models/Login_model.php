@@ -8,21 +8,15 @@ class Login_model extends CI_Model {
     public $password;
     public $role;
     
-    public function logged_in() {
-        return $this->session->userdata('username');
-    }
-
-
-
-    public function validate($username, $password) {
+    public function login($post) {
         $this->load->database();
 
-        $this->db->where('username', $username);
-        $this->db->where('password', $password);
-       $result = $this->db->get();
-        print_r($this);
-        exit();
-        return $result;
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('username', $post['username']);
+        $this->db->where('password', $post['password']);
+        $query = $this->db->get();
+        return $query;
     }
 
 }

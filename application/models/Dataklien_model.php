@@ -206,7 +206,18 @@ class Dataklien_model extends CI_Model {
         return $this->db->insert_id();
     }
 
-    public function approve($id, $user, $post) {
+    public function approve($id) {
+
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('id', $id);
+        
+        $query = $this->db->get()->first_row();
+        print_r($query);
+        exit();
+        return $query->result();   
+      
+    
        
         
 

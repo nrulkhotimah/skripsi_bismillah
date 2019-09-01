@@ -194,13 +194,14 @@ class Ad_Dataklien_controller extends CI_Controller {
     }
 
     public function approve($id) {
-       // $id=$this->uri->('3');
+        $this->Dataklien_model->approve($id);
+
+  
+
         // print_r($id);
         // exit();
 
-        $data['user'] = $this->Dataklien_model->getAll();
-        $this->db->insert('user', $data);
-        return $this->db->insert();
+        
 
     }
 

@@ -18,35 +18,29 @@ class Login_controller extends CI_Controller {
     }
 
     public function user_login() {
-      $username = $this->input->post('username', TRUE);
-      $password = $this->input->post('password', TRUE);
-      $validate = $this->Login_model->validate($username, $password);
-
-      if ($validate->num_rows() > 0 ) {
-          $data = $validate->row_array();
-          $nama = $data['nama'];
-          $username = $data['username'];
-          $role = $data['role'];
-          $session_data =  array(
-              'nama' => $nama,
-              'username' => $username,
-              'role' => $role,
-              'logged_in' => TRUE);
-        $this->session->set_userdata($session_data);
-
-        if($role === '1') {
-            redirect('LoginPage_controller/index');
-        } elseif($role === '2') {
-            redirect('LoginPage_controller/koordinator');
-        } elseif($role === '3') {
-            redirect('LoginPage_controller/anggota');
-        } else {
-            redirect('LoginPage_controller/klien');
+        $post = $this->input->post(null, TRUE);
+        if(isset($post['login'])) {
+            $this->load->model('Login_model');
+            $query = $this->Login_model->login($post);
+            if($query->num_rows() > 0) {
+                $row = $query->row();
+                $params = array(
+                    'id' => $row->id,
+                    'role' => $row->role
+                );
+                $this->session->set_userdata($params);
+                echo "<script> 
+                    alert('Selamat, login berhasil');
+                    window.location='".site_url('Ad_Home/index')."';
+                </script>";
+            } else {
+                echo "<script> 
+                    alert('Login gagal');
+                    window.location='".site_url('Login_controller/index')."';
+                </script>";
+            }
+            
         }
-      } else {
-          echo $this->session->set_flashdata('msg', 'Username or Password is Wrong');
-          redirect('login/Login');
-      }
     }
 
     public function logout() {
