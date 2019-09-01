@@ -207,21 +207,17 @@ class Dataklien_model extends CI_Model {
     }
 
     public function approve($id) {
-      $klien = new stdClass();
-      $klien->approve = '1';
-    //   print_r($klien);
-    //     exit();
-
-       // $this->db->set($klien);
-        $this->db->where('id_user', $id);
+        $klien = new stdClass();
+        $klien->approve = '1';
+  
+        $this->db->where('id', $id);
         $this->db->update('klien', $klien);
- 
-        $query = $this->db->get('klien')->first_row();
+        $query = $this->db->get_where('klien', array('id' => $id))->first_row();
 
         print_r($query);
         exit();
 
-        return $query->result();   
+        //return $query->result();   
       
     
        

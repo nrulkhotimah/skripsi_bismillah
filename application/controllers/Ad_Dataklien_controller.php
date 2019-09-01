@@ -187,6 +187,8 @@ class Ad_Dataklien_controller extends CI_Controller {
     public function approve($id) {
         $this->Dataklien_model->approve($id);
 
+        
+
   
 
         // print_r($id);

@@ -154,7 +154,7 @@
                                     <td class="align-middle">
                                         <form action="">
                                             <a
-                                                href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>">
+                                                href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id) ?>">
                                                 <i class=" mr-3 text-success fas fa-check"></i>
                                             </a>
                                         </form>
