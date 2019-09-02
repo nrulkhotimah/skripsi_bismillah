@@ -18,7 +18,7 @@ class Login_controller extends CI_Controller {
 
     public function index() {
         check_already_login();
-            $this->load->view('login/Login');
+        $this->load->view('login/Login');
     }
 
     public function user_login() {
@@ -33,10 +33,27 @@ class Login_controller extends CI_Controller {
                     'role' => $row->role
                 );
                 $this->session->set_userdata($params);
-                echo "<script> 
+                if($row->role === '1') {
+                    echo "<script> 
                     alert('Selamat, login berhasil');
                     window.location='".site_url('Ad_Home/index')."';
                 </script>";
+                } elseif ($row->role === '2') {
+                    echo "<script> 
+                    alert('Selamat, login berhasil');
+                    window.location='".site_url('K_Home/index')."';
+                </script>";
+                } elseif ($row->role === '3') {
+                    echo "<script> 
+                    alert('Selamat, login berhasil');
+                    window.location='".site_url('Ad_Dataklien_controller/index')."';
+                </script>";
+                } else {
+                    echo "<script> 
+                    alert('Selamat, login berhasil');
+                    window.location='".site_url('Ad_Datapakar_controller/index')."';
+                </script>";
+                }
             } else {
                 echo "<script> 
                     alert('Login gagal');

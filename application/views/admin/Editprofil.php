@@ -78,7 +78,7 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">PROFIL</span>
+                            <span class="title font-weight-bold">EDIT PROFIL</span>
                         </div>
 
                     </div>

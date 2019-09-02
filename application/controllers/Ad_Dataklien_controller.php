@@ -9,6 +9,10 @@ class Ad_Dataklien_controller extends CI_Controller {
         $this->load->model('Dataklien_model');
         $this->model = $this->Dataklien_model;
         $this->load->library('session');
+        
+
+        
+      //  check_not_login();
     }
 
     public function rules() {
@@ -75,6 +79,7 @@ class Ad_Dataklien_controller extends CI_Controller {
   
     public function index() {
         // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
+        $data['nama'] = "nk";
         $data['user'] = $this->Dataklien_model->getAll();
         $this->load->view("admin/klien/Dataklien", $data);
     }
@@ -84,6 +89,7 @@ class Ad_Dataklien_controller extends CI_Controller {
     }
 
     public function save() {
+        $data['nama'] = "nk";
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -167,7 +173,7 @@ class Ad_Dataklien_controller extends CI_Controller {
         
 
         if($validation->run()) {
-            $this->Dataklien_model->save($post);
+            $this->Dataklien_model->tambah_user($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
             $this->load->view("admin/register/Pageverif", $data);

@@ -45,7 +45,7 @@
                             <!-- <a href="" class="logout text-center">
                                 <i class="fas fa-sign-out-alt"></i>
                             </a> -->
-                            <p class="text-center" style="font:12px !important;">Hello! Admin</p>
+                            <p class="text-center" style="font:12px !important;">Hello! <?= $nama; ?></p>
                             <!-- <span >Hello! Admin</span> -->
                         </li>
                         <hr>

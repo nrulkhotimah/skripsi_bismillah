@@ -39,53 +39,43 @@
                         <li>
                             <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>Profile</span>
+                                <span>RIWAYAT</span>
                             </a>
                             <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -99,7 +89,7 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN / LIHAT RIWAYAT</span>
+                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
                         </div>
                     </div>
 
@@ -115,50 +105,95 @@
                             </td>
                         </tr>
                         <tr>
+                        <br>
                             <td>
                                 <span>Nama Psikolog : Ika
                                 </span>
                             </td>
                         </tr>
-                    </div>
 
-                    <div class="col-md-12">
-                        <table class="table table-striped" style="margin-top:20px;">
-                            <thead>
+                        <!-- data tabel -->
+                        <table
+                            class="table table-sm table-bordered"
+                            style="margin-top:20px;"
+                            id="result">
+                            <thead class="text-center">
                                 <tr>
-                                    <th scope="col">No.</th>
-                                    <th scope="col">Tanggal</th>
-                                    <th scope="col">Hasil Diagnosis</th>
-                                    <th scope="col">Keluhan</th>
-                                    <th scope="col">Catatan Konseling</th>
+                                    <th class="align-middle" rowspan="2">No</th>
+                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
+                                    <th class="align-middle" rowspan="2">Waktu</th>
+                                    <th class="align-middle" rowspan="2">Kuota Penuh</th>
+                                    <th class="align-middle" rowspan="2">Sisa Kuota</th>
+                                    <th colspan="2">Aksi</th>
                                 </tr>
-
+                                <tr>
+                                    <th>Edit</th>
+                                    <th>Hapus</th>
+                                </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td>08 Juni 2019</td>
-                                    <td>Bipolar</td>
-                                    <td>Mudah panik</td>
-                                    <td>Perbanyak minum air dan tidur dengan cukup</td>
-                                </tr>
 
+                            <tbody class="text-center">
                                 <tr>
-                                    <th>2</th>
-                                    <td>10 Juni 2019</td>
-                                    <td>Bipolar 1</td>
-                                    <td>Stress</td>
-                                    <td>Disarankan untuk mengunjungi psikiater</td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+
+                                    <td class="align-middle">
+                                        <a href="">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
+                                    </td>
+
+                                    <td class="align-middle">
+                                        <a
+                                            onclick="deleteConfirm('')"
+                                            href="#!"
+                                            class="btn tbn-small text-secondary"
+                                            method="delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <script>
+                                            function deleteConfirm(url) {
+                                                $('#btn-delete').attr('href', url);
+                                                $('#deleteModal').modal();
+                                            }
+                                        </script>
+
+                                        <!-- modal Delete Confirmation-->
+                                        <div
+                                            class="modal fade"
+                                            id="deleteModal"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
                                 </tr>
 
                             </tbody>
                         </table>
-                        <a href="<?php echo site_url('Admin/riwayat')?>">
-                        <button type="button" class="btn btn-primary" style="float:auto">Kembali ke halaman sebelumnya</button>
-                        </a>
-
-
                     </div>
+
                 </div>
             </div>
 

@@ -46,46 +46,36 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -99,94 +89,41 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">DATA KLIEN/CATATAN KONSELING</span>
+                            <span class="title font-weight-bold">CATATAN KONSELING -- SESSION NAMA KLIEN --</span>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <table class="table table-striped" style="margin-top:20px;">
-                            <thead>
+                    <table
+                            class="table table-sm table-bordered"
+                            style="margin-top:20px;"
+                            id="result">
+                            <thead class="text-center">
                                 <tr>
-                                    <th scope="col">Keluhan</th>
-                                    <th scope="col">Catatan</th>
-                                    <th scope="col">Edit</th>
+                                    <th class="align-middle" rowspan="2">KELUHAN</th>
+                                    <th class="align-middle" rowspan="2">CATATAN</th>
+                                    <th class="align-middle" rowspan="2">EDIT</th>
                                 </tr>
-
                             </thead>
-                            <tbody>
+
+                            <tbody class="text-center">
                                 <tr>
-                                    <td>
-                                        <ul>
-                                            <li>stress</li>
-                                            <li>mudah panik</li>
-                                        </ul>
+                                    <td class="align-middle">1</td>
+                                    <td class="align-middle">2</td>
 
+                                    <td class="align-middle">
+                                        <a
+                                            href="">
+                                            <i class="fas fa-pen"></i>
+                                        </a>
                                     </td>
-                                    <td>Mark</td>
-                                    <td>
-                                        <!-- Button trigger modal -->
-                                        <button
-                                            type="button"
-                                            class="btn btn-primary"
-                                            data-toggle="modal"
-                                            data-target="#exampleModal">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
 
-                                        <!-- Modal -->
-                                        <div
-                                            class="modal fade"
-                                            id="exampleModal"
-                                            tabindex="-1"
-                                            role="dialog"
-                                            aria-labelledby="exampleModalLabel"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Catatan Konseling</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form >
-                                                            <div class="form-group">
-                                                                <label for="exampleFormControlInput1">Masukkan Keluhan Klien</label>
-                                                                <input
-                                                                    type="email"
-                                                                    class="form-control"
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Merasa kesulitan tidur di malam hari">
-                                                            </div>
-                                                        </form>
-
-                                                        <form >
-                                                            <div class="form-group">
-                                                                <label for="exampleFormControlInput1">Masukkan Catatan Konseling Klien</label>
-                                                                <input
-                                                                    type="email"
-                                                                    class="form-control"
-                                                                    id="exampleFormControlInput1"
-                                                                    placeholder="Memperbanya minum air putih dan konsumsi buah ">
-                                                            </div>
-                                                        </form>
-
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <div class="but" style="float:RIGHT">
-                            <a href="<?php echo site_url('Admin/dataKlienKoor')?>">
+                            <a href="">
                                 <button type="button" class="btn btn-primary">Kembali ke Halaman Sebelumnya</button>
                             </a>
 

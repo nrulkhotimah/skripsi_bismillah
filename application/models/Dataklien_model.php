@@ -122,6 +122,7 @@ class Dataklien_model extends CI_Model {
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
+        $user->role = "4";
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
@@ -189,7 +190,7 @@ class Dataklien_model extends CI_Model {
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
-        $user->password = $post['password'];
+        $user->password = md5($post['password']);
 
         $this->db->insert($this->_table, $user);
      
@@ -224,6 +225,7 @@ class Dataklien_model extends CI_Model {
         
 
     }
+
 
 }
 

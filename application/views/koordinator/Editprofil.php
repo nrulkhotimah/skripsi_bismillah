@@ -46,46 +46,36 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -93,7 +83,7 @@
 
                 <!-- Page Content -->
                 <div id="content">
-                <div class="jumbotron">
+                    <div class="jumbotron">
                         <button type="button" id="sidebarCollapse" class="btn">
                             <i class="fas fa-bars"></i>
                         </button>
@@ -105,207 +95,85 @@
                     </div>
 
                     <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="picture">
-                                    <a href="#" class="btn profile">
-                                        <img
-                                            src="../../assets/img/user.png"
-                                            alt="Avatar"
-                                            style="height:250px;width:250px;"><br>
-                                        <i class="far fa-image" style="z-index:10;"></i>
-                                        <i class="fas fa-camera"></i>
-                                    </a>
-                                </div>
+                        <form>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    aria-describedby="name"
+                                    placeholder="Nama">
                             </div>
 
-                            <div class="col-md-8 offset-md-1">
-                                <form>
-                                    <table class="col-md-12">
-                                        <tr>
-                                            <td>
-                                                <label for="name">Nama</label>
-                                            </td>
-                                            <td><input id="name" class="form-control" type="text" placeholder="Nama"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="name">Username</label>
-                                            </td>
-                                            <td><input id="name" class="form-control" type="text" placeholder="Username"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <label for="name">Tempat Tanggal Lahir</label>
-                                            </td>
-                                            <td><input id="name" class="form-control" type="text" placeholder="Usia"></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <div class="row">
-                                                        <label class="col-form-label col-sm-2 pt-0">Jenis Kelamin</label>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="radio"
-                                                                name="gridRadios"
-                                                                id="gridRadios1"
-                                                                value="option1"
-                                                                checked="checked">
-                                                            <label class="form-check-label" for="gridRadios1">
-                                                                Pria
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input
-                                                                class="form-check-input"
-                                                                type="radio"
-                                                                name="gridRadios"
-                                                                id="gridRadios2"
-                                                                value="option2">
-                                                            <label class="form-check-label" for="gridRadios2">
-                                                                Wanita
-                                                            </label>
-                                                        </div>
-                                                    </td>
-                                                </div>
-                                            </fieldset>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <label for="name">Email</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="text" placeholder="Email"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <label for="name">Nomor Telepon</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="number" placeholder="Nomor Telepon"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <label for="name">Alamat</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="text" placeholder="Alamat"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <form class="form-inline ">
-                                            <div class="form-group row ">
-                                                <td>
-                                                    <label for="inputPassword6" class="col-form-label">Password</label>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="password"
-                                                        id="inputPassword6"
-                                                        class="form-control"
-                                                        aria-describedby="passwordHelpInline">
-                                                    <small id="passwordHelpInline" class="text-muted">
-                                                        Must be 8-20 characters long.
-                                                    </small>
-                                                </td>
-                                            </div>
-                                        </form>
-                                    </tr>
-
-                                    <tr>
-                                        <form class="form-inline ">
-                                            <div class="form-group row ">
-                                                <td>
-                                                    <label for="inputPassword6" class="col-form-label">Ubah Password</label>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="password"
-                                                        id="inputPassword6"
-                                                        class="form-control"
-                                                        aria-describedby="passwordHelpInline">
-                                                    <small id="passwordHelpInline" class="text-muted">
-                                                        Must be 8-20 characters long.
-                                                    </small>
-                                                </td>
-                                            </div>
-                                        </form>
-                                    </tr>
-
-                                    <tr>
-                                        <form class="form-inline ">
-                                            <div class="form-group row ">
-                                                <td>
-                                                    <label for="inputPassword6" class="col-form-label">Ulangi Password</label>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="password"
-                                                        id="inputPassword6"
-                                                        class="form-control"
-                                                        aria-describedby="passwordHelpInline">
-                                                    <small id="passwordHelpInline" class="text-muted">
-                                                        Must be 8-20 characters long.
-                                                    </small>
-                                                </td>
-                                            </div>
-                                        </form>
-                                    </tr>
-
-                                </table>
-
-                                <button
-                                    type="button"
-                                    class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal"
-                                    style="margin-right:auto; float:right;"
-                                    onclick="myFunction()">
-                                    Simpan
-                                </button>
-                                <script>
-                                    function myFunction() {
-                                        alert("Perubahan berhasil di simpan");
-                                    }
-                                </script>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="username"
+                                    aria-describedby="username"
+                                    placeholder="Username">
                             </div>
 
-                        </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    aria-describedby="email"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="nomor_telepon"
+                                    aria-describedby="nomor_telepon"
+                                    placeholder="Nomor Telepon">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password Lama">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password Baru">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="#exampleModal"
+                                style="margin-right:auto; float:right;"
+                                onclick="myFunction()">
+                                Simpan
+                            </button>
+                            <script>
+                                function myFunction() {
+                                    alert("Perubahan berhasil di simpan");
+                                }
+                            </script>
+                        </form>
 
                     </div>
-
-                    <!-- Modal -->
-                    <!-- <div
-                        class="modal fade"
-                        id="exampleModal"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Edit Profil</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <span>perubahan berhasil di simpan</span>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
             </div>
 

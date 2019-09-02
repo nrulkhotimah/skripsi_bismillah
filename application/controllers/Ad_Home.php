@@ -9,8 +9,9 @@ class Ad_Home extends CI_Controller {
     }
 
     public function index() {
+        $data['nama'] = "Admin";
         check_not_login();
-        $this->load->view('admin/Home');
+        $this->load->view('admin/Home', $data);
     }
 
     public function edit_profil() {
