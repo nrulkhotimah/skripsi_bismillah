@@ -46,46 +46,36 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -131,7 +121,7 @@
                                     <td>0001</td>
                                     <td>Mark</td>
                                     <td>
-                                    <a href="<?php echo site_url('Admin/lihatRiwayat')?>">
+                                    <a href="<?php echo site_url('K_Home/lihatRiwayat')?>">
                                     <button type="button" class="btn btn-primary">Lihat Riwayat</button>
                                     </a>
                                     </td>
@@ -142,7 +132,7 @@
                                     <td>0002</td>
                                     <td>Markus</td>
                                     <td>
-                                    <a href="<?php echo site_url('Admin/lihatRiwayat')?>">
+                                    <a href="<?php echo site_url('K_Home/lihatRiwayat')?>">
                                     <button type="button" class="btn btn-primary">Lihat Riwayat</button>
                                     </a>
                                     </td>

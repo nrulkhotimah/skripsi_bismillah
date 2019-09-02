@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>SPK Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
             rel="stylesheet"
             type="text/css"
             href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+
         <!-- Our Custom CSS -->
         <link
             rel="stylesheet"
@@ -37,55 +38,45 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
+                            <a href="<?php echo site_url('K_Home/edit_Profil')?>" class="btn profile">
+                                <img src="../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
                             <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <!-- <span >Hello! Admin</span> -->
                         </li>
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -99,10 +90,14 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
+                            <span class="title font-weight-bold">HOME</span>
                         </div>
                     </div>
 
+
+
+
+                    
                 </div>
             </div>
 
@@ -135,6 +130,10 @@
                         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
                 });
+
+                function test() {
+                    alert("Hello! I am an alert box!");
+                }
             </script>
         </body>
 

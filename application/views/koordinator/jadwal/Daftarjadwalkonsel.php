@@ -46,46 +46,36 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -104,78 +94,99 @@
                     </div>
 
                     <div class="col-md-12">
-                        <table class="table table-striped" style="margin-top:20px;">
-                            <thead>
-                                <tr>
-                                    <th scope="col">No.</th>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Nama Klien</th>
-                                    <th scope="col">Jadwal</th>
-                                    <th scope="col">Ket.</th>
-                                </tr>
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
 
+                        <!-- kolom search -->
+                        <form
+                            class="form-inline"
+                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                            method="get">
+                            <div class="search container">
+                                <div class="row">
+                                    <div style="width:90%">
+                                        <input
+                                            class="form-control w-100"
+                                            type="text"
+                                            name="keyword"
+                                            placeholder="Search . . ."
+                                            autocomplate="off">
+                                    </div>
+
+                                    <div style="width:2%"></div>
+
+                                    <div style="width:8%">
+                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+
+                        <!-- data tabel -->
+                        <table
+                            class="table table-sm table-bordered"
+                            style="margin-top:20px;"
+                            id="result">
+                            <thead class="text-center">
+                                <tr>
+                                    <th class="align-middle" rowspan="2">No</th>
+                                    <th class="align-middle" rowspan="2">Nama Klien</th>
+                                    <th colspan="2">Jadwal</th>
+                                    <th class="align-middle" rowspan="2">Keterangan</th>
+                                </tr>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Waktu</th>
+                                </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td>0001</td>
-                                    <td>Budi</td>
-                                    <td>18 Juni 2019, 13.00 s/d 14.00 WIB</td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-check-square"></i>
-                                        </button>
-                                    </td>
-                                </tr>
 
+                            <tbody class="text-center">
                                 <tr>
-                                    <th>2</th>
-                                    <td>0002</td>
-                                    <td>Budi</td>
-                                    <td>18 Juni 2019, 13.00 s/d 14.00 WIB</td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-check-square"></i>
-                                        </button>
-                                    </td>
+                                    <td class="align-middle">s</td>
+                                    <td class="align-middle">sa</td>
+                                    <td class="align-middle">e</td>
+                                    <td class="align-middle">sa</td>
+                                    <td class="align-middle">ada</td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script
-                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <!-- Popper.JS -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                crossorigin="anonymous"></script>
-            <!-- Bootstrap JS -->
-            <script
-                type='text/javascript'
-                src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+                <!-- jQuery CDN - Slim version (=without AJAX) -->
+                <script
+                    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <!-- Popper.JS -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                    crossorigin="anonymous"></script>
+                <!-- Bootstrap JS -->
+                <script
+                    type='text/javascript'
+                    src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
-            <!-- jQuery Custom Scroller CDN | button menu -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+                <!-- jQuery Custom Scroller CDN | button menu -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#sidebar").mCustomScrollbar({theme: "minimal"});
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-                    $('#sidebarCollapse').on('click', function () {
-                        $('#sidebar, #content').toggleClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar, #content').toggleClass('active');
+                            $('.collapse.in').toggleClass('in');
+                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        });
                     });
-                });
-            </script>
-        </body>
+                </script>
+            </body>
 
-    </html>
+        </html>

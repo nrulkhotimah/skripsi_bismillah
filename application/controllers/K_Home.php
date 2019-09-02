@@ -18,6 +18,11 @@ class K_Home extends CI_Controller {
 			$this->load->view('koordinator/Lihatriwayat.php');
 	}
 
+	public function riwayat() 
+	{
+			$this->load->view('koordinator/Riwayatdiagnosis.php');
+	}
+
 	
 
     

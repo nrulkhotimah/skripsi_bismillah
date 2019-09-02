@@ -38,7 +38,7 @@
                     <ul class="list-unstyled components">
                         <li>
                             <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
+                                <img src="../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
                             <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
@@ -46,175 +46,160 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Koordinator/index')?>">Home</a>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koordinator/dataKlienKoor')?>">Data Klien</a>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koordinator/riwayat')?>">Riwayat</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koordinator/penjadwalanPsi')?>">Penjadwalan</a>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koordinator/anggotaPsikolog')?>">Anggota Psikolog</a>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koordinator/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
-                </nav>
 
-                <!-- Page Content -->
-                <div id="content">
-                    <div class="jumbotron">
-                        <button type="button" id="sidebarCollapse" class="btn">
-                            <i class="fas fa-bars"></i>
-                        </button>
+            </ul>
+        </nav>
 
-                        <div style="float:right">
-                            <span class="title font-weight-bold">ANGGOTA PSIKOLOG</span>
-                        </div>
-                    </div>
+        <!-- Page Content -->
+        <div id="content">
+            <div class="jumbotron">
+                <button type="button" id="sidebarCollapse" class="btn">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-                    <form class="form-inline " style="margin-left:20px;">
-                        <input
-                            class="form-control form-control-sm mr-3 w-75 col-md-11"
-                            type="text"
-                            placeholder="Search"
-                            aria-label="Search"
-                            style="border-radius:13px;">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </form>
-
-                    <div class="table" style="padding:10px;">
-                        <table class="table table-striped" style="margin-top:20px;">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Aksi</th>
-                                    <th></th>
-                                </tr>
-
-                                <tr>
-                                    <th scope="col">No.</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">Jenis Kelamin</th>
-                                    <th scope="col">NIK</th>
-                                    <th scope="col">Nomor Telepon</th>
-                                    <th scope="col">Edit</th>
-                                    <th scope="col">Hapus</th>
-                                </tr>
-
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Tina</td>
-                                    <td>P</td>
-                                    <td>640203283232323</td>
-                                    <td>0812334343</td>
-                                    <td>
-                                        <a href="<?php echo site_url('Admin/editAnggotaPsi')?>">
-                                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Tina</td>
-                                    <td>P</td>
-                                    <td>640203283232323</td>
-                                    <td>0812334343</td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>2</td>
-                                    <td>Tina</td>
-                                    <td>P</td>
-                                    <td>640203283232323</td>
-                                    <td>0812334343</td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="but" style="float:RIGHT">
-                            <a href="<?php echo site_url('Admin/tambahAnggotaPsi')?>">
-                                <button type="button" class="btn btn-primary">Tambah</button>
-                            </a>
-
-                        </div>
-                    </div>
+                <div style="float:right">
+                    <span class="title font-weight-bold">ANGGOTA PSIKOLOG</span>
                 </div>
             </div>
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script
-                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <!-- Popper.JS -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                crossorigin="anonymous"></script>
-            <!-- Bootstrap JS -->
-            <script
-                type='text/javascript'
-                src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+            <!-- kolom search -->
+            <div class="col-md-12">
+                <form
+                    class="form-inline"
+                    action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                    method="get">
+                    <div class="search container">
+                        <div class="row">
+                            <div style="width:90%">
+                                <input
+                                    class="form-control w-100"
+                                    type="text"
+                                    name="keyword"
+                                    placeholder="Search . . ."
+                                    autocomplate="off">
+                            </div>
 
-            <!-- jQuery Custom Scroller CDN | button menu -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+                            <div style="width:2%"></div>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#sidebar").mCustomScrollbar({theme: "minimal"});
+                            <div style="width:8%">
+                                <input type="submit" class="btn btn-primary form-control w-100" value="search">
+                            </div>
+                        </div>
 
-                    $('#sidebarCollapse').on('click', function () {
-                        $('#sidebar, #content').toggleClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                    });
-                });
-            </script>
-        </body>
+                    </div>
+                </form>
 
-    </html>
+                <!-- data tabel -->
+                <table
+                    class="table table-sm table-bordered"
+                    style="margin-top:20px;"
+                    id="result">
+                    <thead class="text-center">
+                        <tr>
+                            <th class="align-middle" rowspan="2">No</th>
+                            <th class="align-middle" rowspan="2">Nama Psikolog</th>
+                            <th class="align-middle" rowspan="2">JK</th>
+                            <th class="align-middle" rowspan="2">Nomor Telepon</th>
+                            <th colspan="2">Aksi</th>
+                        </tr>
+
+                        <tr>
+                            <th>Hapus</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-center">
+                        <tr>
+                            <td class="align-middle">1</td>
+                            <td class="align-middle">Toni</td>
+                            <td class="align-middle">P</td>
+                            <td class="align-middle">Bipolar 1</td>
+                            <td class="align-middle">
+                                <i class="fas fa-pen"></i>
+                            </td>
+                            <td class="align-middle">
+                                <i class="fas fa-trash-alt"></i>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+                <div class="but" style="float:RIGHT">
+                    <a href="<?php echo site_url('K_Angpsi/tambah')?>">
+                        <button type="button" class="btn btn-primary">Tambah</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script
+        type='text/javascript'
+        src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+
+    <!-- jQuery Custom Scroller CDN | button menu -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+
+</html>

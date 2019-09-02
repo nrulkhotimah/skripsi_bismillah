@@ -44,48 +44,38 @@
                             <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
                         <hr>
-
+                        
                         <li>
-                            <a href="<?php echo site_url('Admin/index')?>">Home</a>
-                        </li>
-
-                        <li class="active">
-                            <a
-                                href="#homeSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Klien</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/dataKlienKoor')?>">Data Klien</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/riwayat')?>">Riwayat</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a
-                                href="#pageSubmenu"
-                                data-toggle="collapse"
-                                aria-expanded="false"
-                                class="dropdown-toggle">Psikolog</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">Input Penjadwalan</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/daftarJadwalKonseling')?>">Penjadwalan Konseling</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo site_url('Admin/anggotaPsikolog')?>">Anggota</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/kriteriaKeputusan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                        </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </a>
                         </li>
 
                     </ul>
@@ -102,63 +92,76 @@
                             <span class="title font-weight-bold">EDIT JADWAL</span>
                         </div>
                     </div>
-
                     <div class="col-md-12">
-                        <form>
-                            <table class="col-md-8">
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <label for="formGroupExampleInput">Nama Psikolog</label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="formGroupExampleInput"
-                                                placeholder="Nama Psikolog">
-                                        </div>
-                                    </td>
-                                </tr>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    value=""
+                                    placeholder="Nama">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <label for="formGroupExampleInput">Nomor Telepon</label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="formGroupExampleInput"
-                                                placeholder="Nomor Telepon">
-                                        </div>
-                                    </td>
-                                </tr>
+                            <div class="form-group">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    value=""
+                                    placeholder="Nomor Telepon">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
-                                <tr>
-                                    <td>
-                                        <div class="form-group">
-                                            <label for="formGroupExampleInput">Kuota Klien</label>
-                                            <input
-                                                type="text"
-                                                class="form-control"
-                                                id="formGroupExampleInput"
-                                                placeholder="Kuota Klien">
-                                        </div>
-                                    </td>
-                                </tr>
+                            <div class="form-group">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    value=""
+                                    placeholder="Kuota Klien">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
-                            </table>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Tanggal konseling</label>
+                                <input
+                                    name="tanggal_lahir"
+                                    type="date"
+                                    class="form-control "
+                                    id="exampleFormControlInput1"
+                                    value="">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Waktu Konseling</label>
+                                <input
+                                    name="tanggal_lahir"
+                                    type="time"
+                                    class="form-control "
+                                    id="exampleFormControlInput1"
+                                    value="">
+                                <div class="invalid-feedback"></div>
+                            </div>
                         </form>
-                        <a href="<?php echo site_url('Admin/penjadwalanPsi')?>">
-                            <button type="button" class="btn btn-primary">Cancel</button>
+                    
+
+                        <a href="<?php echo site_url('K_Penjadwalan/index')?>">
+                            <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
                         </a>
-                        <button type="button" class="btn btn-primary" onclick="myFunction()">Submit</button>
+                        <button type="button" class="btn btn-primary" onclick="myFunction()" style="float:right;">Simpan</button>
 
                         <script>
                             function myFunction() {
                                 alert("Jadwal berhasil disimpan");
                             }
                         </script>
-                    </div>
+                        </div>
 
                 </div>
             </div>
