@@ -16,5 +16,13 @@
         }
     }
 
+    function check_admin() {
+        $cek =& get_instance();
+        $cek->load-library('fungsi');
+        if($cek->fungsi->user_login()->role != 1) {
+            redirect('Login_controller/index');
+        }
+    }
+
 
 ?>

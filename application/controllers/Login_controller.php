@@ -11,10 +11,13 @@ class Login_controller extends CI_Controller {
         $this->load->helper('url');
         $this->load->library('form_validation');
         $this->load->library('session');
+
+        
+       // check_admin();
     }
 
     public function index() {
-            check_already_login();
+        check_already_login();
             $this->load->view('login/Login');
     }
 
