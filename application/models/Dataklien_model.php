@@ -214,8 +214,8 @@ class Dataklien_model extends CI_Model {
         $this->db->update('klien', $klien);
         $query = $this->db->get_where('klien', array('id' => $id))->first_row();
 
-        print_r($query);
-        exit();
+        // print_r($query);
+        // exit();
 
         //return $query->result();   
       

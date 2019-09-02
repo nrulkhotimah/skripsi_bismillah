@@ -68,7 +68,7 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
                                 <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </li>

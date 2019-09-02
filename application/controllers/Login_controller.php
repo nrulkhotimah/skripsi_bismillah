@@ -44,8 +44,9 @@ class Login_controller extends CI_Controller {
     }
 
     public function logout() {
-        $this->session->session_destroy();
-        redirect('login/Login');
+        $params = array('id', 'role');
+        $this->session->unset_userdata($params);
+        redirect('Login_controller/index');
     }
 
     

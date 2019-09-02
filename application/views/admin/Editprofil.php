@@ -60,6 +60,13 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
@@ -79,136 +86,52 @@
                         <div class="col-md-12">
                         <form>
                             <div class="form-group">
-                                <label for="name">Nama</label>
                                 <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nama">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
+
                             <div class="form-group">
-                                <label for="name">Username</label>
                                 <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Username">
                             </div>
 
                             <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email">
                             </div>
-                            <button type="submit" class="btn btn-primary" style="margin-right:auto; float:right;">Simpan</button>
-                        </form>
 
-                            <!-- <form>
-                                <table class="col-md-12">
-                                    <tr>
-                                        <td>
-                                            <label for="name">Nama</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="text" placeholder="Nama"></td>
-                                    </tr>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="nomor_telepon" aria-describedby="nomor_telepon" placeholder="Nomor Telepon">
+                            </div>
 
-                                    <tr>
-                                        <td>
-                                            <label for="name">Username</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="text" placeholder="Username"></td>
-                                    </tr>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password Lama">
+                            </div>
 
-                                    <tr>
-                                        <td>
-                                            <label for="name">Email</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="text" placeholder="Email"></td>
-                                    </tr>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password Baru">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
 
-                                    <tr>
-                                        <td>
-                                            <label for="name">Nomor Telepon</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="number" placeholder="Nomor Telepon"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <label for="name">Alamat</label>
-                                        </td>
-                                        <td><input id="name" class="form-control" type="text" placeholder="Alamat"></td>
-                                    </tr>
-
-                                    <tr>
-                                        <form class="form-inline ">
-                                            <div class="form-group row ">
-                                                <td>
-                                                    <label for="inputPassword6" class="col-form-label">Password</label>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="password"
-                                                        id="inputPassword6"
-                                                        class="form-control"
-                                                        aria-describedby="passwordHelpInline">
-                                                    <small id="passwordHelpInline" class="text-muted">
-                                                        Must be 8-20 characters long.
-                                                    </small>
-                                                </td>
-                                            </div>
-                                        </form>
-                                    </tr>
-
-                                    <tr>
-                                        <form class="form-inline ">
-                                            <div class="form-group row ">
-                                                <td>
-                                                    <label for="inputPassword6" class="col-form-label">Ubah Password</label>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="password"
-                                                        id="inputPassword6"
-                                                        class="form-control"
-                                                        aria-describedby="passwordHelpInline">
-                                                    <small id="passwordHelpInline" class="text-muted">
-                                                        Must be 8-20 characters long.
-                                                    </small>
-                                                </td>
-                                            </div>
-                                        </form>
-                                    </tr>
-
-                                    <tr>
-                                        <form class="form-inline ">
-                                            <div class="form-group row ">
-                                                <td>
-                                                    <label for="inputPassword6" class="col-form-label">Ulangi Password</label>
-                                                </td>
-                                                <td>
-                                                    <input
-                                                        type="password"
-                                                        id="inputPassword6"
-                                                        class="form-control"
-                                                        aria-describedby="passwordHelpInline">
-                                                    <small id="passwordHelpInline" class="text-muted">
-                                                        Must be 8-20 characters long.
-                                                    </small>
-                                                </td>
-                                            </div>
-                                        </form>
-                                    </tr>
-
-                                </table>
-
-                                <button
-                                    type="button"
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+                            <button
+                                    type="submit"
                                     class="btn btn-primary"
                                     data-toggle="modal"
                                     data-target="#exampleModal"
                                     style="margin-right:auto; float:right;"
                                     onclick="myFunction()">
                                     Simpan
-                                </button> -->
+                                </button> 
                                 <script>
                                     function myFunction() {
                                         alert("Perubahan berhasil di simpan");
                                     }
                                 </script>
-                            </div>
+                        </form>
+
+                            
+                            
 
 
                     </div>

@@ -59,6 +59,13 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
                         </li>
+                        <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Login_controller/logout')?>">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
