@@ -126,6 +126,7 @@
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
                                     <th class="align-middle" rowspan="2">Nama Psikolog</th>
+                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th colspan="2">Jadwal</th>
                                     <th class="align-middle" rowspan="2">Kuota Penuh</th>
                                     <th class="align-middle" rowspan="2">Sisa Kuota</th>
@@ -140,64 +141,33 @@
                             </thead>
 
                             <tbody class="text-center">
-
+                                <?php 
+                                $i=0;
+                                    foreach($user as $Dataklien):
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle"><?php echo $Dataklien->nama ?></td>
+                                    <td class="align-middle"><?php echo $Dataklien->nomor_telepon ?></td>
+                                    <td class="align-middle"><?php echo $Dataklien->tanggal ?></td>
+                                    <td class="align-middle"><?php echo $Dataklien->waktu ?></td>
+                                    <td class="align-middle"><?php echo $Dataklien->kuota ?></td>
                                     <td class="align-middle"></td>
                                     <td class="align-middle">
-                                        <a href="">
+                                        <a href="<?php echo site_url('K_Penjadwalan/edit/'.$Dataklien->id_user) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
 
                                     <td class="align-middle">
-                                        <a
-                                            onclick="deleteConfirm()"
-                                            href="#!"
-                                            class="btn tbn-small text-secondary"
-                                            method="delete">
+                                        <a href="<?php echo site_url('K_Penjadwalan/delete/'.$Dataklien->id_user) ?>">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
-
-                                        <script>
-                                            function deleteConfirm(url) {
-                                                $('#btn-delete').attr('href', url);
-                                                $('#deleteModal').modal();
-                                            }
-                                        </script>
-
-                                        <!-- modal Delete Confirmation-->
-                                        <div
-                                            class="modal fade"
-                                            id="deleteModal"
-                                            tabindex="-1"
-                                            role="dialog"
-                                            aria-labelledby="exampleModalLabel"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">×</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                                        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </td>
 
                                 </tr>
-
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                         <div class="but" style="float:RIGHT">
@@ -205,7 +175,7 @@
                                 <button type="button" class="btn btn-link">Lihat Daftar Jadwal Klien</button>
                             </a>
 
-                            <a href="<?php echo site_url('K_Penjadwalan/inputjadwal')?>">
+                            <a href="<?php echo site_url('K_Penjadwalan/add')?>">
                                 <button type="button" class="btn btn-primary">Tambah</button>
                             </a>
                         </div>
