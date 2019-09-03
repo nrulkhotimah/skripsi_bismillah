@@ -3,7 +3,6 @@
 class K_Angpsi_m extends CI_Model {
 
     private $_table = "user";
-    // private $tabel = "klien";
 
     public $id;
     public $nama;
@@ -62,8 +61,7 @@ class K_Angpsi_m extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->where('role >=', '2');
-        $this->db->where('role <=', '3');
+        $this->db->where('role =', '3');
         
         $query = $this->db->get();
         return $query->result();
@@ -72,7 +70,7 @@ class K_Angpsi_m extends CI_Model {
     public function getById($id) {
 
         $this->db->select('*');
-        $this->db->from('klien');
+        $this->db->from('user');
         $this->db->where('id', $id);
         // print_r($id);
         // exit();
@@ -106,19 +104,6 @@ class K_Angpsi_m extends CI_Model {
         $this->db->where('id', $id);
 
         $this->db->update($this->_table, $user);
-     
-        $klien = new stdClass();
-        //$id_user = $this->db->id();
-       //$klien->kode = $post['kode']; 
-        $klien->id_user = $id;
-        $klien->tanggal_lahir = $post['tanggal_lahir'];
-        $klien->agama = $post['agama'];
-        $klien->marital_status = $post['marital_status'];
-        $klien->pekerjaan = $post['pekerjaan'];
-
-        $this->db->set($klien);
-        $this->db->where('id_user', $id);
-        $this->db->update('klien', $klien);
     }
 
     public function delete($id){

@@ -91,8 +91,7 @@
                     <div class="col-md-12">
                         
                         <form
-                            action="<?php echo base_url( 'index.php/Ad_Dataklien_controller/update/'.$user->id) ?>"
-                           
+                            action="<?php echo base_url('index.php/Ad_Dataklien_controller/update/'.$user->id) ?>"
                             method="post"
                             enctype="multipart/form-data">
 

@@ -54,20 +54,20 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                            <a href="<?php echo site_url('K_Home/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('K_Kriteria/index')?>">Kriteria Keputusan</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                            <a href="<?php echo site_url('K_Angpsi/index')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -91,26 +91,35 @@
                 </button>
 
                 <div style="float:right">
-                    <span class="title font-weight-bold">TAMBAH ANGGOTA PSIKOLOG</span>
+                    <span class="title font-weight-bold">EDIT ANGGOTA PSIKOLOG</span>
                 </div>
 
             </div>
 
+            <?php if($this->session->flashdata('success')): ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $this->session->flashdata('success'); ?>
+            </div>
+            <?php endif; ?>
+
             <div class="col-md-12">
 
-                <form action="save" method="post" enctype="multipart/form-data">
-
-                    <!-- <?php echo form_open('admin/klien/Dataklien'); ?> -->
+                <form
+                    action="<?php echo base_url('index.php/K_Angpsi/update/'.$user->id) ?>"
+                    method="post"
+                    enctype="multipart/form-data">
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nama</label>
                         <input
                             name="nama"
                             type="text"
-                            class="form-control"
+                            class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            value="">
-                        <div class="invalid-feedback"></div>
+                            value="<?php echo $user->nama ?>">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('nama') ?>
+                        </div>
                     </div>
 
                     <fieldset class="form-group ">
@@ -123,7 +132,7 @@
                                         type="radio"
                                         name="jenis_kelamin"
                                         id="gridRadios1"
-                                        value="pria"
+                                        value="pria <?php echo ($user->jenis_kelamin=='pria' ? 'checked':''); ?>"
                                         checked="checked">
                                     <label class="form-check-label" for="gridRadios1">
                                         Pria
@@ -135,7 +144,7 @@
                                         type="radio"
                                         name="jenis_kelamin"
                                         id="gridRadios2"
-                                        value="wanita">
+                                        value="wanita <?php echo ($user->jenis_kelamin=='wanita' ? 'checked':''); ?>">
                                     <label class="form-check-label" for="gridRadios2">
                                         Wanita
                                     </label>
@@ -149,10 +158,12 @@
                         <input
                             name="alamat"
                             type="text"
-                            class="form-control "
+                            class="form-control  <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            value="">
-                        <div class="invalid-feedback"></div>
+                            value="<?php echo $user->alamat ?>">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('alamat') ?>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -160,10 +171,12 @@
                         <input
                             name="nomor_telepon"
                             type="number"
-                            class="form-control "
+                            class="form-control  <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            value="">
-                        <div class="invalid-feedback"></div>
+                            value="<?php echo $user->nomor_telepon ?>">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('nomor_telepon') ?>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -171,10 +184,12 @@
                         <input
                             name="email"
                             type="text"
-                            class="form-control "
+                            class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            value="">
-                        <div class="invalid-feedback"></div>
+                            value="<?php echo $user->email ?>">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('email') ?>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -182,10 +197,12 @@
                         <input
                             name="username"
                             type="text"
-                            class="form-control "
+                            class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            value="">
-                        <div class="invalid-feedback"></div>
+                            value="<?php echo $user->username ?>">
+                        <div class="invalid-feedback">
+                            <?php echo form_error('username') ?>
+                        </div>
                     </div>
 
                     <input
@@ -195,7 +212,6 @@
                         value="Save"
                         style="float:right; width:100px;"/>
                 </form>
-                <!-- <?php echo form_close(); ?> -->
             </div>
 
         </div>

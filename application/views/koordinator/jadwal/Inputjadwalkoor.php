@@ -54,20 +54,20 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                            <a href="<?php echo site_url('K_Home/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('K_Kriteria/index')?>">Kriteria Keputusan</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                            <a href="<?php echo site_url('K_Angpsi/index')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -89,7 +89,7 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">INPUT JADWAL</span>
+                            <span class="title font-weight-bold">TAMBAH JADWAL</span>
                         </div>
                     </div>
 

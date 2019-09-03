@@ -8,6 +8,7 @@ class K_Angpsi extends CI_Controller {
 
         $this->load->helper('url_helper');
         $this->load->model('K_Angpsi_m');
+        $this->model = $this->K_Angpsi_m;
         $this->load->library('session');
     }
 
@@ -85,8 +86,36 @@ class K_Angpsi extends CI_Controller {
         }
     }
 
-    public function edit() {
-        $this->load->view('koordinator/angpsi/Editangpsi');
+    public function edit($id) {
+        $data['user'] = $this->K_Angpsi_m->getById($id);
+        $this->load->view("koordinator/angpsi/Editangpsi", $data);
+    }
+
+    public function update($id) {
+        if(!isset($id)) redirect('koordinator/angpsi/Angpsikolog');
+        $post = $this->input->post();
+
+        $user = $this->K_Angpsi_m;
+        $validation = $this->form_validation;
+        $validation->set_rules($user->rules());
+
+        echo "a";
+        $this->K_Angpsi_m->update($post, $id);
+        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $data['user'] = $this->K_Angpsi_m->getAll();
+        $this->load->view("koordinator/angpsi/Angpsikolog", $data);
+
+        $data['user'] = $user->getById($id);
+        if(!$data['user']) show_404();
+    }
+
+    public function delete($id) {
+   
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+        $data['user'] = $this->K_Angpsi_m->getAll();
+
+        $this->load->view('koordinator/angpsi/Angpsikolog', $data);
     }
 
 }

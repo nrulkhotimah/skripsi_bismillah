@@ -54,20 +54,20 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                            <a href="<?php echo site_url('K_Home/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('K_Kriteria/index')?>">Kriteria Keputusan</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                            <a href="<?php echo site_url('K_Angpsi/index')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -143,8 +143,8 @@
                         </tr>
 
                         <tr>
-                            <th>Hapus</th>
                             <th>Edit</th>
+                            <th>Hapus</th>
                         </tr>
                     </thead>
 
@@ -152,7 +152,6 @@
                         <?php 
                         $i=0;
                             foreach($user as $DataKlien):
-
                             $i++;
                         
                         ?>
@@ -164,7 +163,7 @@
 
                             <td class="align-middle">
                                 <form action="">
-                                    <a href="">
+                                    <a href="<?php echo site_url('K_Angpsi/edit/'.$DataKlien->id) ?>">
                                         <i class="fas fa-pen"></i>
                                     </a>
                                 </form>
@@ -173,7 +172,7 @@
 
                             <td class="align-middle">
                                 <form action="">
-                                    <a href="">
+                                    <a href="<?php echo site_url('K_Angpsi/delete/'.$DataKlien->id) ?>">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>
                                 </form>

@@ -55,7 +55,6 @@ class Datapakar_model extends CI_Model {
         $this->db->from('user');
         $this->db->where('role >=', '2');
         $this->db->where('role <=', '3');
-        // $this->db->or_where('role !=', 'klien');
 
         $query = $this->db->get();
         return $query->result();
@@ -85,7 +84,6 @@ class Datapakar_model extends CI_Model {
         $this->db->where('id', $id);
 
         $this->db->update($this->_table, $user);
-
     }
 
     public function delete($id) {
