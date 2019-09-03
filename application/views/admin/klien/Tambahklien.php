@@ -88,10 +88,6 @@
 
                             <?php echo form_open('admin/klien/Dataklien'); ?>
 
-                        <span class="font-weight-bold">Kode Klien : </span>
-                        <br>
-                        <br>
-
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Nama</label>
                                 <input

@@ -38,7 +38,7 @@
                     <ul class="list-unstyled components">
                         <li>
                             <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
-                                <img src="../assets/img/user.png" alt="Avatar"><br>
+                                <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
                             <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
@@ -97,6 +97,12 @@
 
             <!-- kolom search -->
             <div class="col-md-12">
+                <?php if($this->session->flashdata('success')): ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $this->session->flashdata('success'); ?>
+                </div>
+                <?php endif; ?>
+
                 <form
                     class="form-inline"
                     action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
@@ -143,19 +149,37 @@
                     </thead>
 
                     <tbody class="text-center">
+                        <?php 
+                        $i=0;
+                            foreach($user as $DataKlien):
+
+                            $i++;
+                        
+                        ?>
                         <tr>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">Toni</td>
-                            <td class="align-middle">P</td>
-                            <td class="align-middle">Bipolar 1</td>
+                            <td class="align-middle"><?php echo $i ?></td>
+                            <td class="align-middle"><?php echo $DataKlien->nama ?></td>
+                            <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
+                            <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
+
                             <td class="align-middle">
-                                <i class="fas fa-pen"></i>
+                                <form action="">
+                                    <a href="">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
+                                </form>
+
                             </td>
+
                             <td class="align-middle">
-                                <i class="fas fa-trash-alt"></i>
+                                <form action="">
+                                    <a href="">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </form>
                             </td>
                         </tr>
-
+                        <?php endforeach; ?>
                     </tbody>
 
                 </table>

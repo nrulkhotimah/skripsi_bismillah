@@ -52,7 +52,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('K_Angpsi/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -68,7 +68,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
+                            <a href="<?php echo site_url('K_Angpsi/index')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 

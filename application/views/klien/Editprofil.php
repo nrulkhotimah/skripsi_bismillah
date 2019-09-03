@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>SPK Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
@@ -37,11 +37,11 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
+                            <a href="<?php echo site_url('Ad_Home/edit_profil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Klien</p>
+                            <p class="text-center" style="font:12px !important;">Hello! Admin</p>
                         </li>
                         <hr>
 
@@ -60,11 +60,9 @@
 
                         <li>
                             <a href="<?php echo site_url('Login_controller/logout')?>">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Logout
+                                <i class="fas fa-sign-out-alt"></i> Logout
                             </a>
                         </li>
-
                     </ul>
                 </nav>
 
@@ -76,70 +74,59 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">PENDAFTARAN KLIEN</span>
+                            <span class="title font-weight-bold">EDIT PROFIL</span>
                         </div>
+
                     </div>
 
-                    <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action=""
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
+                        <div class="col-md-12">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nama">
                             </div>
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Username">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="nomor_telepon" aria-describedby="nomor_telepon" placeholder="Nomor Telepon">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password Lama">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password Baru">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+                            <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    style="margin-right:auto; float:right;"
+                                    onclick="myFunction()">
+                                    Simpan
+                                </button> 
+                                <script>
+                                    function myFunction() {
+                                        alert("Perubahan berhasil di simpan");
+                                    }
+                                </script>
                         </form>
-
-                        <!-- data tabel -->
-                        <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
-                                    <th colspan="2">Jadwal</th>
-                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
-                                    <th class="align-middle" rowspan="2">Keterangan</th>
-                                </tr>
-
-                                <tr>
-                                <th>Tanggal</th>
-                                <th>Waktu</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">Tika</td>
-                                    <td class="align-middle">23 Juni 2019</td>
-                                    <td class="align-middle">14.00</td>
-                                    <td class="align-middle">09832732901</td>
-                                    <td class="align-middle">
-                                    <button class="btn btn-primary">Pilih Psikolog</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
+
                 </div>
             </div>
 
@@ -172,6 +159,10 @@
                         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
                 });
+
+                function test() {
+                    alert("Hello! I am an alert box!");
+                }
             </script>
         </body>
 

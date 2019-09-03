@@ -5,27 +5,27 @@ class Kli_Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('klien/Homekoor.php');
+		$this->load->view('klien/Home.php');
 	}
 
-    public function editProfilKlien() 
+    public function editProfil() 
 	{
-			$this->load->view('klien/Editprofilklien.php');
+			$this->load->view('klien/Editprofil.php');
 	}
 
-	public function pendaftaranKlien() 
+	public function pendaftaran() 
 	{
-			$this->load->view('klien/Pendaftaranklien.php');
+			$this->load->view('klien/Pendaftaran.php');
 	}
 
-	public function dataDiagnosis() 
+	public function data() 
 	{
-			$this->load->view('klien/Datadiagnosisklien.php');
+			$this->load->view('klien/diagnosis/Data.php');
 	}
 
-	public function catatanKonselingKlien() 
+	public function catatan() 
 	{
-			$this->load->view('klien/Catatankonselklien.php');
+			$this->load->view('klien/diagnosis/Catkonsel.php');
 	}
 
 }

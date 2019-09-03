@@ -1,34 +1,23 @@
 <?php if (!defined ('BASEPATH')) exit ('No direct script access allowed');
 
-class Dataklien_model extends CI_Model {
+class K_Angpsi_m extends CI_Model {
 
     private $_table = "user";
     // private $tabel = "klien";
 
     public $id;
-    public $id_user;
-    public $kode;
     public $nama;
     public $nomor_telepon;
     public $jenis_kelamin;
-    public $tanggal_lahir;
-    public $marital_status;
-    public $agama;
     public $alamat;
-    public $pekerjaan;
     public $email;
     public $username; 
     public $password;
-    public $approve;
 
     public function rules() {
         return [
             ['field' => 'id',
             'label' => 'ID',
-            ],
-
-            ['field' => 'kode',
-            'label' => 'Kode',
             ],
 
             ['field' => 'nama',
@@ -46,28 +35,8 @@ class Dataklien_model extends CI_Model {
             'rules' => 'required'
             ],
 
-            ['field' => 'agama',
-            'label' => 'Agama',
-            'rules' => 'required'
-            ],
-
-            ['field' => 'tanggal_lahir',
-            'label' => 'Tanggal Lahir',
-            'rules' => 'required'
-            ],
-
             ['field' => 'alamat',
             'label' => 'Alamat',
-            'rules' => 'required'
-            ],
-
-            ['field' => 'pekerjaan',
-            'label' => 'Pekerjaan',
-            'rules' => 'required'
-            ],
-
-            ['field' => 'marital_status',
-            'label' => 'Marital Status',
             'rules' => 'required'
             ],
 
@@ -85,12 +54,6 @@ class Dataklien_model extends CI_Model {
             'label' => 'Password',
             'rules' => 'required'
             ],
-
-            ['field' => 'approve',
-            'label' => 'Approve',
-            'rules' => 'required'
-        ],
-
         ];
     }
 
@@ -99,7 +62,8 @@ class Dataklien_model extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('user');
-        $this->db->join('klien','klien.id_user=user.id');
+        $this->db->where('role >=', '2');
+        $this->db->where('role <=', '3');
         
         $query = $this->db->get();
         return $query->result();
@@ -109,8 +73,7 @@ class Dataklien_model extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('klien');
-        $this->db->join('user','user.id=klien.id_user');
-        $this->db->where('id_user', $id);
+        $this->db->where('id', $id);
         // print_r($id);
         // exit();
 
@@ -122,23 +85,12 @@ class Dataklien_model extends CI_Model {
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
-        $user->role = "4";
+        $user->role = "3";
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
 
         $this->db->insert($this->_table, $user);
-     
-        $klien = new stdClass();
-        $id_user = $this->db->insert_id();
-       //$klien->kode = $post['kode']; 
-        $klien->id_user = $id_user;
-        $klien->tanggal_lahir = $post['tanggal_lahir'];
-        $klien->marital_status = $post['marital_status'];
-        $klien->pekerjaan = $post['pekerjaan'];
-        $klien->agama = $post['agama'];
-
-        $this->db->insert('klien', $klien);
     }
 
     public function update($post,$id) {

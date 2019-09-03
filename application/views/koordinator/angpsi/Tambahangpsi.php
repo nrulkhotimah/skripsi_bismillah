@@ -100,7 +100,7 @@
 
                 <form action="save" method="post" enctype="multipart/form-data">
 
-                    <!-- <?php echo form_open('admin/klien/Dataklien'); ?> -->
+                    <?php echo form_open('koordinator/angpsi/Angpsikolog'); ?>
                     
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nama Psikolog</label>
@@ -205,7 +205,7 @@
                         value="Save"
                         style="float:right; width:100px;"/>
                 </form>
-                <!-- <?php echo form_close(); ?> -->
+                <?php echo form_close(); ?> 
             </div>
 
         </div>
