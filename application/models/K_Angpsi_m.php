@@ -114,56 +114,9 @@ class K_Angpsi_m extends CI_Model {
     public function search($keyword) {
        $this->db->select('*');
        $this->db->from('user');
-       $this->db->join('klien','klien.id_user=user.id');
        $this->db->like('nama', $keyword);
        return $this->db->get()->result();   
     }
-
-    public function tambah_user($post) {
-        $user = new stdClass();
-        $user->nama = $post['nama'];
-        $user->nomor_telepon = $post['nomor_telepon'];
-        $user->jenis_kelamin = $post['jenis_kelamin'];
-        $user->role = "4";
-        $user->alamat = $post['alamat'];
-        $user->email = $post['email'];
-        $user->username = $post['username'];
-        $user->password = md5($post['password']);
-
-        $this->db->insert($this->_table, $user);
-     
-        $klien = new stdClass();
-        $id_user = $this->db->insert_id();
-       //$klien->kode = $post['kode']; 
-        $klien->id_user = $id_user;
-        $klien->tanggal_lahir = $post['tanggal_lahir'];
-        $klien->marital_status = $post['marital_status'];
-        $klien->pekerjaan = $post['pekerjaan'];
-        $klien->agama = $post['agama'];
-
-        $this->db->insert('klien', $klien);
-        return $this->db->insert_id();
-    }
-
-    public function approve($id) {
-        $klien = new stdClass();
-        $klien->approve = '1';
-  
-        $this->db->where('id', $id);
-        $this->db->update('klien', $klien);
-        $query = $this->db->get_where('klien', array('id' => $id))->first_row();
-
-        // print_r($query);
-        // exit();
-
-        //return $query->result();   
-      
-    
-       
-        
-
-    }
-
 
 }
 

@@ -118,6 +118,17 @@ class K_Angpsi extends CI_Controller {
         $this->load->view('koordinator/angpsi/Angpsikolog', $data);
     }
 
+    public function search() {
+        $data['user'] = $this->K_Angpsi_m->getAll();
+        $keyword = $this->input->get('keyword');
+
+        if($this->input->get('keyword')) {
+            $data['user'] = $this->K_Angpsi_m->search($keyword);
+        }
+
+        $this->load->view('koordinator/angpsi/Angpsikolog', $data);
+    }
+
 }
 
 ?>

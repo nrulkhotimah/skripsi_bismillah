@@ -105,7 +105,7 @@
 
                 <form
                     class="form-inline"
-                    action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                    action="<?php echo site_url('K_Angpsi/search/') ?>"
                     method="get">
                     <div class="search container">
                         <div class="row">
