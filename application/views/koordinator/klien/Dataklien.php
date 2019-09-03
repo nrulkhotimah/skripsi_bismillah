@@ -95,9 +95,14 @@
 
                     <!-- kolom search -->
                     <div class="col-md-12">
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                            <?php endif; ?>
                         <form
                             class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                            action="<?php echo site_url('K_Dataklien/search/') ?>"
                             method="get">
                             <div class="search container">
                                 <div class="row">
@@ -143,12 +148,17 @@
                             </thead>
 
                             <tbody class="text-center">
+                                <?php 
+                                $i=0;
+                                    foreach($user as $DataKlien):
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
+                                    <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle">
-                                        <a href="" class="btn btn-link">Toni</a>
+                                        <a href="<?php echo site_url('K_Dataklien/edit/'.$DataKlien->id_user) ?>" class="btn btn-link"><?php echo $DataKlien->nama ?></a>
                                     </td>
-                                    <td class="align-middle">P</td>
+                                    <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
                                     <td class="align-middle">
                                         <a href="" class="btn btn-link">Bipolar 1</a>
                                     </td>
@@ -176,7 +186,7 @@
                                     </td>
 
                                 </tr>
-
+                                    <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
