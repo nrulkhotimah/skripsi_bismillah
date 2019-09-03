@@ -41,7 +41,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
 
@@ -65,10 +65,6 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
                         </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
-                        </li>
                         <hr>
 
                         <li>
@@ -89,62 +85,90 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">EDIT PROFIL</span>
                         </div>
+
                     </div>
 
                     <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
+                        <form>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    aria-describedby="name"
+                                    placeholder="Nama">
                             </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="username"
+                                    aria-describedby="username"
+                                    placeholder="Username">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    aria-describedby="email"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="nomor_telepon"
+                                    aria-describedby="nomor_telepon"
+                                    placeholder="Nomor Telepon">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password Lama">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password Baru">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="#exampleModal"
+                                style="margin-right:auto; float:right;"
+                                onclick="myFunction()">
+                                Simpan
+                            </button>
+                            <script>
+                                function myFunction() {
+                                    alert("Perubahan berhasil di simpan");
+                                }
+                            </script>
                         </form>
 
-                        <!-- data tabel -->
-                        <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
-                                        </a>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>

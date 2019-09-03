@@ -41,7 +41,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
 
@@ -50,7 +50,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -64,10 +64,6 @@
 
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
-                        </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -89,15 +85,13 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">DATA KLIEN</span>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
+                        <!-- kolom search -->
+                        <form class="form-inline" action="" method="get">
                             <div class="search container">
                                 <div class="row">
                                     <div style="width:90%">
@@ -127,24 +121,90 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
+                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
+                                    <th colspan="2">Jadwal</th>
+                                    <th class="align-middle" rowspan="2">Kuota Penuh</th>
+                                    <th class="align-middle" rowspan="2">Sisa Kuota</th>
+                                    <th colspan="2">Aksi</th>
+                                </tr>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Waktu</th>
+                                    <th>Edit</th>
+                                    <th>Hapus</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
+
                                 <tr>
                                     <td class="align-middle"></td>
                                     <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
+                                    <td class="align-middle"></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
+                                        <a href="">
+                                            <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
+
+                                    <td class="align-middle">
+                                        <a
+                                            onclick="deleteConfirm()"
+                                            href="#!"
+                                            class="btn tbn-small text-secondary"
+                                            method="delete">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+
+                                        <script>
+                                            function deleteConfirm(url) {
+                                                $('#btn-delete').attr('href', url);
+                                                $('#deleteModal').modal();
+                                            }
+                                        </script>
+
+                                        <!-- modal Delete Confirmation-->
+                                        <div
+                                            class="modal fade"
+                                            id="deleteModal"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">×</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
                                 </tr>
 
                             </tbody>
                         </table>
+                        <div class="but" style="float:RIGHT">
+                            <a href="<?php echo site_url('K_Penjadwalan/daftarjadwal') ?>">
+                                <button type="button" class="btn btn-link">Lihat Daftar Jadwal Klien</button>
+                            </a>
+
+                            <a href="<?php echo site_url('K_Penjadwalan/inputjadwal')?>">
+                                <button type="button" class="btn btn-primary">Tambah</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

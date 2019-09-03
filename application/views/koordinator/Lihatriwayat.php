@@ -39,7 +39,7 @@
                         <li>
                             <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>RIWAYAT</span>
+                                <span>Profil</span>
                             </a>
                             <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
@@ -105,7 +105,7 @@
                             </td>
                         </tr>
                         <tr>
-                        <br>
+                            <br>
                             <td>
                                 <span>Nama Psikolog : Ika
                                 </span>
@@ -120,74 +120,20 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
-                                    <th class="align-middle" rowspan="2">Waktu</th>
-                                    <th class="align-middle" rowspan="2">Kuota Penuh</th>
-                                    <th class="align-middle" rowspan="2">Sisa Kuota</th>
-                                    <th colspan="2">Aksi</th>
-                                </tr>
-                                <tr>
-                                    <th>Edit</th>
-                                    <th>Hapus</th>
+                                    <th class="align-middle" rowspan="2">Tanggal</th>
+                                    <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
+                                    <th class="align-middle" rowspan="2">Keluhan</th>
+                                    <th class="align-middle" rowspan="2">Catatan Konseling</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-
-                                    <td class="align-middle">
-                                        <a href="">
-                                            <i class="fas fa-pen"></i>
-                                        </a>
-                                    </td>
-
-                                    <td class="align-middle">
-                                        <a
-                                            onclick="deleteConfirm('')"
-                                            href="#!"
-                                            class="btn tbn-small text-secondary"
-                                            method="delete">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-
-                                        <script>
-                                            function deleteConfirm(url) {
-                                                $('#btn-delete').attr('href', url);
-                                                $('#deleteModal').modal();
-                                            }
-                                        </script>
-
-                                        <!-- modal Delete Confirmation-->
-                                        <div
-                                            class="modal fade"
-                                            id="deleteModal"
-                                            tabindex="-1"
-                                            role="dialog"
-                                            aria-labelledby="exampleModalLabel"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">×</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
-                                                    <div class="modal-footer">
-                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                                        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-
+                                    <td class="align-middle">1</td>
+                                    <td class="align-middle">23 Juni 2019</td>
+                                    <td class="align-middle">Bipolar 1</td>
+                                    <td class="align-middle">Stress</td>
+                                    <td class="align-middle">Perbanyak istirahat</td>
                                 </tr>
 
                             </tbody>

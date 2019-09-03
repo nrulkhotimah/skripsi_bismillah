@@ -125,7 +125,7 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
+                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
                                     <th colspan="2">Jadwal</th>
                                     <th class="align-middle" rowspan="2">Kuota Penuh</th>
                                     <th class="align-middle" rowspan="2">Sisa Kuota</th>

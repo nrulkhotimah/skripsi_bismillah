@@ -41,7 +41,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
 
@@ -65,10 +65,6 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
                         </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
-                        </li>
                         <hr>
 
                         <li>
@@ -89,62 +85,102 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">CATATAN KONSELING -- SESSION NAMA KLIEN --</span>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-
-                        <!-- data tabel -->
-                        <table
+                    <table
                             class="table table-sm table-bordered"
                             style="margin-top:20px;"
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
+                                    <th class="align-middle" rowspan="2">KELUHAN</th>
+                                    <th class="align-middle" rowspan="2">CATATAN</th>
+                                    <th class="align-middle" rowspan="2">EDIT</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle">1</td>
+                                    <td class="align-middle">2</td>
+
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
+                                        <a
+                                            href="">
+                                            <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
-                                </tr>
 
+                                </tr>
                             </tbody>
                         </table>
+
+                        <div class="but" style="float:RIGHT">
+                            <a href="">
+                                <button type="button" class="btn btn-primary">Kembali ke Halaman Sebelumnya</button>
+                            </a>
+
+                            <!-- Button trigger modal -->
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="#exampleModal">
+                                Tambah
+                            </button>
+
+                            <!-- Modal -->
+                            <div
+                                class="modal fade"
+                                id="exampleModal"
+                                tabindex="-1"
+                                role="dialog"
+                                aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Catatan Konseling</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form >
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Masukkan Keluhan Klien</label>
+                                                    <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="exampleFormControlInput1"
+                                                        placeholder="Merasa kesulitan tidur di malam hari">
+                                                </div>
+                                            </form>
+
+                                            <form >
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlInput1">Masukkan Catatan Konseling Klien</label>
+                                                    <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="exampleFormControlInput1"
+                                                        placeholder="Memperbanya minum air putih dan konsumsi buah ">
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

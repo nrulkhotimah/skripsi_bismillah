@@ -41,7 +41,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
 
@@ -65,10 +65,6 @@
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
                         </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
-                        </li>
                         <hr>
 
                         <li>
@@ -89,10 +85,11 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">DATA KLIEN</span>
                         </div>
                     </div>
 
+                    <!-- kolom search -->
                     <div class="col-md-12">
                         <form
                             class="form-inline"
@@ -128,24 +125,58 @@
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
                                     <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
+                                    <th class="align-middle" rowspan="2">JK</th>
+                                    <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
+                                    <th colspan="2">Jadwal Konseling</th>
+                                    <th class="align-middle" rowspan="2">Catatan Konseling</th>
+                                    <th class="align-middle" rowspan="2">Keterangan Konseling</th>
+                                </tr>
+
+                                <tr>
+                                    <th>Waktu</th>
+                                    <th>Tanggal</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle">1</td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
-                                        </a>
+                                        <a href="" class="btn btn-link">Toni</a>
                                     </td>
+                                    <td class="align-middle">P</td>
+                                    <td class="align-middle">
+                                        <a href="" class="btn btn-link">Bipolar 1</a>
+                                    </td>
+                                    <td class="align-middle">13.00 WIB</td>
+                                    <td class="align-middle">23 Januari 2019</td>
+                                    <td class="align-middle">
+                                        <button type="button" class="btn btn-primary">Open</button>
+                                    </td>
+                                    <td class="align-middle">
+                                        <!-- Example single danger button -->
+                                        <div class="btn-group">
+                                            <button
+                                                type="button"
+                                                class="btn btn-primary dropdown-toggle"
+                                                data-toggle="dropdown"
+                                                aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Action
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Selesai</a>
+                                                <a class="dropdown-item" href="#">Jadwal Berikutnya</a>
+                                            </div>
+                                        </div>
+                                    </td>
+
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
 

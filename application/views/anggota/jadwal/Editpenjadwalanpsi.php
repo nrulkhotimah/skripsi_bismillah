@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>SPK Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
@@ -41,16 +41,16 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
-
+                        
                         <li>
                             <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -64,10 +64,6 @@
 
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
-                        </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -89,63 +85,80 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">EDIT JADWAL</span>
                         </div>
                     </div>
-
                     <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    value=""
+                                    placeholder="Nama">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
-                                    <div style="width:2%"></div>
+                            <div class="form-group">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    value=""
+                                    placeholder="Nomor Telepon">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
+                            <div class="form-group">
+                                <input
+                                    name="nama"
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleFormControlInput1"
+                                    value=""
+                                    placeholder="Kuota Klien">
+                                <div class="invalid-feedback"></div>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Tanggal konseling</label>
+                                <input
+                                    name="tanggal_lahir"
+                                    type="date"
+                                    class="form-control "
+                                    id="exampleFormControlInput1"
+                                    value="">
+                                <div class="invalid-feedback"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Waktu Konseling</label>
+                                <input
+                                    name="tanggal_lahir"
+                                    type="time"
+                                    class="form-control "
+                                    id="exampleFormControlInput1"
+                                    value="">
+                                <div class="invalid-feedback"></div>
                             </div>
                         </form>
+                    
 
-                        <!-- data tabel -->
-                        <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
-                                </tr>
-                            </thead>
+                        <a href="<?php echo site_url('K_Penjadwalan/index')?>">
+                            <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
+                        </a>
+                        <button type="button" class="btn btn-primary" onclick="myFunction()" style="float:right;">Simpan</button>
 
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
-                                        </a>
-                                    </td>
-                                </tr>
+                        <script>
+                            function myFunction() {
+                                alert("Jadwal berhasil disimpan");
+                            }
+                        </script>
+                        </div>
 
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
 

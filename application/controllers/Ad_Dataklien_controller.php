@@ -159,7 +159,7 @@ class Ad_Dataklien_controller extends CI_Controller {
     }
 
     public function open_register() {
-        $this->load->view('admin/register/registrasi');
+        $this->load->view('klien/register/registrasi');
     }
 
     public function post_register() {
@@ -176,17 +176,17 @@ class Ad_Dataklien_controller extends CI_Controller {
             $this->Dataklien_model->tambah_user($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
-            $this->load->view("admin/register/Pageverif", $data);
+            $this->load->view("klien/register/Pageverif", $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
-            $this->load->view("admin/register/Registrasi");
+            $this->load->view("klien/register/Registrasi");
         }
 
     }
 
     public function open_verif() {
-        $this->load->view('admin/register/Pageverif');
+        $this->load->view('klien/register/Pageverif');
 
     }
 

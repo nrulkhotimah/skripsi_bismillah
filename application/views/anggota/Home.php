@@ -6,13 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>SPK Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
             rel="stylesheet"
             type="text/css"
             href="<?php echo base_url();?>assets/css/bootstrap.min.css">
+
         <!-- Our Custom CSS -->
         <link
             rel="stylesheet"
@@ -37,11 +38,12 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
+                            <a href="<?php echo site_url('K_Home/edit_Profil')?>" class="btn profile">
+                                <img src="../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
+                            <!-- <span >Hello! Admin</span> -->
                         </li>
                         <hr>
 
@@ -50,12 +52,11 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
-                            </a>
+                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan </a>
                         </li>
 
                         <li>
@@ -66,9 +67,6 @@
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
                         </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
-                        </li>
                         <hr>
 
                         <li>
@@ -89,62 +87,20 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">HOME</span>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
+                        <h2>SISTEM PENDUKUNG KEPUTUSAN</h2>
+                        <h2>DIAGNOSIS BANDING GANGGUAN AFEKTIF</h2>
+                        <br><br>
 
-                                    <div style="width:2%"></div>
+                        <span >Selamat Datang
+                        </span>
+                        <span style="color:blue;">Admin</span>
+                        <br>
 
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-
-                        <!-- data tabel -->
-                        <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
-                                        </a>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
@@ -178,6 +134,10 @@
                         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
                 });
+
+                function test() {
+                    alert("Hello! I am an alert box!");
+                }
             </script>
         </body>
 

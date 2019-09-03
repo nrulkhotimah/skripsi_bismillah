@@ -41,7 +41,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
 
@@ -50,7 +50,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
@@ -64,10 +64,6 @@
 
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
-                        </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -89,11 +85,18 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">DAFTAR JADWAL KONSELING KLIEN</span>
                         </div>
                     </div>
 
                     <div class="col-md-12">
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <!-- kolom search -->
                         <form
                             class="form-inline"
                             action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
@@ -128,57 +131,58 @@
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
                                     <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
+                                    <th colspan="2">Jadwal</th>
+                                    <th class="align-middle" rowspan="2">Keterangan</th>
+                                </tr>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Waktu</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
-                                        </a>
-                                    </td>
+                                    <td class="align-middle">s</td>
+                                    <td class="align-middle">sa</td>
+                                    <td class="align-middle">e</td>
+                                    <td class="align-middle">sa</td>
+                                    <td class="align-middle">ada</td>
                                 </tr>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </div>
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script
-                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <!-- Popper.JS -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                crossorigin="anonymous"></script>
-            <!-- Bootstrap JS -->
-            <script
-                type='text/javascript'
-                src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+                <!-- jQuery CDN - Slim version (=without AJAX) -->
+                <script
+                    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <!-- Popper.JS -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                    crossorigin="anonymous"></script>
+                <!-- Bootstrap JS -->
+                <script
+                    type='text/javascript'
+                    src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
-            <!-- jQuery Custom Scroller CDN | button menu -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+                <!-- jQuery Custom Scroller CDN | button menu -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#sidebar").mCustomScrollbar({theme: "minimal"});
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-                    $('#sidebarCollapse').on('click', function () {
-                        $('#sidebar, #content').toggleClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar, #content').toggleClass('active');
+                            $('.collapse.in').toggleClass('in');
+                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        });
                     });
-                });
-            </script>
-        </body>
+                </script>
+            </body>
 
-    </html>
+        </html>

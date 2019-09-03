@@ -39,9 +39,9 @@
                         <li>
                             <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>Profile</span>
+                                <span>Profil</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
                         </li>
                         <hr>
 
@@ -64,10 +64,6 @@
 
                         <li>
                             <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
-                        </li>
-
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
@@ -94,30 +90,23 @@
                     </div>
 
                     <div class="col-md-12">
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
+                        <tr>
+                            <th>
+                                <span>Nama klien : Tina
+                                </span>
+                                <br>
+                            </th>
+                            <td>
+                                <span>Hasil Diagnosis : Bipolar 1</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <br>
+                            <td>
+                                <span>Nama Psikolog : Ika
+                                </span>
+                            </td>
+                        </tr>
 
                         <!-- data tabel -->
                         <table
@@ -127,25 +116,26 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
+                                    <th class="align-middle" rowspan="2">Tanggal</th>
+                                    <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
+                                    <th class="align-middle" rowspan="2">Keluhan</th>
+                                    <th class="align-middle" rowspan="2">Catatan Konseling</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
-                                            <button class="btn btn-primary">Lihat Riwayat</button>
-                                        </a>
-                                    </td>
+                                    <td class="align-middle">1</td>
+                                    <td class="align-middle">23 Juni 2019</td>
+                                    <td class="align-middle">Bipolar 1</td>
+                                    <td class="align-middle">Stress</td>
+                                    <td class="align-middle">Perbanyak istirahat</td>
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
 
