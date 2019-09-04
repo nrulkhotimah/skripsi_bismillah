@@ -41,29 +41,29 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            <a href="<?php echo site_url('Ang_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('Ang_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            <a href="<?php echo site_url('Ang_Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                            <a href="<?php echo site_url('Ang_Home/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ang_Home/kriteria')?>">Kriteria Keputusan</a>
                         </li>
                         <hr>
 
@@ -91,9 +91,14 @@
 
                     <!-- kolom search -->
                     <div class="col-md-12">
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
                         <form
                             class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
+                            action="<?php echo site_url('Ang_Dataklien/search/') ?>"
                             method="get">
                             <div class="search container">
                                 <div class="row">
@@ -105,9 +110,7 @@
                                             placeholder="Search . . ."
                                             autocomplate="off">
                                     </div>
-
                                     <div style="width:2%"></div>
-
                                     <div style="width:8%">
                                         <input type="submit" class="btn btn-primary form-control w-100" value="search">
                                     </div>
@@ -139,12 +142,21 @@
                             </thead>
 
                             <tbody class="text-center">
+                                <?php 
+                                $i=0;
+                                    foreach($user as $DataKlien):
+                                        // print_r($DataKlien);
+                                        // exit();
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
+                                    <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle">
-                                        <a href="" class="btn btn-link">Toni</a>
+                                        <a
+                                            href="<?php echo site_url('Ang_Dataklien/edit/'.$DataKlien->id_user) ?>"
+                                            class="btn btn-link"><?php echo $DataKlien->nama ?></a>
                                     </td>
-                                    <td class="align-middle">P</td>
+                                    <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
                                     <td class="align-middle">
                                         <a href="" class="btn btn-link">Bipolar 1</a>
                                     </td>
@@ -170,9 +182,8 @@
                                             </div>
                                         </div>
                                     </td>
-
                                 </tr>
-
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

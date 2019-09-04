@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class K_Penjadwalan extends CI_Controller {
+class Ang_Penjadwalan extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
 
         $this->load->helper('url_helper');
-        $this->load->model('K_Penjadwalan_m');
+        $this->load->model('Ang_Penjadwalan_m');
         $this->load->library('session');
     }
 
@@ -46,12 +46,12 @@ class K_Penjadwalan extends CI_Controller {
 
 	public function index() {
         
-        $data['user'] = $this->K_Penjadwalan_m->getAll();
-        $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+        $data['user'] = $this->Ang_Penjadwalan_m->getAll();
+        $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
     }
 
     public function add() {
-        $this->load->view("koordinator/jadwal/Inputjadwalkoor");
+        $this->load->view("anggota/jadwal/Inputjadwalkoor");
     }
 
     public function save() {
@@ -63,36 +63,36 @@ class K_Penjadwalan extends CI_Controller {
         $validation->set_rules($this->rules());
 
         if($validation->run()) {
-            $this->K_Penjadwalan_m->save($post);
+            $this->Ang_Penjadwalan_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->K_Penjadwalan_m->getAll();
-            $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+            $data['user'] = $this->Ang_Penjadwalan_m->getAll();
+            $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
-            $this->load->view("koordinator/jadwal/Inputjadwalkoor");
+            $this->load->view("anggota/jadwal/Inputjadwalkoor");
         }
     }
 
     public function edit($id) {
-        $data['user'] = $this->K_Penjadwalan_m->getById($id);
+        $data['user'] = $this->Ang_Penjadwalan_m->getById($id);
 
-        $this->load->view("koordinator/jadwal/Editpenjadwalanpsi", $data);
+        $this->load->view("anggota/jadwal/Editpenjadwalanpsi", $data);
     }
 
     public function update($id) {
-        if(!isset($id)) redirect('koordinator/jadwal/Penjadwalankoor');
+        if(!isset($id)) redirect('anggota/jadwal/Penjadwalankoor');
         $post = $this->input->post();
 
-        $user = $this->K_Penjadwalan_m;
+        $user = $this->Ang_Penjadwalan_m;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
             echo "a";
-            $this->K_Penjadwalan_m->update($post,$id);
+            $this->Ang_Penjadwalan_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->K_Penjadwalan_m->getAll();
-            $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+            $data['user'] = $this->Ang_Penjadwalan_m->getAll();
+            $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
         
         $data['user'] = $user->getById($id);
 
@@ -102,10 +102,11 @@ class K_Penjadwalan extends CI_Controller {
     public function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
-        $data['user'] = $this->K_Penjadwalan_m->getAll();
+        $data['user'] = $this->Ang_Penjadwalan_m->getAll();
 
         $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
     }
+    
     public function daftarjadwal() {
         $this->load->view('koordinator/jadwal/Daftarjadwalkonsel.php');
     }

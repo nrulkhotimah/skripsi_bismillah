@@ -41,29 +41,29 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profil</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            <a href="<?php echo site_url('Ang_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Datapakar_controller/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('Ang_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            <a href="<?php echo site_url('Ang_Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                            <a href="<?php echo site_url('Ang_Home/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ang_Home/kriteria')?>">Kriteria Keputusan</a>
                         </li>
                         <hr>
 

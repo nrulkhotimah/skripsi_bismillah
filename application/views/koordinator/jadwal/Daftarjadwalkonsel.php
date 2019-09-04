@@ -145,13 +145,19 @@
                             </thead>
 
                             <tbody class="text-center">
+                            <?php 
+                            $i=0;
+                                foreach($user as $DataKlien):
+                                $i++;
+                            ?>
                                 <tr>
-                                    <td class="align-middle">s</td>
-                                    <td class="align-middle">sa</td>
+                                    <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
                                     <td class="align-middle">e</td>
                                     <td class="align-middle">sa</td>
                                     <td class="align-middle">ada</td>
                                 </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

@@ -41,29 +41,29 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! Anggota</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
                         <hr>
-                        
+
                         <li>
-                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            <a href="<?php echo site_url('Ang_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('Ang_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Penjadwalan
+                            <a href="<?php echo site_url('Ang_Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Riwayat</a>
+                            <a href="<?php echo site_url('Ang_Home/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ang_Home/kriteria')?>">Kriteria Keputusan</a>
                         </li>
                         <hr>
 
@@ -89,75 +89,88 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form
+                            action="<?php echo base_url('index.php/K_Penjadwalan/update/'.$user->id) ?>"
+                            method="post"
+                            enctype="multipart/form-data">
+
                             <div class="form-group">
                                 <input
                                     name="nama"
                                     type="text"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value=""
+                                    value="<?php echo $user->nama ?>"
                                     placeholder="Nama">
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nama') ?>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <input
-                                    name="nama"
-                                    type="text"
-                                    class="form-control"
+                                    name="nomor_telepon"
+                                    type="number"
+                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value=""
+                                    value="<?php echo $user->nomor_telepon ?>"
                                     placeholder="Nomor Telepon">
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('nomor_telepon') ?>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <input
-                                    name="nama"
+                                    name="kuota"
                                     type="text"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('kuota') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value=""
+                                    value="<?php echo $user->kuota ?>"
                                     placeholder="Kuota Klien">
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('kuota') ?>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Tanggal konseling</label>
                                 <input
-                                    name="tanggal_lahir"
+                                    name="tanggal"
                                     type="date"
-                                    class="form-control "
+                                    class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="">
-                                <div class="invalid-feedback"></div>
+                                    value="<?php echo $user->tanggal ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('kuota') ?>
+                                </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Waktu Konseling</label>
                                 <input
-                                    name="tanggal_lahir"
+                                    name="waktu"
                                     type="time"
-                                    class="form-control "
+                                    class="form-control  <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
-                                    value="">
-                                <div class="invalid-feedback"></div>
+                                    value="<?php echo $user->waktu ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('waktu') ?>
+                                </div>
                             </div>
+
+                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">
+                                <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
+                            </a>
+
+                            <input
+                                type="submit"
+                                class="btn btn-primary"
+                                name="btn"
+                                value="Save"
+                                style="float:right;"/>
                         </form>
-                    
-
-                        <a href="<?php echo site_url('K_Penjadwalan/index')?>">
-                            <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
-                        </a>
-                        <button type="button" class="btn btn-primary" onclick="myFunction()" style="float:right;">Simpan</button>
-
-                        <script>
-                            function myFunction() {
-                                alert("Jadwal berhasil disimpan");
-                            }
-                        </script>
-                        </div>
+                    </div>
 
                 </div>
             </div>
