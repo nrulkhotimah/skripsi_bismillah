@@ -9,6 +9,8 @@ class K_Penjadwalan extends CI_Controller {
         $this->load->helper('url_helper');
         $this->load->model('K_Penjadwalan_m');
         $this->load->library('session');
+
+        check_not_login();
     }
 
     public function rules() {

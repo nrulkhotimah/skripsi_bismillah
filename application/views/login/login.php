@@ -52,7 +52,7 @@
                                     class="form-control"
                                     id="inputEmail3"
                                     placeholder="Username"
-                                    required>
+                                    required="required">
                             </div>
                         </div>
 
@@ -64,7 +64,7 @@
                                     class="form-control"
                                     id="inputPassword3"
                                     placeholder="Password"
-                                    required>
+                                    required="required">
                             </div>
                         </div>
 
@@ -88,7 +88,7 @@
                             <div class="col-sm-12 daftar">
                                 <a
                                     role="button"
-                                    href="<?php echo site_url('Ad_Dataklien_controller/open_register')?>"
+                                    href="<?php echo site_url('Register/index')?>"
                                     type="submit"
                                     class="btn btn-block btn-link">Belum punya akun? Daftar disini</a>
                             </div>

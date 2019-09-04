@@ -9,6 +9,8 @@ class K_Dataklien extends CI_Controller {
         $this->load->helper('url_helper');
         $this->load->model('K_Dataklien_m');
         $this->load->library('session');
+
+        check_not_login();
     }
 
     public function rules() {
@@ -101,6 +103,10 @@ class K_Dataklien extends CI_Controller {
 
     public function catkonsel() {
         $this->load->view('koordinator/klien/Catkonselkoor');
+    }
+
+    public function tambahcat() {
+        $this->load->view('koordinator/klien/Tambahcatkonsel');
     }
 
     

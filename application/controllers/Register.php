@@ -1,22 +1,26 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined ('BASEPATH') OR exit ('No direct script access allowed');
 
-class Ang_Dataklien extends CI_Controller {
-
+class Register extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
         $this->load->helper('url_helper');
-        $this->load->model('Ang_Dataklien_m');
+        $this->load->model('Dataklien_model');
+        $this->model = $this->Dataklien_model;
         $this->load->library('session');
-
-        check_not_login();
+        
+       // check_not_login();
     }
 
     public function rules() {
         return [
             ['field' => 'id',
             'label' => 'ID',
+            ],
+
+            ['field' => 'kode',
+            'label' => 'Kode',
             ],
 
             ['field' => 'nama',
@@ -71,42 +75,36 @@ class Ang_Dataklien extends CI_Controller {
         ];
     }
 
-    public function index() {
-       $data['user'] = $this->Ang_Dataklien_m->getAll();
-        $this->load->view('anggota/klien/Dataklien', $data);
+public function index() {
+        $this->load->view('klien/register/registrasi');
     }
 
-    public function edit($id) {
-        $data['user'] = $this->Ang_Dataklien_m->getById($id);
-
-        $this->load->view("anggota/klien/Editdataklien", $data);
-    }
-
-    public function update($id) {
-        if(!isset($id)) redirect('anggota/klien/Dataklien');
+    public function post_register() {
         $post = $this->input->post();
+        $this->load->library('form_validation');
+        $this->load->helper(array('url', 'html', 'form'));
 
-        $user = $this->Ang_Dataklien_m;
         $validation = $this->form_validation;
-        $validation->set_rules($user->rules());
-
-            echo "a";
-            $this->Ang_Dataklien_m->update($post,$id);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Ang_Dataklien_m->getAll();
-            $this->load->view("anggota/klien/Dataklien", $data);
+        $validation->set_rules($this->rules());
         
-        $data['user'] = $user->getById($id);
 
-        if(!$data['user']) show_404();
+        if($validation->run()) {
+            $this->Dataklien_model->tambah_user($post);
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $data['user'] = $this->Dataklien_model->getAll();
+            $this->load->view("klien/register/Pageverif", $data);
+        } else {
+            $error=validation_errors();
+            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view("klien/register/Registrasi");
+        }
+
     }
 
-    public function catkonsel() {
-        $this->load->view('anggota/klien/Catkonselkoor');
+    public function open_verif() {
+        $this->load->view('klien/register/Pageverif');
+
     }
-
-    
-
 
 }
 

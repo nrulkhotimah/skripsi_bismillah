@@ -42,7 +42,7 @@
                 <div class="col-md-5">
                     <form action="post_register" method="post" enctype="multipart/form-data">
 
-                        <?php echo form_open('Ad_Dataklien_controller/post_register'); ?>
+                        <?php echo form_open('Register/post_register'); ?>
 
                         <div class="form-group row">
                             <div class="col-sm-12">

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>SPK Diagnosis Banding Gangguan Afektif</title>
+        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
@@ -37,32 +37,47 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/edit_profil')?>" class="btn profile">
+                            <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:12px !important;">Hello! Admin</p>
+                            <p class="text-center" style="font:10px !important;">Hello! Koordinator</p>
                         </li>
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Kli_Home/index')?>">Home</a>
+                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Kli_Home/pendaftaran')?>">Pendaftaran</a>
+                            <a href="<?php echo site_url('K_Dataklien/index')?>">Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
+                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">Penjadwalan
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('K_Home/riwayat')?>">Riwayat</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('K_Kriteria/index')?>">Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('K_Angpsi/index')?>">Anggota Psikolog</a>
                         </li>
                         <hr>
 
                         <li>
                             <a href="<?php echo site_url('Login_controller/logout')?>">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
                             </a>
                         </li>
+
                     </ul>
                 </nav>
 
@@ -74,59 +89,41 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">EDIT PROFIL</span>
+                            <span class="title font-weight-bold">EDIT CATATAN KONSELING</span>
                         </div>
-
                     </div>
 
-                        <div class="col-md-12">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nama">
-                            </div>
+                    <div class="col-md-12">
+                        <table
+                            class="table table-sm table-bordered"
+                            style="margin-top:20px;"
+                            id="result">
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Username">
-                            </div>
+                            <tbody class="text-center">
+                                <form action="">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Masukkan keluhan
+                                        </label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
 
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email">
-                            </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Masukkan catatan konseling
+                                        </label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
 
-                            <div class="form-group">
-                                <input type="number" class="form-control" id="nomor_telepon" aria-describedby="nomor_telepon" placeholder="Nomor Telepon">
-                            </div>
+                                    <input
+                                        type="submit"
+                                        class="btn btn-primary"
+                                        name="btn"
+                                        value="Save"
+                                        style="float:right; width:100px;"/>
+                                </form>
+                            </tbody>
+                        </table>
 
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password Lama">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password Baru">
-                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password">
-                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
-                            </div>
-                            <button
-                                    type="submit"
-                                    class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal"
-                                    style="margin-right:auto; float:right;"
-                                    onclick="myFunction()">
-                                    Simpan
-                                </button> 
-                                <script>
-                                    function myFunction() {
-                                        alert("Perubahan berhasil di simpan");
-                                    }
-                                </script>
-                        </form>
                     </div>
-
                 </div>
             </div>
 
@@ -159,10 +156,6 @@
                         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
                 });
-
-                function test() {
-                    alert("Hello! I am an alert box!");
-                }
             </script>
         </body>
 

@@ -6,6 +6,8 @@ class Ad_Home extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Dataklien_model');
+
+        check_not_login();
     }
 
     public function index() {

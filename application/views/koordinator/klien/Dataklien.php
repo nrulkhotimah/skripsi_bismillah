@@ -99,7 +99,7 @@
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
                         </div>
-                            <?php endif; ?>
+                        <?php endif; ?>
                         <form
                             class="form-inline"
                             action="<?php echo site_url('K_Dataklien/search/') ?>"
@@ -137,6 +137,7 @@
                                     <th class="align-middle" rowspan="2">JK</th>
                                     <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
                                     <th colspan="2">Jadwal Konseling</th>
+                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
                                     <th class="align-middle" rowspan="2">Catatan Konseling</th>
                                     <th class="align-middle" rowspan="2">Keterangan Konseling</th>
                                 </tr>
@@ -156,7 +157,9 @@
                                 <tr>
                                     <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Dataklien/edit/'.$DataKlien->id_user) ?>" class="btn btn-link"><?php echo $DataKlien->nama ?></a>
+                                        <a
+                                            href="<?php echo site_url('K_Dataklien/edit/'.$DataKlien->id_user) ?>"
+                                            class="btn btn-link"><?php echo $DataKlien->nama ?></a>
                                     </td>
                                     <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
                                     <td class="align-middle">
@@ -164,8 +167,12 @@
                                     </td>
                                     <td class="align-middle">13.00 WIB</td>
                                     <td class="align-middle">23 Januari 2019</td>
+                                    <td class="align-middle">Ika</td>
                                     <td class="align-middle">
-                                        <button type="button" class="btn btn-primary">Open</button>
+                                        <a href="<?php echo site_url('K_Dataklien/catkonsel/'.$DataKlien->id_user) ?>">
+                                            <button type="button" class="btn btn-primary">Open</button>
+                                        </a>
+
                                     </td>
                                     <td class="align-middle">
                                         <!-- Example single danger button -->
@@ -186,7 +193,7 @@
                                     </td>
 
                                 </tr>
-                                    <?php endforeach; ?>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

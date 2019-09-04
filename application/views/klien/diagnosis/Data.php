@@ -46,15 +46,15 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            <a href="<?php echo site_url('Kli_Home/index')?>">Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('K_Dataklien/index')?>">Pendaftaran</a>
+                            <a href="<?php echo site_url('Kli_Home/pendaftaran')?>">Pendaftaran</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Data Diagnosis</a>
+                            <a href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
                         </li>
                         <hr>
 

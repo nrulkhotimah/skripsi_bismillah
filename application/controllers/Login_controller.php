@@ -12,12 +12,12 @@ class Login_controller extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('session');
 
-        
-       // check_admin();
+       
     }
 
     public function index() {
-        check_already_login();
+        //check_admin();
+       check_already_login();
         $this->load->view('login/Login');
     }
 
@@ -46,12 +46,12 @@ class Login_controller extends CI_Controller {
                 } elseif ($row->role === '3') {
                     echo "<script> 
                     alert('Selamat, login berhasil');
-                    window.location='".site_url('Ad_Dataklien_controller/index')."';
+                    window.location='".site_url('Ang_Home/index')."';
                 </script>";
                 } else {
                     echo "<script> 
                     alert('Selamat, login berhasil');
-                    window.location='".site_url('Ad_Datapakar_controller/index')."';
+                    window.location='".site_url('Kli_Home/index')."';
                 </script>";
                 }
             } else {

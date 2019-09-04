@@ -9,6 +9,8 @@ class Ad_Datapakar_controller extends CI_Controller {
         $this->load->helper('url_helper');
         $this->model = $this->Datapakar_model;
         $this->load->library('session');
+
+        check_not_login();
     }
 
     public function rules() {
