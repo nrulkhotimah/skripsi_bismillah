@@ -44,7 +44,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:12px !important;">Hello! </p>
+                            <p class="text-center" style="font:12px !important;">Hello! admin </p>
                         </li>
                         <hr>
 

@@ -6,13 +6,13 @@ class Ad_Home extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Dataklien_model');
-
+        
         check_not_login();
     }
 
     public function index() {
-        $data['nama'] = "Admin";
-        check_not_login();
+        $data['nama'] = "admin";
+        //  check_not_login();
         $this->load->view('admin/Home', $data);
     }
 
