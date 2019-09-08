@@ -133,16 +133,21 @@
                             </thead>
 
                             <tbody class="text-center">
+                                <?php 
+                                $i=0;
+                                    foreach($user as $DataKlien):
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Home/lihatRiwayat') ?>">
+                                        <a href="<?php echo site_url('K_Home/lihatRiwayat/'.$DataKlien->id_user) ?>">
                                             <button class="btn btn-primary">Lihat Riwayat</button>
                                         </a>
                                     </td>
                                 </tr>
-
+                                    <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

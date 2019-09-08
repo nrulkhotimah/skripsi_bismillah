@@ -53,7 +53,16 @@ class K_Penjadwalan extends CI_Controller {
     }
 
     public function add() {
-        $this->load->view("koordinator/jadwal/Inputjadwalkoor");
+        $params['user'] = $this->K_Penjadwalan_m->getId($id);
+        $params = array(
+            'id' => $row->id,
+            'nama' => $row->nama,
+            'nomor_telepon' => $row->nomor_telepon
+        );
+        $this->session->set_userdata($params);
+       // $data['user'] = $this->K_Penjadwalan_m->getId($id);     
+
+        $this->load->view("koordinator/jadwal/Inputjadwalkoor", $params);
     }
 
     public function save() {
