@@ -12,12 +12,14 @@ class Login_controller extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('session');
 
+       // check_admin();
+
        
     }
 
     public function index() {
-        //check_admin();
-       check_already_login();
+        
+        check_already_login();
         $this->load->view('login/Login');
     }
 
@@ -30,6 +32,8 @@ class Login_controller extends CI_Controller {
                 $row = $query->row();
                 $params = array(
                     'id' => $row->id,
+                    'nama' => $row->nama,
+                    'nomor_telepon' => $row->nomor_telepon,
                     'role' => $row->role
                 );
                 $this->session->set_userdata($params);

@@ -66,20 +66,20 @@ class K_Penjadwalan_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function getId($id) {
+    // public function getId($id) {
 
-        $this->db->select('nama,nomor_telepon');
-        $this->db->from('user');
-        $this->db->where('id', $id);
+    //     $this->db->select('nama,nomor_telepon');
+    //     $this->db->from('user');
+    //     $this->db->where('id', $id);
 
-        $query = $this->db->get()->first_row();
-        print_r($query);
-        exit();
-        return $query->result();
+    //     $query = $this->db->get()->first_row();
+    //     print_r($query);
+    //     exit();
+    //     return $query->result();
         
-        //return $this->db->get()->first_row();
+    //     //return $this->db->get()->first_row();
 
-    }
+    // }
 
     public function save($post) {
         $user = new stdClass();
