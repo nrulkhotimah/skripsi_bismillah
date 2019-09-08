@@ -13,8 +13,6 @@ class Login_controller extends CI_Controller {
         $this->load->library('session');
 
        // check_admin();
-
-       
     }
 
     public function index() {
