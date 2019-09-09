@@ -81,8 +81,8 @@ class K_Penjadwalan_m extends CI_Model {
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
 
-        print_r($id_user);
-        exit();
+        // print_r($id_user);
+        // exit();
         $this->db->insert('penjadwalan', $penjadwalan);
         return $this->db->insert_id();
 
