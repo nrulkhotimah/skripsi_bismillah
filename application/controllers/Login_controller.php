@@ -12,9 +12,9 @@ class Login_controller extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('session');
 
-       check_admin();
-       print_r("halo");
-       exit();
+    //    check_admin();
+    //    print_r("halo");
+    //    exit();
     }
 
     public function index() {
@@ -37,6 +37,7 @@ class Login_controller extends CI_Controller {
                     'role' => $row->role
                 );
                 $this->session->set_userdata($params);
+
                 if($row->role === '1') {
                     echo "<script> 
                     alert('Selamat, login berhasil');

@@ -11,9 +11,9 @@
             
             $this->cek->load->model('Login_model');
             $id = $this->cek->session->userdata('id');
-            // print_r($id);
+            $user_data = $this->cek->Login_model->login($id)->row();
+            // print_r($user_data);
             // exit();
-            $user_data = $this->cek->Login_model->get($id)->row();
             return $user_data;
         }
     }
