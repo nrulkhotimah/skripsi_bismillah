@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Agency - Start Bootstrap Theme</title>
+        <title>Diagnosis gangguan afektif</title>
 
         <!-- Bootstrap core CSS -->
         <link
@@ -70,14 +70,23 @@
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#home">Home</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="#profil">Profil</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#pendaftaran">Pendaftaran</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#data">Data Diagnosis</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#logout">Logout</a>
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Login_controller/logout')?>">Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -100,6 +109,101 @@
                 </div>
             </div>
         </header>
+
+        <!-- pendaftaran -->
+        <section class="page-section" id="profil">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">Profil</h2>
+                        <h3 class="section-subheading text-muted">Edit Profi disini</h3>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <form>
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    aria-describedby="name"
+                                    placeholder="Nama">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="username"
+                                    aria-describedby="username"
+                                    placeholder="Username">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="email"
+                                    aria-describedby="email"
+                                    placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="nomor_telepon"
+                                    aria-describedby="nomor_telepon"
+                                    placeholder="Nomor Telepon">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password Lama">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password Baru">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    placeholder="Password">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="#exampleModal"
+                                style="margin-right:auto; float:right;"
+                                onclick="myFunction()">
+                                Simpan
+                            </button>
+                            <script>
+                                function myFunction() {
+                                    alert("Perubahan berhasil di simpan");
+                                }
+                            </script>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
         <!-- pendaftaran -->
         <section class="page-section" id="pendaftaran">

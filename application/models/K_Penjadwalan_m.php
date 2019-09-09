@@ -66,28 +66,13 @@ class K_Penjadwalan_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    // public function getId($id) {
-
-    //     $this->db->select('nama,nomor_telepon');
-    //     $this->db->from('user');
-    //     $this->db->where('id', $id);
-
-    //     $query = $this->db->get()->first_row();
-    //     print_r($query);
-    //     exit();
-    //     return $query->result();
-        
-    //     //return $this->db->get()->first_row();
-
-    // }
-
     public function save($post) {
-        $user = new stdClass();
-        $user->nama = $post['nama'];
-        $user->nomor_telepon = $post['nomor_telepon'];
+        // $user = new stdClass();
+        // $user->nama = $post['nama'];
+        // $user->nomor_telepon = $post['nomor_telepon'];
 
 
-        $this->db->insert($this->_table, $user);
+        // $this->db->insert($this->_table, $user);
      
         $penjadwalan = new stdClass();
         $id_user = $this->db->insert_id();
@@ -96,7 +81,11 @@ class K_Penjadwalan_m extends CI_Model {
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
 
+        print_r($id_user);
+        exit();
         $this->db->insert('penjadwalan', $penjadwalan);
+        return $this->db->insert_id();
+
     }
 
     public function update($post,$id) {

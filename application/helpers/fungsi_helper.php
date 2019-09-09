@@ -18,7 +18,7 @@
 
     function check_admin() {
         $cek =& get_instance();
-        $cek->load->library('fungsi');
+        $cek->load->library('Fungsi');
         if($cek->fungsi->user_login()->role != 1) {
             redirect('Ad_Home/index');
         }

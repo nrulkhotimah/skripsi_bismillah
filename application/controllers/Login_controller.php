@@ -12,7 +12,7 @@ class Login_controller extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->library('session');
 
-       // check_admin();
+       check_admin();
     }
 
     public function index() {
