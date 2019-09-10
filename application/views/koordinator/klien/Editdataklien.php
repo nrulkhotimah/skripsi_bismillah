@@ -37,7 +37,7 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/edit_profil')?>" class="btn profile">
+                            <a href="<?php echo site_url('K_Home/editProfil')?>" class="btn profile">
                                 <img src="../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
