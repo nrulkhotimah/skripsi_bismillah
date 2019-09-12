@@ -61,7 +61,8 @@
 
                         <li>
                             <a href="<?php echo site_url('Login_controller/logout')?>">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
                             </a>
                         </li>
                     </ul>
@@ -80,51 +81,100 @@
 
                     </div>
 
-                        <div class="col-md-12">
-                        <form>
+                    <?php if($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
+
+                    <div class="col-md-12">
+                        <form
+                            action="<?php echo base_url('index.php/Ad_Home/update/'.$user->id) ?>"
+                            method="post"
+                            enctype="multipart/form-data">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nama">
+                                <input
+                                    type="text"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    id="name"
+                                    value=" <?php echo $nama = $this->session->userdata('nama'); ?>"
+                                    aria-describedby="name"
+                                    placeholder="Nama">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Username">
+                                <input
+                                    type="text"
+                                    class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
+                                    id="username"
+                                    value="<?php echo $user->username ?>"
+                                    aria-describedby="username"
+                                    placeholder="Username">
                             </div>
 
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email">
+                                <input
+                                    type="email"
+                                    class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>"
+                                    id="email"
+                                    value="<?php echo $user->email ?>"
+                                    aria-describedby="email"
+                                    placeholder="Email">
                             </div>
 
                             <div class="form-group">
-                                <input type="number" class="form-control" id="nomor_telepon" aria-describedby="nomor_telepon" placeholder="Nomor Telepon">
+                                <input
+                                    type="number"
+                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
+                                    id="nomor_telepon"
+                                    value="<?php echo $user->nomor_telepon ?>"
+                                    aria-describedby="nomor_telepon"
+                                    placeholder="Nomor Telepon">
                             </div>
 
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password Lama">
+                                <input
+                                    type="tex"
+                                    class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
+                                    id="alamat"
+                                    value="<?php echo $user->alamat ?>"
+                                    aria-describedby="alamat"
+                                    placeholder="Alamat">
                             </div>
 
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password Baru">
+                                <input
+                                    type="password"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password"
+                                    value="<?php echo $user->password ?>"
+                                    placeholder="Password Baru">
                                 <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
                             </div>
 
                             <div class="form-group">
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <input
+                                    type="password"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password"
+                                    value="<?php echo $user->password ?>"
+                                    placeholder="Confirm Password Baru">
                                 <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
                             </div>
                             <button
-                                    type="submit"
-                                    class="btn btn-primary"
-                                    data-toggle="modal"
-                                    data-target="#exampleModal"
-                                    style="margin-right:auto; float:right;"
-                                    onclick="myFunction()">
-                                    Simpan
-                                </button> 
-                                <script>
-                                    function myFunction() {
-                                        alert("Perubahan berhasil di simpan");
-                                    }
-                                </script>
+                                type="submit"
+                                class="btn btn-primary"
+                                data-toggle="modal"
+                                data-target="#exampleModal"
+                                style="margin-right:auto; float:right;"
+                                onclick="myFunction()">
+                                Simpan
+                            </button>
+                            <script>
+                                function myFunction() {
+                                    alert("Perubahan berhasil di simpan");
+                                }
+                            </script>
                         </form>
                     </div>
 

@@ -38,14 +38,14 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Ad_Home/edit_Profil')?>" class="btn profile">
+                            <a href="<?php echo site_url('Ad_Home/edit_profil/')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <!-- <a href="" class="logout text-center">
-                                <i class="fas fa-sign-out-alt"></i>
+                            <!-- <a href="" class="logout text-center"> <i class="fas fa-sign-out-alt"></i>
                             </a> -->
-                            <p class="text-center" style="font:12px !important;">Hello! <?= $nama; ?></p>
+                            <p class="text-center" style="font:12px !important;">Hello!
+                                <?= $nama; ?></p>
                             <?php echo $id = $this->session->userdata('id'); ?>
                             <!-- <span >Hello! Admin</span> -->
                         </li>
@@ -67,7 +67,8 @@
 
                         <li>
                             <a href="<?php echo site_url('Login_controller/logout')?>">
-                                <i class="fas fa-sign-out-alt"></i> Logout
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
                             </a>
                         </li>
                     </ul>

@@ -112,10 +112,10 @@ class Ad_Dataklien_controller extends CI_Controller {
 
     public function edit($id) {
         $data['user'] = $this->Dataklien_model->getById($id);
-        
-        $this->load->view("admin/klien/Editdataklien", $data);
         // print_r($data);
         // exit();
+        $this->load->view("admin/klien/Editdataklien", $data);
+        
     }
 
     public function update($id) {
