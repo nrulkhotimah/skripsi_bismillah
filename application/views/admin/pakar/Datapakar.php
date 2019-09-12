@@ -56,9 +56,6 @@
                             <a href="<?php echo site_url('Ad_Dataklien_controller/index')?>">Data klien</a>
                         </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Ad_Home/penjadwalan')?>">Pendaftaran klien</a>
-                        </li>
                         <hr>
 
                         <li>
