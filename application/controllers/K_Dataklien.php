@@ -101,6 +101,20 @@ class K_Dataklien extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
+    public function search() {
+        $data['user'] = $this->K_Dataklien_m->getAll();
+        $keyword = $this->input->get('keyword');
+
+        if($this->input->get('keyword')) {
+            $where = array (
+                'role' => 4
+            );
+            $data['user'] = $this->K_Dataklien_m->search($keyword, $where);
+        }
+
+        $this->load->view('koordinator/klien/Dataklien', $data);
+    }
+
     public function catkonsel() {
         $this->load->view('koordinator/klien/Catkonselkoor');
     }

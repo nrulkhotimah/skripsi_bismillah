@@ -98,7 +98,6 @@
 
                             <?php echo form_open('koordinator/jadwal/Penjadwalankoor'); ?>
 
-
                             <div class="form-group">
                                 <input
                                     type="nama"
@@ -107,25 +106,26 @@
                                     name="nama"
                                     aria-describedby="emailHelp"
                                     value=" <?php echo $nama = $this->session->userdata('nama'); ?>"
-                                    placeholder="Nama" disabled>
+                                    placeholder="Nama"
+                                    disabled="disabled">
                             </div>
 
                             <div class="form-group">
-                                <input  
+                                <input
                                     name="nomor_telepon"
-                                    
-                                    class="form-control"
                                     id="nomor_telepon"
+                                    class="form-control"
                                     value=" <?php echo $nomor_telepon = $this->session->userdata('nomor_telepon'); ?>"
-                                    placeholder="Nomor Telepon" disabled>
+                                    placeholder="Nomor Telepon"
+                                    disabled="disabled">
                             </div>
 
                             <div class="form-group">
                                 <input
                                     name="kuota"
+                                    id="exampleFormControlInput1"
                                     type="text"
                                     class="form-control <?php echo form_error('kuota') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
                                     placeholder="Kuota Klien">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('kuota') ?>
@@ -136,9 +136,9 @@
                                 <label for="exampleFormControlInput1">Tanggal konseling</label>
                                 <input
                                     name="tanggal"
+                                    id="exampleFormControlInput1"
                                     type="date"
-                                    class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1">
+                                    class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('tanggal') ?>
                                 </div>
@@ -148,9 +148,9 @@
                                 <label for="exampleFormControlInput1">Waktu Konseling</label>
                                 <input
                                     name="waktu"
+                                    id="exampleFormControlInput1"
                                     type="time"
-                                    class="form-control <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1">
+                                    class="form-control <?php echo form_error('waktu') ? 'is-invalid':'' ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('waktu') ?>
                                 </div>

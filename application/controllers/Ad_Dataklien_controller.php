@@ -159,49 +159,8 @@ class Ad_Dataklien_controller extends CI_Controller {
         $this->load->view('admin/klien/Dataklien', $data);
     }
 
-    // public function open_register() {
-    //     $this->load->view('klien/register/registrasi');
-    // }
-
-    // public function post_register() {
-    //     $post = $this->input->post();
-    //     $this->load->library('form_validation');
-    //     $this->load->helper(array('url', 'html', 'form'));
-    //    // $this->id = $this->session->userdata('id');
-
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($this->rules());
-        
-
-    //     if($validation->run()) {
-    //         $this->Dataklien_model->tambah_user($post);
-    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
-    //         $data['user'] = $this->Dataklien_model->getAll();
-    //         $this->load->view("klien/register/Pageverif", $data);
-    //     } else {
-    //         $error=validation_errors();
-    //         $this->session->set_flashdata('errors', 'Gagal disimpan');
-    //         $this->load->view("klien/register/Registrasi");
-    //     }
-
-    // }
-
-    // public function open_verif() {
-    //     $this->load->view('klien/register/Pageverif');
-
-    // }
-
     public function approve($id) {
         $this->Dataklien_model->approve($id);
-
-        
-
-  
-
-        // print_r($id);
-        // exit();
-
-        
 
     }
 
