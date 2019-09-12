@@ -59,7 +59,7 @@ class Ad_Home extends CI_Controller {
         $this->load->view('admin/Home', $data);
     }
 
-    public function edit_profil($id) {
+    public function edit_profil() {
         $data['user'] = $this->Ad_Editprofil_m->getById($id);
         print_r($data);
         exit();

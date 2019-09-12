@@ -91,9 +91,10 @@ class Datapakar_model extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-    public function search($keyword) {
+    public function search($keyword, $where) {
         $this->db->select('*');
         $this->db->from('user');
+        $this->db->where_in('role',$where);
         $this->db->like('nama', $keyword);
         return $this->db->get()->result();
     }

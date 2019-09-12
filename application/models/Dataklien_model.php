@@ -149,6 +149,7 @@ class Dataklien_model extends CI_Model {
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
+        $user->password = $post['password'];
 
         $this->db->set($user);
         $this->db->where('id', $id);
@@ -174,10 +175,11 @@ class Dataklien_model extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-    public function search($keyword) {
+    public function search($keyword, $where) {
        $this->db->select('*');
        $this->db->from('user');
        $this->db->join('klien','klien.id_user=user.id');
+       $this->db->where($where);
        $this->db->like('nama', $keyword);
        return $this->db->get()->result();   
     }

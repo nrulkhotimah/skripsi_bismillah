@@ -92,7 +92,11 @@ class Ad_Datapakar_controller extends CI_Controller {
         $keyword = $this->input->get('keyword');
 
         if($this->input->get('keyword')) {
-            $data['user'] = $this->Datapakar_model->search($keyword);
+            $where = array(
+                2,
+                3
+            );
+            $data['user'] = $this->Datapakar_model->search($keyword, $where);
         }
 
         $this->load->view('admin/pakar/Datapakar', $data);

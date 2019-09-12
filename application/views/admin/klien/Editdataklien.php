@@ -263,6 +263,19 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Password</label>
+                                <input
+                                    name="password"
+                                    type="text"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $user->password ?>">
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('pekerjaan') ?>
+                                </div>
+                            </div>
+
                             <input
                                 type="submit"
                                 class="btn btn-primary"

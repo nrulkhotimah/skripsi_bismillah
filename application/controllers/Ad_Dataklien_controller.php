@@ -150,7 +150,10 @@ class Ad_Dataklien_controller extends CI_Controller {
        $keyword = $this->input->get('keyword');
 
         if($this->input->get('keyword')) {
-        $data['user'] = $this->Dataklien_model->search($keyword);
+            $where = array(
+                'role' => 4
+            );
+            $data['user'] = $this->Dataklien_model->search($keyword, $where);
         }
         
         $this->load->view('admin/klien/Dataklien', $data);
