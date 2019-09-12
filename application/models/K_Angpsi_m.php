@@ -111,9 +111,10 @@ class K_Angpsi_m extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-    public function search($keyword) {
+    public function search($keyword, $where) {
        $this->db->select('*');
        $this->db->from('user');
+       $this->db->where($where);
        $this->db->like('nama', $keyword);
        return $this->db->get()->result();   
     }

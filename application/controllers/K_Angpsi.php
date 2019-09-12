@@ -125,7 +125,10 @@ class K_Angpsi extends CI_Controller {
         $keyword = $this->input->get('keyword');
 
         if($this->input->get('keyword')) {
-            $data['user'] = $this->K_Angpsi_m->search($keyword);
+            $where = array(
+                'role' => 3
+            );
+            $data['user'] = $this->K_Angpsi_m->search($keyword, $where);
         }
 
         $this->load->view('koordinator/angpsi/Angpsikolog', $data);
