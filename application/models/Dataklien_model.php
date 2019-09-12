@@ -149,7 +149,7 @@ class Dataklien_model extends CI_Model {
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
-        $user->password = $post['password'];
+        if($post['password'] !== '') $user->password = md5($post['password']);
 
         $this->db->set($user);
         $this->db->where('id', $id);

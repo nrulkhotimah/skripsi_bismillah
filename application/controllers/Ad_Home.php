@@ -60,33 +60,36 @@ class Ad_Home extends CI_Controller {
     }
 
     public function edit_profil() {
+        $id = $this->session->userdata('id');
         $data['user'] = $this->Ad_Editprofil_m->getById($id);
-        print_r($data);
-        exit();
+        // var_dump($data['user']);die;
+        // print_r($data);
+        // exit();
 
         $this->load->view('admin/Editprofil', $data);
     }
 
-    // public function update($id) {
-    //     if(!isset($id)) redirect('admin/Editprofil');
-    //     $post = $this->input->post();
+    public function update($id) {
+        if(!isset($id)) redirect('admin/Editprofil');
+        $user = $this->Ad_Editprofil_m->getById($id);
+        if($user->password !== MD5($post['password_lama'])):
+            $this->session->set_flashdata('success', 'Password salah');
+            redirect('Ad_Home/edit_profil');
+        endif;
 
-    //     $user = $this->Ad_Editprofil_m;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($user->rules());
-      
-    //         echo "a";
-    //         $this->Ad_Editprofil_m->update($post,$id);
-    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
-    //         $data['user'] = $this->Ad_Editprofil_m->getAll();
-    //         $this->load->view("admin/Editprofil", $data);
+        $user = $this->Ad_Editprofil_m;
+        $validation = $this->form_validation;
+        $validation->set_rules($user->rules());
+
+        $this->Ad_Editprofil_m->update($id);
+        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        // $this->load->view("admin/Editprofil", $data);
+        redirect('Ad_Home/edit_profil');
        
-    //     $data['user'] = $user->getById($id);
+        $data['user'] = $user->getById($id);
 
-    //     if(!$data['user']) show_404();
-    // }
-
-
+        if(!$data['user']) show_404();
+    }
 
 }
 

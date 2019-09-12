@@ -97,7 +97,8 @@
                                     type="text"
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="name"
-                                    value=" <?php echo $nama = $this->session->userdata('nama'); ?>"
+                                    name="nama"
+                                    value=" <?php echo $user->nama ?>"
                                     aria-describedby="name"
                                     placeholder="Nama">
                             </div>
@@ -107,6 +108,7 @@
                                     type="text"
                                     class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="username"
+                                    name="username"
                                     value="<?php echo $user->username ?>"
                                     aria-describedby="username"
                                     placeholder="Username">
@@ -117,6 +119,7 @@
                                     type="email"
                                     class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="email"
+                                    name="email"
                                     value="<?php echo $user->email ?>"
                                     aria-describedby="email"
                                     placeholder="Email">
@@ -127,6 +130,7 @@
                                     type="number"
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="nomor_telepon"
+                                    name="nomor_telepon"
                                     value="<?php echo $user->nomor_telepon ?>"
                                     aria-describedby="nomor_telepon"
                                     placeholder="Nomor Telepon">
@@ -134,20 +138,31 @@
 
                             <div class="form-group">
                                 <input
-                                    type="tex"
+                                    type="text"
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="alamat"
+                                    name="alamat"
                                     value="<?php echo $user->alamat ?>"
                                     aria-describedby="alamat"
                                     placeholder="Alamat">
                             </div>
+
 
                             <div class="form-group">
                                 <input
                                     type="password"
                                     class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
                                     id="password"
-                                    value="<?php echo $user->password ?>"
+                                    name="password_lama"
+                                    placeholder="Password Lama">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password-baru"
+                                    name="password_baru"
                                     placeholder="Password Baru">
                                 <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
                             </div>
@@ -156,10 +171,12 @@
                                 <input
                                     type="password"
                                     class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
-                                    id="password"
-                                    value="<?php echo $user->password ?>"
+                                    id="password-konfirmasi"
+                                    onchange="checkPassword()"
+                                    name="password_konfirmasi"
                                     placeholder="Confirm Password Baru">
-                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                                <small id="alert-password-konfirmasi" style="color:red"></small>
+
                             </div>
                             <button
                                 type="submit"
@@ -170,11 +187,6 @@
                                 onclick="myFunction()">
                                 Simpan
                             </button>
-                            <script>
-                                function myFunction() {
-                                    alert("Perubahan berhasil di simpan");
-                                }
-                            </script>
                         </form>
                     </div>
 
@@ -214,6 +226,22 @@
                 function test() {
                     alert("Hello! I am an alert box!");
                 }
+
+                function checkPassword(){
+                    
+                  
+                }
+
+                $("#password-konfirmasi").keyup(function() {
+                    var passwordBaru = $('#password-baru').val();
+                    var passwordKonfirmasi = $('#password-konfirmasi').val();
+                    if(passwordBaru !== passwordKonfirmasi)     
+                        $('#alert-password-konfirmasi').html('Password tidak cocok');
+                    else
+                        $('#alert-password-konfirmasi').html('');
+                });
+
+
             </script>
         </body>
 

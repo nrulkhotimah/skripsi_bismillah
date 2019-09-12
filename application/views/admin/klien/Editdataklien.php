@@ -269,8 +269,8 @@
                                     name="password"
                                     type="text"
                                     class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->password ?>">
+                                    id="exampleFormControlInput1" placeholder="******"
+                                    value="">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('pekerjaan') ?>
                                 </div>

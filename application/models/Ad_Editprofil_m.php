@@ -56,25 +56,26 @@ class Ad_Editprofil_m extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('user');
-        $id = $this->session->userdata('id');
         $this->db->where('id', $id);
       
         return $this->db->get()->first_row();
     }
 
-    // public function update($post,$id) {
-    //     $user = new stdClass(); //ini adalah objek
-    //     $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
-    //     $user->nomor_telepon = $post['nomor_telepon'];
-    //     $user->alamat = $post['alamat'];
-    //     $user->email = $post['email'];
-    //     $user->username = $post['username'];
+    public function update($id) {
+        $post = $this->input->post();
+        $user = new stdClass(); //ini adalah objek
+        $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
+        $user->nomor_telepon = $post['nomor_telepon'];
+        $user->alamat = $post['alamat'];
+        $user->email = $post['email'];
+        $user->username = $post['username'];
+        if($post['password_baru'] !== '') $user->password = md5($post['password_baru']);
 
-    //     $this->db->set($user);
-    //     $this->db->where('id', $id);
+        $this->db->set($user);
+        $this->db->where('id', $id);
 
-    //     $this->db->update($this->_table, $user);
-    // }
+        $this->db->update($this->_table, $user);
+    }
 
 }
 
