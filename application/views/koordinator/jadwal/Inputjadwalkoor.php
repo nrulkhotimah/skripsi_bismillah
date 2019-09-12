@@ -104,13 +104,14 @@
                                     type="nama"
                                     class="form-control"
                                     id="nama"
+                                    name="nama"
                                     aria-describedby="emailHelp"
                                     value=" <?php echo $nama = $this->session->userdata('nama'); ?>"
                                     placeholder="Nama" disabled>
                             </div>
 
                             <div class="form-group">
-                                <input
+                                <input  
                                     name="nomor_telepon"
                                     
                                     class="form-control"

@@ -15,9 +15,6 @@ class K_Penjadwalan extends CI_Controller {
 
     public function rules() {
         return [
-            ['field' => 'id',
-            'label' => 'ID',
-            ],
 
             ['field' => 'nama',
             'label' => 'Nama',
@@ -64,16 +61,18 @@ class K_Penjadwalan extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($this->rules());
 
-        if($validation->run()) {
-            $this->K_Penjadwalan_m->save($post);
+        
+        // if($validation->run()) {
+            $id = $this->session->userdata('id');
+            $this->K_Penjadwalan_m->save($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->K_Penjadwalan_m->getAll();
             $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
-        } else {
-            $error=validation_errors();
-            $this->session->set_flashdata('errors', 'Gagal disimpan');
-            $this->load->view("koordinator/jadwal/Inputjadwalkoor");
-        }
+        // } else {
+        //     $error=validation_errors();
+        //     $this->session->set_flashdata('errors', 'Gagal disimpan');
+        //     $this->load->view("koordinator/jadwal/Inputjadwalkoor");
+        // }
     }
 
     public function edit($id) {

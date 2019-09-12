@@ -66,22 +66,15 @@ class K_Penjadwalan_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function save($post) {
-        // $user = new stdClass();
-        // $user->nama = $post['nama'];
-        // $user->nomor_telepon = $post['nomor_telepon'];
-
-
-        // $this->db->insert($this->_table, $user);
-     
+    public function save($post,$id_user) {
+    
         $penjadwalan = new stdClass();
-        $id_user = $this->db->insert_id();
         $penjadwalan->id_user = $id_user;
         $penjadwalan->waktu = $post['waktu'];
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
 
-        // print_r($id_user);
+        // print_r($penjadwalan);
         // exit();
         $this->db->insert('penjadwalan', $penjadwalan);
         return $this->db->insert_id();
