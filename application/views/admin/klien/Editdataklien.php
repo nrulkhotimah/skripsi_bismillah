@@ -267,7 +267,7 @@
                                 <label for="exampleFormControlInput1">Password</label>
                                 <input
                                     name="password"
-                                    type="text"
+                                    type="password"
                                     class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1" placeholder="******"
                                     value="">
