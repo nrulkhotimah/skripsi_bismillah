@@ -46,7 +46,6 @@
                             </a> -->
                             <p class="text-center" style="font:12px !important;">Hello!
                                 <?= $nama; ?></p>
-                            <?php echo $id = $this->session->userdata('id'); ?>
                             <!-- <span >Hello! Admin</span> -->
                         </li>
                         <hr>

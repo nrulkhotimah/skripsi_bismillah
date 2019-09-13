@@ -70,6 +70,7 @@ class Ad_Home extends CI_Controller {
     }
 
     public function update($id) {
+        $post = $this->input->post();
         if(!isset($id)) redirect('admin/Editprofil');
         $user = $this->Ad_Editprofil_m->getById($id);
         if($user->password !== MD5($post['password_lama'])):
@@ -83,7 +84,6 @@ class Ad_Home extends CI_Controller {
 
         $this->Ad_Editprofil_m->update($id);
         $this->session->set_flashdata('success', 'Berhasil disimpan');
-        // $this->load->view("admin/Editprofil", $data);
         redirect('Ad_Home/edit_profil');
        
         $data['user'] = $user->getById($id);

@@ -49,6 +49,12 @@ class Ad_Editprofil_m extends CI_Model {
             'rules' => 'required'
             ],
 
+            [
+            'field' => 'password_konfirmasi',
+            'label' => 'Konfirmasi Password',
+            'rules' => 'trim', 'required', 'matches[password]'
+            ]
+
         ];
     }
 
