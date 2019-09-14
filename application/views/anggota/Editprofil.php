@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>SPK Diagnosis Banding Gangguan Afektif</title>
 
         <!-- Bootstrap CSS CDN -->
         <link
@@ -37,11 +37,11 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Ang_Home/editProfil')?>" class="btn profile">
+                            <a href="<?php echo site_url('Ad_Home/edit_profil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! psikolog</p>
+                            <p class="text-center" style="font:12px !important;">Hello! Psikolog</p>
                         </li>
                         <hr>
 
@@ -90,13 +90,24 @@
 
                     </div>
 
+                    <?php if($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                    <?php endif; ?>
+
                     <div class="col-md-12">
-                        <form>
+                        <form
+                            action="<?php echo base_url('index.php/Ad_Home/update/'.$user->id) ?>"
+                            method="post"
+                            enctype="multipart/form-data">
                             <div class="form-group">
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="name"
+                                    name="nama"
+                                    value=" <?php echo $user->nama ?>"
                                     aria-describedby="name"
                                     placeholder="Nama">
                             </div>
@@ -104,8 +115,10 @@
                             <div class="form-group">
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="username"
+                                    name="username"
+                                    value="<?php echo $user->username ?>"
                                     aria-describedby="username"
                                     placeholder="Username">
                             </div>
@@ -113,8 +126,10 @@
                             <div class="form-group">
                                 <input
                                     type="email"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="email"
+                                    name="email"
+                                    value="<?php echo $user->email ?>"
                                     aria-describedby="email"
                                     placeholder="Email">
                             </div>
@@ -122,25 +137,40 @@
                             <div class="form-group">
                                 <input
                                     type="number"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="nomor_telepon"
+                                    name="nomor_telepon"
+                                    value="<?php echo $user->nomor_telepon ?>"
                                     aria-describedby="nomor_telepon"
                                     placeholder="Nomor Telepon">
                             </div>
 
                             <div class="form-group">
                                 <input
+                                    type="text"
+                                    class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
+                                    id="alamat"
+                                    name="alamat"
+                                    value="<?php echo $user->alamat ?>"
+                                    aria-describedby="alamat"
+                                    placeholder="Alamat">
+                            </div>
+
+                            <div class="form-group">
+                                <input
                                     type="password"
-                                    class="form-control"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
                                     id="password"
+                                    name="password_lama"
                                     placeholder="Password Lama">
                             </div>
 
                             <div class="form-group">
                                 <input
                                     type="password"
-                                    class="form-control"
-                                    id="password"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password-baru"
+                                    name="password_baru"
                                     placeholder="Password Baru">
                                 <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
                             </div>
@@ -148,10 +178,13 @@
                             <div class="form-group">
                                 <input
                                     type="password"
-                                    class="form-control"
-                                    id="password"
-                                    placeholder="Password">
-                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password-konfirmasi"
+                                    onchange="checkPassword()"
+                                    name="password_konfirmasi"
+                                    placeholder="Confirm Password Baru">
+                                <small id="alert-password-konfirmasi" style="color:red"></small>
+
                             </div>
                             <button
                                 type="submit"
@@ -162,14 +195,9 @@
                                 onclick="myFunction()">
                                 Simpan
                             </button>
-                            <script>
-                                function myFunction() {
-                                    alert("Perubahan berhasil di simpan");
-                                }
-                            </script>
                         </form>
-
                     </div>
+
                 </div>
             </div>
 
@@ -202,6 +230,22 @@
                         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
                 });
+
+                function test() {
+                    alert("Hello! I am an alert box!");
+                }
+
+                function checkPassword() {}
+
+                $("#password-konfirmasi").keyup(function () {
+                    var passwordBaru = $('#password-baru').val();
+                    var passwordKonfirmasi = $('#password-konfirmasi').val();
+                    if (passwordBaru !== passwordKonfirmasi) 
+                        $('#alert-password-konfirmasi').html('Password tidak cocok');
+                    else 
+                        $('#alert-password-konfirmasi').html('');
+                    }
+                );
             </script>
         </body>
 
