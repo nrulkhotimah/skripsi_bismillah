@@ -99,7 +99,7 @@ class K_Penjadwalan_m extends CI_Model {
         $penjadwalan->kuota = $post['kuota'];
 
         $this->db->set($penjadwalan);
-        $this->db->where('id_user', $id);
+        $this->db->where('id', $id);
         // var_dump($id); die;
         $this->db->update('penjadwalan', $penjadwalan);
     }
