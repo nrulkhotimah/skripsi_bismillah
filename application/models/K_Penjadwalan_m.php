@@ -78,7 +78,7 @@ class K_Penjadwalan_m extends CI_Model {
         $penjadwalan->kuota = $post['kuota'];
 
         $this->db->insert('penjadwalan', $penjadwalan);
-        return $this->db->insert_id();
+        // return $this->db->insert_id();
 
     }
 
@@ -100,12 +100,13 @@ class K_Penjadwalan_m extends CI_Model {
 
         $this->db->set($penjadwalan);
         $this->db->where('id_user', $id);
+        // var_dump($id); die;
         $this->db->update('penjadwalan', $penjadwalan);
     }
 
     public function delete($id){
         $this->db->where('id', $id);
-        return $this->db->delete($this->_table, array('id' => $id));
+        return $this->db->delete('penjadwalan', array('id' => $id));
     }
 
     public function search($keyword) {

@@ -159,7 +159,7 @@
                         <div class="but" style="float:RIGHT">
 
                             <a href="<?php echo site_url('K_Penjadwalan/index')?>">
-                                <button type="button" class="btn btn-primary">Cancel</button>
+                                <button type="button" class="btn btn-primary">Back</button>
                             </a>
                         </div>
                     </div>

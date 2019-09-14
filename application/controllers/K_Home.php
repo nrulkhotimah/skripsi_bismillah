@@ -87,18 +87,6 @@ class K_Home extends CI_Controller {
 		if(!$data['user']) show_404();
 	}
 
-	public function lihatRiwayat() 
-	{
-		
-			$this->load->view('koordinator/Lihatriwayat.php');
-	}
-
-	public function riwayat() 
-	{
-		// $data['user'] = $this->K_Dataklien_m->getAll();
-		$this->load->view("koordinator/Riwayatdiagnosis");
-	}
-
 	
 
     

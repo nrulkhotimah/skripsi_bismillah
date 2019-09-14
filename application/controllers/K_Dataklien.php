@@ -123,6 +123,18 @@ class K_Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Tambahcatkonsel');
     }
 
+    public function lihatRiwayat() 
+	{
+		
+			$this->load->view('koordinator/Lihatriwayat.php');
+	}
+
+	public function riwayat() 
+	{
+        $data['user'] = $this->K_Dataklien_m->getAll();
+		$this->load->view("koordinator/Riwayatdiagnosis", $data);
+	}
+
     
 
 

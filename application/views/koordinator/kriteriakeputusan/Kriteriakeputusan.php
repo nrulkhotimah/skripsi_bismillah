@@ -63,7 +63,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('K_Home/riwayat')?>">Riwayat</a>
+                            <a href="<?php echo site_url('K_Dataklien/riwayat')?>">Riwayat</a>
                         </li>
 
                         <li>
