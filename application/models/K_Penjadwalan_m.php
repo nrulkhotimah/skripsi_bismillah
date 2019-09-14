@@ -3,6 +3,8 @@
 class K_Penjadwalan_m extends CI_Model {
 
     private $_table = "user";
+    // private $_table = "penjadwalan";
+    
 
     public $id;
     public $id_user;
@@ -53,6 +55,7 @@ class K_Penjadwalan_m extends CI_Model {
         $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
         
         $query = $this->db->get();
+        // print_r($query); exit();
         return $query->result();
     }
 
@@ -74,22 +77,20 @@ class K_Penjadwalan_m extends CI_Model {
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
 
-        // print_r($penjadwalan);
-        // exit();
         $this->db->insert('penjadwalan', $penjadwalan);
         return $this->db->insert_id();
 
     }
 
     public function update($post,$id) {
-        $user = new stdClass(); //ini adalah objek
-        $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
-        $user->nomor_telepon = $post['nomor_telepon'];
+        // $user = new stdClass(); //ini adalah objek
+        // $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
+        // $user->nomor_telepon = $post['nomor_telepon'];
 
-        $this->db->set($user);
-        $this->db->where('id', $id);
+        // $this->db->set($user);
+        // $this->db->where('id', $id);
 
-        $this->db->update($this->_table, $user);
+        // $this->db->update($this->_table, $user);
      
         $penjadwalan = new stdClass();
         $penjadwalan->id_user = $id;

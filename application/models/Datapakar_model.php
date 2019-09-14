@@ -54,7 +54,6 @@ class Datapakar_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('role >=', '2');
-        
         $this->db->where('role <=', '3');
 
         $query = $this->db->get();
@@ -77,7 +76,7 @@ class Datapakar_model extends CI_Model {
         $user->nama = $post['nama'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
         $user->nomor_telepon = $post['nomor_telepon'];
-        $user->role = $post['role'];
+        // $user->role = $post['role'];
         //  print_r('user');
         // exit();
 

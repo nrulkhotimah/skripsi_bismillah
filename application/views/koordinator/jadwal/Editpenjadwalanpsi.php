@@ -99,39 +99,14 @@
                             enctype="multipart/form-data">
 
                             <div class="form-group">
-                                <input
-                                    name="nama"
-                                    type="text"
-                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->nama ?>"
-                                    placeholder="Nama">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nama') ?>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    name="nomor_telepon"
-                                    type="number"
-                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->nomor_telepon ?>"
-                                    placeholder="Nomor Telepon">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nomor_telepon') ?>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
+                                <label for="kuota">Kuota</label>
                                 <input
                                     name="kuota"
-                                    type="text"
+                                    type="number"
                                     class="form-control <?php echo form_error('kuota') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
+                                    id="kuota"
                                     value="<?php echo $user->kuota ?>"
-                                    placeholder="Kuota Klien">
+                                    >
                                 <div class="invalid-feedback">
                                     <?php echo form_error('kuota') ?>
                                 </div>
@@ -143,10 +118,10 @@
                                     name="tanggal"
                                     type="date"
                                     class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
+                                    id="tanggal"
                                     value="<?php echo $user->tanggal ?>">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('kuota') ?>
+                                    <?php echo form_error('tanggal') ?>
                                 </div>
                             </div>
 
@@ -156,7 +131,7 @@
                                     name="waktu"
                                     type="time"
                                     class="form-control  <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
+                                    id="waktu"
                                     value="<?php echo $user->waktu ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('waktu') ?>

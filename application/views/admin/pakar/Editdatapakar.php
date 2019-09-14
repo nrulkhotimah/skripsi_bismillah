@@ -152,22 +152,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="agama">Hak Akses</label>
-                                <?php $role = $user->role; ?>
-                                <select
-                                    type="select"
-                                    class="form-control"
-                                    id="exampleFormControlSelect1"
-                                    name="role"
-                                    >
-                                    <option <?php echo ($role == 'islam') ? "selected": "" ?>>Admin</option>
-                                    <option <?php echo ($role == 'kristen') ? "selected": "" ?>>Koordinator</option>
-                                    <option <?php echo ($role == 'hindu') ? "selected": "" ?>>Anggota</option>
-                                    <option <?php echo ($role == 'budha') ? "selected": "" ?>>Klien</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
                                 <label for="exampleFormControlInput1">Username</label>
                                 <input
                                     name="username"

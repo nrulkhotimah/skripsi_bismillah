@@ -102,6 +102,7 @@ class Dataklien_model extends CI_Model {
         $this->db->join('klien','klien.id_user=user.id');
         
         $query = $this->db->get();
+        
         return $query->result();
     }
 

@@ -95,8 +95,8 @@ class K_Home extends CI_Controller {
 
 	public function riwayat() 
 	{
-		$data['user'] = $this->K_Dataklien_m->getAll();
-		$this->load->view("koordinator/Riwayatdiagnosis", $data);
+		// $data['user'] = $this->K_Dataklien_m->getAll();
+		$this->load->view("koordinator/Riwayatdiagnosis");
 	}
 
 	

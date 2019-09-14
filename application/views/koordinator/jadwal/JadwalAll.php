@@ -89,22 +89,13 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">DAFTAR JADWAL KONSELING KLIEN</span>
+                            <span class="title font-weight-bold">JADWAL PSIKOLOG</span>
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <?php if($this->session->flashdata('success')): ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                        <?php endif; ?>
-
                         <!-- kolom search -->
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Dataklien_controller/search/') ?>"
-                            method="get">
+                        <form class="form-inline" action="" method="get">
                             <div class="search container">
                                 <div class="row">
                                     <div style="width:90%">
@@ -134,9 +125,11 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
+                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
+                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
                                     <th colspan="2">Jadwal</th>
-                                    <th class="align-middle" rowspan="2">Keterangan</th>
+                                    <th class="align-middle" rowspan="2">Kuota Penuh</th>
+                                    <th class="align-middle" rowspan="2">Sisa Kuota</th>
                                 </tr>
                                 <tr>
                                     <th>Tanggal</th>
@@ -145,54 +138,64 @@
                             </thead>
 
                             <tbody class="text-center">
-                            <?php 
-                            $i=0;
-                                foreach($user as $DataKlien):
-                                $i++;
-                            ?>
+                                <?php 
+                                $i=0;
+                                    foreach($user as $Jadwal):
+                                    $i++;
+                                ?>
                                 <tr>
                                     <td class="align-middle"><?php echo $i ?></td>
-                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
-                                    <td class="align-middle">e</td>
-                                    <td class="align-middle">sa</td>
-                                    <td class="align-middle">ada</td>
+                                    <td class="align-middle"><?php echo $Jadwal->nama ?></td>
+                                    <td class="align-middle"><?php echo $Jadwal->nomor_telepon ?></td>
+                                    <td class="align-middle"><?php echo $Jadwal->tanggal ?></td>
+                                    <td class="align-middle"><?php echo $Jadwal->waktu ?></td>
+                                    <td class="align-middle"><?php echo $Jadwal->kuota ?></td>
+                                    <td class="align-middle"></td>
+
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
+                        <div class="but" style="float:RIGHT">
+
+                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">
+                                <button type="button" class="btn btn-primary">Cancel</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- jQuery CDN - Slim version (=without AJAX) -->
-                <script
-                    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                    crossorigin="anonymous"></script>
-                <!-- Popper.JS -->
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                    crossorigin="anonymous"></script>
-                <!-- Bootstrap JS -->
-                <script
-                    type='text/javascript'
-                    src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+            <!-- jQuery CDN - Slim version (=without AJAX) -->
+            <script
+                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <!-- Popper.JS -->
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                crossorigin="anonymous"></script>
+            <!-- Bootstrap JS -->
+            <script
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
 
-                <!-- jQuery Custom Scroller CDN | button menu -->
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+            <!-- jQuery Custom Scroller CDN | button menu -->
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-                <script type="text/javascript">
-                    $(document).ready(function () {
-                        $("#sidebar").mCustomScrollbar({theme: "minimal"});
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-                        $('#sidebarCollapse').on('click', function () {
-                            $('#sidebar, #content').toggleClass('active');
-                            $('.collapse.in').toggleClass('in');
-                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                        });
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar, #content').toggleClass('active');
+                        $('.collapse.in').toggleClass('in');
+                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                     });
-                </script>
-            </body>
+                });
+            </script>
+        </body>
 
-        </html>
+    </html>

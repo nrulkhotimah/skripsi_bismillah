@@ -44,8 +44,8 @@ class K_Penjadwalan extends CI_Controller {
     }
 
 	public function index() {
-        
         $data['user'] = $this->K_Penjadwalan_m->getAll();
+        // print_r($data); exit();
         $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
     }
 
@@ -61,7 +61,6 @@ class K_Penjadwalan extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($this->rules());
 
-        
         // if($validation->run()) {
             $id = $this->session->userdata('id');
             $this->K_Penjadwalan_m->save($post,$id);
@@ -77,6 +76,8 @@ class K_Penjadwalan extends CI_Controller {
 
     public function edit($id) {
         $data['user'] = $this->K_Penjadwalan_m->getById($id);
+        // print_r($data);
+        // exit();
 
         $this->load->view("koordinator/jadwal/Editpenjadwalanpsi", $data);
     }
@@ -107,8 +108,11 @@ class K_Penjadwalan extends CI_Controller {
 
         $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
     }
-    public function daftarjadwal() {
-        $this->load->view('koordinator/jadwal/Daftarjadwalkonsel.php');
+
+    public function seluruhJadwal() {
+        $data['user'] = $this->K_Penjadwalan_m->getAll();
+        // print_r($data); exit;
+        $this->load->view("koordinator/jadwal/JadwalAll", $data);
     }
 
     
