@@ -12,7 +12,10 @@ class Ang_Home extends CI_Controller {
 	{
 		$this->load->view('anggota/Home');
 
-	
+	}
+
+	public function editProfil() {
+		$this->load->view('anggota/Editprofil');
 	}
 	
 	public function riwayat() {

@@ -37,7 +37,7 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
+                            <a href="<?php echo site_url('Ang_Home/editProfil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
