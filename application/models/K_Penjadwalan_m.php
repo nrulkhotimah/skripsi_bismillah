@@ -85,11 +85,6 @@ class K_Penjadwalan_m extends CI_Model {
         // $user = new stdClass(); //ini adalah objek
         // $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
         // $user->nomor_telepon = $post['nomor_telepon'];
-
-        // $this->db->set($user);
-        // $this->db->where('id', $id);
-
-        // $this->db->update($this->_table, $user);
      
         $penjadwalan = new stdClass();
         $penjadwalan->waktu = $post['waktu'];
@@ -98,7 +93,6 @@ class K_Penjadwalan_m extends CI_Model {
 
         $this->db->set($penjadwalan);
         $this->db->where('id', $id);
-        // var_dump($id); die;
         $this->db->update('penjadwalan', $penjadwalan);
     }
 
