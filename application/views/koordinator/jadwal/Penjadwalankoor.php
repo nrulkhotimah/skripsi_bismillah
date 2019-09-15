@@ -151,14 +151,14 @@
                                     <td class="align-middle"><?php echo $Penjadwalan->kuota ?></td>
                                     <td class="align-middle"></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('K_Penjadwalan/edit/'.$Penjadwalan->id_user) ?>">
+                                        <a href="<?php echo site_url('K_Penjadwalan/edit/'.$Penjadwalan->id) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
 
                                     <td class="align-middle">
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('K_Penjadwalan/delete/'.$Penjadwalan->id_user) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('K_Penjadwalan/delete/'.$Penjadwalan->id) ?>')"
                                             href="#!"
                                             class="btn tbn-small text-secondary"
                                             method="delete">
