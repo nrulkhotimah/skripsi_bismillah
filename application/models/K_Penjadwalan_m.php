@@ -63,7 +63,6 @@ class K_Penjadwalan_m extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('penjadwalan');
-        // $this->db->join('user','user.id=penjadwalan.id_user');
         $this->db->where('id', $id);
 
         return $this->db->get()->first_row();
@@ -93,8 +92,6 @@ class K_Penjadwalan_m extends CI_Model {
         // $this->db->update($this->_table, $user);
      
         $penjadwalan = new stdClass();
-        // $penjadwalan->id_user = $id;
-        // print_r($penjadwalan); exit();
         $penjadwalan->waktu = $post['waktu'];
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
