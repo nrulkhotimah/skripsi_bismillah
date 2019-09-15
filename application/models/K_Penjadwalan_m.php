@@ -94,12 +94,13 @@ class K_Penjadwalan_m extends CI_Model {
      
         $penjadwalan = new stdClass();
         $penjadwalan->id_user = $id;
+        // print_r($penjadwalan); exit();
         $penjadwalan->waktu = $post['waktu'];
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
 
         $this->db->set($penjadwalan);
-        $this->db->where('id', $id);
+        $this->db->where('id_user', $id);
         // var_dump($id); die;
         $this->db->update('penjadwalan', $penjadwalan);
     }
