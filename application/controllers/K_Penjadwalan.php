@@ -10,6 +10,11 @@ class K_Penjadwalan extends CI_Controller {
         $this->load->model('K_Penjadwalan_m');
         $this->load->library('session');
 
+        function hitungKuota($kuota) {
+            $sisakuota = 10 - $kuota;
+            return $sisakuota;
+        }
+
         //check_not_login();
     }
 
@@ -46,6 +51,7 @@ class K_Penjadwalan extends CI_Controller {
 	public function index() {
         $data['user'] = $this->K_Penjadwalan_m->getAll();
         $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+
     }
 
     public function add() {
