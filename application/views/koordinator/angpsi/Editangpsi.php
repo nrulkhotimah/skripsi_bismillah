@@ -93,8 +93,20 @@
                 <div style="float:right">
                     <span class="title font-weight-bold">EDIT ANGGOTA PSIKOLOG</span>
                 </div>
-
             </div>
+
+            <!-- breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item btn-link">
+                        <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                    </li>
+                    <li class="breadcrumb-item btn-link">
+                        <a href="<?php echo site_url('K_Angpsi/index') ?>">Anggota psikolog</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit Anggota psikolog</li>
+                </ol>
+            </nav>
 
             <?php if($this->session->flashdata('success')): ?>
             <div class="alert alert-success" role="alert">

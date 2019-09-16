@@ -163,7 +163,41 @@
                                     </td>
                                     <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
                                     <td class="align-middle">
-                                        <a href="" class="btn btn-link">Bipolar 1</a>
+                                        <a href="" class="btn btn-link" data-toggle="modal" data-target="#hasil">Bipolar 1</a>
+
+                                        <!-- Modal -->
+                                        <div
+                                            class="modal fade"
+                                            id="hasil"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Edit Hasil Diagnosis</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <input
+                                                                type="text"
+                                                                class="form-control"
+                                                                id="diagnosis"
+                                                                placeholder="name@example.com">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td class="align-middle">13.00 WIB</td>
                                     <td class="align-middle">23 Januari 2019</td>

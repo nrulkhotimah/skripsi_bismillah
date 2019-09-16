@@ -3,15 +3,18 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #fff;
 }
+
 *{
     font-size: 13px !important;
 }
+
 p {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     line-height: 1.7em;
     color: #999;
 }
+
 .login-part{
     font-size: 30px !important;
 }
@@ -61,9 +64,11 @@ a:focus {
 a .logout{
     padding: 0 !important
 }
+
 .fas{
     margin-right: 20px !important; 
 }
+
 #sidebar {
     width: 200px;
     position: fixed;
@@ -71,7 +76,7 @@ a .logout{
     left: 0;
     height: 100vh;
     z-index: 999;
-    background-color: #3195c4;
+    /* background-color: #3195c4; */
     color: #fff;
     transition: all 0.3s;
 }
@@ -101,7 +106,7 @@ a .logout{
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #3195c4;
+    /* background: #3195c4; */
 }
 
 #sidebar ul.components {
@@ -120,14 +125,14 @@ a .logout{
 }
 
 #sidebar ul li a:hover {
-    color: #3195c4;
+    /* color: #3195c4; */
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #3195c4;
+    /* background: #3195c4; */
 }
 
 a[data-toggle="collapse"] {
@@ -149,7 +154,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #3195c4;
+    /* background: #3195c4; */
 }
 
 ul.CTAs {

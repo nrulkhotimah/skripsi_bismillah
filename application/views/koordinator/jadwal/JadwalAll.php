@@ -93,6 +93,19 @@
                         </div>
                     </div>
 
+                     <!-- breadcrumb -->
+                     <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Penjadwalan/index') ?>">Penjadwalan</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Seluruh jadwal</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
                         <!-- kolom search -->
                         <form class="form-inline" action="" method="get">
@@ -156,12 +169,7 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <div class="but" style="float:RIGHT">
-
-                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">
-                                <button type="button" class="btn btn-primary">Back</button>
-                            </a>
-                        </div>
+         
                     </div>
                 </div>
             </div>

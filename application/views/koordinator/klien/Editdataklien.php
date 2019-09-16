@@ -92,6 +92,19 @@
                         </div>
                     </div>
 
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Dataklien/index') ?>">Dataklien</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Dataklien</li>
+                        </ol>
+                    </nav>
+
                     <?php if($this->session->flashdata('success')): ?>
                     <div class="alert alert-success" role="alert">
                         <?php echo $this->session->flashdata('success'); ?>

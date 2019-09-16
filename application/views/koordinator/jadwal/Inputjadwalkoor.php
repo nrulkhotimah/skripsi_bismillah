@@ -93,6 +93,19 @@
                         </div>
                     </div>
 
+                     <!-- breadcrumb -->
+                     <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Penjadwalan/index') ?>">Penjadwalan</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Tambah jadwal</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
                         <form action="save" method="post" enctype="multipart/form-data">
 
@@ -155,10 +168,6 @@
                                     <?php echo form_error('waktu') ?>
                                 </div>
                             </div>
-
-                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">
-                                <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
-                            </a>
 
                             <input
                                 type="submit"

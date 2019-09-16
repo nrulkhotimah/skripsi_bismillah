@@ -72,6 +72,7 @@ class K_Dataklien extends CI_Controller {
     }
 
     public function index() {
+    
         $data['user'] = $this->K_Dataklien_m->getAll();
         $this->load->view('koordinator/klien/Dataklien', $data);
     }

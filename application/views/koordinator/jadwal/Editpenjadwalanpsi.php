@@ -92,6 +92,20 @@
                             <span class="title font-weight-bold">EDIT JADWAL</span>
                         </div>
                     </div>
+
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Penjadwalan/index') ?>">Penjadwalan</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit penjadwalan psikolog</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
                         <form
                             action="<?php echo base_url('index.php/K_Penjadwalan/update/'.$user->id) ?>"
@@ -105,8 +119,7 @@
                                     type="number"
                                     class="form-control <?php echo form_error('kuota') ? 'is-invalid':'' ?>"
                                     id="kuota"
-                                    value="<?php echo $user->kuota ?>"
-                                    >
+                                    value="<?php echo $user->kuota ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('kuota') ?>
                                 </div>
@@ -137,10 +150,6 @@
                                     <?php echo form_error('waktu') ?>
                                 </div>
                             </div>
-
-                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">
-                                <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
-                            </a>
 
                             <input
                                 type="submit"

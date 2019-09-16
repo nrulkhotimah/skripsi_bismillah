@@ -54,6 +54,10 @@ class Ad_Datapakar_controller extends CI_Controller {
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 
+    public function hakAkses() {
+        
+    }
+
     public function edit($id) {
         $data['user'] = $this->Datapakar_model->getById($id);
         // print_r($data);
@@ -101,6 +105,8 @@ class Ad_Datapakar_controller extends CI_Controller {
 
         $this->load->view('admin/pakar/Datapakar', $data);
     }
+
+
 
 
 }
