@@ -149,7 +149,7 @@
                                     <td class="align-middle"><?php echo $Penjadwalan->tanggal ?></td>
                                     <td class="align-middle"><?php echo $Penjadwalan->waktu ?></td>
                                     <td class="align-middle"><?php echo $Penjadwalan->kuota ?></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle"><?= hitungKuota($Penjadwalan->kuota) ?></td>
                                     <td class="align-middle">
                                         <a href="<?php echo site_url('K_Penjadwalan/edit/'.$Penjadwalan->id) ?>">
                                             <i class="fas fa-pen"></i>
