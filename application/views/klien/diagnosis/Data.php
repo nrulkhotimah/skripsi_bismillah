@@ -88,7 +88,7 @@
                             <a  class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a  class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Login_controller/logout')?>">Logout</a>
@@ -129,9 +129,8 @@
                                     <td class="align-middle">1</td>
                                     <td class="align-middle">Bipolar</td>
                                     <td class="align-middle">23 Juni 2019</td>
-                                    <td class="align-middle">
-                                        <button class="btn btn-primary">Lihat
-                                        </button>
+                                    <td class="align-middle">                                       
+                                        <a class="btn btn-primary" href="<?php echo site_url('Kli_diagnosis/catkonsel')?>">Lihat</a>
                                     </td>
                                 </tr>
                             </tbody>

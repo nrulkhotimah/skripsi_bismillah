@@ -1,88 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
+
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-        <title>Sistem Pendukung Keputusan Diagnosis Banding Gangguan Afektif</title>
+        <title>Diagnosis gangguan afektif</title>
 
-        <!-- Bootstrap CSS CDN -->
+        <!-- Bootstrap core CSS -->
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-        <!-- Our Custom CSS -->
+            href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
+
+        <!-- Custom fonts for this template -->
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/css/custom.css">
+            href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+            rel="stylesheet"
+            type="text/css">
+        <link
+            href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+            rel='stylesheet'
+            type='text/css'>
+        <link
+            href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
+            rel='stylesheet'
+            type='text/css'>
+        <link
+            href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
+            rel='stylesheet'
+            type='text/css'>
 
-        <!-- Font Awesome JS -->
-        <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/font/js/solid.js"></script>
-        <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
-
+        <!-- Custom styles for this template -->
+        <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="<?php echo base_url();?>assets/css/agency.css">
     </head>
 
-    <body>
+    <body id="page-top">
 
-        <div class="wrapper">
-            <!-- Sidebar -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <ul class="list-unstyled components">
-                        <li>
-                            <a href="<?php echo site_url('Admin/editProfilkoor')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>Profile</span>
-                            </a>
-                            <p class="text-center" style="font:10px !important;">Hello! klien</p>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">DiagAfektif</a>
+                <button
+                    class="navbar-toggler navbar-toggler-right"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                id="#home"
+                                href="<?php echo site_url('Kli_Home/index')?>">Home</a>
                         </li>
-                        <hr>
 
-                        <li>
-                            <a href="<?php echo site_url('Kli_Home/index')?>">Home</a>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Kli_Home/editProfil')?>">Profil</a>
                         </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Kli_Home/pendaftaran')?>">Pendaftaran</a>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Kli_pendaftaran/index')?>">Pendaftaran</a>
                         </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
                         </li>
-                        <hr>
 
-                        <li>
-                            <a href="<?php echo site_url('Login_controller/logout')?>">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Logout
-                            </a>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Login_controller/logout')?>">Logout</a>
                         </li>
 
                     </ul>
-                </nav>
+                </div>
+            </div>
+        </nav>
 
-                <!-- Page Content -->
-                <div id="content">
-                    <div class="jumbotron">
-                        <button type="button" id="sidebarCollapse" class="btn">
-                            <i class="fas fa-bars"></i>
-                        </button>
-
-                        <div style="float:right">
-                            <span class="title font-weight-bold">CATATAN KONSELING</span>
-                        </div>
+        <!-- edit -->
+        <section class="page-section" id="profil">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">CatKel</h2>
+                        <h3 class="section-subheading text-muted">Catatan dan keluhan</h3>
                     </div>
+                </div>
 
+                <div class="row text-left">
                     <div class="col-md-12">
 
-                        <span>Nama : Tika
+                        <span>Nama Klien : Tika
                         </span>
                         <br>
                         <!-- data tabel -->
@@ -92,52 +127,55 @@
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" rowspan="2">Keluhan </th>
-                                    <th class="align-middle" rowspan="2">Catatan </th>
+                                    <th class="align-middle" rowspan="2">Keluhan
+                                    </th>
+                                    <th class="align-middle" rowspan="2">Catatan
+                                    </th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <tr>
-                                    <td class="align-middle">1</td>
+                                    <td class="align-middle">merasa pusing</td>
                                     <td class="align-middle">Bipolar</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
 
-            <!-- jQuery CDN - Slim version (=without AJAX) -->
-            <script
-                src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-            <!-- Popper.JS -->
-            <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-                integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-                crossorigin="anonymous"></script>
-            <!-- Bootstrap JS -->
+                </div>
+
+            </section>
+
+            <!-- Bootstrap core JavaScript -->
             <script
                 type='text/javascript'
-                src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-
-            <!-- jQuery Custom Scroller CDN | button menu -->
+                src="<?php echo base_url();?>assets/font/js/solid.js"></script>
             <script
-                src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
+            <script
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    $("#sidebar").mCustomScrollbar({theme: "minimal"});
+            <!-- Plugin JavaScript -->
+            <script
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                    $('#sidebarCollapse').on('click', function () {
-                        $('#sidebar, #content').toggleClass('active');
-                        $('.collapse.in').toggleClass('in');
-                        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                    });
-                });
-            </script>
+            <!-- Contact form JavaScript -->
+            <script
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/js/jqBootstrapValidation.js"></script>
+            <script
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/js/contact_me.js"></script>
+
+            <!-- Custom scripts for this template -->
+            <script
+                type='text/javascript'
+                src="<?php echo base_url();?>assets/js/agency.min.js"></script>
+
         </body>
 
     </html>
