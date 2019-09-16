@@ -1,3 +1,4 @@
+@@ -1,373 +0,0 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,22 +66,23 @@
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#home">Home</a>
+                            <a class="nav-link js-scroll-trigger" id="#home" href="<?php echo site_url('Kli_Home/index')?>">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#profil">Profil</a>
+                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Kli_Home/editProfil')?>">Profil</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#pendaftaran">Pendaftaran</a>
+                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Kli_pendaftaran/index')?>">Pendaftaran</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="#data">Data Diagnosis</a>
+                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
                         </li>
 
                         <li class="nav-item">
@@ -110,234 +112,6 @@
             </div>
         </header>
 
-        <!-- pendaftaran -->
-        <section class="page-section" id="profil">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Profil</h2>
-                        <h3 class="section-subheading text-muted">Edit Profi disini</h3>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <form>
-                            <div class="form-group">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="name"
-                                    aria-describedby="name"
-                                    placeholder="Nama">
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    id="username"
-                                    aria-describedby="username"
-                                    placeholder="Username">
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    id="email"
-                                    aria-describedby="email"
-                                    placeholder="Email">
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    type="number"
-                                    class="form-control"
-                                    id="nomor_telepon"
-                                    aria-describedby="nomor_telepon"
-                                    placeholder="Nomor Telepon">
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    id="password"
-                                    placeholder="Password Lama">
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    id="password"
-                                    placeholder="Password Baru">
-                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    type="password"
-                                    class="form-control"
-                                    id="password"
-                                    placeholder="Password">
-                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
-                            </div>
-                            <button
-                                type="submit"
-                                class="btn btn-primary"
-                                data-toggle="modal"
-                                data-target="#exampleModal"
-                                style="margin-right:auto; float:right;"
-                                onclick="myFunction()">
-                                Simpan
-                            </button>
-                            <script>
-                                function myFunction() {
-                                    alert("Perubahan berhasil di simpan");
-                                }
-                            </script>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- pendaftaran -->
-        <section class="page-section" id="pendaftaran">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Pendaftaran</h2>
-                        <h3 class="section-subheading text-muted">Pilih jadwal konseling</h3>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <!-- data tabel -->
-                        <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
-                                    <th colspan="2">Jadwal</th>
-                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
-                                    <th class="align-middle" rowspan="2">Keterangan</th>
-                                </tr>
-
-                                <tr>
-                                    <th>Tanggal</th>
-                                    <th>Waktu</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">Tika</td>
-                                    <td class="align-middle">23 Juni 2019</td>
-                                    <td class="align-middle">14.00</td>
-                                    <td class="align-middle">09832732901</td>
-                                    <td class="align-middle">
-                                        <button class="btn btn-primary">Pilih Psikolog</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Data diagnosis -->
-        <section class="bg-light page-section" id="data">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Data Diagnosis</h2>
-                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien.</h3>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-12">
-                        <!-- data tabel -->
-                        <table
-                            class="table table-sm table-bordered"
-                            style="margin-top:20px;"
-                            id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
-                                    <th class="align-middle" rowspan="2">Tanggal Konseling</th>
-                                    <th class="align-middle" rowspan="2">Catatan Konseling</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="text-center">
-                                <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">Bipolar</td>
-                                    <td class="align-middle">23 Juni 2019</td>
-                                    <td class="align-middle">
-                                        <button class="btn btn-primary">Lihat
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-4">
-                        <span class="copyright">Copyright &copy; Your Website 2019</span>
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="list-inline social-buttons">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <ul class="list-inline quicklinks">
-                            <li class="list-inline-item">
-                                <a href="#">Privacy Policy</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">Terms of Use</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
 
         <!-- Bootstrap core JavaScript -->
         <script
