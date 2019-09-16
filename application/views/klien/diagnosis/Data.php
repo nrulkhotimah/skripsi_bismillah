@@ -88,12 +88,12 @@
                             <a  class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
                         </li>
-
+                        
                         <li class="nav-item">
                             <a  class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Login_controller/logout')?>">Logout</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
