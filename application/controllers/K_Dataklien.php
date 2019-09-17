@@ -120,6 +120,10 @@ class K_Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Catkonselkoor');
     }
 
+    public function editcatkonsel() {
+        $this->load->view('koordinator/klien/Editcatkonsel');
+    }
+
     public function tambahcat() {
         $this->load->view('koordinator/klien/Tambahcatkonsel');
     }

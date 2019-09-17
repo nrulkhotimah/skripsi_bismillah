@@ -93,8 +93,21 @@
                         </div>
                     </div>
 
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Dataklien/index') ?>">Dataklien</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Catatan konseling</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
-                    <table
+                        <table
                             class="table table-sm table-bordered"
                             style="margin-top:20px;"
                             id="result">
@@ -112,8 +125,7 @@
                                     <td class="align-middle">2</td>
 
                                     <td class="align-middle">
-                                        <a
-                                            href="">
+                                        <a href="<?php echo site_url('K_Dataklien/editcatkonsel') ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
@@ -122,19 +134,11 @@
                             </tbody>
                         </table>
 
-                        <div class="but" style="float:LEFT">
-                            <a href="">
-                                <button type="button" class="btn btn-primary">Kembali ke Halaman Sebelumnya</button>
-                            </a>
-                        </div>
-
                         <div class="but" style="float:RIGHT">
                             <a href="<?php echo site_url('K_Dataklien/tambahcat') ?>">
                                 <button type="button" class="btn btn-primary">Tambah</button>
                             </a>
                         </div>
-
-
 
                     </div>
                 </div>

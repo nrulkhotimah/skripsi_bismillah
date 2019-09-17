@@ -93,6 +93,22 @@
                         </div>
                     </div>
 
+                        <!-- breadcrumb -->
+                        <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Dataklien/index') ?>">Dataklien</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('K_Dataklien/catkonsel') ?>">Catatan konseling</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit catatan konseling</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
                         <table
                             class="table table-sm table-bordered"
