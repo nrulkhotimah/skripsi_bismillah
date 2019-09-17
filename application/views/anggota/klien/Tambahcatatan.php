@@ -37,11 +37,11 @@
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
                         <li>
-                            <a href="<?php echo site_url('Ang_Home/editProfil')?>" class="btn profile">
+                            <a href="<?php echo site_url('K_Home/editProfil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! psikolog</p>
+                            <p class="text-center" style="font:10px !important;">Hello! koordinator</p>
                         </li>
                         <hr>
 
@@ -85,88 +85,56 @@
                         </button>
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">JADWAL PSIKOLOG</span>
+                            <span class="title font-weight-bold">TAMBAH CATATAN KONSELING</span>
                         </div>
                     </div>
 
+                        <!-- breadcrumb -->
+                        <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang_Dataklien/index') ?>">Dataklien</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang_Dataklien/catkonsel') ?>">Catatan konseling</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Tambah catatan konseling</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
-                        <!-- kolom search -->
-                        <form class="form-inline" action="" method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-
-                        <!-- data tabel -->
                         <table
                             class="table table-sm table-bordered"
                             style="margin-top:20px;"
                             id="result">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th colspan="2">Jadwal</th>
-                                    <th class="align-middle" rowspan="2">Kuota Penuh</th>
-                                    <th class="align-middle" rowspan="2">Sisa Kuota</th>
-                                    <th colspan="2">Aksi</th>
-                                </tr>
-                                <tr>
-                                    <th>Tanggal</th>
-                                    <th>Waktu</th>
-                                    <th>Edit</th>
-                                    <th>Hapus</th>
-                                </tr>
-                            </thead>
 
                             <tbody class="text-center">
-                                <?php 
-                                $i=0;
-                                    foreach($user as $Dataklien):
-                                    $i++;
-                                ?>
-                                <tr>
-                                    <td class="align-middle"><?php echo $i ?></td>
-                                    <td class="align-middle"><?php echo $Dataklien->tanggal ?></td>
-                                    <td class="align-middle"><?php echo $Dataklien->waktu ?></td>
-                                    <td class="align-middle"><?php echo $Dataklien->kuota ?></td>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('Ang_Penjadwalan/edit/'.$Dataklien->id_user) ?>">
-                                            <i class="fas fa-pen"></i>
-                                        </a>
-                                    </td>
+                                <form action="">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Masukkan keluhan
+                                        </label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
 
-                                    <td class="align-middle">
-                                        <a href="<?php echo site_url('Ang_Penjadwalan/delete/'.$Dataklien->id_user) ?>">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
-                                    </td>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Masukkan catatan konseling
+                                        </label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
 
-                                </tr>
-                                <?php endforeach; ?>
+                                    <input
+                                        type="submit"
+                                        class="btn btn-primary"
+                                        name="btn"
+                                        value="Save"
+                                        style="float:right; width:100px;"/>
+                                </form>
                             </tbody>
                         </table>
-                        <div class="but" style="float:RIGHT">
-                            <a href="<?php echo site_url('Ang_Penjadwalan/add')?>">
-                                <button type="button" class="btn btn-primary">Tambah</button>
-                            </a>
-                        </div>
+
                     </div>
                 </div>
             </div>

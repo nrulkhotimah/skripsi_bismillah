@@ -163,7 +163,9 @@
                                     <td class="align-middle">13.00 WIB</td>
                                     <td class="align-middle">23 Januari 2019</td>
                                     <td class="align-middle">
+                                    <a href="<?php echo site_url('Ang_Dataklien/catkonsel') ?>">
                                         <button type="button" class="btn btn-primary">Open</button>
+                                        </a>
                                     </td>
                                     <td class="align-middle">
                                         <!-- Example single danger button -->

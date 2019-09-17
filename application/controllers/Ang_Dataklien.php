@@ -105,6 +105,9 @@ class Ang_Dataklien extends CI_Controller {
         $this->load->view('anggota/klien/Catkonselkoor');
     }
 
+    public function tambahcatatan() {
+        $this->load->view('anggota/klien/Tambahcatatan');
+    }
     
 
 

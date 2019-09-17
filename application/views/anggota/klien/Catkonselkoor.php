@@ -89,8 +89,21 @@
                         </div>
                     </div>
 
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang_Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang_Dataklien/index') ?>">Dataklien</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Catatan konseling</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
-                    <table
+                        <table
                             class="table table-sm table-bordered"
                             style="margin-top:20px;"
                             id="result">
@@ -108,8 +121,7 @@
                                     <td class="align-middle">2</td>
 
                                     <td class="align-middle">
-                                        <a
-                                            href="">
+                                        <a href="">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
@@ -119,66 +131,11 @@
                         </table>
 
                         <div class="but" style="float:RIGHT">
-                            <a href="">
-                                <button type="button" class="btn btn-primary">Kembali ke Halaman Sebelumnya</button>
+                            <a href="<?php echo site_url('Ang_Dataklien/tambahcatatan') ?>">
+                                <button type="button" class="btn btn-primary">
+                                    Tambah
+                                </button>
                             </a>
-
-                            <!-- Button trigger modal -->
-                            <button
-                                type="button"
-                                class="btn btn-primary"
-                                data-toggle="modal"
-                                data-target="#exampleModal">
-                                Tambah
-                            </button>
-
-                            <!-- Modal -->
-                            <div
-                                class="modal fade"
-                                id="exampleModal"
-                                tabindex="-1"
-                                role="dialog"
-                                aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Catatan Konseling</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form >
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Masukkan Keluhan Klien</label>
-                                                    <input
-                                                        type="email"
-                                                        class="form-control"
-                                                        id="exampleFormControlInput1"
-                                                        placeholder="Merasa kesulitan tidur di malam hari">
-                                                </div>
-                                            </form>
-
-                                            <form >
-                                                <div class="form-group">
-                                                    <label for="exampleFormControlInput1">Masukkan Catatan Konseling Klien</label>
-                                                    <input
-                                                        type="email"
-                                                        class="form-control"
-                                                        id="exampleFormControlInput1"
-                                                        placeholder="Memperbanya minum air putih dan konsumsi buah ">
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
