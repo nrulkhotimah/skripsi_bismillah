@@ -93,8 +93,8 @@
                         </div>
                     </div>
 
-                        <!-- breadcrumb -->
-                        <nav aria-label="breadcrumb">
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item btn-link">
                                 <a href="<?php echo site_url('K_Home/index')?>">Home</a>
