@@ -82,10 +82,6 @@ class Kli_Home extends CI_Controller {
 		$this->load->view('klien/Home.php');
 	}
 
-	public function home2() {
-		$this->load->view('klien/Home2');
-	}
-
     public function editProfil() {
 
 		$id = $this->session->userdata('id');
@@ -98,6 +94,23 @@ class Kli_Home extends CI_Controller {
 	public function update($id) {
 		$post = $this->input->post();
 		if(!isset($id)) redirect('klien/Home');
+		$user = $this->Kli_Editprofil_m->getById($id);
+		if($user->password !== MD5($post['password_lama'])):
+			$this->session->set_flashdata('success', 'Password salah');
+			redirect('Kli_Home/editProfil');
+		endif;
+
+		$user = $this->Kli_Editprofil_m;
+		$validation = $this->form_validation;
+		$validation->set_rules($user->rules());
+
+		$this->Kli_Editprofil_m->update($id);
+		$this->session->set_flashdata('success', 'Berhasil disimpan');
+		redirect('Kli_Home/editProfil');
+
+		$data['user'] = $user->getById($id);
+
+		if(!$data['user']) show_404();
 	
 	}
 

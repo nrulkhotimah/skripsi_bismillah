@@ -124,9 +124,6 @@
                                     class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->nama ?>">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nama') ?>
-                                </div>
                             </div>
 
                             <div class="form-group">
@@ -138,9 +135,6 @@
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->tanggal_lahir ?>"
                                     >
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('tanggal_lahir') ?>
-                                </div>
                             </div>
 
                             <fieldset class="form-group">
@@ -181,9 +175,6 @@
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->alamat ?>">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('alamat') ?>
-                                </div>
                             </div>
 
                             <div class="form-group">
@@ -240,9 +231,6 @@
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->pekerjaan ?>">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('pekerjaan') ?>
-                                </div>
                             </div>
 
                             <div class="form-group">
@@ -253,9 +241,6 @@
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo  $user->nomor_telepon?>">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nomor-telepon') ?>
-                                </div>
                             </div>
 
                             <div class="form-group">
@@ -266,9 +251,6 @@
                                     class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo $user->email ?>">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('email') ?>
-                                </div>
                             </div>
 
                             <div class="form-group">
@@ -279,31 +261,43 @@
                                     class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                                     id="exampleFormControlInput1"
                                     value="<?php echo  $user->username ?>">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('username') ?>
-                                </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Password</label>
                                 <input
-                                    name="password"
                                     type="password"
                                     class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1" placeholder="******"
-                                    value="">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('pekerjaan') ?>
-                                </div>
+                                    id="password"
+                                    name="password_lama"
+                                    placeholder="Password Lama">
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password-baru"
+                                    name="password_baru"
+                                    placeholder="Password Baru">
+                                <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+                            </div>
+
+                            <div class="form-group">
+                                <input
+                                    type="password"
+                                    class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
+                                    id="password-konfirmasi"
+                                    onchange="checkPassword()"
+                                    name="password_konfirmasi"
+                                    placeholder="Confirm Password Baru">
+                                <small id="alert-password-konfirmasi" style="color:red"></small>
+
                             </div>
 
                             <button
                                 type="submit"
                                 class="btn btn-primary"
-                                data-toggle="modal"
-                                data-target="#exampleModal"
-                                style="margin-right:auto; float:right;"
-                                onclick="myFunction()">
+                                style="margin-right:auto; float:right;">
                                 Simpan
                             </button>
                         </form>

@@ -176,7 +176,6 @@
                                     name="password_konfirmasi"
                                     placeholder="Confirm Password Baru">
                                 <small id="alert-password-konfirmasi" style="color:red"></small>
-
                             </div>
                             <button
                                 type="submit"

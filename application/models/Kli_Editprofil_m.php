@@ -96,6 +96,7 @@ class Kli_Editprofil_m extends CI_Model {
         $user = new stdClass(); //ini adalah objek
         $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
         $user->nomor_telepon = $post['nomor_telepon'];
+        $user->jenis_kelamin = $post['jenis_kelamin'];
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
@@ -105,7 +106,21 @@ class Kli_Editprofil_m extends CI_Model {
         $this->db->where('id', $id);
 
         $this->db->update($this->_table, $user);
+     
+        $klien = new stdClass();
+        $klien->id_user = $id;
+        $klien->tanggal_lahir = $post['tanggal_lahir'];
+        $klien->agama = $post['agama'];
+        $klien->marital_status = $post['marital_status'];
+        $klien->pekerjaan = $post['pekerjaan'];
+
+        $this->db->set($klien);
+        $this->db->where('id_user', $id);
+        $this->db->update('klien', $klien);
+
     }
+
+
 
 }
 

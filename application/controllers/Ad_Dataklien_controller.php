@@ -126,7 +126,7 @@ class Ad_Dataklien_controller extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
       
-            echo "a";
+            // echo "a";
             $this->Dataklien_model->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_model->getAll();
