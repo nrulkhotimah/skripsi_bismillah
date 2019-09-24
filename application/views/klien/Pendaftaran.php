@@ -68,28 +68,33 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a  class="nav-link js-scroll-trigger"
+                            <a
+                                class="nav-link js-scroll-trigger"
                                 id="#home"
                                 href="<?php echo site_url('Kli_Home/index')?>">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a  class="nav-link js-scroll-trigger"
+                            <a
+                                class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Kli_Home/editProfil')?>">Profil</a>
                         </li>
 
                         <li class="nav-item">
-                            <a  class="nav-link js-scroll-trigger"
+                            <a
+                                class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Kli_pendaftaran/index')?>">Pendaftaran</a>
                         </li>
 
                         <li class="nav-item">
-                            <a  class="nav-link js-scroll-trigger"
+                            <a
+                                class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
                         </li>
 
                         <li class="nav-item">
-                            <a  class="nav-link js-scroll-trigger"
+                            <a
+                                class="nav-link js-scroll-trigger"
                                 href="<?php echo site_url('Login_controller/logout')?>">Logout</a>
                         </li>
                     </ul>
@@ -138,7 +143,43 @@
                                     <td class="align-middle">14.00</td>
                                     <td class="align-middle">09832732901</td>
                                     <td class="align-middle">
-                                        <button class="btn btn-primary">Pilih Psikolog</button>
+
+                                        <!-- Button trigger modal -->
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            data-toggle="modal"
+                                            data-target="#modaldiagnosis">
+                                            Pilih Psikolog
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div
+                                            class="modal fade"
+                                            id="modaldiagnosis"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Jadwal Terpilih</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                            Waktu : <br>
+                                                            Tanggal :<br>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </td>
                                 </tr>
                             </tbody>

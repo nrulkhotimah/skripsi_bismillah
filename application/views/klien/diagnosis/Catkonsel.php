@@ -114,6 +114,19 @@
                     </div>
                 </div>
 
+                <!-- breadcrumb -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item btn-link">
+                            <a href="<?php echo site_url('Kli_Home/index')?>">Home</a>
+                        </li>
+                        <li class="breadcrumb-item btn-link">
+                            <a href="<?php echo site_url('Kli_diagnosis/index') ?>">Data diagnosis</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Catatan dan keluhan</li>
+                    </ol>
+                </nav>
+
                 <div class="row text-left">
                     <div class="col-md-12">
 
