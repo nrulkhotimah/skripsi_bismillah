@@ -41,22 +41,22 @@ class Login_controller extends CI_Controller {
                 if($row->role === '1') {
                     echo "<script> 
                     alert('Selamat, login berhasil');
-                    window.location='".site_url('Ad_Home/index')."';
+                    window.location='".site_url('Admin/Home/index')."';
                 </script>";
                 } elseif ($row->role === '2') {
                     echo "<script> 
                     alert('Selamat, login berhasil');
-                    window.location='".site_url('K_Home/index')."';
+                    window.location='".site_url('Koor/Home/index')."';
                 </script>";
                 } elseif ($row->role === '3') {
                     echo "<script> 
                     alert('Selamat, login berhasil');
-                    window.location='".site_url('Ang_Home/index')."';
+                    window.location='".site_url('Ang/Home/index')."';
                 </script>";
                 } else {
                     echo "<script> 
                     alert('Selamat, login berhasil');
-                    window.location='".site_url('Kli_Home/index')."';
+                    window.location='".site_url('Klien/Home/index')."';
                 </script>";
                 }
             } else {
