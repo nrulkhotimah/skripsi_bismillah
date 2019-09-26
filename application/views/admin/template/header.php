@@ -28,6 +28,9 @@
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
 
+        <!-- script bootstrap datatables -->
+        <script src="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"></script>
+
     </head>
 
     <body>

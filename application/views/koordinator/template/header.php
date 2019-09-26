@@ -56,6 +56,11 @@
                         </li>
 
                         <li>
+                            <a href="<?php echo site_url('Koor/Penjadwalan/index')?>">Diagnosis
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="<?php echo site_url('Koor/Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>

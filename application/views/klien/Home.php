@@ -50,7 +50,6 @@
     </head>
 
     <body id="page-top">
-
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -70,19 +69,15 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" id="#home" href="<?php echo site_url('Kli_Home/index')?>">Home</a>
+                            <a class="nav-link js-scroll-trigger" id="#home" href="<?php echo site_url('Klien/Home/index')?>">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Kli_Home/editProfil')?>">Profil</a>
+                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/editProfil')?>">Profil</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Kli_pendaftaran/index')?>">Pendaftaran</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
+                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
                         </li>
 
                         <li class="nav-item">
