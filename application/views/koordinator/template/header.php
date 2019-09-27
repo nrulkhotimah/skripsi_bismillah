@@ -56,7 +56,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koor/Penjadwalan/index')?>">Diagnosis
+                            <a href="<?php echo site_url('Koor/Diagnosis/index')?>">Diagnosis
                             </a>
                         </li>
 

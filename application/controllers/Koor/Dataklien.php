@@ -94,14 +94,14 @@ class Dataklien extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-            echo "a";
             $this->Dataklien_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_m->getAll();
+            $this->load->view('koordinator/template/header');
+            $this->load->view('koordinator/template/footer');
             $this->load->view("koordinator/klien/Dataklien", $data);
         
         $data['user'] = $user->getById($id);
-
         if(!$data['user']) show_404();
     }
 
