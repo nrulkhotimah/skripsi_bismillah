@@ -49,15 +49,13 @@ class Datapakar extends CI_Controller {
 
     public function index() {
         $data['user'] = $this->Datapakar_m->getAll();
+        // echo "<pre>";
         // print_r($data);
         // exit();
+        // echo "</pre>";
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Datapakar", $data);
-    }
-
-    public function hakAkses() {
-        
     }
 
     public function edit($id) {
@@ -77,10 +75,11 @@ class Datapakar extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-        echo "a";
-        $this->Datapakar_model->update($post, $id);
+        $this->Datapakar_m->update($post, $id);
         $this->session->set_flashdata('success', 'Berhasil');
         $data['user'] = $this->Datapakar_m->getAll();
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Datapakar", $data);
 
         $data['user'] = $user->getById($id);
@@ -91,7 +90,8 @@ class Datapakar extends CI_Controller {
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Datapakar_m->getAll();
-
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 

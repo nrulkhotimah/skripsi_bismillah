@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <!-- data tabel -->
-<table class="table table-bordered" style="margin-top:20px; ;" id="example">
+<table class="table table-bordered" style="margin-top:20px; ;" id="klien1">
     <thead class="text-center">
         <tr>
             <th class="align-middle">No</th>
@@ -65,7 +65,7 @@
 
             <td class="align-middle">
                 <a
-                    onclick="deleteConfirm('<?php echo site_url('Ad_Dataklien_controller/delete/'.$DataKlien->id_user) ?>')"
+                    onclick="deleteConfirm('<?php echo site_url('Admin/Dataklien/delete/'.$DataKlien->id_user) ?>')"
                     href="#!"
                     class="btn tbn-small text-secondary"
                     method="delete">
@@ -123,6 +123,6 @@
 src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script>
 $(document).ready(function () {
-$('#example').DataTable();
+$('#klien1').DataTable();
 });
 </script>

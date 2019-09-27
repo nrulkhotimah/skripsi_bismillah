@@ -102,13 +102,17 @@ class Dataklien extends CI_Controller {
         $validation->set_rules($this->rules());
 
         if($validation->run()) {
-            $this->Dataklien_model->save($post);
+            $this->Dataklien_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_m->getAll();
-           $this->load->view("admin/klien/Dataklien", $data);
+            $this->load->view('admin/template/header');
+            $this->load->view('admin/template/footer');
+            $this->load->view("admin/klien/Dataklien", $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view('admin/template/header');
+            $this->load->view('admin/template/footer');
             $this->load->view("admin/klien/Tambahklien");
         }
 
@@ -136,6 +140,8 @@ class Dataklien extends CI_Controller {
             $this->Dataklien_model->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_m->getAll();
+            $this->load->view('admin/template/header');
+            $this->load->view('admin/template/footer');
             $this->load->view("admin/klien/Dataklien", $data);
        
         $data['user'] = $user->getById($id);
@@ -147,7 +153,8 @@ class Dataklien extends CI_Controller {
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Dataklien_m->getAll();
-
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/template/footer');
         $this->load->view('admin/klien/Dataklien', $data);
     }
 

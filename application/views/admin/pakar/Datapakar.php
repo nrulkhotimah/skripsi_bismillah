@@ -13,47 +13,18 @@
                         </div>
                         <?php endif; ?>
 
-                        <!-- kolom search -->
-                        <form
-                            class="form-inline"
-                            action="<?php echo site_url('Ad_Datapakar_controller/search/') ?>"
-                            method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-
                         <!-- data tabel -->
 
-                        <table class="table table-sm table-bordered" style="margin-top:20px;">
+                        <table class="table table-sm table-bordered" style="margin-top:20px;" id="pakar1">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Lengkap</th>
-                                    <th class="align-middle" rowspan="2">JK</th>
-                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
-                                    <th class="align-middle" rowspan="2">Hak Akses</th>
-                                    <th colspan="2">Aksi</th>
-                                </tr>
-                                <tr>
-                                    <th>Edit</th>
-                                    <th>Hapus</th>
+                                    <th class="align-middle" >No</th>
+                                    <th class="align-middle" >Nama Lengkap</th>
+                                    <th class="align-middle" >Jenis Kelamin</th>
+                                    <th class="align-middle" >Nomor Telepon</th>
+                                    <th class="align-middle" >Hak Akses</th>
+                                    <th class="align-middle">Edit</th>
+                                    <th class="align-middle">Hapus</th>
                                 </tr>
                             </thead>
 
@@ -61,8 +32,6 @@
                                 <?php
                                 $i=0;
                                     foreach($user as $DataPakar):
-                                        // print_r($DataPakar);
-                                        // exit();
                                         $i++;
                                     ?>
                                 <tr>
@@ -80,7 +49,7 @@
                                     <td class="align-middle">
 
                                         <a
-                                            onclick="deleteConfirm('<?php echo site_url('Ad_Datapakar_controller/delete/'.$DataPakar->id) ?>')"
+                                            onclick="deleteConfirm('<?php echo site_url('Admin/Datapakar/delete/'.$DataPakar->id) ?>')"
                                             href="#!"
                                             class="btn tbn-small text-secondary"
                                             method="delete">
@@ -128,3 +97,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- script datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function () {
+$('#pakar1').DataTable();
+});
+</script>

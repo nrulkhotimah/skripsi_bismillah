@@ -58,16 +58,13 @@ class Datapakar_m extends CI_Model {
 
         $query = $this->db->get();
         return $query->result();
-        // print_r('query');
-        // exit();
     }
 
     public function getById($id) {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('id', $id);
-// print_r($id);
-//         exit();
+
         return $this->db->get()->first_row();
     }
 
@@ -91,13 +88,13 @@ class Datapakar_m extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-    public function search($keyword, $where) {
-        $this->db->select('*');
-        $this->db->from('user');
-        $this->db->where_in('role',$where);
-        $this->db->like('nama', $keyword);
-        return $this->db->get()->result();
-    }
+    // public function search($keyword, $where) {
+    //     $this->db->select('*');
+    //     $this->db->from('user');
+    //     $this->db->where_in('role',$where);
+    //     $this->db->like('nama', $keyword);
+    //     return $this->db->get()->result();
+    // }
 
 
 
