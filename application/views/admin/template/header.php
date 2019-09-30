@@ -63,6 +63,10 @@
                             <a href="<?php echo site_url('Admin/Dataklien/index')?>">Data klien</a>
                         </li>
 
+                        <li>
+                            <a href="<?php echo site_url('Admin/Dataklien/index')?>">Pendaftaran klien</a>
+                        </li>
+
                         <hr>
 
                         <li>

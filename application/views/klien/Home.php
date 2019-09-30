@@ -1,4 +1,3 @@
-@@ -1,373 +0,0 @@
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +16,13 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
+            href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css');?>">
 
         <!-- Custom fonts for this template -->
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css">
+            href="<?php echo base_url('assets/vendor/fontawesome-free/css/all.min.css');?>">
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -46,7 +45,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/css/agency.css">
+            href="<?php echo base_url('assets/css/agency.css');?>">
     </head>
 
     <body id="page-top">

@@ -85,7 +85,7 @@ class Home extends CI_Controller {
     public function editProfil() {
 
 		$id = $this->session->userdata('id');
-		$data['user'] = $this->Kli_Editprofil_m->getById($id);
+		$data['user'] = $this->Editprofil_m->getById($id);
 		// print_r($data); exit();
 
 		$this->load->view('klien/Editprofil', $data);
@@ -94,10 +94,10 @@ class Home extends CI_Controller {
 	public function update($id) {
 		$post = $this->input->post();
 		if(!isset($id)) redirect('klien/Home');
-		$user = $this->Kli_Editprofil_m->getById($id);
+		$user = $this->Editprofil_m->getById($id);
 		if($user->password !== MD5($post['password_lama'])):
 			$this->session->set_flashdata('success', 'Password salah');
-			redirect('Kli_Home/editProfil');
+			redirect('Klien/Home/editProfil');
 		endif;
 
 		$user = $this->Kli_Editprofil_m;
@@ -106,7 +106,7 @@ class Home extends CI_Controller {
 
 		$this->Kli_Editprofil_m->update($id);
 		$this->session->set_flashdata('success', 'Berhasil disimpan');
-		redirect('Kli_Home/editProfil');
+		redirect('Klien/Home/editProfil');
 
 		$data['user'] = $user->getById($id);
 

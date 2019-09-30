@@ -144,6 +144,12 @@ class Dataklien_m extends CI_Model {
         return $this->db->insert_id();
     }
 
+    // public function tambah_user($input) {
+       
+    //     $this->db->insert('user', $input);
+    //     $this->db->insert('klien', $input);
+    // }
+
     public function save($post) {
         $user = new stdClass();
         $user->nama = $post['nama'];
