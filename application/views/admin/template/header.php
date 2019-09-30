@@ -64,7 +64,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/Dataklien/index')?>">Pendaftaran klien</a>
+                            <a href="<?php echo site_url('Admin/Pendaftaran/index')?>">Pendaftaran klien</a>
                         </li>
 
                         <hr>
