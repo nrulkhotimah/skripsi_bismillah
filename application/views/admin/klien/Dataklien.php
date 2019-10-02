@@ -13,7 +13,7 @@
 <?php endif; ?>
 
 <!-- data tabel -->
-<table class="table table-bordered" style="margin-top:20px; ;" id="klien1">
+<table class="table table-bordered" style="margin-top:20px;" id="example">
     <thead class="text-center">
         <tr>
             <th class="align-middle">No</th>
@@ -123,6 +123,6 @@
 src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 <script>
 $(document).ready(function () {
-$('#klien1').DataTable();
+$('#example').DataTable();
 });
 </script>
