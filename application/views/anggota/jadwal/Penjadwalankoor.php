@@ -5,47 +5,21 @@
                     </div>
 
                     <div class="col-md-12">
-                        <!-- kolom search -->
-                        <form class="form-inline" action="" method="get">
-                            <div class="search container">
-                                <div class="row">
-                                    <div style="width:90%">
-                                        <input
-                                            class="form-control w-100"
-                                            type="text"
-                                            name="keyword"
-                                            placeholder="Search . . ."
-                                            autocomplate="off">
-                                    </div>
-
-                                    <div style="width:2%"></div>
-
-                                    <div style="width:8%">
-                                        <input type="submit" class="btn btn-primary form-control w-100" value="search">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
 
                         <!-- data tabel -->
                         <table
                             class="table table-sm table-bordered"
                             style="margin-top:20px;"
-                            id="result">
+                            id="example">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th colspan="2">Jadwal</th>
-                                    <th class="align-middle" rowspan="2">Kuota Penuh</th>
-                                    <th class="align-middle" rowspan="2">Sisa Kuota</th>
-                                    <th colspan="2">Aksi</th>
-                                </tr>
-                                <tr>
-                                    <th>Tanggal</th>
-                                    <th>Waktu</th>
-                                    <th>Edit</th>
-                                    <th>Hapus</th>
+                                    <th class="align-middle col5" >No</th>
+                                    <th class="align-middle col20" >Tanggal</th>
+                                    <th class="align-middle col20" >Waktu</th>
+                                    <th class="align-middle col15" >Kuota Penuh</th>
+                                    <th class="align-middle col15" >Sisa Kuota</th>
+                                    <th class="align-middle col10" >Edit</th>
+                                    <th class="align-middle col10" >Hapus</th>
                                 </tr>
                             </thead>
 
@@ -85,3 +59,13 @@
                     </div>
                 </div>
             </div>
+
+<!-- script datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function () {
+$('#example').DataTable();
+});
+</script>

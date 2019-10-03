@@ -28,6 +28,12 @@
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
 
+        <!-- script bootstrap datatables -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="<?php echo base_url();?>assets/css/dataTable.css">
+
     </head>
 
     <body>

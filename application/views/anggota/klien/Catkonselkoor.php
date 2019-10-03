@@ -26,7 +26,7 @@
                                 <tr>
                                     <th class="align-middle" rowspan="2">KELUHAN</th>
                                     <th class="align-middle" rowspan="2">CATATAN</th>
-                                    <th class="align-middle" rowspan="2">EDIT</th>
+                                    <th class="align-middle col8" rowspan="2">EDIT</th>
                                 </tr>
                             </thead>
 
