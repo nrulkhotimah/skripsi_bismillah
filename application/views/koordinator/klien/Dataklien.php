@@ -10,51 +10,23 @@
     <?php echo $this->session->flashdata('success'); ?>
 </div>
 <?php endif; ?>
-<form
-    class="form-inline"
-    action="<?php echo site_url('K_Dataklien/search/') ?>"
-    method="get">
-    <div class="search container">
-        <div class="row">
-            <div style="width:90%">
-                <input
-                    class="form-control w-100"
-                    type="text"
-                    name="keyword"
-                    placeholder="Search . . ."
-                    autocomplate="off">
-            </div>
-
-            <div style="width:2%"></div>
-
-            <div style="width:8%">
-                <input type="submit" class="btn btn-primary form-control w-100" value="search">
-            </div>
-        </div>
-
-    </div>
-</form>
 
 <!-- data tabel -->
 <table
     class="table table-sm table-bordered"
     style="margin-top:20px;"
-    id="result">
+    id="example">
     <thead class="text-center">
         <tr>
-            <th class="align-middle" rowspan="2">No</th>
-            <th class="align-middle" rowspan="2">Nama Klien</th>
-            <th class="align-middle" rowspan="2">JK</th>
-            <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
-            <th colspan="2">Jadwal Konseling</th>
-            <th class="align-middle" rowspan="2">Nama Psikolog</th>
-            <th class="align-middle" rowspan="2">Catatan Konseling</th>
-            <th class="align-middle" rowspan="2">Keterangan Konseling</th>
-        </tr>
-
-        <tr>
-            <th>Waktu</th>
-            <th>Tanggal</th>
+            <th class="align-middle" >No</th>
+            <th class="align-middle" >Nama Klien</th>
+            <th class="align-middle" >Jenis Kelamin</th>
+            <th class="align-middle" >Hasil Diagnosis</th>
+            <th class="align-middle" >Waktu</th>
+            <th class="align-middle" >Tanggal</th>
+            <th class="align-middle" >Nama Psikolog</th>
+            <th class="align-middle" >Catatan Konseling</th>
+            <th class="align-middle" >Keterangan Konseling</th>
         </tr>
     </thead>
 
@@ -144,3 +116,13 @@
 
 </div>
 </div>
+
+<!-- script datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+$(document).ready(function () {
+$('#example').DataTable();
+});
+</script>
