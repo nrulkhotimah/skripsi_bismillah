@@ -16,7 +16,7 @@
 <table class="table table-bordered" style="margin-top:20px;" id="klien1">
     <thead class="text-center">
         <tr>
-            <th class="align-middle">No</th>
+            <th class="align-middle col5">No</th>
             <th class="align-middle">Nama Klien</th>
             <th class="align-middle">Aksi</th>
         </tr>

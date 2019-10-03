@@ -43,11 +43,11 @@
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Tanggal</th>
-                                    <th class="align-middle" rowspan="2">Hasil Diagnosis</th>
-                                    <th class="align-middle" rowspan="2">Keluhan</th>
-                                    <th class="align-middle" rowspan="2">Catatan Konseling</th>
+                                    <th class="align-middle col5" >No</th>
+                                    <th class="align-middle col10" >Tanggal</th>
+                                    <th class="align-middle col20" >Hasil Diagnosis</th>
+                                    <th class="align-middle col30" >Keluhan</th>
+                                    <th class="align-middle col30" >Catatan Konseling</th>
                                 </tr>
                             </thead>
 

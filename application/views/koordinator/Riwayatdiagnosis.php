@@ -38,9 +38,9 @@
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Klien</th>
-                                    <th class="align-middle" rowspan="2">Aksi</th>
+                                    <th class="align-middle col5" rowspan="2">No</th>
+                                    <th class="align-middle " rowspan="2">Nama Klien</th>
+                                    <th class="align-middle " rowspan="2">Aksi</th>
                                 </tr>
                             </thead>
 

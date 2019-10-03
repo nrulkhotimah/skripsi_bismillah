@@ -16,7 +16,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css');?>">
+            href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
         <link
