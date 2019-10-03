@@ -16,7 +16,7 @@
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/vendor/bootstrap/css/bootstrap.min.css">
+            href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
         <link
@@ -71,22 +71,17 @@
                 <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
                         id="#home"
-                        href="<?php echo site_url('Kli_Home/index')?>">Home</a>
+                        href="<?php echo site_url('Klien/Home/index')?>">Home</a>
                 </li>
 
                 <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
-                        href="<?php echo site_url('Kli_Home/editProfil')?>">Profil</a>
+                        href="<?php echo site_url('Klien/Home/editProfil')?>">Profil</a>
                 </li>
 
                 <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
-                        href="<?php echo site_url('Kli_pendaftaran/index')?>">Pendaftaran</a>
-                </li>
-
-                <li class="nav-item">
-                    <a  class="nav-link js-scroll-trigger"
-                        href="<?php echo site_url('Kli_diagnosis/index')?>">Data Diagnosis</a>
+                        href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
                 </li>
 
                 <li class="nav-item">

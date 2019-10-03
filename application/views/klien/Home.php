@@ -94,14 +94,8 @@
             <div class="container">
                 <div class="intro-text">
                     <div class="intro-lead-in">Selamat Datang di DiagAfektif</div>
-                    <!-- <div class="intro-heading text-uppercase">It's Nice To Meet You</div> -->
-                    <a
-                        class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-                        href="#services">Diagnosis Ulang</a>
-                    <a
-                        class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-                        href="#services">Diagnosis
-                    </a>
+                    <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+                
                 </div>
             </div>
         </header>
