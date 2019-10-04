@@ -173,7 +173,7 @@ class Dataklien extends CI_Controller {
         $validation->set_rules($user->rules());
       
             // echo "a";
-            $this->Dataklien_model->update($post,$id);
+            $this->Dataklien_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_m->getAll();
             $this->load->view('admin/template/header');

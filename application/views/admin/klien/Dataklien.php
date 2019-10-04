@@ -16,13 +16,12 @@
 <table class="table table-bordered" style="margin-top:20px;" id="example">
     <thead class="text-center">
         <tr>
-            <th class="align-middle">No</th>
+            <th class="align-middle col5">No</th>
             <th class="align-middle">Nama Klien</th>
-            <th class="align-middle">JK</th>
+            <th class="align-middle">Jenis Kelamin</th>
             <th class="align-middle">Status</th>
             <th class="align-middle">Tanggal Lahir</th>
             <th class="align-middle">Nomor Telepon</th>
-            <th class="align-middle">Aksi</th>
             <th class="align-middle">Edit</th>
             <th class="align-middle">Hapus</th>
         </tr>
@@ -43,19 +42,6 @@
             <td class="align-middle"><?php echo $DataKlien->marital_status ?></td>
             <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
             <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
-
-            <td class="align-middle">
-                <form action="">
-                    <a
-                        href="<?php echo site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id) ?>">
-                        <i class=" mr-3 text-success fas fa-check"></i>
-                    </a>
-                </form>
-                <!-- <a href="<?php echo
-                site_url('Ad_Dataklien_controller/approve/'.$DataKlien->id_user) ?>"> <i class="
-                text-danger fas fa-times"></i> </a> -->
-
-            </td>
 
             <td class="align-middle">
                 <a href="<?php echo site_url('Admin/Dataklien/edit/'.$DataKlien->id_user) ?>">

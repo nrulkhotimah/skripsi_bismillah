@@ -107,14 +107,16 @@ class Anggota extends CI_Controller {
         if(!isset($id)) redirect('koordinator/angpsi/Angpsikolog');
         $post = $this->input->post();
 
-        $user = $this->K_Angpsi_m;
+        $user = $this->Angpsi_m;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
         echo "a";
-        $this->K_Angpsi_m->update($post, $id);
+        $this->Angpsi_m->update($post, $id);
         $this->session->set_flashdata('success', 'Berhasil disimpan');
-        $data['user'] = $this->K_Angpsi_m->getAll();
+        $data['user'] = $this->Angpsi_m->getAll();
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/angpsi/Angpsikolog", $data);
 
         $data['user'] = $user->getById($id);
@@ -128,20 +130,6 @@ class Anggota extends CI_Controller {
         $data['user'] = $this->Angpsi_m->getAll();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/angpsi/Angpsikolog', $data);
-    }
-
-    public function search() {
-        $data['user'] = $this->K_Angpsi_m->getAll();
-        $keyword = $this->input->get('keyword');
-
-        if($this->input->get('keyword')) {
-            $where = array(
-                'role' => 3
-            );
-            $data['user'] = $this->K_Angpsi_m->search($keyword, $where);
-        }
-
         $this->load->view('koordinator/angpsi/Angpsikolog', $data);
     }
 
