@@ -84,48 +84,6 @@ class Dataklien extends CI_Controller {
         $this->load->view("admin/klien/Dataklien", $data);
     }
 
-    public function add() {
-    //     $input = $this->input->post();
-    //     $nama = $this->input->post('nama');
-    //     $alamat = $this->input->post('alamat');
-    //     $nomor_telepon = $this->input->post('nomor_telepon');
-    //     $email = $this->input->post('email');
-    //     $jenis_kelamin = $this->input->post('jenis_kelamin');
-    //     $username = $this->input->post('username');
-    //    // $password = md5($this->input->post('password'));
-
-    //     $data1 = array (
-    //         'nama'=>$nama,
-    //         'alamat'=>$alamat,
-    //         'nomor_telepon'=>$nomor_telepon,
-    //         'email'=>$email,
-    //         'jenis_kelamin'=>$jenis_kelamin,
-    //         'role'=>3,
-    //         'username'=>$username,
-    //        // 'password'=>$password,
-    //     );
-
-    //     $marital_status = $this->input->post('marital_status');
-    //     $agama = $this->input->post('agama');
-    //     $pekerjaan = $this->input->post('pekerjaan');
-    //     $tanggal_lahir = $this->input->post('tanggal_lahir');
-
-    //     $data = array (
-    //         'marital_status'=>$marital_status,
-    //         'agama'=>$agama,
-    //         'pekerjaan'=>$marital_status,
-    //         'marital_status'=>$marital_status,
-
-    //     )
-    //     if($input) {
-    //         $this->Dataklien_m->tambah_user($input);
-    //         redirect('user', 'refresh');
-    //     }
-        $this->load->view('admin/template/header');
-        $this->load->view('admin/template/footer');
-        $this->load->view("admin/klien/Tambahklien");
-    }
-
     public function save() {
         $panggil['nama'] = "nk";
         $post = $this->input->post();
@@ -192,26 +150,6 @@ class Dataklien extends CI_Controller {
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view('admin/klien/Dataklien', $data);
-    }
-
-    public function search() {
-       $data['user'] = $this->Dataklien_m->getAll();
-       $keyword = $this->input->get('keyword');
-
-        if($this->input->get('keyword')) {
-            $where = array(
-                'role' => 4
-            );
-            $data['user'] = $this->Dataklien_model->search($keyword, $where);
-        }
-        
-        $this->load->view('admin/klien/Dataklien', $data);
-    }
-
-    public function approve($id) {
-        $this->Dataklien_model->approve($id);
-
-      
     }
 
 
