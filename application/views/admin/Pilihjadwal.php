@@ -4,6 +4,19 @@
 
 </div>
 
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Admin/Home/index')?>">Home</a>
+    </li>
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Admin/Pendaftaran/index') ?>">Penjadwalan</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Pilih Jadwal</li>
+</ol>
+</nav>
+
 <!-- data klien -->
 <div class="col-md-12">
 <?php if($this->session->flashdata('success')): ?>

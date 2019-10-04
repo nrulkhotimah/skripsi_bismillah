@@ -62,6 +62,10 @@
                         </li>
 
                         <li>
+                            <a href="<?php echo site_url('Ang/Diagnosis/index')?>">Diagnosis</a>
+                        </li>
+
+                        <li>
                             <a href="<?php echo site_url('Ang/Penjadwalan/index')?>">Penjadwalan
                             </a>
                         </li>
