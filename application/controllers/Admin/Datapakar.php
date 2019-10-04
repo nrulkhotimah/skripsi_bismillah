@@ -77,6 +77,7 @@ class Datapakar extends CI_Controller {
         $data['status'][2] = "koordinator";
         $data['status'][3] = "anggota";
         $data['status'][4] = "klien";
+        
         if(!isset($id)) redirect('admin/pakar/Datapakar');
         $post = $this->input->post();
 

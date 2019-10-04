@@ -81,13 +81,17 @@ class Anggota extends CI_Controller {
         $validation->set_rules($this->rules());
 
         if($validation->run()) {
-            $this->K_Angpsi_m->save($post);
+            $this->Angpsi_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil ditambahkan');
-            $data['user'] = $this->K_Angpsi_m->getAll();
+            $data['user'] = $this->Angpsi_m->getAll();
+            $this->load->view('koordinator/template/header');
+            $this->load->view('koordinator/template/footer');
             $this->load->view("koordinator/angpsi/Angpsikolog", $data);
         } else {
             $error = validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view('koordinator/template/header');
+            $this->load->view('koordinator/template/footer');
             $this->load->view("koordinator/angpsi/Tambahangpsi");
         }
     }
@@ -121,8 +125,9 @@ class Anggota extends CI_Controller {
    
         $this->db->where('id', $id);
         $this->db->delete('user');
-        $data['user'] = $this->K_Angpsi_m->getAll();
-
+        $data['user'] = $this->Angpsi_m->getAll();
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/angpsi/Angpsikolog', $data);
     }
 
