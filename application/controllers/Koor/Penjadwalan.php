@@ -49,7 +49,11 @@ class Penjadwalan extends CI_Controller {
     }
 
 	public function index() {
-        $data['user'] = $this->Penjadwalan_m->getAll();
+        $data['user'] = $this->Penjadwalan_m->getAllUser($this->session->userdata('id'));
+        foreach ($data['user'] as $key => $value) {
+            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
+            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        }
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
@@ -75,6 +79,8 @@ class Penjadwalan extends CI_Controller {
             $this->Penjadwalan_m->save($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Penjadwalan_m->getAll();
+            $this->load->view('koordinator/template/header');
+            $this->load->view('koordinator/template/footer');
             $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
         // } else {
         //     $error=validation_errors();

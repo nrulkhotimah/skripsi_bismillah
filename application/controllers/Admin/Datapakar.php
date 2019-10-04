@@ -48,6 +48,11 @@ class Datapakar extends CI_Controller {
     }
 
     public function index() {
+        $data['status'][1] = "admin";
+        $data['status'][2] = "koordinator";
+        $data['status'][3] = "anggota";
+        $data['status'][4] = "klien";
+        
         $data['user'] = $this->Datapakar_m->getAll();
         // echo "<pre>";
         // print_r($data);
@@ -68,6 +73,10 @@ class Datapakar extends CI_Controller {
     }
 
     public function update($id) {
+        $data['status'][1] = "admin";
+        $data['status'][2] = "koordinator";
+        $data['status'][3] = "anggota";
+        $data['status'][4] = "klien";
         if(!isset($id)) redirect('admin/pakar/Datapakar');
         $post = $this->input->post();
 
@@ -87,6 +96,11 @@ class Datapakar extends CI_Controller {
     }
 
     public function delete($id) {
+        $data['status'][1] = "admin";
+        $data['status'][2] = "koordinator";
+        $data['status'][3] = "anggota";
+        $data['status'][4] = "klien";
+
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Datapakar_m->getAll();
@@ -95,20 +109,20 @@ class Datapakar extends CI_Controller {
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 
-    public function search() {
-        $data['user'] = $this->Datapakar_m->getAll();
-        $keyword = $this->input->get('keyword');
+    // public function search() {
+    //     $data['user'] = $this->Datapakar_m->getAll();
+    //     $keyword = $this->input->get('keyword');
 
-        if($this->input->get('keyword')) {
-            $where = array(
-                2,
-                3
-            );
-            $data['user'] = $this->Datapakar_m->search($keyword, $where);
-        }
+    //     if($this->input->get('keyword')) {
+    //         $where = array(
+    //             2,
+    //             3
+    //         );
+    //         $data['user'] = $this->Datapakar_m->search($keyword, $where);
+    //     }
 
-        $this->load->view('admin/pakar/Datapakar', $data);
-    }
+    //     $this->load->view('admin/pakar/Datapakar', $data);
+    // }
 
 
 

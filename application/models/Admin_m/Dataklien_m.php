@@ -119,8 +119,8 @@ class Dataklien_m extends CI_Model {
 
     public function tambah_user($post) {
         $user = new stdClass();
-        print_r($user);
-        exit();
+        // print_r($user);
+        // exit();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];

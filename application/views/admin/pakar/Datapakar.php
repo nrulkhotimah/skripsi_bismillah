@@ -39,7 +39,7 @@
                                     <td class="align-middle"><?php echo $DataPakar->nama ?></td>
                                     <td class="align-middle"><?php echo $DataPakar->jenis_kelamin ?></td>
                                     <td class="align-middle"><?php echo $DataPakar->nomor_telepon ?></td>
-                                    <td class="align-middle"><?php echo $DataPakar->role ?></td>
+                                    <td class="align-middle"><?php echo $status[$DataPakar->role] ?></td>
                                     <td class="align-middle">
                                         <a href="<?php echo site_url('Admin/Datapakar/edit/'.$DataPakar->id) ?>">
                                             <i class="fas fa-pen"></i>

@@ -59,6 +59,12 @@ class Penjadwalan_m extends CI_Model {
         return $query->result();
     }
 
+    public function getAllUser($id_user) {
+        $this->db->where('id_user', $id_user);
+        $query = $this->db->get('penjadwalan');
+        return $query->result();
+    }
+
     public function getById($id) {
 
         $this->db->select('*');
@@ -101,12 +107,10 @@ class Penjadwalan_m extends CI_Model {
         return $this->db->delete('penjadwalan', array('id' => $id));
     }
 
-    public function search($keyword) {
-       $this->db->select('*');
-       $this->db->from('user');
-       $this->db->join('klien','klien.id_user=user.id');
-       $this->db->like('nama', $keyword);
-       return $this->db->get()->result();   
+    public function getPendaftaranJadwal($id_penjadwalan) {
+        $this->db->where('id_penjadwalan', $id_penjadwalan);
+        $query = $this->db->get("pendaftaran");
+        return $query->result();
     }
 
 }

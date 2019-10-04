@@ -16,11 +16,21 @@
         }
     }
 
-    function check_admin() {
+    // function check_admin() {
+    //     $cek =& get_instance();
+    //     $cek->load->library('Fungsi');
+    //     if($cek->fungsi->user_login()->role != 1) {
+    //         redirect('Admin/Home/index');
+    //     }
+    // }
+
+    //buat cek not login koordinator dkknya
+    function check_not_login_admin() {
         $cek =& get_instance();
-        $cek->load->library('Fungsi');
-        if($cek->fungsi->user_login()->role != 1) {
-            redirect('Admin/Home/index');
+        $user_session = $cek->session->userdata('role');
+        if($user_session != 1) {
+           // $cek->session->unset_userdata();
+            redirect('Login_controller/index');
         }
     }
 
