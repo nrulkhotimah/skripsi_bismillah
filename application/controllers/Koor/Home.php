@@ -10,7 +10,7 @@ class Home extends CI_Controller {
         $this->load->model('Admin_m/Editprofil_m');
 		$this->load->library('session');
 		
-        check_not_login();
+        check_not_login_koordinator();
 	}
 	
 	public function rules() {

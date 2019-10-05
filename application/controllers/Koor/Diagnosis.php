@@ -9,7 +9,7 @@ class Diagnosis extends CI_Controller {
        // $this->load->model('Koor_m/Diagnosis_m');
 		$this->load->library('session');
 		
-        check_not_login();
+        check_not_login_koordinator();
     }
     
     public function index() {

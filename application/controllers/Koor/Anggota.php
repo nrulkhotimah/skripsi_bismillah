@@ -11,7 +11,7 @@ class Anggota extends CI_Controller {
         $this->model = $this->Angpsi_m;
         $this->load->library('session');
 
-        check_not_login();
+        check_not_login_koordinator();
     }
 
     public function rules() {

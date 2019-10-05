@@ -34,6 +34,33 @@
         }
     }
 
+    function check_not_login_koordinator() {
+        $cek =& get_instance();
+        $user_session = $cek->session->userdata('role');
+        if($user_session != 2) {
+           // $cek->session->unset_userdata();
+            redirect('Login_controller/index');
+        }
+    }
+
+    function check_not_login_anggota() {
+        $cek =& get_instance();
+        $user_session = $cek->session->userdata('role');
+        if($user_session != 3) {
+           // $cek->session->unset_userdata();
+            redirect('Login_controller/index');
+        }
+    }
+
+    function check_not_login_klien() {
+        $cek =& get_instance();
+        $user_session = $cek->session->userdata('role');
+        if($user_session != 4) {
+           // $cek->session->unset_userdata();
+            redirect('Login_controller/index');
+        }
+    }
+
 
 
 ?>

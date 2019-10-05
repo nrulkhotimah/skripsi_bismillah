@@ -9,7 +9,7 @@ class Kriteria extends CI_Controller {
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/kriteriakeputusan/Kriteriakeputusan');
 
-		check_not_login();
+		check_not_login_koordinator();
     }
 
 }
