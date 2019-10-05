@@ -10,7 +10,7 @@ class Datapakar extends CI_Controller {
         $this->model = $this->Datapakar_m;
         $this->load->library('session');
 
-        check_not_login();
+        check_not_login_admin();
     }
 
     public function rules() {

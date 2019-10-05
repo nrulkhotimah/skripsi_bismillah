@@ -10,7 +10,6 @@ class Home extends CI_Controller {
         $this->load->library('session');
         
         check_not_login_admin();
-        // check_admin();
         
     }
 
