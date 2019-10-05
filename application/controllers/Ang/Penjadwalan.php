@@ -10,7 +10,7 @@ class Penjadwalan extends CI_Controller {
         $this->load->model('Ang_m/Penjadwalan_m');
         $this->load->library('session');
 
-        check_not_login();
+        check_not_login_anggota();
     }
 
     public function rules() {

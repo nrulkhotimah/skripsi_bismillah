@@ -10,7 +10,7 @@ class Dataklien extends CI_Controller {
         $this->load->model('Ang_m/Dataklien_m');
         $this->load->library('session');
 
-        check_not_login();
+        check_not_login_anggota();
     }
 
     public function rules() {

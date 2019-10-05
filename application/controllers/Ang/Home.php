@@ -10,7 +10,7 @@ class Home extends CI_Controller {
         $this->load->helper('url_helper');
 		$this->load->library('session');
 		
-        check_not_login();
+        check_not_login_anggota();
 	}
 	
 	public function rules() {
