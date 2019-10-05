@@ -96,9 +96,6 @@
     </tbody>
 </table>
 
-<a href="<?php echo site_url('Admin/Dataklien/add')?>">
-    <button type="button" class="btn btn-primary" style="float:right;">Tambah klien</button>
-</a>
 </div>
 </div>
 </div>

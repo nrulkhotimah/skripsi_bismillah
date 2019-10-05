@@ -14,6 +14,15 @@ class Pendaftaran_m extends CI_Model {
         return $query->result();
     }
 
+    public function getPenjadwalan() {
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function getById($id) {
 
         $this->db->select('*');

@@ -29,23 +29,31 @@
 <table class="table table-bordered" style="margin-top:20px;" id="klien1">
     <thead class="text-center">
         <tr>
-            <th class="align-middle">No</th>
-            <th class="align-middle">Nama Psikolog</th>
-            <th class="align-middle">Tanggal</th>
-            <th class="align-middle">Waktu</th>
-            <th class="align-middle">Aksi</th>
+            <th class="align-middle col5">No</th>
+            <th class="align-middle col20">Nama Psikolog</th>
+            <th class="align-middle col30">Tanggal</th>
+            <th class="align-middle col30">Waktu</th>
+            <th class="align-middle col20">Aksi</th>
 
         </tr>
     </thead>
 
     <tbody class="text-center">
+    <?php
+            $i=0;
+            foreach($penjadwalan as $DataKlien):
+            // print_r($DataKlien);
+             // exit();
+            $i++;
+                                    ?>
         <tr>
-            <td>1</td>
-            <td>Tika</td>
-            <td>23 Juni 2019</td>
-            <td>13.00</td>
+            <td><?php echo $i ?></td>
+            <td><?php echo $DataKlien->nama ?></td>
+            <td><?php echo $DataKlien->tanggal ?></td>
+            <td><?php echo $DataKlien->waktu ?></td>
             <td class="btn btn-primary">Pilih jadwal</td>
         </tr>
+        <?php  endforeach; ?>
     </tbody>
 </table>
 
