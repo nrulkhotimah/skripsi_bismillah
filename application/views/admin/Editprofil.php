@@ -4,11 +4,11 @@
 
 </div>
 
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success" role="alert">
-<?php echo $this->session->flashdata('success'); ?>
+    <?php if($this->session->flashdata('success')): ?>
+        <div class="alert alert-success" role="alert">
+    <?php echo $this->session->flashdata('success'); ?>
 </div>
-<?php endif; ?>
+    <?php endif; ?>
 
 <div class="col-md-12">
 <form
@@ -21,7 +21,7 @@
             class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
             id="name"
             name="nama"
-            value=" <?php echo $user->nama ?>"
+            value="<?php echo $user->nama ?>"
             aria-describedby="name"
             placeholder="Nama">
     </div>
