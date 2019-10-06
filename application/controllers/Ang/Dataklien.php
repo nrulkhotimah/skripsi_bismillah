@@ -13,63 +13,63 @@ class Dataklien extends CI_Controller {
         check_not_login_anggota();
     }
 
-    public function rules() {
-        return [
-            ['field' => 'id',
-            'label' => 'ID',
-            ],
+    // public function rules() {
+    //     return [
+    //         ['field' => 'id',
+    //         'label' => 'ID',
+    //         ],
 
-            ['field' => 'nama',
-            'label' => 'Nama',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'nama',
+    //         'label' => 'Nama',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'nomor_telepon',
-            'label' => 'Nomor Telepon',
-            'rules' => 'numeric', 'required'
-            ],
+    //         ['field' => 'nomor_telepon',
+    //         'label' => 'Nomor Telepon',
+    //         'rules' => 'numeric', 'required'
+    //         ],
 
-            ['field' => 'jenis_kelamin',
-            'label' => 'Jenis Kelamin',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'jenis_kelamin',
+    //         'label' => 'Jenis Kelamin',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'agama',
-            'label' => 'Agama',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'agama',
+    //         'label' => 'Agama',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'tanggal_lahir',
-            'label' => 'Tanggal Lahir',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'tanggal_lahir',
+    //         'label' => 'Tanggal Lahir',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'alamat',
-            'label' => 'Alamat',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'alamat',
+    //         'label' => 'Alamat',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'pekerjaan',
-            'label' => 'pekerjaan',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'pekerjaan',
+    //         'label' => 'pekerjaan',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'marital_status',
-            'label' => 'Marital Status',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'marital_status',
+    //         'label' => 'Marital Status',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'email',
-            'label' => 'Email',
-            'rules' => 'valid_email', 'required'
-            ],
+    //         ['field' => 'email',
+    //         'label' => 'Email',
+    //         'rules' => 'valid_email', 'required'
+    //         ],
 
-            ['field' => 'username',
-            'label' => 'Username',
-            'rules' => 'required'
-            ],
-        ];
-    }
+    //         ['field' => 'username',
+    //         'label' => 'Username',
+    //         'rules' => 'required'
+    //         ],
+    //     ];
+    // }
 
     public function index() {
        $data['user'] = $this->Dataklien_m->getAll();
@@ -126,7 +126,15 @@ class Dataklien extends CI_Controller {
 		$this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
 		$this->load->view('anggota/Lihatriwayat');
-	}
+    }
+    
+    public function ubah_status($id_user) {
+        $status_konsel = $this->input->get();
+        $this->Dataklien_m->ubah_status($id_user, $status_konsel);
+        redirect('Ang/Dataklien', 'refresh');
+        // print_r($x);
+        // exit();
+    }
     
 
 

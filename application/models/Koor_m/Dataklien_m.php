@@ -176,6 +176,11 @@ class Dataklien_m extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
+    public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum
+        $this->db->where('id_user', $id_user);
+        $this->db->update('klien', $status_konsel);
+    }
+
     // public function search($keyword, $where) {
     //    $this->db->select('*');
     //    $this->db->from('user');
@@ -185,10 +190,7 @@ class Dataklien_m extends CI_Model {
     //    return $this->db->get()->result();   
     // }
 
-    public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum
-        $this->db->where('id_user', $id_user);
-        $this->db->update('klien', $status_konsel);
-    }
+ 
 
 
 

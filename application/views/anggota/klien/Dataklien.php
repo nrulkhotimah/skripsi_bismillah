@@ -18,14 +18,14 @@
                             id="example">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle" >No</th>
-                                    <th class="align-middle" >Nama Klien</th>
-                                    <th class="align-middle" >JK</th>
-                                    <th class="align-middle" >Hasil Diagnosis</th>
-                                    <th class="align-middle" >Tanggal</th>
-                                    <th class="align-middle" >Waktu</th>
-                                    <th class="align-middle" >Catatan Konseling</th>
-                                    <th class="align-middle" >Keterangan Konseling</th>
+                                    <th class="align-middle col5" >No</th>
+                                    <th class="align-middle col10" >Nama Klien</th>
+                                    <th class="align-middle col10" >Jenis Kelamin</th>
+                                    <th class="align-middle col10" >Hasil Diagnosis</th>
+                                    <th class="align-middle col15" >Tanggal</th>
+                                    <th class="align-middle col15" >Waktu</th>
+                                    <th class="align-middle col15" >Catatan Konseling</th>
+                                    <th class="align-middle col15" >Keterangan Konseling</th>
                                 </tr>
                             </thead>
 
@@ -55,23 +55,16 @@
                                         <button type="button" class="btn btn-primary">Open</button>
                                         </a>
                                     </td>
-                                    <td class="align-middle">
-                                        <!-- Example single danger button -->
-                                        <div class="btn-group">
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary dropdown-toggle"
-                                                data-toggle="dropdown"
-                                                aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Action
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Selesai</a>
-                                                <a class="dropdown-item" href="#">Jadwal Berikutnya</a>
-                                            </div>
-                                        </div>
+
+                                    <td>
+                                        <form action="<?php echo base_url("Ang/Dataklien/ubah_status/".$DataKlien->id_user) ?>">
+                                            <select name="status_konsel" id="" onchange="submit()">
+                                                <option value="selesai" <?php if($DataKlien->status_konsel == "selesai") {echo "selected";} ?> >selesai</option>
+                                                <option value="belum selesai" <?php if($DataKlien->status_konsel == "belum selesai") {echo "selected";} ?>>belum selesai</option>
+                                            </select>
+                                        </form>
                                     </td>
+
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
