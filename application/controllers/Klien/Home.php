@@ -13,69 +13,69 @@ class Home extends CI_Controller {
         check_not_login_klien();
 	}
 	
-	// public function rules() {
-    //     return [
-    //         ['field' => 'id',
-    //         'label' => 'ID',
-    //         ],
+	public function rules() {
+        return [
+            ['field' => 'id',
+            'label' => 'ID',
+            ],
 
-    //         ['field' => 'nama',
-    //         'label' => 'Nama',
-    //         'rules' => 'required'
-	// 		],
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'
+			],
 			
-	// 		['field' => 'jenis_kelamin',
-	// 		'label' => 'Jenis Kelamin',
-	// 		'rules' => 'required'
-	// 		],
+			['field' => 'jenis_kelamin',
+			'label' => 'Jenis Kelamin',
+			'rules' => 'required'
+			],
 
-	// 		['field' => 'marital_status',
-	// 		'label' => 'Marital Status',
-	// 		'rules' => 'required'
-	// 		],
+			['field' => 'marital_status',
+			'label' => 'Marital Status',
+			'rules' => 'required'
+			],
 
-	// 		['field' => 'agama',
-	// 		'label' => 'Agama',
-	// 		'rules' => 'required'
-	// 		],
+			['field' => 'agama',
+			'label' => 'Agama',
+			'rules' => 'required'
+			],
 
-	// 		['field' => 'pekerjaan',
-	// 		'label' => 'Pekerjaan',
-	// 		'rules' => 'required'
-	// 		],
+			['field' => 'pekerjaan',
+			'label' => 'Pekerjaan',
+			'rules' => 'required'
+			],
 
-	// 		['field' => 'tanggal_lahir',
-	// 		'label' => 'Tanggal Lahir',
-	// 		'rules' => 'required'
-	// 		],
+			['field' => 'tanggal_lahir',
+			'label' => 'Tanggal Lahir',
+			'rules' => 'required'
+			],
 
-    //         ['field' => 'nomor_telepon',
-    //         'label' => 'Nomor Telepon',
-    //         'rules' => 'numeric', 'required'
-    //         ],
+            ['field' => 'nomor_telepon',
+            'label' => 'Nomor Telepon',
+            'rules' => 'numeric', 'required'
+            ],
 
-    //         ['field' => 'alamat',
-    //         'label' => 'Alamat',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'alamat',
+            'label' => 'Alamat',
+            'rules' => 'required'
+            ],
 
-    //         ['field' => 'email',
-    //         'label' => 'Email',
-    //         'rules' => 'valid_email', 'required'
-    //         ],
+            ['field' => 'email',
+            'label' => 'Email',
+            'rules' => 'valid_email', 'required'
+            ],
 
-    //         ['field' => 'username',
-    //         'label' => 'Username',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required'
+            ],
 
-    //         ['field' => 'password',
-    //         'label' => 'Password',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'password',
+            'label' => 'Password',
+            'rules' => 'required'
+            ],
 
-    //     ];
-    // }
+        ];
+    }
 
 	public function index() {
 
@@ -132,7 +132,7 @@ class Home extends CI_Controller {
 
 	public function pendaftaran() 
 	{
-			$this->load->view('klien/Pendaftaran.php');
+			$this->load->view('klien/Pendaftaran');
 	}
 
 

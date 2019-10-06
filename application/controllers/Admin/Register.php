@@ -6,8 +6,8 @@ class Register extends CI_Controller {
         parent::__construct();
 
         $this->load->helper('url_helper');
-        $this->load->model('Dataklien_model');
-        $this->model = $this->Dataklien_model;
+        $this->load->model('Admin_m/Dataklien_m');
+
         $this->load->library('session');
         
        // check_not_login();
@@ -89,10 +89,10 @@ public function index() {
         
 
         if($validation->run()) {
-            $this->Dataklien_model->tambah_user($post);
+            $this->Dataklien_m->tambah_user($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Dataklien_model->getAll();
-            $this->load->view("klien/register/Pageverif", $data);
+            $data['user'] = $this->Dataklien_m->getAll();
+            redirect('Login_controller/index', $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');

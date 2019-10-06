@@ -61,6 +61,7 @@ class Penjadwalan extends CI_Controller {
         $this->load->view("koordinator/jadwal/Inputjadwalkoor");
     }
 
+
     public function save() {
         $post = $this->input->post();
         $this->load->helper('form');

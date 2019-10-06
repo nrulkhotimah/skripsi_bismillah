@@ -8,30 +8,28 @@
                     <div class="col-md-12">
                         <form action="save" method="post" enctype="multipart/form-data">
 
-                            <?php echo form_open('koordinator/jadwal/Penjadwalankoor'); ?>
+                            <?php echo form_open('anggota/jadwal/Penjadwalankoor'); ?>
 
                             <div class="form-group">
                                 <input
                                     name="nama"
+                                    class="form-control"
                                     type="text"
-                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
+                                    value="<?php echo $nama = $this->session->userdata('nama'); ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Nama">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nama') ?>
-                                </div>
+                                    placeholder="Nama"
+                                    disabled="disabled">
                             </div>
 
                             <div class="form-group">
                                 <input
                                     name="nomor_telepon"
+                                    class="form-control"
                                     type="number"
-                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
+                                    value="<?php echo $nomor_telepon = $this->session->userdata('nomor_telepon'); ?>"
                                     id="exampleFormControlInput1"
-                                    placeholder="Nomor Telepon">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nomor_telepon') ?>
-                                </div>
+                                    placeholder="Nomor Telepon"
+                                    disabled="disabled">
                             </div>
 
                             <div class="form-group">

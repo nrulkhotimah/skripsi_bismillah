@@ -48,7 +48,13 @@ class Penjadwalan extends CI_Controller {
 
 	public function index() {
         
-        $data['user'] = $this->Penjadwalan_m->getAll();
+        $data['user'] = $this->Penjadwalan_m->getToday($this->session->userdata('id'));
+
+        foreach ($data['user'] as $key => $value) {
+            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
+            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        }
+
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
         $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
@@ -62,20 +68,26 @@ class Penjadwalan extends CI_Controller {
 
     public function save() {
         $post = $this->input->post();
-        $this->load->helper('form');
+        // print_r($post);
+        // exit();
+
         $this->load->library('form_validation');
 
         $validation = $this->form_validation;
         $validation->set_rules($this->rules());
 
         if($validation->run()) {
-            $this->Ang_Penjadwalan_m->save($post);
+            $this->Penjadwalan_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Ang_Penjadwalan_m->getAll();
+            $data['user'] = $this->Penjadwalan_m->getAll();
+            $this->load->view('anggota/template/header');
+            $this->load->view('anggota/template/footer');
             $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view('anggota/template/header');
+            $this->load->view('anggota/template/footer');
             $this->load->view("anggota/jadwal/Inputjadwalkoor");
         }
     }

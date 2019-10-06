@@ -88,7 +88,7 @@
                             <div class="col-sm-12 daftar">
                                 <a
                                     role="button"
-                                    href="<?php echo site_url('Register/index')?>"
+                                    href="<?php echo site_url('Admin/Register/index')?>"
                                     type="submit"
                                     class="btn btn-block btn-link">Belum punya akun? Daftar disini</a>
                             </div>

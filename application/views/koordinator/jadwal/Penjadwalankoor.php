@@ -24,10 +24,10 @@
 
     <tbody class="text-center">
         <?php 
-                                $i=0;
-                                    foreach($user as $Penjadwalan):
-                                    $i++;
-                                ?>
+            $i=0;
+                foreach($user as $Penjadwalan):
+                $i++;
+            ?>
         <tr>
             <td class="align-middle"><?php echo $i ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->tanggal ?></td>

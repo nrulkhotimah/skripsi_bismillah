@@ -84,10 +84,6 @@ class Anggota extends CI_Controller {
             $hasil = $this->Angpsi_m->save($post);
             $this->session->set_flashdata('success', 'Password nya :'.$hasil);
             redirect('Koor/Anggota/index');
-            // $data['user'] = $this->Angpsi_m->getAll();
-            // $this->load->view('koordinator/template/header');
-            // $this->load->view('koordinator/template/footer');
-            // $this->load->view("koordinator/angpsi/Angpsikolog", $data);
         } else {
             $error = validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');

@@ -31,9 +31,14 @@
                             </thead>
 
                             <tbody class="text-center">
+                                <?php 
+                                    $i=0;
+                                    foreach($diagnosis as $DataKlien):
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">2</td>
+                                    <td class="align-middle"><?php echo $DataKlien->keluhan ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->catatan ?></td>
 
                                     <td class="align-middle">
                                         <a href="">
@@ -42,6 +47,7 @@
                                     </td>
 
                                 </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
 

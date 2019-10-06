@@ -51,8 +51,23 @@ class Penjadwalan_m extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
-        
+        $this->db->order_by('penjadwalan.tanggal', 'desc');
         $query = $this->db->get();
+        // print_r($query); exit();
+        return $query->result();
+    }
+
+    public function getToday($id_user) {
+        $today = date("Y-m-d");
+        $this->db->where('id_user', $id_user);
+        $this->db->where('tanggal', $today);
+        $query = $this->db->get('penjadwalan');
+        return $query->result();
+    }
+
+    public function getPendaftaranJadwal($id_penjadwalan) {
+        $this->db->where('id_penjadwalan', $id_penjadwalan);
+        $query = $this->db->get("pendaftaran");
         return $query->result();
     }
 
@@ -66,22 +81,36 @@ class Penjadwalan_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function save($post) {
-        $user = new stdClass();
-        $user->nama = $post['nama'];
-        $user->nomor_telepon = $post['nomor_telepon'];
-
-        $this->db->insert($this->_table, $user);
-     
+    
+    public function save($post,$id_user) {
+    
         $penjadwalan = new stdClass();
-        $id_user = $this->db->insert_id();
         $penjadwalan->id_user = $id_user;
         $penjadwalan->waktu = $post['waktu'];
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
 
         $this->db->insert('penjadwalan', $penjadwalan);
-    }
+        // return $this->db->insert_id();
+
+    }    
+
+    // public function save($post) {
+    //     $user = new stdClass();
+    //     $user->nama = $post['nama'];
+    //     $user->nomor_telepon = $post['nomor_telepon'];
+
+    //     $this->db->insert($this->_table, $user);
+     
+    //     $penjadwalan = new stdClass();
+    //     $id_user = $this->db->insert_id();
+    //     $penjadwalan->id_user = $id_user;
+    //     $penjadwalan->waktu = $post['waktu'];
+    //     $penjadwalan->tanggal = $post['tanggal'];
+    //     $penjadwalan->kuota = $post['kuota'];
+
+    //     $this->db->insert('penjadwalan', $penjadwalan);
+    // }
 
     public function update($post,$id) {
         $user = new stdClass(); //ini adalah objek

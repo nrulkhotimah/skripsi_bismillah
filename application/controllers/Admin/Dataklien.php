@@ -152,6 +152,31 @@ class Dataklien extends CI_Controller {
         $this->load->view('admin/klien/Dataklien', $data);
     }
 
+    public function tambah_user($post) { // function untuk registrasi klien
+        $user = new stdClass();
+        $user->nama = $post['nama'];
+        $user->nomor_telepon = $post['nomor_telepon'];
+        $user->jenis_kelamin = $post['jenis_kelamin'];
+        $user->alamat = $post['alamat'];
+        $user->email = $post['email'];
+        $user->username = $post['username'];
+        $user->password =md5($post['password']);
+
+        $this->db->insert($this->_table, $user);
+     
+        $klien = new stdClass();
+        $id_user = $this->db->insert_id();
+       //$klien->kode = $post['kode']; 
+        $klien->id_user = $id_user;
+        $klien->tanggal_lahir = $post['tanggal_lahir'];
+        $klien->marital_status = $post['marital_status'];
+        $klien->pekerjaan = $post['pekerjaan'];
+        $klien->agama = $post['agama'];
+
+        $this->db->insert('klien', $klien);
+        return $this->db->insert_id();
+    }
+
 
 }
 
