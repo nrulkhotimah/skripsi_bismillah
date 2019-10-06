@@ -79,6 +79,15 @@ class Angpsi_m extends CI_Model {
     }
 
     public function save($post) {
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        $password = array();
+        $alpha_length = strlen($alphabet) - 1;
+        for ($i = 0; $i<8; $i++) {
+            $n = rand(0, $alpha_length);
+            $password[] = $alphabet[$n];
+        }
+        $data_password = implode($password);
+
         $user = new stdClass();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
@@ -87,9 +96,10 @@ class Angpsi_m extends CI_Model {
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
-        // $user->password = md5($post['password']);
+        $user->password = md5($data_password);
 
         $this->db->insert($this->_table, $user);
+        return $data_password;
     }
 
     public function update($post,$id) {

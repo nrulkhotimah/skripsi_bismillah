@@ -25,7 +25,7 @@
                     <div class="col-md-12">
                         
                         <form
-                            action="<?php echo base_url('index.php/Admin/Dataklien/update/'.$user->id) ?>"
+                            action="<?php echo base_url('/Admin/Dataklien/update/'.$user->id) ?>"
                             method="post"
                             enctype="multipart/form-data">
 

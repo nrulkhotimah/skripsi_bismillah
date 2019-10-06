@@ -149,7 +149,15 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view("koordinator/Riwayatdiagnosis", $data);
-	}
+    }
+    
+    public function ubah_status($id_user) {
+        $status_konsel = $this->input->get();
+        $this->Dataklien_m->ubah_status($id_user, $status_konsel);
+        redirect('Koor/Dataklien', 'refresh');
+        // print_r($x);
+        // exit();
+    }
 
 }
 

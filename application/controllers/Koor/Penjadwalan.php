@@ -44,7 +44,7 @@ class Penjadwalan extends CI_Controller {
     }
 
 	public function index() {
-        $data['user'] = $this->Penjadwalan_m->getAllUser($this->session->userdata('id'));
+        $data['user'] = $this->Penjadwalan_m->getToday($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) {
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
             $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
@@ -115,8 +115,11 @@ class Penjadwalan extends CI_Controller {
     public function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
-        $data['user'] = $this->K_Penjadwalan_m->getAll();
 
+        $data['user'] = $this->Penjadwalan_m->getAll();
+
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
     }
 

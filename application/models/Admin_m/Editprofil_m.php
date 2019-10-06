@@ -83,6 +83,11 @@ class Editprofil_m extends CI_Model {
         $this->db->update($this->_table, $user);
     }
 
+    public function update_profil($post, $id_user) {
+        $this->db->where('id', $id_user);
+        $this->db->update('user', $post);
+    }
+
 }
 
 ?>

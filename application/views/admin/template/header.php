@@ -48,7 +48,7 @@
                     <ul class="list-unstyled components">
                         <li>
                             <a href="<?php echo site_url('Admin/Home/edit_profil/')?>" class="btn profile">
-                                <img src="../../../assets/img/user.png" alt="Avatar"><br>
+                                <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
 

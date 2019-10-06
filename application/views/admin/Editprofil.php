@@ -12,7 +12,7 @@
 
 <div class="col-md-12">
 <form
-    action="<?php echo base_url('index.php/Ad_Home/update/'.$user->id) ?>"
+    action="<?php echo base_url('index.php/Admin/Home/update/'.$user->id) ?>"
     method="post"
     enctype="multipart/form-data">
     <div class="form-group">

@@ -53,7 +53,7 @@ class Penjadwalan_m extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
-        
+        $this->db->order_by('penjadwalan.tanggal', 'desc');
         $query = $this->db->get();
         // print_r($query); exit();
         return $query->result();
@@ -61,6 +61,14 @@ class Penjadwalan_m extends CI_Model {
 
     public function getAllUser($id_user) {
         $this->db->where('id_user', $id_user);
+        $query = $this->db->get('penjadwalan');
+        return $query->result();
+    }
+
+    public function getToday($id_user) {
+        $today = date("Y-m-d");
+        $this->db->where('id_user', $id_user);
+        $this->db->where('tanggal', $today);
         $query = $this->db->get('penjadwalan');
         return $query->result();
     }

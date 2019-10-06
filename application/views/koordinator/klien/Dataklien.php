@@ -18,15 +18,15 @@
     id="example">
     <thead class="text-center">
         <tr>
-            <th class="align-middle" >No</th>
-            <th class="align-middle" >Nama Klien</th>
-            <th class="align-middle" >Jenis Kelamin</th>
-            <th class="align-middle" >Hasil Diagnosis</th>
-            <th class="align-middle" >Waktu</th>
-            <th class="align-middle" >Tanggal</th>
-            <th class="align-middle" >Nama Psikolog</th>
-            <th class="align-middle" >Catatan Konseling</th>
-            <th class="align-middle" >Keterangan Konseling</th>
+            <th class="align-middle col5" >No</th>
+            <th class="align-middle col10" >Nama Klien</th>
+            <th class="align-middle col10" >Jenis Kelamin</th>
+            <th class="align-middle col10" >Hasil Diagnosis</th>
+            <th class="align-middle col10" >Waktu</th>
+            <th class="align-middle col15" >Tanggal</th>
+            <th class="align-middle col15" >Nama Psikolog</th>
+            <th class="align-middle col10" >Catatan Konseling</th>
+            <th class="align-middle col10" >Keterangan Konseling</th>
         </tr>
     </thead>
 
@@ -90,9 +90,19 @@
                 </a>
 
             </td>
-            <td class="align-middle">
+            
+                <td>
+                <form action="<?php echo base_url("Koor/Dataklien/ubah_status/".$DataKlien->id_user) ?>">
+                    <select name="status_konsel" id="" onchange="submit()">
+                        <option value="selesai" <?php if($DataKlien->status_konsel == "selesai") {echo "selected";} ?> >selesai</option>
+                        <option value="belum selesai" <?php if($DataKlien->status_konsel == "belum selesai") {echo "selected";} ?>>belum selesai</option>
+                    </select>
+                    </form>
+                </td>
+
+            <!-- <td class="align-middle"> -->
                 <!-- Example single danger button -->
-                <div class="btn-group">
+                <!-- <div class="btn-group">
                     <button
                         type="button"
                         class="btn btn-primary dropdown-toggle"
@@ -106,7 +116,7 @@
                         <a class="dropdown-item" href="#">Jadwal Berikutnya</a>
                     </div>
                 </div>
-            </td>
+            </td> -->
 
         </tr>
         <?php endforeach; ?>
