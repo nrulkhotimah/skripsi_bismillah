@@ -20,11 +20,11 @@
                     <thead class="text-center">
                         <tr>
                             <th class="align-middle col5" >No</th>
-                            <th class="align-middle col8" >Nama Psikolog</th>
+                            <th class="align-middle col15" >Nama Psikolog</th>
                             <th class="align-middle" >Jenis Kelamin</th>
                             <th class="align-middle" >Nomor Telepon</th>
-                            <th class="align-middle" >Edit</th>
-                            <th class="align-middle" >Hapus</th>
+                            <th class="align-middle col15" >Edit</th>
+                            <th class="align-middle col15" >Hapus</th>
                         </tr>
                     </thead>
 

@@ -23,6 +23,7 @@
                             style="margin-top:20px;"
                             id="result">
                             <thead class="text-center">
+                                
                                 <tr>
                                     <th class="align-middle" rowspan="2">KELUHAN</th>
                                     <th class="align-middle" rowspan="2">CATATAN</th>
@@ -31,9 +32,14 @@
                             </thead>
 
                             <tbody class="text-center">
+                                <?php 
+                                    $i=0;
+                                    foreach($diagnosis as $DataKlien):
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">2</td>
+                                    <td class="align-middle"><?php echo $DataKlien->keluhan ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->catatan ?></td>
 
                                     <td class="align-middle">
                                         <a href="<?php echo site_url('Koor/Dataklien/editcatkonsel') ?>">
@@ -42,6 +48,7 @@
                                     </td>
 
                                 </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
 

@@ -111,6 +111,16 @@ class Dataklien_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
+    public function getKeluhan() {
+
+        $this->db->select('keluhan', 'catatan');
+        $this->db->from('diagnosis');
+
+        $query = $this->db->get();
+        return $query->result();
+        
+    }
+
     public function save($post) {
         $user = new stdClass();
         $user->nama = $post['nama'];
@@ -150,8 +160,6 @@ class Dataklien_m extends CI_Model {
         $this->db->update($this->_table, $user);
      
         $klien = new stdClass();
-        //$id_user = $this->db->id();
-       //$klien->kode = $post['kode']; 
         $klien->id_user = $id;
         $klien->tanggal_lahir = $post['tanggal_lahir'];
         $klien->agama = $post['agama'];
@@ -177,7 +185,7 @@ class Dataklien_m extends CI_Model {
     //    return $this->db->get()->result();   
     // }
 
-    public function ubah_status($id_user, $status_konsel) {
+    public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum
         $this->db->where('id_user', $id_user);
         $this->db->update('klien', $status_konsel);
     }

@@ -13,63 +13,63 @@ class Dataklien extends CI_Controller {
         check_not_login_koordinator();
     }
 
-    public function rules() {
-        return [
-            ['field' => 'id',
-            'label' => 'ID',
-            ],
+    // public function rules() {
+    //     return [
+    //         ['field' => 'id',
+    //         'label' => 'ID',
+    //         ],
 
-            ['field' => 'nama',
-            'label' => 'Nama',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'nama',
+    //         'label' => 'Nama',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'nomor_telepon',
-            'label' => 'Nomor Telepon',
-            'rules' => 'numeric', 'required'
-            ],
+    //         ['field' => 'nomor_telepon',
+    //         'label' => 'Nomor Telepon',
+    //         'rules' => 'numeric', 'required'
+    //         ],
 
-            ['field' => 'jenis_kelamin',
-            'label' => 'Jenis Kelamin',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'jenis_kelamin',
+    //         'label' => 'Jenis Kelamin',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'agama',
-            'label' => 'Agama',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'agama',
+    //         'label' => 'Agama',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'tanggal_lahir',
-            'label' => 'Tanggal Lahir',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'tanggal_lahir',
+    //         'label' => 'Tanggal Lahir',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'alamat',
-            'label' => 'Alamat',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'alamat',
+    //         'label' => 'Alamat',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'pekerjaan',
-            'label' => 'pekerjaan',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'pekerjaan',
+    //         'label' => 'pekerjaan',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'marital_status',
-            'label' => 'Marital Status',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'marital_status',
+    //         'label' => 'Marital Status',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'email',
-            'label' => 'Email',
-            'rules' => 'valid_email', 'required'
-            ],
+    //         ['field' => 'email',
+    //         'label' => 'Email',
+    //         'rules' => 'valid_email', 'required'
+    //         ],
 
-            ['field' => 'username',
-            'label' => 'Username',
-            'rules' => 'required'
-            ],
-        ];
-    }
+    //         ['field' => 'username',
+    //         'label' => 'Username',
+    //         'rules' => 'required'
+    //         ],
+    //     ];
+    // }
 
     public function index() {
     
@@ -105,24 +105,26 @@ class Dataklien extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
-    public function search() {
-        $data['user'] = $this->K_Dataklien_m->getAll();
-        $keyword = $this->input->get('keyword');
+    // public function search() {
+    //     $data['user'] = $this->K_Dataklien_m->getAll();
+    //     $keyword = $this->input->get('keyword');
 
-        if($this->input->get('keyword')) {
-            $where = array (
-                'role' => 4
-            );
-            $data['user'] = $this->K_Dataklien_m->search($keyword, $where);
-        }
+    //     if($this->input->get('keyword')) {
+    //         $where = array (
+    //             'role' => 4
+    //         );
+    //         $data['user'] = $this->K_Dataklien_m->search($keyword, $where);
+    //     }
 
-        $this->load->view('koordinator/klien/Dataklien', $data);
-    }
+    //     $this->load->view('koordinator/klien/Dataklien', $data);
+    // }
 
     public function catkonsel() {
+        $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+        
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/klien/Catkonselkoor');
+        $this->load->view('koordinator/klien/Catkonselkoor', $data);
     }
 
     public function editcatkonsel() {

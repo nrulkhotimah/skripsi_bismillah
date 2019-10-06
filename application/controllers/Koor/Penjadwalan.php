@@ -69,7 +69,7 @@ class Penjadwalan extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($this->rules());
 
-        // if($validation->run()) {
+        if($validation->run()) {
             $id = $this->session->userdata('id');
             $this->Penjadwalan_m->save($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
@@ -77,11 +77,13 @@ class Penjadwalan extends CI_Controller {
             $this->load->view('koordinator/template/header');
             $this->load->view('koordinator/template/footer');
             $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
-        // } else {
-        //     $error=validation_errors();
-        //     $this->session->set_flashdata('errors', 'Gagal disimpan');
-        //     $this->load->view("koordinator/jadwal/Inputjadwalkoor");
-        // }
+        } else {
+            $error=validation_errors();
+            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->load->view('koordinator/template/header');
+            $this->load->view('koordinator/template/footer');
+            $this->load->view("koordinator/jadwal/Inputjadwalkoor");
+        }
     }
 
     public function edit($id) {
@@ -129,6 +131,18 @@ class Penjadwalan extends CI_Controller {
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/JadwalAll", $data);
+    }
+
+    public function historyJadwal() {
+        $data['user'] = $this->Penjadwalan_m->getAll();
+
+        foreach ($data['user'] as $key => $value) {
+            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
+            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        }
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view("koordinator/jadwal/Historyjadwal", $data);
     }
 
     
