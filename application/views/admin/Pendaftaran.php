@@ -29,7 +29,7 @@
             // print_r($DataKlien);
              // exit();
             $i++;
-                                    ?>
+        ?>
         <tr>
             <td><?php echo $i ?></td>
             <td><?php echo $DataKlien->nama ?></td>

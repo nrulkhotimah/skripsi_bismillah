@@ -130,12 +130,19 @@
                             </thead>
 
                             <tbody class="text-center">
+                                <?php
+                                    $i=0;
+                                    foreach($user as $DataKlien):
+                                    // print_r($DataKlien);
+                                    // exit();
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">Tika</td>
-                                    <td class="align-middle">23 Juni 2019</td>
-                                    <td class="align-middle">14.00</td>
-                                    <td class="align-middle">09832732901</td>
+                                    <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->tanggal ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->waktu ?></td>
+                                    <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
                                     <td class="align-middle">
 
                                         <!-- Button trigger modal -->
@@ -164,8 +171,9 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                            Waktu : <br>
-                                                            Tanggal :<br>
+                                                        Waktu :
+                                                        <br>
+                                                        Tanggal :<br>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -176,6 +184,7 @@
 
                                     </td>
                                 </tr>
+                                <?php  endforeach; ?>
                             </tbody>
                         </table>
                     </div>
