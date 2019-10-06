@@ -107,7 +107,7 @@
                 <div class="row text-left">
                     <div class="col-md-12">
                     <form
-                            action="<?php echo base_url('index.php/Kli_Home/update/'.$user->id) ?>"
+                            action="<?php echo base_url('index.php/Klien/Home/update/'.$user->id) ?>"
                             method="post"
                             enctype="multipart/form-data">
                           
