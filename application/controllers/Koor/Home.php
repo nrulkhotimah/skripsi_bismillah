@@ -13,44 +13,44 @@ class Home extends CI_Controller {
         check_not_login_koordinator();
 	}
 	
-	public function rules() {
-        return [
-            ['field' => 'id',
-            'label' => 'ID',
-            ],
+	// public function rules() {
+    //     return [
+    //         ['field' => 'id',
+    //         'label' => 'ID',
+    //         ],
 
-            ['field' => 'nama',
-            'label' => 'Nama',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'nama',
+    //         'label' => 'Nama',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'nomor_telepon',
-            'label' => 'Nomor Telepon',
-            'rules' => 'numeric', 'required'
-            ],
+    //         ['field' => 'nomor_telepon',
+    //         'label' => 'Nomor Telepon',
+    //         'rules' => 'numeric', 'required'
+    //         ],
 
-            ['field' => 'alamat',
-            'label' => 'Alamat',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'alamat',
+    //         'label' => 'Alamat',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'email',
-            'label' => 'Email',
-            'rules' => 'valid_email', 'required'
-            ],
+    //         ['field' => 'email',
+    //         'label' => 'Email',
+    //         'rules' => 'valid_email', 'required'
+    //         ],
 
-            ['field' => 'username',
-            'label' => 'Username',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'username',
+    //         'label' => 'Username',
+    //         'rules' => 'required'
+    //         ],
 
-            ['field' => 'password',
-            'label' => 'Password',
-            'rules' => 'required'
-            ],
+    //         ['field' => 'password',
+    //         'label' => 'Password',
+    //         'rules' => 'required'
+    //         ],
 
-        ];
-    }
+    //     ];
+    // }
 
 	public function index()
 	{
@@ -69,26 +69,43 @@ class Home extends CI_Controller {
 		$this->load->view('koordinator/Editprofil', $data);
 	}
 
-	public function update($id) {
-		$post = $this->input->post();
-		if(!isset($id)) redirect('koordinator/Editprofil');
-		$user = $this->Editprofil_m->getById($id);
-		if($user->password !== MD5($post['password_lama'])):
-			$this->session->set_flashdata('success', 'Masukkan password lama');
-			redirect('K_Home/editProfil');
-		endif;
+    public function update($id) {
+        $post = $this->input->post();
 
-		$user = $this->Ad_Editprofil_m;
-		$validation = $this->form_validation;
-		$validation->set_rules($user->rules());
+        if(empty($post['password_lama'])) {
+            unset($post['password_lama']);
+            unset($post['password_baru']);
+            unset($post['password_konfirmasi']);
+            $this->Editprofil_m->update_profil($post, $id);
+            redirect('Koor/Home/editProfil', 'refresh'); 
+        } else {
+            $data_lama = $this->Editprofil_m->getById($id);
+            $password_asli = $data_lama->password;
+            $post['password'] = md5($post['password_baru']);
 
-		$this->Editprofil_m->update($id);
-		$this->session->set_flashdata('success', 'Berhasil disimpan');
-		redirect('K_Home/editProfil');
+            if(md5($post['password_lama'])==$password_asli) {
+                if(!empty($post['password_baru'])) {
+                    if($post['password_baru']==$post['password_konfirmasi']) {
+                        unset($post['password_lama']);
+                        unset($post['password_baru']);
+                        unset($post['password_konfirmasi']);
+                        $this->Editprofil_m->update_profil($post, $id);
+                        $this->session->set_flashdata('success', 'password telah diubah');
+                        redirect('Koor/Home/editProfil', 'refresh'); 
+                    } else {
+                        $this->session->set_flashdata('success', 'konfirmasi password salah');
+                        redirect('Koor/Home/editProfil', 'refresh'); 
+                    }
+                } else {
+                    $this->session->set_flashdata('success', 'password baru tidak boleh kosong');
+                    redirect('Koor/Home/editProfil', 'refresh'); 
+                }
+            } else {
+                $this->session->set_flashdata('success', 'password lama salah');
+                redirect('Koor/Home/editProfil', 'refresh'); 
+            }
+        }
 
-		$data['user'] = $user->getById($id);
-
-		if(!$data['user']) show_404();
     }
     
 
