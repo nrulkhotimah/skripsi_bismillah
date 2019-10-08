@@ -49,7 +49,7 @@
                                     <td class="align-middle"><?php echo $Jadwal->tanggal ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->waktu ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->kuota ?></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle"><?php echo $sisa[$Jadwal->id] ?></td>
 
                                 </tr>
                                 <?php endforeach; ?>

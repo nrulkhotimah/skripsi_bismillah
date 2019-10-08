@@ -95,10 +95,7 @@ class Home extends CI_Controller {
         $post = $this->input->post();
 
         if(empty($post['password_lama'])) {
-            unset($post['password_lama']);
-            unset($post['password_baru']);
-            unset($post['password_konfirmasi']);
-            $this->Editprofil_m->update_profil($post, $id);
+            $this->Editprofil_m->update($id);
             redirect('Klien/Home/editProfil', 'refresh'); 
         } else {
             $data_lama = $this->Editprofil_m->getById($id);
@@ -108,23 +105,20 @@ class Home extends CI_Controller {
             if(md5($post['password_lama'])==$password_asli) {
                 if(!empty($post['password_baru'])) {
                     if($post['password_baru']==$post['password_konfirmasi']) {
-                        unset($post['password_lama']);
-                        unset($post['password_baru']);
-                        unset($post['password_konfirmasi']);
-                        $this->Editprofil_m->update_profil($post, $id);
-                        $this->session->set_flashdata('success', 'password telah diubah');
-                        redirect('Klien/Home/editProfil', 'refresh'); 
+                        $this->Editprofil_m->update($id);
+                        // $this->session->set_flashdata('success', 'password telah diubah');
+                        // redirect('Klien/Home/editProfil', 'refresh'); 
                     } else {
-                        $this->session->set_flashdata('success', 'konfirmasi password salah');
-                        redirect('Klien/Home/editProfil', 'refresh'); 
+                        // $this->session->set_flashdata('success', 'konfirmasi password salah');
+                        // redirect('Klien/Home/editProfil', 'refresh'); 
                     }
                 } else {
-                    $this->session->set_flashdata('success', 'password baru tidak boleh kosong');
-                    redirect('Klien/Home/editProfil', 'refresh'); 
+                    // $this->session->set_flashdata('success', 'password baru tidak boleh kosong');
+                    // redirect('Klien/Home/editProfil', 'refresh'); 
                 }
             } else {
-                $this->session->set_flashdata('success', 'password lama salah');
-                redirect('Klien/Home/editProfil', 'refresh'); 
+                // $this->session->set_flashdata('success', 'password lama salah');
+                // redirect('Klien/Home/editProfil', 'refresh'); 
             }
         }
 

@@ -26,21 +26,20 @@
             type="nama"
             class="form-control"
             id="nama"
-            name="nama"
             aria-describedby="emailHelp"
             value="<?php echo $nama = $this->session->userdata('nama'); ?>"
             placeholder="Nama"
-            disabled="disabled">
+            readonly="">
+            <input type="hidden" name="id_user" value="<?php echo $nama = $this->session->userdata('id'); ?>">
     </div>
 
     <div class="form-group">
         <input
-            name="nomor_telepon"
             id="nomor_telepon"
             class="form-control"
             value="<?php echo $nomor_telepon = $this->session->userdata('nomor_telepon'); ?>"
             placeholder="Nomor Telepon"
-            disabled="disabled">
+            readonly="">
     </div>
 
     <div class="form-group">
@@ -61,7 +60,8 @@
             name="tanggal"
             id="exampleFormControlInput1"
             type="date"
-            class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>">
+            class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
+            value="<?php echo date("Y-m-d") ?>">
         <div class="invalid-feedback">
             <?php echo form_error('tanggal') ?>
         </div>

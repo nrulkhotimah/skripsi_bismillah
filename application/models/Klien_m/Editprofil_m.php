@@ -91,39 +91,48 @@ class Editprofil_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function update_profil($post, $id_user) {
-        $this->db->where('id', $id_user);
-        $this->db->update('user', $post);
-    }
+    // public function update_profil($post, $id_user) {
+        
+    //     $this->db->where('id', $id_user);
+    //     $this->db->update('user', $post);
 
-    // public function update($id) {
-    //     $post = $this->input->post();
-    //     $user = new stdClass(); //ini adalah objek
-    //     $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
-    //     $user->nomor_telepon = $post['nomor_telepon'];
-    //     $user->jenis_kelamin = $post['jenis_kelamin'];
-    //     $user->alamat = $post['alamat'];
-    //     $user->email = $post['email'];
-    //     $user->username = $post['username'];
-    //     if($post['password_baru'] !== '') $user->password = md5($post['password_baru']);
-
-    //     $this->db->set($user);
-    //     $this->db->where('id', $id);
-
-    //     $this->db->update($this->_table, $user);
-     
-    //     $klien = new stdClass();
-    //     $klien->id_user = $id;
-    //     $klien->tanggal_lahir = $post['tanggal_lahir'];
-    //     $klien->agama = $post['agama'];
-    //     $klien->marital_status = $post['marital_status'];
-    //     $klien->pekerjaan = $post['pekerjaan'];
-
-    //     $this->db->set($klien);
-    //     $this->db->where('id_user', $id);
-    //     $this->db->update('klien', $klien);
-
+    //     $this->db->where('id', $id_user);
+    //     $this->db->update('klien', $post);
     // }
+
+    public function update($id) {
+        $post = $this->input->post();
+        // $user = new stdClass(); //ini adalah objek
+        $user['nama'] = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
+        $user['nomor_telepon'] = $post['nomor_telepon'];
+        $user['jenis_kelamin'] = $post['jenis_kelamin'];
+        $user['alamat'] = $post['alamat'];
+        $user['email'] = $post['email'];
+        $user['username'] = $post['username'];
+        $user['password'] = md5($post['password_baru']);
+        
+        // $this->db->set($user);
+        $this->db->where('id', $id);
+        $this->db->update("user", $user);
+        // $this->db->query("UPDATE user SET nama='Anton w' WHERE id='$id'");
+        // echo "<pre>";
+        // print_r($user);
+        // echo "<pre>";
+        // echo $id;
+        // exit();
+        
+        // $klien = new stdClass();
+        // $klien->id_user = $id;
+        // $klien->tanggal_lahir = $post['tanggal_lahir'];
+        // $klien->agama = $post['agama'];
+        // $klien->marital_status = $post['marital_status'];
+        // $klien->pekerjaan = $post['pekerjaan'];
+
+        // $this->db->set($klien);
+        // $this->db->where('id_user', $id);
+        // $this->db->update('klien', $klien);
+
+    }
 
 
 

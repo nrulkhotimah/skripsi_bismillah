@@ -16,15 +16,15 @@ class Penjadwalan extends CI_Controller {
     public function rules() {
         return [
 
-            ['field' => 'nama',
-            'label' => 'Nama',
+            ['field' => 'id_user',
+            'label' => 'Id User',
             'rules' => 'required'
             ],
 
-            ['field' => 'nomor_telepon',
-            'label' => 'Nomor Telepon',
-            'rules' => 'required'
-            ],
+            // ['field' => 'nomor_telepon',
+            // 'label' => 'Nomor Telepon',
+            // 'rules' => 'required'
+            // ],
 
             ['field' => 'waktu',
             'label' => 'Waktu',
@@ -74,10 +74,9 @@ class Penjadwalan extends CI_Controller {
             $id = $this->session->userdata('id');
             $this->Penjadwalan_m->save($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Penjadwalan_m->getAll();
-            $this->load->view('koordinator/template/header');
-            $this->load->view('koordinator/template/footer');
-            $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+           // $data['user'] = $this->Penjadwalan_m->getAll();
+            redirect('koor/penjadwalan/index','refresh');
+            
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
@@ -105,10 +104,11 @@ class Penjadwalan extends CI_Controller {
         $validation->set_rules($user->rules());
 
             // echo "a";
-            $this->K_Penjadwalan_m->update($post,$id);
+            $this->Penjadwalan_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->K_Penjadwalan_m->getAll();
-            $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+            $data['user'] = $this->Penjadwalan_m->getAll();
+           // $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
+           redirect('koor/penjadwalan/index','refresh');
         
         $data['user'] = $user->getById($id);
 
@@ -118,16 +118,21 @@ class Penjadwalan extends CI_Controller {
     public function delete($id) {
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
+        redirect('koor/penjadwalan/index','refresh');
 
-        $data['user'] = $this->Penjadwalan_m->getAll();
+        // $data['user'] = $this->Penjadwalan_m->getAll();
 
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
+        // $this->load->view('koordinator/template/header');
+        // $this->load->view('koordinator/template/footer');
+        // $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
     }
 
     public function seluruhJadwal() {
-        $data['user'] = $this->Penjadwalan_m->getAll();
+        $data['user'] = $this->Penjadwalan_m->getJadwalAng($this->session->userdata("id"));
+        foreach ($data['user'] as $key => $value) {
+            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
+            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        }
         // print_r($data); exit;
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');

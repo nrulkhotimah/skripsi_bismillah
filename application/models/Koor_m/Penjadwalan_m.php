@@ -73,6 +73,28 @@ class Penjadwalan_m extends CI_Model {
         return $query->result();
     }
 
+    public function getJadwalAng($id_user) {
+        $this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
+        $this->db->where('penjadwalan.id_user != ', $id_user);
+        $query = $this->db->get('penjadwalan');
+        return $query->result();
+    }
+
+    public function getPendaftaranBaru($id_klien) {
+        
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');
+        $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
+        $this->db->join('deskripsigangguan', 'deskripsigangguan.id = diagnosis.id_gangguan', 'left');
+
+        $this->db->order_by('pendaftaran.id', 'desc');
+        $this->db->limit(1);
+        $this->db->where('pendaftaran.id_klien', $id_klien);
+        $query = $this->db->get('pendaftaran');
+        return $query->row();
+        
+    }
+
     public function getById($id) {
 
         $this->db->select('*');
@@ -82,13 +104,14 @@ class Penjadwalan_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function save($post,$id_user) {
+    public function save($post) {
     
         $penjadwalan = new stdClass();
-        $penjadwalan->id_user = $id_user;
+        $penjadwalan->id_user = $post['id_user'];
         $penjadwalan->waktu = $post['waktu'];
         $penjadwalan->tanggal = $post['tanggal'];
         $penjadwalan->kuota = $post['kuota'];
+
 
         $this->db->insert('penjadwalan', $penjadwalan);
         // return $this->db->insert_id();
