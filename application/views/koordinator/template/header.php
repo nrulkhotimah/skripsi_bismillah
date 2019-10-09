@@ -56,10 +56,6 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
-                        </li>
-
-                        <li>
                             <a href="<?php echo site_url('Koor/Dataklien/index')?>">Data klien</a>
                         </li>
 

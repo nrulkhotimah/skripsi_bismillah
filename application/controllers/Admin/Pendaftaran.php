@@ -28,6 +28,14 @@ class Pendaftaran extends CI_Controller {
         $this->load->view('admin/template/footer');
         $this->load->view('admin/Pilihjadwal', $data);
     }
+
+    public function pilih_psikolog() {
+        $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan();
+
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/template/footer');
+        $this->load->view('admin/Pilihjadwal', $data);
+    }
 }
 
 ?>

@@ -23,6 +23,10 @@ class Pendaftaran_m extends CI_Model {
         return $query->result();
     }
 
+    public function getPsikolog() {
+        
+    }
+
     // public function getById($id) {
 
     //     $this->db->select('*');

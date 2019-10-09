@@ -58,10 +58,6 @@
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/Home/index')?>">Home</a>
-                        </li>
-
-                        <li>
                             <a href="<?php echo site_url('Admin/Datapakar/index')?>">Data pakar</a>
                         </li>
 
