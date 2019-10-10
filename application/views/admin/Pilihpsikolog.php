@@ -1,5 +1,5 @@
 <div style="float:right">
-    <span class="title font-weight-bold">PILIH JADWAL</span>
+    <span class="title font-weight-bold">PENDAFTARAN</span>
 </div>
 
 </div>
@@ -13,46 +13,37 @@
     <li class="breadcrumb-item btn-link">
         <a href="<?php echo site_url('Admin/Pendaftaran/index') ?>">Pilih klien</a>
     </li>
-    <li class="breadcrumb-item btn-link">
-        <a href="<?php echo site_url('Admin/Pendaftaran/pilih_psikolog') ?>">Pilih psikolog</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">Pilih Jadwal</li>
+    <li class="breadcrumb-item active" aria-current="page">Pilih psikolog</li>
 </ol>
 </nav>
 
 <!-- data klien -->
 <div class="col-md-12">
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success" role="alert">
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<?php endif; ?>
 
 <!-- data tabel -->
 <table class="table table-bordered" style="margin-top:20px;" id="klien1">
     <thead class="text-center">
         <tr>
             <th class="align-middle col5">No</th>
-            <th class="align-middle col30">Hari</th>
-            <th class="align-middle col30">Waktu</th>
-            <th class="align-middle col20">Aksi</th>
-
+            <th class="align-middle">Nama Psikolog</th>
+            <th class="align-middle">Aksi</th>
         </tr>
     </thead>
 
     <tbody class="text-center">
-    <?php
+     <?php
             $i=0;
-            foreach($penjadwalan as $DataKlien):
+            foreach($penjadwalan as $jadwal):
             // print_r($DataKlien);
              // exit();
             $i++;
-                                    ?>
+        ?>
         <tr>
             <td><?php echo $i ?></td>
-            <td><?php echo $DataKlien->tanggal ?></td>
-            <td><?php echo $DataKlien->waktu ?></td>
-            <td class="btn btn-primary">Pilih jadwal</td>
+            <td><?php echo $jadwal->nama ?></td>
+            <td class="btn-link">
+                <a href="<?php echo site_url('Admin/Pendaftaran/pilih_jadwal')?>">Pilih jadwal</a>
+            </td>
         </tr>
         <?php  endforeach; ?>
     </tbody>

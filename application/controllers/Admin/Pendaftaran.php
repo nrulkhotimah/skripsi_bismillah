@@ -34,7 +34,7 @@ class Pendaftaran extends CI_Controller {
 
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
-        $this->load->view('admin/Pilihjadwal', $data);
+        $this->load->view('admin/Pilihpsikolog', $data);
     }
 }
 
