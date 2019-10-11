@@ -21,11 +21,6 @@ class Penjadwalan extends CI_Controller {
             'rules' => 'required'
             ],
 
-            // ['field' => 'nomor_telepon',
-            // 'label' => 'Nomor Telepon',
-            // 'rules' => 'required'
-            // ],
-
             ['field' => 'waktu',
             'label' => 'Waktu',
             'rules' => 'required'
@@ -44,7 +39,7 @@ class Penjadwalan extends CI_Controller {
     }
 
 	public function index() {
-        $data['user'] = $this->Penjadwalan_m->getToday($this->session->userdata('id'));
+        $data['user'] = $this->Penjadwalan_m->getJadwalPsi($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) {
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
             $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
@@ -62,7 +57,7 @@ class Penjadwalan extends CI_Controller {
     }
 
 
-    public function save() {
+    public function save() { // ini method untuk menambahkan jadwal sudah clear
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -74,7 +69,6 @@ class Penjadwalan extends CI_Controller {
             $id = $this->session->userdata('id');
             $this->Penjadwalan_m->save($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-           // $data['user'] = $this->Penjadwalan_m->getAll();
             redirect('koor/penjadwalan/index','refresh');
             
         } else {
@@ -120,11 +114,6 @@ class Penjadwalan extends CI_Controller {
         $this->db->delete('penjadwalan');
         redirect('koor/penjadwalan/index','refresh');
 
-        // $data['user'] = $this->Penjadwalan_m->getAll();
-
-        // $this->load->view('koordinator/template/header');
-        // $this->load->view('koordinator/template/footer');
-        // $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
     }
 
     public function seluruhJadwal() {
@@ -139,17 +128,17 @@ class Penjadwalan extends CI_Controller {
         $this->load->view("koordinator/jadwal/JadwalAll", $data);
     }
 
-    public function historyJadwal() {
-        $data['user'] = $this->Penjadwalan_m->getAll();
+    // public function historyJadwal() {
+    //     $data['user'] = $this->Penjadwalan_m->getAll();
 
-        foreach ($data['user'] as $key => $value) {
-            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
-            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
-        }
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view("koordinator/jadwal/Historyjadwal", $data);
-    }
+    //     foreach ($data['user'] as $key => $value) {
+    //         $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
+    //         $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+    //     }
+    //     $this->load->view('koordinator/template/header');
+    //     $this->load->view('koordinator/template/footer');
+    //     $this->load->view("koordinator/jadwal/Historyjadwal", $data);
+    // }
 
     
 }

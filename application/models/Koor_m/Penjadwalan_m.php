@@ -59,11 +59,11 @@ class Penjadwalan_m extends CI_Model {
         return $query->result();
     }
 
-    public function getAllUser($id_user) {
-        $this->db->where('id_user', $id_user);
-        $query = $this->db->get('penjadwalan');
-        return $query->result();
-    }
+    // public function getAllUser($id_user) {
+    //     $this->db->where('id_user', $id_user);
+    //     $query = $this->db->get('penjadwalan');
+    //     return $query->result();
+    // }
 
     public function getToday($id_user) {
         $today = date("Y-m-d");
@@ -73,14 +73,21 @@ class Penjadwalan_m extends CI_Model {
         return $query->result();
     }
 
-    public function getJadwalAng($id_user) {
+    public function getJadwalPsi($id_user) { // ini masih salah. harusnya yang ini ambil semua jadwal berdasarkan yg login
+        $this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
+        $this->db->where('penjadwalan.id_user', $id_user);
+        $query = $this->db->get('penjadwalan');
+        return $query->result();
+    }
+
+    public function getJadwalAng($id_user) { // ini method untuk mengambil jadwal anggota psikolog
         $this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
         $this->db->where('penjadwalan.id_user != ', $id_user);
         $query = $this->db->get('penjadwalan');
         return $query->result();
     }
 
-    public function getPendaftaranBaru($id_klien) {
+    public function getPendaftaranBaru($id_klien) { //ini method untuk mengambil pendaftaran klien
         
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');

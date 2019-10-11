@@ -88,12 +88,6 @@
 </table>
 <br>
 
-<div style="float:left">
-    <a href="<?php echo site_url('Koor/Penjadwalan/historyJadwal')?>">
-        <button type="button" class="btn btn-link">History jadwal</button>
-    </a>
-</div>
-
 <div class="but" style="float:RIGHT">
     <a href="<?php echo site_url('Koor/Penjadwalan/seluruhJadwal')?>">
         <button type="button" class="btn btn-link">Lihat seluruh jadwal disini</button>
