@@ -43,15 +43,17 @@
     <tbody class="text-center">
     <?php
             $i=0;
-            foreach($penjadwalan as $DataKlien):
+            foreach($tanggal_muncul as $key => $value):
             // print_r($DataKlien);
              // exit();
             $i++;
                                     ?>
         <tr>
             <td><?php echo $i ?></td>
-            <td><?php echo $DataKlien->tanggal ?></td>
-            <td><?php echo $DataKlien->waktu ?></td>
+            <td><?php echo date("D", strtotime($value)).", ".date("d M Y", strtotime($value)) ?></td>
+            <td><?php echo $jadwal[date("D", strtotime($value))]->waktu?></td>
+            <td><?php echo $jadwal[date("D", strtotime($value))]->kuota- $sisa_kuota[date("D", strtotime($value))] ?></td>
+
             <td class="btn btn-primary">Pilih jadwal</td>
         </tr>
         <?php  endforeach; ?>

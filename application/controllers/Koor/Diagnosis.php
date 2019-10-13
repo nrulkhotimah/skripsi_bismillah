@@ -11,6 +11,8 @@ class Diagnosis extends CI_Controller {
 		
         check_not_login_koordinator();
     }
+
+    
     
     public function index() {
         $this->load->view('koordinator/template/header');

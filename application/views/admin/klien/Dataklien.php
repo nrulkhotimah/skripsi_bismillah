@@ -22,6 +22,7 @@
             <th class="align-middle">Status</th>
             <th class="align-middle">Tanggal Lahir</th>
             <th class="align-middle">Nomor Telepon</th>
+            <th class="align-middle">Jadwal Konseling</th>
             <th class="align-middle">Edit</th>
             <th class="align-middle">Hapus</th>
         </tr>
@@ -42,6 +43,8 @@
             <td class="align-middle"><?php echo $DataKlien->marital_status ?></td>
             <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
             <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
+            <td class="align-middle">dss</td>
+                
 
             <td class="align-middle">
                 <a href="<?php echo site_url('Admin/Dataklien/edit/'.$DataKlien->id_user) ?>">

@@ -33,7 +33,7 @@
     <tbody class="text-center">
      <?php
             $i=0;
-            foreach($penjadwalan as $jadwal):
+            foreach($user as $jadwal):
             // print_r($DataKlien);
              // exit();
             $i++;
@@ -42,7 +42,7 @@
             <td><?php echo $i ?></td>
             <td><?php echo $jadwal->nama ?></td>
             <td class="btn-link">
-                <a href="<?php echo site_url('Admin/Pendaftaran/pilih_jadwal')?>">Pilih jadwal</a>
+                <a href="<?php echo site_url('Admin/Pendaftaran/pilih_jadwal/'.$id_user.'/'.$jadwal->id)?>">Pilih jadwal</a>
             </td>
         </tr>
         <?php  endforeach; ?>

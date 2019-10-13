@@ -34,7 +34,7 @@
             <td><?php echo $i ?></td>
             <td><?php echo $DataKlien->nama ?></td>
             <td class="btn-link">
-                <a href="<?php echo site_url('Admin/Pendaftaran/pilih_psikolog')?>">Pilih psikolog</a>
+                <a href="<?php echo site_url('Admin/Pendaftaran/pilih_psikolog/'.$DataKlien->id_user)?>">Pilih psikolog</a>
             </td>
         </tr>
         <?php  endforeach; ?>

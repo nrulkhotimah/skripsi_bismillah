@@ -23,8 +23,11 @@ class Pendaftaran_m extends CI_Model {
         return $query->result();
     }
 
-    public function getPsikolog() {
-        
+    public function sisa_kuota($id_penjadwalan, $tanggal) {
+        $this->db->where('id_penjadwalan', $id_penjadwalan);
+        $this->db->like('waktu_daftar', $tanggal);
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->result();
     }
 
     // public function getById($id) {
