@@ -65,7 +65,7 @@
             <td class="align-middle">
             <?php 
                     if($jadwal[$DataKlien->id]) {
-                        echo $jadwal[$DataKlien->id]->tanggal;
+                        echo $jadwal[$DataKlien->id]->hari;
                     } else {
                         echo "Belum Melakukan pendaftaran";
                     }

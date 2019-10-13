@@ -35,6 +35,7 @@
             <th class="align-middle col5">No</th>
             <th class="align-middle col30">Hari</th>
             <th class="align-middle col30">Waktu</th>
+            <th class="align-middle col20">Kuota</th>
             <th class="align-middle col20">Aksi</th>
 
         </tr>

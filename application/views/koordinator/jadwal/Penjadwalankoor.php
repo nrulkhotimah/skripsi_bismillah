@@ -13,7 +13,7 @@
     <thead class="text-center">
         <tr>
             <th class="align-middle col5">No</th>
-            <th class="align-middle">Tanggal</th>
+            <th class="align-middle">Hari</th>
             <th class="align-middle">Waktu</th>
             <th class="align-middle">Kuota Penuh</th>
             <th class="align-middle">Sisa Kuota</th>
@@ -30,7 +30,7 @@
             ?>
         <tr>
             <td class="align-middle"><?php echo $i ?></td>
-            <td class="align-middle"><?php echo $Penjadwalan->tanggal ?></td>
+            <td class="align-middle"><?php echo $Penjadwalan->hari ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->waktu ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->kuota ?></td>
             <td class="align-middle"><?php echo $sisa[$Penjadwalan->id] ?></td>

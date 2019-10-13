@@ -29,7 +29,7 @@
                                     <th class="align-middle col5">No</th>
                                     <th class="align-middle" >Nama Psikolog</th>
                                     <th class="align-middle" >Nomor Telepon</th>
-                                    <th class="align-middle" >Tanggal</th>
+                                    <th class="align-middle" >Hari</th>
                                     <th class="align-middle" >Waktu</th>                                    
                                     <th class="align-middle" >Kuota Penuh</th>
                                     <th class="align-middle" >Sisa Kuota</th>
@@ -46,7 +46,7 @@
                                     <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->nama ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->nomor_telepon ?></td>
-                                    <td class="align-middle"><?php echo $Jadwal->tanggal ?></td>
+                                    <td class="align-middle"><?php echo $Jadwal->hari ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->waktu ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->kuota ?></td>
                                     <td class="align-middle"><?php echo $sisa[$Jadwal->id] ?></td>

@@ -122,23 +122,11 @@ class Penjadwalan extends CI_Controller {
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
             $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
         }
-        // print_r($data); exit;
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/JadwalAll", $data);
     }
-
-    // public function historyJadwal() {
-    //     $data['user'] = $this->Penjadwalan_m->getAll();
-
-    //     foreach ($data['user'] as $key => $value) {
-    //         $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
-    //         $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
-    //     }
-    //     $this->load->view('koordinator/template/header');
-    //     $this->load->view('koordinator/template/footer');
-    //     $this->load->view("koordinator/jadwal/Historyjadwal", $data);
-    // }
 
     
 }
