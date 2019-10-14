@@ -86,6 +86,19 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Dataklien', $data);
     }
 
+    public function lihatseluruh() {
+        $data['user'] = $this->Dataklien_m->getAll();
+
+        foreach ($data['user'] as $key => $value) {
+            $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id);
+            $data['jadwal'][$value->id] = $jadwal;
+        }
+        
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view('koordinator/klien/Dataklien2', $data);
+    }
+
     public function edit($id) {
         $data['user'] = $this->Dataklien_m->getById($id);
         $this->load->view('koordinator/template/header');
@@ -111,20 +124,6 @@ class Dataklien extends CI_Controller {
         $data['user'] = $user->getById($id);
         if(!$data['user']) show_404();
     }
-
-    // public function search() {
-    //     $data['user'] = $this->K_Dataklien_m->getAll();
-    //     $keyword = $this->input->get('keyword');
-
-    //     if($this->input->get('keyword')) {
-    //         $where = array (
-    //             'role' => 4
-    //         );
-    //         $data['user'] = $this->K_Dataklien_m->search($keyword, $where);
-    //     }
-
-    //     $this->load->view('koordinator/klien/Dataklien', $data);
-    // }
 
     public function catkonsel() {
         $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();

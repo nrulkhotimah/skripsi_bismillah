@@ -11,6 +11,19 @@
 </div>
 <?php endif; ?>
 
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Koor/Dataklien/index') ?>">Dataklien</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Lihat seluruh dataklien</li>
+                        </ol>
+                    </nav>
+
 <!-- data tabel -->
 <table
     class="table table-sm table-bordered"
@@ -24,6 +37,7 @@
             <th class="align-middle col10" >Hasil Diagnosis</th>
             <th class="align-middle col10" >Waktu</th>
             <th class="align-middle col15" >Tanggal</th>
+            <th class="align-middle col15" >Nama Psikolog</th>
             <th class="align-middle col10" >Catatan Konseling</th>
             <th class="align-middle col10" >Keterangan Konseling</th>
         </tr>
@@ -70,8 +84,15 @@
                     }
                 ?>
             </td>
-
-
+            <td class="align-middle">
+            <?php 
+                    if($jadwal[$DataKlien->id]) {
+                        echo $jadwal[$DataKlien->id]->nama;
+                    } else {
+                        echo "Belum Melakukan pendaftaran";
+                    }
+                ?>
+            </td>
             <td class="align-middle">
                 <a href="<?php echo site_url('Koor/Dataklien/catkonsel/'.$DataKlien->id_user) ?>">
                     <button type="button" class="btn btn-primary">Open</button>
@@ -92,12 +113,6 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-
-<div style="float:RIGHT">
-<a href="<?php echo site_url('Koor/Dataklien/lihatseluruh')?>">
-        <button type="button" class="btn btn-link">Lihat seluruh data klien</button>
-    </a>
-</div>
 </div>
 
 </div>
