@@ -127,16 +127,18 @@ class Dataklien extends CI_Controller {
 
     public function catkonsel() {
         $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
-        
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Catkonselkoor', $data);
     }
 
     public function editcatkonsel() {
+        $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/klien/Editcatkonsel');
+        $this->load->view('koordinator/klien/Editcatkonsel', $data);
     }
 
     public function tambahcat() {

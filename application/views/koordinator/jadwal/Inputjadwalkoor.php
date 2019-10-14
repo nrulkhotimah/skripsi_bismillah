@@ -55,15 +55,15 @@
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlInput1">Tanggal konseling</label>
+        <!-- <label for="exampleFormControlInput1">Hari </label> -->
         <input
-            name="tanggal"
+            name="hari"
             id="exampleFormControlInput1"
-            type="date"
-            class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
-            value="<?php echo date("Y-m-d") ?>">
+            type="text"
+            class="form-control <?php echo form_error('hari') ? 'is-invalid':'' ?>"
+            placeholder="Hari">
         <div class="invalid-feedback">
-            <?php echo form_error('tanggal') ?>
+            <?php echo form_error('hari') ?>
         </div>
     </div>
 

@@ -113,7 +113,7 @@ class Dataklien_m extends CI_Model {
 
     public function getKeluhan() {
 
-        $this->db->select('keluhan', 'catatan');
+        $this->db->select('*');
         $this->db->from('diagnosis');
 
         $query = $this->db->get();

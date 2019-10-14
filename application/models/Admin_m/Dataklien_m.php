@@ -89,7 +89,15 @@ class Dataklien_m extends CI_Model {
             ['field' => 'approve',
             'label' => 'Approve',
             'rules' => 'required'
-        ],
+            ],
+
+            ['field' => 'keluhan',
+            'label' => 'Keluhan',
+            ],
+
+            ['field' => 'catatan',
+            'label' => 'Catatan',
+            ],
 
         ];
     }
@@ -106,7 +114,6 @@ class Dataklien_m extends CI_Model {
     }
 
     public function getById($id) {
-
         $this->db->select('*');
         $this->db->from('klien');
         $this->db->join('user','user.id=klien.id_user');
@@ -119,8 +126,6 @@ class Dataklien_m extends CI_Model {
 
     public function tambah_user($post) {
         $user = new stdClass();
-        // print_r($user);
-        // exit();
         $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
@@ -144,12 +149,6 @@ class Dataklien_m extends CI_Model {
         return $this->db->insert_id();
     }
 
-    // public function tambah_user($input) {
-       
-    //     $this->db->insert('user', $input);
-    //     $this->db->insert('klien', $input);
-    // }
-
     public function save($post) {
         $user = new stdClass();
         $user->nama = $post['nama'];
@@ -164,7 +163,6 @@ class Dataklien_m extends CI_Model {
      
         $klien = new stdClass();
         $id_user = $this->db->insert_id();
-       //$klien->kode = $post['kode']; 
         $klien->id_user = $id_user;
         $klien->tanggal_lahir = $post['tanggal_lahir'];
         $klien->marital_status = $post['marital_status'];
@@ -191,7 +189,6 @@ class Dataklien_m extends CI_Model {
      
         $klien = new stdClass();
         //$id_user = $this->db->id();
-       //$klien->kode = $post['kode']; 
         $klien->id_user = $id;
         $klien->tanggal_lahir = $post['tanggal_lahir'];
         $klien->agama = $post['agama'];
@@ -229,12 +226,9 @@ class Dataklien_m extends CI_Model {
         // exit();
 
         //return $query->result();   
-      
-    
-       
-        
-
     }
+
+
 
 
 }

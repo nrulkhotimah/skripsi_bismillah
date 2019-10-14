@@ -57,7 +57,7 @@ class Penjadwalan extends CI_Controller {
     }
 
 
-    public function save() { // ini method untuk menambahkan jadwal sudah clear
+    public function save() { // belum clear
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -80,7 +80,7 @@ class Penjadwalan extends CI_Controller {
         }
     }
 
-    public function edit($id) {
+    public function edit($id) { // sudah clear
         $data['user'] = $this->Penjadwalan_m->getById($id);
         // print_r($data);
         // exit();

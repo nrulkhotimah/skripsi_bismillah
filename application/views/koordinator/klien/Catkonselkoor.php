@@ -40,9 +40,8 @@
                                 <tr>
                                     <td class="align-middle"><?php echo $DataKlien->keluhan ?></td>
                                     <td class="align-middle"><?php echo $DataKlien->catatan ?></td>
-
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('Koor/Dataklien/editcatkonsel') ?>">
+                                        <a href="<?php echo site_url('Koor/Dataklien/editcatkonsel/'.$DataKlien->id) ?>">
                                             <i class="fas fa-pen"></i>
                                         </a>
                                     </td>
