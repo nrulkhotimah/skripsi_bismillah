@@ -80,6 +80,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Datadiagnosis</a>
+                </li>
+
+                <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
                         href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
                 </li>

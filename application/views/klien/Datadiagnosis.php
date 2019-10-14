@@ -105,8 +105,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Pendaftaran</h2>
-                        <h3 class="section-subheading text-muted">Pilih jadwal konseling</h3>
+                        <h2 class="section-heading text-uppercase">Data Diagnosis</h2>
+                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien</h3>
                     </div>
                 </div>
 
@@ -120,75 +120,29 @@
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle col5" rowspan="2">No</th>
-                                    <th class="align-middle" rowspan="2">Nama Psikolog</th>
-                                    <th colspan="2">Jadwal</th>
-                                    <th class="align-middle" rowspan="2">Nomor Telepon</th>
-                                    <th class="align-middle" rowspan="2">Keterangan</th>
+                                    <th class="align-middle col5" >No</th>
+                                    <th class="align-middle" >Nama Psikolog</th>
+                                    <th class="align-middle" >Hasil Diagnosis</th>
+                                    <th class="align-middle" >Keluhan</th>
+                                    <th class="align-middle" >Catatan</th>
+                                    <th class="align-middle" >Keterangan</th>
                                 </tr>
 
-                                <tr>
-                                    <th>Hari/tgl</th>
-                                    <th>Waktu</th>
-                                </tr>
                             </thead>
 
                             <tbody class="text-center">
-                                <?php
-                                    $i=0;
-                                    foreach($user as $DataKlien):
-                                    // print_r($DataKlien);
-                                    // exit();
-                                    $i++;
-                                ?>
+        
                                 <tr>
-                                    <td class="align-middle"><?php echo $i ?></td>
-                                    <td class="align-middle"><?php echo $DataKlien->nama ?></td>
-                                    <td class="align-middle"><?php echo $DataKlien->hari ?></td>
-                                    <td class="align-middle"><?php echo $DataKlien->waktu ?></td>
-                                    <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
-                                    <td class="align-middle">
+                                    <td class="align-middle">1</td>
+                                    <td class="align-middle">tessddsdt</td>
+                                    <td class="align-middle">test</td>
+                                    <td class="align-middle">test</td>
+                                    <td class="align-middle">test</td>
+                                    <td class="align-middle">tedsdsst</td>
 
-                                        <!-- Button trigger modal -->
-                                        <button
-                                            type="button"
-                                            class="btn btn-primary"
-                                            data-toggle="modal"
-                                            data-target="#modaldiagnosis">
-                                            Pilih Psikolog
-                                        </button>
-
-                                        <!-- Modal -->
-                                        <div
-                                            class="modal fade"
-                                            id="modaldiagnosis"
-                                            tabindex="-1"
-                                            role="dialog"
-                                            aria-labelledby="exampleModalLabel"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Jadwal Terpilih</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Waktu :
-                                                        <br>
-                                                        Tanggal :<br>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </td>
+                                 
                                 </tr>
-                                <?php  endforeach; ?>
+
                             </tbody>
                         </table>
                     </div>
