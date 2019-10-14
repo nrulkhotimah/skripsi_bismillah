@@ -37,15 +37,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Tanggal konseling</label>
+                                <label for="exampleFormControlInput1">Hari</label>
                                 <input
-                                    name="tanggal"
-                                    type="date"
-                                    class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
+                                    name="hari"
+                                    type="varchar"
+                                    class="form-control <?php echo form_error('hari') ? 'is-invalid':'' ?>"
                                     id="tanggal"
-                                    value="<?php echo $user->tanggal ?>">
+                                    value="<?php echo $user->hari ?>">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('tanggal') ?>
+                                    <?php echo form_error('hari') ?>
                                 </div>
                             </div>
 

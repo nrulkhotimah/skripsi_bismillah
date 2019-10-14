@@ -35,8 +35,8 @@ class Penjadwalan_m extends CI_Model {
             'rules' => 'required'
             ],
 
-            ['field' => 'tanggal',
-            'label' => 'Tanggal',
+            ['field' => 'hari',
+            'label' => 'Hari',
             'rules' => 'required'
             ],
 
@@ -53,7 +53,7 @@ class Penjadwalan_m extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
-        $this->db->order_by('penjadwalan.tanggal', 'desc');
+        $this->db->order_by('penjadwalan.hari', 'desc');
         $query = $this->db->get();
         // print_r($query); exit();
         return $query->result();
@@ -106,9 +106,16 @@ class Penjadwalan_m extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('penjadwalan');
-        $this->db->where('id', $id);
+        $this->db->where('id_user', $id);
 
         return $this->db->get()->first_row();
+        
+    }
+
+    public function getPendaftaranJadwal($id_penjadwalan) {
+        $this->db->where('id_penjadwalan', $id_penjadwalan);
+        $query = $this->db->get("pendaftaran");
+        return $query->result();
     }
 
     public function save($post) {
@@ -132,7 +139,7 @@ class Penjadwalan_m extends CI_Model {
      
         $penjadwalan = new stdClass();
         $penjadwalan->waktu = $post['waktu'];
-        $penjadwalan->tanggal = $post['tanggal'];
+        $penjadwalan->hari = $post['hari'];
         $penjadwalan->kuota = $post['kuota'];
 
         $this->db->set($penjadwalan);
@@ -145,11 +152,6 @@ class Penjadwalan_m extends CI_Model {
         return $this->db->delete('penjadwalan', array('id' => $id));
     }
 
-    public function getPendaftaranJadwal($id_penjadwalan) {
-        $this->db->where('id_penjadwalan', $id_penjadwalan);
-        $query = $this->db->get("pendaftaran");
-        return $query->result();
-    }
 
 }
 
