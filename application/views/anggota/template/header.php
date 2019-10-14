@@ -54,6 +54,10 @@
                         <hr>
 
                         <li>
+                            <a href="<?php echo site_url('Ang/Home/index')?>">Home</a>
+                        </li>
+
+                        <li>
                             <a href="<?php echo site_url('Ang/Dataklien/index')?>">Data klien</a>
                         </li>
 
