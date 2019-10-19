@@ -7,6 +7,7 @@ class Dataklien extends CI_Controller {
 
         $this->load->helper('url_helper');
         $this->load->model('Admin_m/Dataklien_m');
+        $this->load->model('Admin_m/Pendaftaran_m');
         $this->model = $this->Dataklien_m;
         $this->load->library('session');
         
@@ -79,9 +80,20 @@ class Dataklien extends CI_Controller {
         // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
         $panggil['nama'] = "nk";
         $data['user'] = $this->Dataklien_m->getAll();
+        foreach ($data['user'] as $key => $value) {
+            $id_klien = $value->id;
+            $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien);
+            if(!empty($pendaftaran[$id_klien])) {
+                $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
+            } else {
+                $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
+            }
+        }
+
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/klien/Dataklien", $data);
+    
     }
 
     public function save() {

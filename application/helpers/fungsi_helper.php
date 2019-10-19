@@ -61,6 +61,12 @@
         }
     }
 
+    function nama_session() {
+        $CI =& get_instance();
+        $data = $CI->session->userdata("nama");
+        return $data;
+    }
+
 
 
 ?>

@@ -72,19 +72,14 @@
         <input
             name="waktu"
             id="exampleFormControlInput1"
-            type="time"
+            type="text"
             class="form-control <?php echo form_error('waktu') ? 'is-invalid':'' ?>">
         <div class="invalid-feedback">
             <?php echo form_error('waktu') ?>
         </div>
     </div>
 
-    <input
-        type="submit"
-        class="btn btn-primary"
-        name="btn"
-        value="Save"
-        style="float:right; width:100px;"/>
+<button class="btn btn-primary">Simpan</button>
 </form>
 <?php echo form_close(); ?>
 </div>

@@ -26,10 +26,6 @@ class Penjadwalan extends CI_Controller {
             'rules' => 'required'
             ],
 
-            ['field' => 'tanggal',
-            'label' => 'Tanggal',
-            'rules' => 'required'
-            ],
 
             ['field' => 'kuota',
             'label' => 'Kuota',
@@ -66,8 +62,8 @@ class Penjadwalan extends CI_Controller {
         $validation->set_rules($this->rules());
 
         if($validation->run()) {
-            $id = $this->session->userdata('id');
-            $this->Penjadwalan_m->save($post,$id);
+            // $id = $this->session->userdata('id');
+            $this->Penjadwalan_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('koor/penjadwalan/index','refresh');
             

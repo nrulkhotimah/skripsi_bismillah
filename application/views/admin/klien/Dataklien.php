@@ -43,7 +43,8 @@
             <td class="align-middle"><?php echo $DataKlien->marital_status ?></td>
             <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
             <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
-            <td class="align-middle">dss</td>
+            <td class="align-middle"><?php echo $jadwal_konseling[$DataKlien->id] ?></td>
+
                 
 
             <td class="align-middle">

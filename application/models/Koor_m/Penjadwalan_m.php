@@ -118,20 +118,10 @@ class Penjadwalan_m extends CI_Model {
         return $query->result();
     }
 
-    public function save($post, $id) {
-    
-        $penjadwalan = new stdClass();
-        $penjadwalan->id_user = $post['id_user'];
-        $penjadwalan->waktu = $post['waktu'];
-        $penjadwalan->hari = $post['hari'];
-        $penjadwalan->kuota = $post['kuota'];
-        echo "<pre>";
-        print_r ($penjadwalan);
-        echo "</pre>";
-        exit();
-    
-        $this->db->insert('penjadwalan', $penjadwalan);
-        return $this->db->insert_id();
+    public function save($post) {
+
+        $this->db->insert('penjadwalan', $post);
+
 
     }
 

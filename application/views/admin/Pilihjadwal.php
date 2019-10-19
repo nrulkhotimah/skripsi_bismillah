@@ -45,17 +45,21 @@
     <?php
             $i=0;
             foreach($tanggal_muncul as $key => $value):
-            // print_r($DataKlien);
-             // exit();
+            $waktu = $jadwal[date("D", strtotime($value))]->waktu;
+            $kuota = $jadwal[date("D", strtotime($value))]->kuota - $sisa_kuota[date("D", strtotime($value))];
+            $id_penjadwalan = $jadwal[date("D", strtotime($value))]->id;
+
             $i++;
                                     ?>
         <tr>
             <td><?php echo $i ?></td>
             <td><?php echo date("D", strtotime($value)).", ".date("d M Y", strtotime($value)) ?></td>
-            <td><?php echo $jadwal[date("D", strtotime($value))]->waktu?></td>
-            <td><?php echo $jadwal[date("D", strtotime($value))]->kuota- $sisa_kuota[date("D", strtotime($value))] ?></td>
+            <td><?php echo $waktu ?></td>
+            <td><?php echo $kuota ?></td>
 
-            <td class="btn btn-primary">Pilih jadwal</td>
+            <td >
+                <a href="<?php echo base_url("admin/pendaftaran/simpan_jadwal/".$id_klien."/".$id_penjadwalan."/".$value) ?>" class="btn btn-primary">Pilih Jadwal</a>
+            </td>
         </tr>
         <?php  endforeach; ?>
     </tbody>

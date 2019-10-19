@@ -52,7 +52,7 @@
                                 <span>Profile</span>
                             </a>
 
-                            <p class="text-center" style="font:12px !important;">Hello! Admin</p>
+                            <p class="text-center" style="font:12px !important;">Hello! <?php echo nama_session() ?></p>
 
                         </li>
                         <hr>

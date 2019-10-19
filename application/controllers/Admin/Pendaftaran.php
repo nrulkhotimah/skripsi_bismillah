@@ -42,6 +42,7 @@ class Pendaftaran extends CI_Controller {
     }
 
     public function pilih_jadwal($id_user, $id_psikolog) {
+        $data['id_klien'] = $id_user;
         $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog);
         foreach ($data['penjadwalan'] as $key => $value) {
             $hari_jadwal[] = $value->hari;
@@ -78,6 +79,12 @@ class Pendaftaran extends CI_Controller {
         // print_r($data);
         // // exit();
         // echo"</pre>";
+    }
+
+    public function simpan_jadwal($id_klien, $id_penjadwalan, $tanggal_daftar) {
+        $this->Pendaftaran_m->simpan_pendaftaran($id_klien, $id_penjadwalan, $tanggal_daftar);
+        redirect('admin/Dataklien/index','refresh');
+        
     }
 
 

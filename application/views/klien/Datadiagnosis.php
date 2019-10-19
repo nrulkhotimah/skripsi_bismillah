@@ -121,10 +121,10 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle col5" >No</th>
-                                    <th class="align-middle" >Nama Psikolog</th>
-                                    <th class="align-middle" >Hasil Diagnosis</th>
-                                    <th class="align-middle" >Keluhan</th>
-                                    <th class="align-middle" >Catatan</th>
+                                    <th class="align-middle col5" >Nama Psikolog</th>
+                                    <th class="align-middle col5" >Hasil Diagnosis</th>
+                                    <th class="align-middle col30" >Keluhan</th>
+                                    <th class="align-middle col30" >Catatan</th>
                                     <th class="align-middle" >Keterangan</th>
                                 </tr>
 
