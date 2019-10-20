@@ -48,7 +48,7 @@ class Datapakar_m extends CI_Model {
         ];
     }
 
-    public function getAll () {
+    public function getAll () { //fungsi untuk mengambil data seluruh pakar berdasarkan role nya 
         $this->load->database();
 
         $this->db->select('*');
@@ -60,7 +60,7 @@ class Datapakar_m extends CI_Model {
         return $query->result();
     }
 
-    public function getById($id) {
+    public function getById($id) { //fungsi untuk mengambil data pakar berdasarkan idnya saja
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('id', $id);
@@ -68,14 +68,11 @@ class Datapakar_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function update($post,$id) {
+    public function update($post,$id) { //fungsi untuk melakukan edit data pakar
         $user = new stdClass();
         $user->nama = $post['nama'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
         $user->nomor_telepon = $post['nomor_telepon'];
-        // $user->role = $post['role'];
-        //  print_r('user');
-        // exit();
 
         $this->db->set($user);
         $this->db->where('id', $id);
@@ -83,18 +80,11 @@ class Datapakar_m extends CI_Model {
         $this->db->update($this->_table, $user);
     }
 
-    public function delete($id) {
+    public function delete($id) { //fungsi untuk menghapus data pakar
         $this->db->where('id', $id);
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-    // public function search($keyword, $where) {
-    //     $this->db->select('*');
-    //     $this->db->from('user');
-    //     $this->db->where_in('role',$where);
-    //     $this->db->like('nama', $keyword);
-    //     return $this->db->get()->result();
-    // }
 
 
 

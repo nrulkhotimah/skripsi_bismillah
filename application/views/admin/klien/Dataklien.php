@@ -32,8 +32,6 @@
         <?php
             $i=0;
             foreach($user as $DataKlien):
-            // print_r($DataKlien);
-             // exit();
             $i++;
                                     ?>
         <tr>
@@ -44,12 +42,10 @@
             <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
             <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
             <td class="align-middle"><?php echo $jadwal_konseling[$DataKlien->id] ?></td>
-
-                
-
             <td class="align-middle">
                 <a href="<?php echo site_url('Admin/Dataklien/edit/'.$DataKlien->id_user) ?>">
-                    <i class="fas fa-pen"></i>
+                    <!-- edit data klien -->
+                    <i class="fas fa-pen"></i> 
                 </a>
             </td>
 

@@ -7,10 +7,7 @@ class Register extends CI_Controller {
 
         $this->load->helper('url_helper');
         $this->load->model('Admin_m/Dataklien_m');
-
         $this->load->library('session');
-        
-       // check_not_login();
     }
 
     public function rules() {
@@ -75,7 +72,7 @@ class Register extends CI_Controller {
         ];
     }
 
-public function index() {
+    public function index() {
         $this->load->view('klien/register/registrasi');
     }
 
@@ -101,10 +98,6 @@ public function index() {
 
     }
 
-    public function open_verif() {
-        $this->load->view('klien/register/Pageverif');
-
-    }
 
 }
 

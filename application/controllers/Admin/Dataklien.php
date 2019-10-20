@@ -8,7 +8,6 @@ class Dataklien extends CI_Controller {
         $this->load->helper('url_helper');
         $this->load->model('Admin_m/Dataklien_m');
         $this->load->model('Admin_m/Pendaftaran_m');
-        $this->model = $this->Dataklien_m;
         $this->load->library('session');
         
         check_not_login_admin();
@@ -78,7 +77,6 @@ class Dataklien extends CI_Controller {
   
     public function index() {
         // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
-        $panggil['nama'] = "nk";
         $data['user'] = $this->Dataklien_m->getAll();
         foreach ($data['user'] as $key => $value) {
             $id_klien = $value->id;
@@ -96,8 +94,7 @@ class Dataklien extends CI_Controller {
     
     }
 
-    public function save() {
-        $panggil['nama'] = "nk";
+    public function save() { //fungsi untuk save registrasi klien
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -124,17 +121,16 @@ class Dataklien extends CI_Controller {
 
     }
 
-    public function edit($id) {
+    public function edit($id) { //open page edit klien
         $data['user'] = $this->Dataklien_m->getById($id);
-        // print_r($data);
-        // exit();
+
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/klien/Editdataklien", $data);
         
     }
 
-    public function update($id) {
+    public function update($id) { //fungsi untuk update edit data klien
         if(!isset($id)) redirect('admin/klien/Dataklien');
         $post = $this->input->post();
 
@@ -142,10 +138,18 @@ class Dataklien extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
       
-            // echo "a";
             $this->Dataklien_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_m->getAll();
+            foreach ($data['user'] as $key => $value) {
+                $id_klien = $value->id;
+                $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien);
+                if(!empty($pendaftaran[$id_klien])) {
+                    $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
+                } else {
+                    $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
+                }
+            }
             $this->load->view('admin/template/header');
             $this->load->view('admin/template/footer');
             $this->load->view("admin/klien/Dataklien", $data);
@@ -155,40 +159,47 @@ class Dataklien extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
-    public function delete ($id) {  
+    public function delete ($id) {  //fungsi untuk delete data klien
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Dataklien_m->getAll();
+        foreach ($data['user'] as $key => $value) {
+            $id_klien = $value->id;
+            $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien);
+            if(!empty($pendaftaran[$id_klien])) {
+                $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
+            } else {
+                $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
+            }
+        }
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view('admin/klien/Dataklien', $data);
     }
 
-    public function tambah_user($post) { // function untuk registrasi klien
-        $user = new stdClass();
-        $user->nama = $post['nama'];
-        $user->nomor_telepon = $post['nomor_telepon'];
-        $user->jenis_kelamin = $post['jenis_kelamin'];
-        $user->alamat = $post['alamat'];
-        $user->email = $post['email'];
-        $user->username = $post['username'];
-        $user->password =md5($post['password']);
+    // public function tambah_user($post) { // function untuk registrasi klien
+    //     $user = new stdClass();
+    //     $user->nama = $post['nama'];
+    //     $user->nomor_telepon = $post['nomor_telepon'];
+    //     $user->jenis_kelamin = $post['jenis_kelamin'];
+    //     $user->alamat = $post['alamat'];
+    //     $user->email = $post['email'];
+    //     $user->username = $post['username'];
+    //     $user->password =md5($post['password']);
 
-        $this->db->insert($this->_table, $user);
+    //     $this->db->insert($this->_table, $user);
      
-        $klien = new stdClass();
-        $id_user = $this->db->insert_id();
-       //$klien->kode = $post['kode']; 
-        $klien->id_user = $id_user;
-        $klien->tanggal_lahir = $post['tanggal_lahir'];
-        $klien->marital_status = $post['marital_status'];
-        $klien->pekerjaan = $post['pekerjaan'];
-        $klien->agama = $post['agama'];
+    //     $klien = new stdClass();
+    //     $id_user = $this->db->insert_id();
+    //     $klien->id_user = $id_user;
+    //     $klien->tanggal_lahir = $post['tanggal_lahir'];
+    //     $klien->marital_status = $post['marital_status'];
+    //     $klien->pekerjaan = $post['pekerjaan'];
+    //     $klien->agama = $post['agama'];
 
-        $this->db->insert('klien', $klien);
-        return $this->db->insert_id();
-    }
-
+    //     $this->db->insert('klien', $klien);
+    //     return $this->db->insert_id();
+    // }
 
 }
 

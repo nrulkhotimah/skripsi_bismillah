@@ -48,8 +48,7 @@ class Editprofil_m extends CI_Model {
             'rules' => 'required'
             ],
 
-            [
-            'field' => 'password_konfirmasi',
+            ['field' => 'password_konfirmasi',
             'label' => 'Konfirmasi Password',
             'rules' => 'trim', 'required', 'matches[password]'
             ]
@@ -57,7 +56,7 @@ class Editprofil_m extends CI_Model {
         ];
     }
 
-    public function getById($id) {
+    public function getById($id) { //untuk mengambil data user berdasarkan ID nya 
 
         $this->db->select('*');
         $this->db->from('user');
@@ -66,7 +65,7 @@ class Editprofil_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function update_profil($post, $id_user) {
+    public function update_profil($post, $id_user) { //untuk update edit profil admin
         $this->db->where('id', $id_user);
         $this->db->update('user', $post);
     }

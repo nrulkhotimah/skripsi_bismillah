@@ -10,18 +10,15 @@ class Home extends CI_Controller {
         $this->load->library('session');
         
         check_not_login_admin();
-        
     }
 
     public function index() {
-        $data['nama'] = "admin";
-
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
-        $this->load->view('admin/Home', $data);
+        $this->load->view('admin/Home');
     }
 
-    public function edit_profil() {
+    public function edit_profil() { //open hpage edit profil
         $id = $this->session->userdata('id');
         $data['user'] = $this->Editprofil_m->getById($id);
 
@@ -30,7 +27,7 @@ class Home extends CI_Controller {
         $this->load->view('admin/Editprofil', $data);
     }
 
-    public function update($id) {
+    public function update($id) { //untuk update edit profil
         $post = $this->input->post();
 
         if(empty($post['password_lama'])) {

@@ -7,7 +7,6 @@ class Datapakar extends CI_Controller {
 
         $this->load->model('Admin_m/Datapakar_m');
         $this->load->helper('url_helper');
-        $this->model = $this->Datapakar_m;
         $this->load->library('session');
 
         check_not_login_admin();
@@ -48,31 +47,26 @@ class Datapakar extends CI_Controller {
     }
 
     public function index() {
-        $data['status'][1] = "admin";
+        $data['status'][1] = "admin"; //untuk menampilkan status hak akses pakar
         $data['status'][2] = "koordinator";
         $data['status'][3] = "anggota";
         $data['status'][4] = "klien";
         
         $data['user'] = $this->Datapakar_m->getAll();
-        // echo "<pre>";
-        // print_r($data);
-        // exit();
-        // echo "</pre>";
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 
-    public function edit($id) {
+    public function edit($id) { //open page edit data pakar
         $data['user'] = $this->Datapakar_m->getById($id);
-        // print_r($data);
-        // exit();
+
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Editdatapakar", $data);
     }
 
-    public function update($id) {
+    public function update($id) { //untuk update edit data pakar
         $data['status'][1] = "admin";
         $data['status'][2] = "koordinator";
         $data['status'][3] = "anggota";
@@ -80,13 +74,13 @@ class Datapakar extends CI_Controller {
         
         if(!isset($id)) redirect('admin/pakar/Datapakar');
         $post = $this->input->post();
-
         $user = $this->Datapakar_m;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
         $this->Datapakar_m->update($post, $id);
         $this->session->set_flashdata('success', 'Berhasil');
+
         $data['user'] = $this->Datapakar_m->getAll();
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
@@ -96,7 +90,7 @@ class Datapakar extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
-    public function delete($id) {
+    public function delete($id) { //untuk menghapus data pakar
         $data['status'][1] = "admin";
         $data['status'][2] = "koordinator";
         $data['status'][3] = "anggota";
@@ -105,25 +99,11 @@ class Datapakar extends CI_Controller {
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Datapakar_m->getAll();
+        
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Datapakar", $data);
     }
-
-    // public function search() {
-    //     $data['user'] = $this->Datapakar_m->getAll();
-    //     $keyword = $this->input->get('keyword');
-
-    //     if($this->input->get('keyword')) {
-    //         $where = array(
-    //             2,
-    //             3
-    //         );
-    //         $data['user'] = $this->Datapakar_m->search($keyword, $where);
-    //     }
-
-    //     $this->load->view('admin/pakar/Datapakar', $data);
-    // }
 
 
 

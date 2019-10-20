@@ -7,7 +7,6 @@ class Pendaftaran extends CI_Controller {
         parent::__construct();
         $this->load->model('Admin_m/Pendaftaran_m');
         $this->load->model('Admin_m/Datapakar_m');
-
         $this->load->helper('url_helper');
         $this->load->library('session');
         
@@ -23,16 +22,7 @@ class Pendaftaran extends CI_Controller {
         $this->load->view('admin/Pendaftaran', $data);
     }
 
-    // public function pilih_jadwal() {
-    //     $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan();
-
-    //     $this->load->view('admin/template/header');
-    //     $this->load->view('admin/template/footer');
-    //     $this->load->view('admin/Pilihjadwal', $data);
-    // }
-
-    public function pilih_psikolog($id_user) {
-
+    public function pilih_psikolog($id_user) { //untuk memilih psikolog
         $data['user'] = $this->Datapakar_m->getAll();
         $data['id_user'] = $id_user;
 
@@ -41,33 +31,32 @@ class Pendaftaran extends CI_Controller {
         $this->load->view('admin/Pilihpsikolog', $data);
     }
 
-    public function pilih_jadwal($id_user, $id_psikolog) {
-        $data['id_klien'] = $id_user;
-        $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog);
+    public function pilih_jadwal($id_user, $id_psikolog) { //untuk memilih jadwal 
+        $data['id_klien'] = $id_user; //untuk mengirimkan id_user dari views
+        $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog); //untuk memanggil function getPenjadwalan
         foreach ($data['penjadwalan'] as $key => $value) {
-            $hari_jadwal[] = $value->hari;
-            $data['jadwal'][$value->hari] = $value;
+            $hari_jadwal[] = $value->hari; //mengambil data hari
+            $data['jadwal'][$value->hari] = $value; // ?
         }
 
         date_default_timezone_set("Asia/Jakarta");
         $sekarang = date("Y-m-d");
         $timestamp = strtotime($sekarang);
-        for ($i=0; $i < 7; $i++) { 
+        for ($i=0; $i < 7; $i++) {  
             $data['tanggal'][date("D", $timestamp)] = date("Y-m-d", $timestamp);
             $timestamp = strtotime('+1 day', $timestamp);
         }
 
         foreach ($data['tanggal'] as $hari => $tanggal) {
-            if(in_array($hari, $hari_jadwal)){
+            if(in_array($hari, $hari_jadwal)){ //untuk menampilkan jadwal dari waktu hari ini hingga keminggu kedepan
                 $data['tanggal_muncul'][] = $tanggal;
             }
         }
-        
-
+    
         foreach ($data['tanggal'] as $hari => $tanggal) {
-            if(isset($data['jadwal'][$hari])) {
+            if(isset($data['jadwal'][$hari])) { 
                 $id_penjadwalan = $data['jadwal'][$hari]->id;
-                $data['sisa_kuota'][$hari] = count($this->Pendaftaran_m->sisa_kuota($id_penjadwalan, $tanggal));
+                $data['sisa_kuota'][$hari] = count($this->Pendaftaran_m->sisa_kuota($id_penjadwalan, $tanggal)); //untuk memanggil function sisa_kuota
             }
         }
 
@@ -75,13 +64,9 @@ class Pendaftaran extends CI_Controller {
         $this->load->view('admin/template/footer');
         $this->load->view('admin/Pilihjadwal', $data);
 
-        // echo"<pre>";
-        // print_r($data);
-        // // exit();
-        // echo"</pre>";
     }
 
-    public function simpan_jadwal($id_klien, $id_penjadwalan, $tanggal_daftar) {
+    public function simpan_jadwal($id_klien, $id_penjadwalan, $tanggal_daftar) { //untuk menyimpan jadwal yang telah di pilih klien
         $this->Pendaftaran_m->simpan_pendaftaran($id_klien, $id_penjadwalan, $tanggal_daftar);
         redirect('admin/Dataklien/index','refresh');
         
