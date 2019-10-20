@@ -17,6 +17,7 @@
                         </ol>
                     </nav>
 
+                    <!-- tabel -->
                     <div class="col-md-12">
                         <table
                             class="table table-sm table-bordered"

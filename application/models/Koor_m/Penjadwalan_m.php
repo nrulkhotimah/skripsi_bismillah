@@ -3,8 +3,6 @@
 class Penjadwalan_m extends CI_Model {
 
     private $_table = "user";
-    // private $_table = "penjadwalan";
-    
 
     public $id;
     public $id_user;
@@ -47,7 +45,7 @@ class Penjadwalan_m extends CI_Model {
         ];
     }
 
-    public function getAll() {
+    public function getAll() { //untuk mengambil seluruh data penjadwalan
         $this->load->database();
 
         $this->db->select('*');
@@ -55,40 +53,44 @@ class Penjadwalan_m extends CI_Model {
         $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
         $this->db->order_by('penjadwalan.hari', 'desc');
         $query = $this->db->get();
-        // print_r($query); exit();
+
         return $query->result();
     }
 
-    // public function getAllUser($id_user) {
+    public function getById($id) { //untuk mengambil data jadwal per id nya 
+
+        $this->db->select('*');
+        $this->db->from('penjadwalan');
+        $this->db->where('id_user', $id);
+
+        return $this->db->get()->first_row();
+        
+    }
+
+    // public function getToday($id_user) { //untuk mengambil data jadwal 
+    //     $today = date("Y-m-d");
     //     $this->db->where('id_user', $id_user);
+    //     $this->db->where('tanggal', $today);
     //     $query = $this->db->get('penjadwalan');
     //     return $query->result();
     // }
 
-    public function getToday($id_user) {
-        $today = date("Y-m-d");
-        $this->db->where('id_user', $id_user);
-        $this->db->where('tanggal', $today);
-        $query = $this->db->get('penjadwalan');
-        return $query->result();
-    }
-
-    public function getJadwalPsi($id_user) { // ini masih salah. harusnya yang ini ambil semua jadwal berdasarkan yg login
+    public function getJadwalPsi($id_user) { // untuk mengambil data jadwal psikolog berdasarkan session psikolog yg login
         $this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
         $this->db->where('penjadwalan.id_user', $id_user);
         $query = $this->db->get('penjadwalan');
         return $query->result();
     }
 
-    public function getJadwalAng($id_user) { // ini method untuk mengambil jadwal anggota psikolog
+    public function getJadwalAng($id_user) { // untuk mengambil data jadwal anggota psikolog
         $this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
         $this->db->where('penjadwalan.id_user != ', $id_user);
         $query = $this->db->get('penjadwalan');
         return $query->result();
     }
 
-    public function getPendaftaranBaru($id_klien) { //ini method untuk mengambil pendaftaran klien
-        
+    public function getPendaftaranBaru($id_klien) { // untuk mengambil data pendaftaran klien, ketika klien mendaftar konseling dan memilih jadwal
+    
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');
         $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
@@ -99,37 +101,19 @@ class Penjadwalan_m extends CI_Model {
         $this->db->where('pendaftaran.id_klien', $id_klien);
         $query = $this->db->get('pendaftaran');
         return $query->row();
-        
     }
 
-    public function getById($id) {
-
-        $this->db->select('*');
-        $this->db->from('penjadwalan');
-        $this->db->where('id_user', $id);
-
-        return $this->db->get()->first_row();
-        
-    }
-
-    public function getPendaftaranJadwal($id_penjadwalan) {
+    public function getPendaftaranJadwal($id_penjadwalan) { //untuk mengambil data jadwal yang telah di pilih oleh klien
         $this->db->where('id_penjadwalan', $id_penjadwalan);
         $query = $this->db->get("pendaftaran");
         return $query->result();
     }
 
-    public function save($post) {
-
+    public function save($post) { //untuk menyimpan jadwal yang di inputkan psikolog
         $this->db->insert('penjadwalan', $post);
-
-
     }
 
-    public function update($post,$id) {
-        // $user = new stdClass(); //ini adalah objek
-        // $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
-        // $user->nomor_telepon = $post['nomor_telepon'];
-     
+    public function update($post,$id) { // untuk menyimpan data jadwal yang telah di edit     
         $penjadwalan = new stdClass();
         $penjadwalan->waktu = $post['waktu'];
         $penjadwalan->hari = $post['hari'];
@@ -140,10 +124,8 @@ class Penjadwalan_m extends CI_Model {
         $this->db->update('penjadwalan', $penjadwalan);
     }
 
-    public function delete($id){
+    public function delete($id){ //untuk menghapus data jadwal 
         $this->db->where('id', $id);
-        print_r($id);
-        exit();
         return $this->db->delete('penjadwalan', array('id' => $id));
     }
 

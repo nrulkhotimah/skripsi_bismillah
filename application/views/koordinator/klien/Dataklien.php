@@ -22,8 +22,8 @@
             <th class="align-middle col10" >Nama Klien</th>
             <th class="align-middle col10" >Jenis Kelamin</th>
             <th class="align-middle col10" >Hasil Diagnosis</th>
-            <th class="align-middle col10" >Waktu</th>
             <th class="align-middle col15" >Tanggal</th>
+            <th class="align-middle col10" >Waktu</th>
             <th class="align-middle col10" >Catatan Konseling</th>
             <th class="align-middle col10" >Keterangan Konseling</th>
         </tr>
@@ -42,7 +42,9 @@
                     href="<?php echo site_url('Koor/Dataklien/edit/'.$DataKlien->id_user) ?>"
                     class="btn btn-link"><?php echo $DataKlien->nama ?></a>
             </td>
+
             <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
+
             <td class="align-middle">
                 <?php 
                     if($jadwal[$DataKlien->id]) {
@@ -52,15 +54,7 @@
                     }
                 ?>
             </td>
-            <td class="align-middle">
-            <?php 
-                    if($jadwal[$DataKlien->id]) {
-                        echo $jadwal[$DataKlien->id]->waktu;
-                    } else {
-                        echo "Belum Melakukan pendaftaran";
-                    }
-                ?>
-            </td>
+
             <td class="align-middle">
             <?php 
                     if($jadwal[$DataKlien->id]) {
@@ -71,7 +65,16 @@
                 ?>
             </td>
 
-
+            <td class="align-middle">
+            <?php 
+                    if($jadwal[$DataKlien->id]) {
+                        echo $jadwal[$DataKlien->id]->waktu;
+                    } else {
+                        echo "Belum Melakukan pendaftaran";
+                    }
+                ?>
+            </td>
+            
             <td class="align-middle">
                 <a href="<?php echo site_url('Koor/Dataklien/catkonsel/'.$DataKlien->id_user) ?>">
                     <button type="button" class="btn btn-primary">Open</button>
@@ -92,12 +95,6 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-
-<div style="float:RIGHT">
-<a href="<?php echo site_url('Koor/Dataklien/lihatseluruh')?>">
-        <button type="button" class="btn btn-link">Lihat seluruh data klien</button>
-    </a>
-</div>
 </div>
 
 </div>

@@ -63,7 +63,7 @@ class Home extends CI_Controller {
 	public function editProfil() {
 		$id = $this->session->userdata('id');
 		$data['user'] = $this->Editprofil_m->getById($id);
-        // var_dump($data['user']);die;
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/Editprofil', $data);

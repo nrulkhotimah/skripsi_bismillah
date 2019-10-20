@@ -26,7 +26,6 @@ class Penjadwalan extends CI_Controller {
             'rules' => 'required'
             ],
 
-
             ['field' => 'kuota',
             'label' => 'Kuota',
             'rules' => 'required'
@@ -36,9 +35,9 @@ class Penjadwalan extends CI_Controller {
 
 	public function index() {
         $data['user'] = $this->Penjadwalan_m->getJadwalPsi($this->session->userdata('id'));
-        foreach ($data['user'] as $key => $value) {
-            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
-            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        foreach ($data['user'] as $key => $value) { 
+            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id); //proses mengambil jadwal yg dipilih klien
+            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran); //proses perhitungan kuota
         }
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
@@ -46,14 +45,14 @@ class Penjadwalan extends CI_Controller {
 
     }
 
-    public function add() {
+    public function add() { //open page tambah jadwal
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/Inputjadwalkoor");
     }
 
 
-    public function save() { // belum clear
+    public function save() { // proses menyimpan jadwal yang telah di inputkan
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -62,7 +61,6 @@ class Penjadwalan extends CI_Controller {
         $validation->set_rules($this->rules());
 
         if($validation->run()) {
-            // $id = $this->session->userdata('id');
             $this->Penjadwalan_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             redirect('koor/penjadwalan/index','refresh');
@@ -76,16 +74,15 @@ class Penjadwalan extends CI_Controller {
         }
     }
 
-    public function edit($id) { // sudah clear
+    public function edit($id) { // open page edit penjadwalan
         $data['user'] = $this->Penjadwalan_m->getById($id);
-        // print_r($data);
-        // exit();
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/Editpenjadwalanpsi", $data);
     }
 
-    public function update($id) {
+    public function update($id) { //proses update jadwal yang telah di edit
         if(!isset($id)) redirect('koordinator/jadwal/Penjadwalankoor');
         $post = $this->input->post();
 
@@ -93,11 +90,9 @@ class Penjadwalan extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-            // echo "a";
             $this->Penjadwalan_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Penjadwalan_m->getAll();
-           // $this->load->view("koordinator/jadwal/Penjadwalankoor", $data);
            redirect('koor/penjadwalan/index','refresh');
         
         $data['user'] = $user->getById($id);
@@ -105,14 +100,13 @@ class Penjadwalan extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
-    public function delete($id) {
+    public function delete($id) { //proses menghapus jadwal
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
         redirect('koor/penjadwalan/index','refresh');
-
     }
 
-    public function seluruhJadwal() {
+    public function seluruhJadwal() { //proses melihat seluruh jadwal anggota psikolog
         $data['user'] = $this->Penjadwalan_m->getJadwalAng($this->session->userdata("id"));
         foreach ($data['user'] as $key => $value) {
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);

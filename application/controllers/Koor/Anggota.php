@@ -8,7 +8,6 @@ class Anggota extends CI_Controller {
 
         $this->load->helper('url_helper');
         $this->load->model('Koor_m/Angpsi_m');
-        $this->model = $this->Angpsi_m;
         $this->load->library('session');
 
         check_not_login_koordinator();
@@ -58,21 +57,20 @@ class Anggota extends CI_Controller {
         ];
     }
 
-	public function index()
-	{
+	public function index() {
         $data['user'] = $this->Angpsi_m->getAll();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/angpsi/Angpsikolog.php', $data);
     }
 
-    public function tambah() {
+    public function tambah() { //open page tambahangsi
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/angpsi/Tambahangpsi');
     }
 
-    public function save() {
+    public function save() { //untuk proses menyimpan anggota yang telah di tambahkan
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -93,14 +91,14 @@ class Anggota extends CI_Controller {
         }
     }
 
-    public function edit($id) {
+    public function edit($id) { //open page edit anggota
         $data['user'] = $this->Angpsi_m->getById($id);
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/angpsi/Editangpsi", $data);
     }
 
-    public function update($id) {
+    public function update($id) { //untuk proses menyimpan edit data anggota
         if(!isset($id)) redirect('koordinator/angpsi/Angpsikolog');
         $post = $this->input->post();
 
@@ -108,7 +106,6 @@ class Anggota extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-        echo "a";
         $this->Angpsi_m->update($post, $id);
         $this->session->set_flashdata('success', 'Berhasil disimpan');
         $data['user'] = $this->Angpsi_m->getAll();
@@ -120,11 +117,11 @@ class Anggota extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
-    public function delete($id) {
-   
+    public function delete($id) { //untuk proses menghapus anggota
         $this->db->where('id', $id);
         $this->db->delete('user');
         $data['user'] = $this->Angpsi_m->getAll();
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/angpsi/Angpsikolog', $data);

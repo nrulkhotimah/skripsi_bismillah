@@ -88,7 +88,7 @@ class Dataklien_m extends CI_Model {
         ];
     }
 
-    public function getAll() {
+    public function getAll() { // untuk mengambil data seluruh klien 
         $this->load->database();
 
         $this->db->select('*');
@@ -99,20 +99,16 @@ class Dataklien_m extends CI_Model {
         return $query->result();
     }
 
-    public function getById($id) {
-
+    public function getById($id) { //untuk mengambil data klien per id nya 
         $this->db->select('*');
         $this->db->from('klien');
         $this->db->join('user','user.id=klien.id_user');
         $this->db->where('id_user', $id);
-        // print_r($id);
-        // exit();
 
         return $this->db->get()->first_row();
     }
 
-    public function getKeluhan() {
-
+    public function getKeluhan() { //untuk mengambil data keluhan dan catatan konseling klien
         $this->db->select('*');
         $this->db->from('diagnosis');
 
@@ -121,31 +117,7 @@ class Dataklien_m extends CI_Model {
         
     }
 
-    public function save($post) {
-        $user = new stdClass();
-        $user->nama = $post['nama'];
-        $user->nomor_telepon = $post['nomor_telepon'];
-        $user->jenis_kelamin = $post['jenis_kelamin'];
-        $user->role = "4";
-        $user->alamat = $post['alamat'];
-        $user->email = $post['email'];
-        $user->username = $post['username'];
-
-        $this->db->insert($this->_table, $user);
-     
-        $klien = new stdClass();
-        $id_user = $this->db->insert_id();
-       //$klien->kode = $post['kode']; 
-        $klien->id_user = $id_user;
-        $klien->tanggal_lahir = $post['tanggal_lahir'];
-        $klien->marital_status = $post['marital_status'];
-        $klien->pekerjaan = $post['pekerjaan'];
-        $klien->agama = $post['agama'];
-
-        $this->db->insert('klien', $klien);
-    }
-
-    public function update($post,$id) {
+    public function update($post,$id) { //untuk menyimpan data klien yang telah di edit
         $user = new stdClass(); //ini adalah objek
         $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
         $user->nomor_telepon = $post['nomor_telepon'];
@@ -169,11 +141,6 @@ class Dataklien_m extends CI_Model {
         $this->db->set($klien);
         $this->db->where('id_user', $id);
         $this->db->update('klien', $klien);
-    }
-
-    public function delete($id){
-        $this->db->where('id', $id);
-        return $this->db->delete($this->_table, array('id' => $id));
     }
 
     public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum

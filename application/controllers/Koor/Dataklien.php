@@ -73,20 +73,18 @@ class Dataklien extends CI_Controller {
     }
 
     public function index() {
-    
         $data['user'] = $this->Dataklien_m->getAll();
 
-        foreach ($data['user'] as $key => $value) {
+        foreach ($data['user'] as $key => $value) { //untuk menampilkan jadwal konseling klien yang terbaru
             $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id);
             $data['jadwal'][$value->id] = $jadwal;
-
         }
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Dataklien', $data);
     }
 
-    public function lihatseluruh() {
+    public function lihatseluruh() { //untuk melihat seluruh data klien
         $data['user'] = $this->Dataklien_m->getAll();
 
         foreach ($data['user'] as $key => $value) {
@@ -99,14 +97,14 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Dataklien2', $data);
     }
 
-    public function edit($id) {
+    public function edit($id) { //open page edit data klien
         $data['user'] = $this->Dataklien_m->getById($id);
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/klien/Editdataklien", $data);
     }
 
-    public function update($id) {
+    public function update($id) { //proses untuk menyimpan data klien yang telah di edit
         if(!isset($id)) redirect('koordinator/klien/Dataklien');
         $post = $this->input->post();
 
@@ -117,15 +115,12 @@ class Dataklien extends CI_Controller {
             $this->Dataklien_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
             $data['user'] = $this->Dataklien_m->getAll();
-            $this->load->view('koordinator/template/header');
-            $this->load->view('koordinator/template/footer');
-            $this->load->view("koordinator/klien/Dataklien", $data);
-        
+            redirect('Koor/Dataklien/index', 'refresh');
         $data['user'] = $user->getById($id);
         if(!$data['user']) show_404();
     }
 
-    public function catkonsel() {
+    public function catkonsel() { //open page catatan konseling
         $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
 
         $this->load->view('koordinator/template/header');
@@ -133,7 +128,17 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Catkonselkoor', $data);
     }
 
-    public function editcatkonsel() {
+    public function catkonselseluruh() { //open page catatan konseling
+        $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view('koordinator/klien/Catkonsel2', $data);
+    }
+
+
+
+    public function editcatkonsel() { //open page edit catatan konseling
         $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
 
         $this->load->view('koordinator/template/header');
@@ -141,32 +146,35 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Editcatkonsel', $data);
     }
 
-    public function tambahcat() {
+    public function tambahcat() { //open page tambah catatan konseling
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Tambahcatkonsel');
     }
-    public function lihatRiwayat() 
-	{
+    public function lihatRiwayat() { //open page lihat riwayat perklien berdasarkan klien yang dipilih
 		$this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/Lihatriwayat.php');
 	}
 
-	public function riwayat() 
-	{
+	public function riwayat() { //open page riwayat yang di tangani oleh koor
         $data['user'] = $this->Dataklien_m->getAll();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view("koordinator/Riwayatdiagnosis", $data);
     }
+
+    public function seluruhriwayat() { //open page riwayat seluruh klien
+        $data['user'] = $this->Dataklien_m->getAll();
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+		$this->load->view("koordinator/Seluruhriwayat", $data);
+    }
     
-    public function ubah_status($id_user) {
+    public function ubah_status($id_user) { //proses untuk mengubah status user telah selesai melakukan treatment konseling atau belum
         $status_konsel = $this->input->get();
         $this->Dataklien_m->ubah_status($id_user, $status_konsel);
         redirect('Koor/Dataklien', 'refresh');
-        // print_r($x);
-        // exit();
     }
 
 }

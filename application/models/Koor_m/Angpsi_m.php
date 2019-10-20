@@ -56,7 +56,7 @@ class Angpsi_m extends CI_Model {
         ];
     }
 
-    public function getAll() {
+    public function getAll() { // untuk mengambil data anggota psikolog
         $this->load->database();
 
         $this->db->select('*');
@@ -67,20 +67,17 @@ class Angpsi_m extends CI_Model {
         return $query->result();
     }
 
-    public function getById($id) {
-
+    public function getById($id) { //untuk mengambil data anggota psikolog bper id nya 
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('id', $id);
-        // print_r($id);
-        // exit();
 
         return $this->db->get()->first_row();
     }
 
-    public function save($post) {
-        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-        $password = array();
+    public function save($post) { //untuk menyimpan data anggota psikolog yang baru ditambahkan (membuat akun untuk ang psikolog)
+        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'; 
+        $password = array(); //untuk password random
         $alpha_length = strlen($alphabet) - 1;
         for ($i = 0; $i<8; $i++) {
             $n = rand(0, $alpha_length);
@@ -102,7 +99,7 @@ class Angpsi_m extends CI_Model {
         return $data_password;
     }
 
-    public function update($post,$id) {
+    public function update($post,$id) { //untuk menyimpan data anggota psikolog yang telah di edit
         $user = new stdClass(); //ini adalah objek
         $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
         $user->nomor_telepon = $post['nomor_telepon'];
@@ -110,7 +107,6 @@ class Angpsi_m extends CI_Model {
         $user->alamat = $post['alamat'];
         $user->email = $post['email'];
         $user->username = $post['username'];
-        // $user->password = md5($post['password']);
 
         $this->db->set($user);
         $this->db->where('id', $id);
@@ -118,28 +114,9 @@ class Angpsi_m extends CI_Model {
         $this->db->update($this->_table, $user);
     }
 
-    public function delete($id){
+    public function delete($id) { //untuk menghapus data anggota psikolog
         $this->db->where('id', $id);
         return $this->db->delete($this->_table, array('id' => $id));
-    }
-
-    public function search($keyword, $where) {
-       $this->db->select('*');
-       $this->db->from('user');
-       $this->db->where($where);
-       $this->db->like('nama', $keyword);
-       return $this->db->get()->result();   
-    }
-
-    public function random_pass() {
-        $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-        $password = array();
-        $alpha_length = strlen($alphabet) - 1;
-        for ($i = 0; $i<8; $i++) {
-            $n = rand(0, $alpha_length);
-            $password[] = $alphabet[$n];
-        }
-        return implode($password);
     }
 
 }

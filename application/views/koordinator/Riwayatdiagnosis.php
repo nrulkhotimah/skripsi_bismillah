@@ -38,6 +38,9 @@
                                     <?php endforeach; ?>
                             </tbody>
                         </table>
+                        <div>
+                            <a href="<?php echo site_url('Koor/Dataklien/seluruhriwayat')?>" class="btn btn-link">Lihat riwayat seluruh klien</a>
+                        </div>
                     </div>
                 </div>
             </div>

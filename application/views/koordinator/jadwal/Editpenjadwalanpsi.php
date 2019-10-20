@@ -53,7 +53,7 @@
                                 <label for="exampleFormControlInput1">Waktu Konseling</label>
                                 <input
                                     name="waktu"
-                                    type="time"
+                                    type="text"
                                     class="form-control  <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
                                     id="waktu"
                                     value="<?php echo $user->waktu ?>">

@@ -50,7 +50,7 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10 px !important;">Hello! koordinator</p>
+                            <p class="text-center" style="font:10 px !important;">Hello! <?php echo nama_session() ?></p>
                             <!-- <span >Hello! Admin</span> -->
                         </li>
                         <hr>
