@@ -151,21 +151,28 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Tambahcatkonsel');
     }
-    public function lihatRiwayat() { //open page lihat riwayat perklien berdasarkan klien yang dipilih
-		$this->load->view('koordinator/template/header');
+    public function lihatRiwayat($id_klien) { //open page lihat riwayat perklien berdasarkan klien yang dipilih
+        $data['user'] = $this->Dataklien_m->getById($id_klien);
+        $data['riwayat'] = $this->Dataklien_m->getPendaftaranPsiKlien($this->session->userdata('id'), $id_klien);
+        foreach ($data['riwayat'] as $key => $value) {
+            $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
+            $id_pendaftaran = $data_pendaftaran->id;
+            $data['diagnosis'][$key] = $this->Dataklien_m->getDiagnosisPendaftaran($id_pendaftaran);
+        }
+        $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-		$this->load->view('koordinator/Lihatriwayat.php');
+		$this->load->view('koordinator/Lihatriwayat', $data);
 	}
 
 	public function riwayat() { //open page riwayat yang di tangani oleh koor
-        $data['user'] = $this->Dataklien_m->getAll();
+        $data['user'] = $this->Dataklien_m->getPendaftaranPsikolog($this->session->userdata('id'));
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view("koordinator/Riwayatdiagnosis", $data);
     }
 
     public function seluruhriwayat() { //open page riwayat seluruh klien
-        $data['user'] = $this->Dataklien_m->getAll();
+        $data['user'] = $this->Dataklien_m->getPendaftaranSemua();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view("koordinator/Seluruhriwayat", $data);

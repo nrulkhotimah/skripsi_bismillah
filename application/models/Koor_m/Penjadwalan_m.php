@@ -61,7 +61,7 @@ class Penjadwalan_m extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('penjadwalan');
-        $this->db->where('id_user', $id);
+        $this->db->where('id', $id); //mengambil id penjadwalan
 
         return $this->db->get()->first_row();
         
@@ -76,7 +76,7 @@ class Penjadwalan_m extends CI_Model {
     // }
 
     public function getJadwalPsi($id_user) { // untuk mengambil data jadwal psikolog berdasarkan session psikolog yg login
-        $this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
+        //$this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
         $this->db->where('penjadwalan.id_user', $id_user);
         $query = $this->db->get('penjadwalan');
         return $query->result();

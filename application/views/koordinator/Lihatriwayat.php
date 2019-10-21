@@ -20,21 +20,19 @@
                     <div class="col-md-12">
                         <tr>
                             <th>
-                                <span>Nama klien : Tina
+                                <span>Nama klien : <?php echo $user->nama ?>
                                 </span>
                                 <br>
                             </th>
-                            <td>
-                                <span>Hasil Diagnosis : Bipolar 1</span>
-                            </td>
                         </tr>
                         <tr>
                             <br>
                             <td>
-                                <span>Nama Psikolog : Ika
+                                <span>Nama Psikolog :  <?php echo $this->session->userdata("nama") ?>
                                 </span>
                             </td>
                         </tr>
+
 
                         <!-- data tabel -->
                         <table
@@ -52,14 +50,15 @@
                             </thead>
 
                             <tbody class="text-center">
+                            <?php foreach ($riwayat as $key => $value): ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">23 Juni 2019</td>
-                                    <td class="align-middle">Bipolar 1</td>
-                                    <td class="align-middle">Stress</td>
-                                    <td class="align-middle">Perbanyak istirahat</td>
+                                    <td class="align-middle"><?php echo $key+1 ?></td>
+                                    <td class="align-middle"><?php echo date("d F Y", strtotime($value->waktu_daftar)) ?></td>
+                                    <td class="align-middle"><?php echo $diagnosis[$key]->nama_gangguan ?></td>
+                                    <td class="align-middle"><?php echo $diagnosis[$key]->keluhan ?></td>
+                                    <td class="align-middle"><?php echo $diagnosis[$key]->catatan ?></td>
                                 </tr>
-
+                            <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

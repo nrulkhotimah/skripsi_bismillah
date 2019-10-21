@@ -41,7 +41,7 @@
             <td class="align-middle"><?php echo $DataKlien->marital_status ?></td>
             <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
             <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
-            <td class="align-middle"><?php echo $jadwal_konseling[$DataKlien->id] ?></td>
+            <td class="align-middle"><?php echo $jadwal_konseling[$DataKlien->id_user] ?></td>
             <td class="align-middle">
                 <a href="<?php echo site_url('Admin/Dataklien/edit/'.$DataKlien->id_user) ?>">
                     <!-- edit data klien -->

@@ -108,6 +108,49 @@ class Dataklien_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
+    public function getPendaftaranPsikolog($id_psikolog) {  
+        $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->where('penjadwalan.id_user', $id_psikolog);
+        $this->db->group_by('pendaftaran.id_klien');
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->result();
+    }
+
+    public function getPendaftaranSemua() {  
+        $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->group_by('pendaftaran.id_klien');
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->result();
+    }
+
+    public function getPendaftaranPsiKlien($id_psikolog, $id_klien) { //mengambil data tanggal aja untuk di bagian lihat riwayat
+        $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->where('penjadwalan.id_user', $id_psikolog);
+        $this->db->where('pendaftaran.id_klien', $id_klien);
+        $this->db->order_by('pendaftaran.waktu_daftar', 'desc');
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->result();
+    }
+
+    public function getIdPendaftaran($id_penjadwalan, $id_klien, $waktu_daftar) { //untuk mengambil satu data pendaftaran klien
+        $this->db->where('id_penjadwalan', $id_penjadwalan);
+        $this->db->where('id_klien', $id_klien);
+        $this->db->where('waktu_daftar', $waktu_daftar);
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->row();
+
+    }
+
+    public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
+        $this->db->join('deskripsigangguan', 'deskripsigangguan.id = diagnosis.id_gangguan', 'left');
+        $this->db->where('diagnosis.id_pendaftaran', $id_pendaftaran);
+        $ambil = $this->db->get('diagnosis');
+        return $ambil->row();
+    }
+
     public function getKeluhan() { //untuk mengambil data keluhan dan catatan konseling klien
         $this->db->select('*');
         $this->db->from('diagnosis');
