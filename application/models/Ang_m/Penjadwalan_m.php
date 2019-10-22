@@ -33,8 +33,8 @@ class Penjadwalan_m extends CI_Model {
             'rules' => 'required'
             ],
 
-            ['field' => 'tanggal',
-            'label' => 'Tanggal',
+            ['field' => 'hari',
+            'label' => 'Hari',
             'rules' => 'required'
             ],
 
@@ -45,133 +45,82 @@ class Penjadwalan_m extends CI_Model {
         ];
     }
 
-    public function getAll() {
+    public function getAll() { //untuk mengambil seluruh data penjadwalan
         $this->load->database();
 
         $this->db->select('*');
         $this->db->from('user');
         $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
-        $this->db->order_by('penjadwalan.tanggal', 'desc');
+        $this->db->order_by('penjadwalan.hari', 'desc');
         $query = $this->db->get();
-        // print_r($query); exit();
+
         return $query->result();
     }
 
-    public function getToday($id_user) {
-        $today = date("Y-m-d");
-        $this->db->where('id_user', $id_user);
-        $this->db->where('tanggal', $today);
+    public function getById($id) { //untuk mengambil data jadwal per id nya 
+
+        $this->db->select('*');
+        $this->db->from('penjadwalan');
+        $this->db->where('id', $id); //mengambil id penjadwalan
+
+        return $this->db->get()->first_row();
+        
+    }
+
+    // public function getToday($id_user) { //untuk mengambil data jadwal 
+    //     $today = date("Y-m-d");
+    //     $this->db->where('id_user', $id_user);
+    //     $this->db->where('tanggal', $today);
+    //     $query = $this->db->get('penjadwalan');
+    //     return $query->result();
+    // }
+
+    public function getJadwalPsi($id_user) { // untuk mengambil data jadwal psikolog berdasarkan session psikolog yg login
+        //$this->db->join('user', 'user.id = penjadwalan.id_user', 'left' );
+        $this->db->where('penjadwalan.id_user', $id_user);
         $query = $this->db->get('penjadwalan');
         return $query->result();
     }
 
-    public function getPendaftaranJadwal($id_penjadwalan) {
+    public function getPendaftaranBaru($id_klien) { // untuk mengambil data pendaftaran klien, ketika klien mendaftar konseling dan memilih jadwal
+    
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');
+        $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
+        $this->db->join('deskripsigangguan', 'deskripsigangguan.id = diagnosis.id_gangguan', 'left');
+
+        $this->db->order_by('pendaftaran.id', 'desc');
+        $this->db->limit(1);
+        $this->db->where('pendaftaran.id_klien', $id_klien);
+        $query = $this->db->get('pendaftaran');
+        return $query->row();
+    }
+
+    public function getPendaftaranJadwal($id_penjadwalan) { //untuk mengambil data jadwal yang telah di pilih oleh klien
         $this->db->where('id_penjadwalan', $id_penjadwalan);
         $query = $this->db->get("pendaftaran");
         return $query->result();
     }
 
-    public function getById($id) {
-
-        $this->db->select('*');
-        $this->db->from('penjadwalan');
-        $this->db->join('user','user.id=penjadwalan.id_user');
-        $this->db->where('id_user', $id);
-
-        return $this->db->get()->first_row();
+    public function save($post) { //untuk menyimpan jadwal yang di inputkan psikolog
+        $this->db->insert('penjadwalan', $post);
     }
 
-    
-    public function save($post,$id_user) {
-    
+    public function update($post,$id) { // untuk menyimpan data jadwal yang telah di edit     
         $penjadwalan = new stdClass();
-        $penjadwalan->id_user = $id_user;
         $penjadwalan->waktu = $post['waktu'];
-        $penjadwalan->tanggal = $post['tanggal'];
-        $penjadwalan->kuota = $post['kuota'];
-
-        $this->db->insert('penjadwalan', $penjadwalan);
-        // return $this->db->insert_id();
-
-    }    
-
-    // public function save($post) {
-    //     $user = new stdClass();
-    //     $user->nama = $post['nama'];
-    //     $user->nomor_telepon = $post['nomor_telepon'];
-
-    //     $this->db->insert($this->_table, $user);
-     
-    //     $penjadwalan = new stdClass();
-    //     $id_user = $this->db->insert_id();
-    //     $penjadwalan->id_user = $id_user;
-    //     $penjadwalan->waktu = $post['waktu'];
-    //     $penjadwalan->tanggal = $post['tanggal'];
-    //     $penjadwalan->kuota = $post['kuota'];
-
-    //     $this->db->insert('penjadwalan', $penjadwalan);
-    // }
-
-    public function update($post,$id) {
-        $user = new stdClass(); //ini adalah objek
-        $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
-        $user->nomor_telepon = $post['nomor_telepon'];
-
-        $this->db->set($user);
-        $this->db->where('id', $id);
-
-        $this->db->update($this->_table, $user);
-     
-        $penjadwalan = new stdClass();
-        $penjadwalan->id_user = $id;
-        $penjadwalan->waktu = $post['waktu'];
-        $penjadwalan->tanggal = $post['tanggal'];
+        $penjadwalan->hari = $post['hari'];
         $penjadwalan->kuota = $post['kuota'];
 
         $this->db->set($penjadwalan);
-        $this->db->where('id_user', $id);
+        $this->db->where('id', $id);
         $this->db->update('penjadwalan', $penjadwalan);
     }
 
-    public function delete($id){
+    public function delete($id){ //untuk menghapus data jadwal 
         $this->db->where('id', $id);
-        return $this->db->delete($this->_table, array('id' => $id));
+        return $this->db->delete('penjadwalan', array('id' => $id));
     }
-
-    public function search($keyword) {
-       $this->db->select('*');
-       $this->db->from('user');
-       $this->db->join('klien','klien.id_user=user.id');
-       $this->db->like('nama', $keyword);
-       return $this->db->get()->result();   
-    }
-
-    public function tambah_user($post) {
-        $user = new stdClass();
-        $user->nama = $post['nama'];
-        $user->nomor_telepon = $post['nomor_telepon'];
-        $user->jenis_kelamin = $post['jenis_kelamin'];
-        $user->role = "4";
-        $user->alamat = $post['alamat'];
-        $user->email = $post['email'];
-        $user->username = $post['username'];
-        $user->password = md5($post['password']);
-
-        $this->db->insert($this->_table, $user);
-     
-        $klien = new stdClass();
-        $id_user = $this->db->insert_id();
-       //$klien->kode = $post['kode']; 
-        $klien->id_user = $id_user;
-        $klien->tanggal_lahir = $post['tanggal_lahir'];
-        $klien->marital_status = $post['marital_status'];
-        $klien->pekerjaan = $post['pekerjaan'];
-        $klien->agama = $post['agama'];
-
-        $this->db->insert('klien', $klien);
-        return $this->db->insert_id();
-    }
-
 
 
 }

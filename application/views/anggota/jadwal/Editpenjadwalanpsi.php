@@ -3,6 +3,20 @@
                             <span class="title font-weight-bold">EDIT JADWAL</span>
                         </div>
                     </div>
+
+                    <!-- breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang/Home/index')?>">Home</a>
+                            </li>
+                            <li class="breadcrumb-item btn-link">
+                                <a href="<?php echo site_url('Ang/Penjadwalan/index') ?>">Penjadwalan</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit penjadwalan psikolog</li>
+                        </ol>
+                    </nav>
+
                     <div class="col-md-12">
                         <form
                             action="<?php echo base_url('index.php/Ang/Penjadwalan/update/'.$user->id) ?>"
@@ -10,54 +24,28 @@
                             enctype="multipart/form-data">
 
                             <div class="form-group">
-                                <input
-                                    name="nama"
-                                    type="text"
-                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->nama ?>"
-                                    placeholder="Nama">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nama') ?>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <input
-                                    name="nomor_telepon"
-                                    type="number"
-                                    class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->nomor_telepon ?>"
-                                    placeholder="Nomor Telepon">
-                                <div class="invalid-feedback">
-                                    <?php echo form_error('nomor_telepon') ?>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
+                                <label for="kuota">Kuota</label>
                                 <input
                                     name="kuota"
-                                    type="text"
+                                    type="number"
                                     class="form-control <?php echo form_error('kuota') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->kuota ?>"
-                                    placeholder="Kuota Klien">
+                                    id="kuota"
+                                    value="<?php echo $user->kuota ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('kuota') ?>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleFormControlInput1">Tanggal konseling</label>
+                                <label for="exampleFormControlInput1">Hari</label>
                                 <input
-                                    name="tanggal"
-                                    type="date"
-                                    class="form-control <?php echo form_error('tanggal') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->tanggal ?>">
+                                    name="hari"
+                                    type="varchar"
+                                    class="form-control <?php echo form_error('hari') ? 'is-invalid':'' ?>"
+                                    id="tanggal"
+                                    value="<?php echo $user->hari ?>">
                                 <div class="invalid-feedback">
-                                    <?php echo form_error('kuota') ?>
+                                    <?php echo form_error('hari') ?>
                                 </div>
                             </div>
 
@@ -65,18 +53,14 @@
                                 <label for="exampleFormControlInput1">Waktu Konseling</label>
                                 <input
                                     name="waktu"
-                                    type="time"
+                                    type="text"
                                     class="form-control  <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
+                                    id="waktu"
                                     value="<?php echo $user->waktu ?>">
                                 <div class="invalid-feedback">
                                     <?php echo form_error('waktu') ?>
                                 </div>
                             </div>
-
-                            <a href="<?php echo site_url('K_Penjadwalan/index')?>">
-                                <button type="button" class="btn btn-primary" style="float:right;">Cancel</button>
-                            </a>
 
                             <input
                                 type="submit"

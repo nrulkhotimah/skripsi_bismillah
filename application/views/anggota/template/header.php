@@ -48,8 +48,8 @@
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
-                            <p class="text-center" style="font:10px !important;">Hello! psikolog</p>
-                            <!-- <span >Hello! Admin</span> -->
+                            <p class="text-center" style="font:10px !important;">Hello! <?php echo nama_session() ?></p>
+
                         </li>
                         <hr>
 

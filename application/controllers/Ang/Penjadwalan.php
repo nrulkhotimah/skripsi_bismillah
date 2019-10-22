@@ -15,27 +15,14 @@ class Penjadwalan extends CI_Controller {
 
     public function rules() {
         return [
-            ['field' => 'id',
-            'label' => 'ID',
-            ],
 
-            ['field' => 'nama',
-            'label' => 'Nama',
-            'rules' => 'required'
-            ],
-
-            ['field' => 'nomor_telepon',
-            'label' => 'Nomor Telepon',
+            ['field' => 'id_user',
+            'label' => 'Id User',
             'rules' => 'required'
             ],
 
             ['field' => 'waktu',
             'label' => 'Waktu',
-            'rules' => 'required'
-            ],
-
-            ['field' => 'tanggal',
-            'label' => 'Tanggal',
             'rules' => 'required'
             ],
 
@@ -47,30 +34,27 @@ class Penjadwalan extends CI_Controller {
     }
 
 	public function index() {
-        
-        $data['user'] = $this->Penjadwalan_m->getToday($this->session->userdata('id'));
-
-        foreach ($data['user'] as $key => $value) {
-            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
-            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        $data['user'] = $this->Penjadwalan_m->getJadwalPsi($this->session->userdata('id'));
+        foreach ($data['user'] as $key => $value) { 
+            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id); //proses mengambil jadwal yg dipilih klien
+            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran); //proses perhitungan kuota
         }
-
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
-        $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
+        $this->load->view("anggota/jadwal/Penjadwalanang", $data);
+
     }
 
-    public function add() {
+    public function add() { //open page tambah jadwal
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
-        $this->load->view("anggota/jadwal/Inputjadwalkoor");
+        $this->load->view("anggota/jadwal/Inputjadwalang");
     }
 
-    public function save() {
+
+    public function save() { // proses menyimpan jadwal yang telah di inputkan
         $post = $this->input->post();
-        // print_r($post);
-        // exit();
-
+        $this->load->helper('form');
         $this->load->library('form_validation');
 
         $validation = $this->form_validation;
@@ -79,58 +63,49 @@ class Penjadwalan extends CI_Controller {
         if($validation->run()) {
             $this->Penjadwalan_m->save($post);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Penjadwalan_m->getAll();
-            $this->load->view('anggota/template/header');
-            $this->load->view('anggota/template/footer');
-            $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
+            redirect('ang/penjadwalan/index','refresh');
+            
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
             $this->load->view('anggota/template/header');
             $this->load->view('anggota/template/footer');
-            $this->load->view("anggota/jadwal/Inputjadwalkoor");
+            $this->load->view("anggota/jadwal/Inputjadwalang");
         }
     }
 
-    public function edit($id) {
+    public function edit($id) { // open page edit penjadwalan
         $data['user'] = $this->Penjadwalan_m->getById($id);
+
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
         $this->load->view("anggota/jadwal/Editpenjadwalanpsi", $data);
     }
 
-    public function update($id) {
-        if(!isset($id)) redirect('anggota/jadwal/Penjadwalankoor');
+    public function update($id) { //proses update jadwal yang telah di edit
+        if(!isset($id)) redirect('ang/penjadwalan/index');
         $post = $this->input->post();
 
-        $user = $this->Ang_Penjadwalan_m;
+        $user = $this->Penjadwalan_m;
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-            echo "a";
-            $this->Ang_Penjadwalan_m->update($post,$id);
+            $this->Penjadwalan_m->update($post,$id);
             $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Ang_Penjadwalan_m->getAll();
-            $this->load->view("anggota/jadwal/Penjadwalankoor", $data);
+            $data['user'] = $this->Penjadwalan_m->getAll();
+           redirect('ang/penjadwalan/index','refresh');
         
         $data['user'] = $user->getById($id);
 
         if(!$data['user']) show_404();
     }
 
-    public function delete($id) {
+    public function delete($id) { //proses menghapus jadwal
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
-        $data['user'] = $this->Ang_Penjadwalan_m->getAll();
+        redirect('ang/penjadwalan/index','refresh');
+    }
 
-        $this->load->view('koordinator/jadwal/Penjadwalankoor', $data);
-    }
-    
-    public function daftarjadwal() {
-        $this->load->view('anggota/template/header');
-        $this->load->view('anggota/template/footer');
-        $this->load->view('koordinator/jadwal/Daftarjadwalkonsel.php');
-    }
 
     
 }

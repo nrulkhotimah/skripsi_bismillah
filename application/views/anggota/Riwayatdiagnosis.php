@@ -6,7 +6,7 @@
                     </div>
 
                     <div class="col-md-12">
-              
+            
                         <!-- data tabel -->
                         <table
                             class="table table-sm table-bordered"
@@ -14,23 +14,28 @@
                             id="example">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle col5" >No</th>
-                                    <th class="align-middle" >Nama Klien</th>
-                                    <th class="align-middle" >Aksi</th>
+                                    <th class="align-middle col5">No</th>
+                                    <th class="align-middle " >Nama Klien</th>
+                                    <th class="align-middle " >Aksi</th>
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
+                                <?php 
+                                $i=0;
+                                    foreach($user as $Dataklien):
+                                    $i++;
+                                ?>
                                 <tr>
-                                    <td class="align-middle"></td>
-                                    <td class="align-middle"></td>
+                                    <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle"><?php echo $Dataklien->nama ?></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('Ang/Dataklien/lihatRiwayat') ?>">
+                                        <a href="<?php echo site_url('Ang/Dataklien/lihatRiwayat/'.$Dataklien->id_klien) ?>">
                                             <button class="btn btn-primary">Lihat Riwayat</button>
                                         </a>
                                     </td>
                                 </tr>
-
+                                    <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
