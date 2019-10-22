@@ -158,6 +158,11 @@ class Dataklien extends CI_Controller {
             $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
             $id_pendaftaran = $data_pendaftaran->id;
             $data['diagnosis'][$key] = $this->Dataklien_m->getDiagnosisPendaftaran($id_pendaftaran);
+            
+            echo "<pre>";
+            print_r ($data_pendaftaran);
+            echo "</pre>";
+            
         }
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');

@@ -157,7 +157,6 @@ class Dataklien_m extends CI_Model {
 
         $query = $this->db->get();
         return $query->result();
-        
     }
 
     public function update($post,$id) { //untuk menyimpan data klien yang telah di edit

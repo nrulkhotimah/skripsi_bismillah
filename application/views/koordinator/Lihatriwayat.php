@@ -33,7 +33,6 @@
                             </td>
                         </tr>
 
-
                         <!-- data tabel -->
                         <table
                             class="table table-sm table-bordered"
