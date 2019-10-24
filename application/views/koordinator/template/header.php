@@ -62,7 +62,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Koor/Diagnosis/index')?>">Diagnosis</a>
+                            <a href="<?php echo site_url('Koor/Diagnosis/pilihKlien')?>">Diagnosis</a>
                         </li>
 
                         <li>
