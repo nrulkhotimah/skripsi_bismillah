@@ -94,7 +94,7 @@ class Penjadwalan_m extends CI_Model {
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');
         $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
-        $this->db->join('deskripsigangguan', 'deskripsigangguan.id = diagnosis.id_gangguan', 'left');
+        $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
 
         $this->db->order_by('pendaftaran.id', 'desc');
         $this->db->limit(1);

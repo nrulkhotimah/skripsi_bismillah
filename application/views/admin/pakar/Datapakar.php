@@ -47,7 +47,6 @@
                                     </td>
 
                                     <td class="align-middle">
-
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Admin/Datapakar/delete/'.$DataPakar->id) ?>')"
                                             href="#!"
