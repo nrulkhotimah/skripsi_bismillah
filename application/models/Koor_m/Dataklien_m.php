@@ -145,7 +145,7 @@ class Dataklien_m extends CI_Model {
     }
 
     public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
-        $this->db->join('deskripsigangguan', 'deskripsigangguan.id = diagnosis.id_gangguan', 'left');
+        $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
         $this->db->where('diagnosis.id_pendaftaran', $id_pendaftaran);
         $ambil = $this->db->get('diagnosis');
         return $ambil->row();

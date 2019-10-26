@@ -29,8 +29,8 @@
         </tr>
     </thead>
 
-    <pre><?php print_r($user) ?></pre>
-    <pre><?php print_r($jadwal) ?></pre>
+    <!-- <pre><?php print_r($user) ?></pre>
+    <pre><?php print_r($jadwal) ?></pre> -->
 
 
     <tbody class="text-center">
