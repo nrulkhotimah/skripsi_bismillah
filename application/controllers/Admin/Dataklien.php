@@ -171,9 +171,7 @@ class Dataklien extends CI_Controller {
                 $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
             }
         }
-        $this->load->view('admin/template/header');
-        $this->load->view('admin/template/footer');
-        $this->load->view('admin/klien/Dataklien', $data);
+        redirect('Admin/Dataklien/index','refresh');
     }
 
 }

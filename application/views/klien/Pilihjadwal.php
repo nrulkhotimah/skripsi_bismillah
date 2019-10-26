@@ -115,29 +115,44 @@
                 <div class="row text-center">
                     <div class="col-md-12">
 
+                        <?php if($this->session->flashdata('success')): ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
+
                         <!-- data tabel -->
                         <table class="table table-bordered" style="margin-top:20px;" id="klien1">
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle col5">No</th>
-                                    <th class="align-middle">Nama Psikolog</th>
-                                    <th class="align-middle">Aksi</th>
+                                    <th class="align-middle col30">Hari</th>
+                                    <th class="align-middle col30">Waktu</th>
+                                    <th class="align-middle col20">Kuota</th>
+                                    <th class="align-middle col20">Aksi</th>
+
                                 </tr>
                             </thead>
 
                             <tbody class="text-center">
                                 <?php
                                     $i=0;
-                                    foreach($user as $jadwal):
-                                    // print_r($DataKlien);
-                                     // exit();
+                                    foreach($tanggal_muncul as $key => $value):
+                                    $waktu = $jadwal[date("D", strtotime($value))]->waktu;
+                                    $kuota = $jadwal[date("D", strtotime($value))]->kuota - $sisa_kuota[date("D", strtotime($value))];
+                                    $id_penjadwalan = $jadwal[date("D", strtotime($value))]->id;
                                     $i++;
                                 ?>
                                 <tr>
                                     <td><?php echo $i ?></td>
-                                    <td><?php echo $jadwal->nama ?></td>
-                                    <td class="btn-link">
-                                        <a href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$id_user.'/'.$jadwal->id)?>"> Pilih jadwal </a>
+                                    <td><?php echo date("D", strtotime($value)).", ".date("d M Y", strtotime($value)) ?></td>
+                                    <td><?php echo $waktu ?></td>
+                                    <td><?php echo $kuota ?></td>
+
+                                    <td >
+                                        <a
+                                            href="<?php echo base_url("klien/pendaftaran/simpan_jadwal/".$id_klien."/".$id_penjadwalan."/".$value) ?>"
+                                            class="btn btn-primary">Pilih Jadwal</a>
                                     </td>
                                 </tr>
                                 <?php  endforeach; ?>
