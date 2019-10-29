@@ -20,6 +20,11 @@
             type="text/css"
             href="<?php echo base_url();?>assets/css/custom.css">
 
+        <!-- <link
+            rel="stylesheet"
+            type="text/css"
+            href="<?php echo base_url();?>assets/css/flowchart.css"> -->
+
         <!-- script bootstrap datatables -->
         <link
             rel="stylesheet"
@@ -37,7 +42,6 @@
     </head>
 
     <body>
-
         <div class="wrapper">
             <!-- Sidebar -->
             <nav id="sidebar">

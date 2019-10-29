@@ -49,6 +49,48 @@
                 }
             </script>
 
+            <script>
+                $(document).ready(function(){
+                    // untuk class satu
+                    $("#show1").click(function(){
+                        $(".satu").hide();  //.satu ini tu class
+                        $(".tiga").show();
+                    });
+                    $("#save2").click(function(){
+                        $(".satu").hide();
+                        $(".dua").show();
+                    });
+                    // ===============
+
+                    // untuk class dua
+                    $("#save2").click(function(){
+                        $(".dua").hide();
+                        $(".tiga").show();
+                    });
+                    $("#show2").click(function(){
+                        $(".satu").hide();
+                        $(".dua").show();
+                    });
+                    // ===============
+
+                    // untuk class dua
+                    $("#save2").click(function(){
+                        $(".dua").hide();
+                        $(".tiga").show();
+                    });
+                    $("#show2").click(function(){
+                        $(".satu").hide();
+                        $(".dua").show();
+                    });
+                    // ===============
+
+                    // default hide
+                    $(".dua").hide();
+                    $(".tiga").hide();
+                });
+
+            </script>
+
         </body>
 
     </html>

@@ -46,7 +46,7 @@
                                     </td>
                                     <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
                                     <td class="align-middle">
-                                        <a href="" class="btn btn-link">Bipolar 1</a>
+                                        bipolar
                                     </td>
                                     <td class="align-middle">23 Januari 2019</td>
                                     <td class="align-middle">13.00 WIB</td>
