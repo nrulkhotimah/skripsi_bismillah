@@ -165,11 +165,12 @@ textarea{
 
                     <div id="diagram"></div>
                         <div class="container p-5">
-
+                        <form method="post">
+                        
                        <!-- ====== pernyataaan 1 ======= -->
-                            <div class="row">
+                       <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" rows="3">Afek yang depresif, manik, ekspansif atau iritabel</textarea>
+                                    <textarea name="1" id="" rows="3"><?php echo $pengetahuan[1]->pertanyaan?> </textarea>
                                 </div>
                             </div>
                             
@@ -187,7 +188,7 @@ textarea{
                         <!-- ====== pertanyaan 2 ===== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Akibat fsiologik langsung dari penyakit umum?</textarea>
+                                    <textarea name="2" id="" cols="30" rows="3"><?php echo $pengetahuan[2]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-2">
@@ -215,7 +216,7 @@ textarea{
                         <!-- ====== pertanyaan 3 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="4">Akibat fsiologik langsung suatu zat (misal obat yg disalahgunakan,medikasi,toksin)?</textarea>
+                                    <textarea name="3" id="" cols="30" rows="4"><?php echo $pengetahuan[3]->pertanyaan?> </textarea>
                                 </div>
 
                                 <div class="col-md-2">
@@ -243,7 +244,7 @@ textarea{
                         <!-- ====== pernyataan 4 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Tentukan tipe dari episode afektif yang kini dan yang lalu</textarea>
+                                    <textarea name="4" id="" cols="30" rows="3"><?php echo $pengetahuan[4]->pertanyaan?> </textarea>
                                 </div>
                             </div>
 
@@ -261,7 +262,7 @@ textarea{
                         <!-- ====== pertanyaan 5 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="4">Afek yang depresif, manik, ekspansif atau iritabel sedikitnya 1 minggu gangguannya hebat atau hospitalisasi?</textarea>
+                                    <textarea name="5" id="" cols="30" rows="4"><?php echo $pengetahuan[5]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -282,7 +283,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 6 || readonly ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="4">Sedikitnya 2 minggu afek depresif atau hilangnya minat ditambah gejala terkait dan tidak disebabkan oleh berkabung?</textarea>
+                                    <textarea name="6" id="" cols="30" rows="4"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
                                 </div>
                             </div>
                         
@@ -301,7 +302,7 @@ textarea{
                         <!-- ====== pertanyaan 7 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="5">Afek yang depresif, manik, ekspansif atau iritabel sedikitnya 4 hari, perubahan tampak oleh orang lain namun lebih ringan daripada episode manik?</textarea>
+                                    <textarea name="7" id="" cols="30" rows="5"><?php echo $pengetahuan[7]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -322,7 +323,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 6 || readonly ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="4">Sedikitnya 2 minggu afek depresif atau hilangnya minat ditambah gejala terkait dan tidak disebabkan oleh berkabung?</textarea>
+                                    <textarea name="6" id="" cols="30" rows="4"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
                                 </div>
                             </div>
 
@@ -349,7 +350,7 @@ textarea{
                             <!-- ====== pertanyaan 6 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="4">Sedikitnya 2 minggu afek depresif atau hilangnya minat ditambah gejala terkait dan tidak disebabkan oleh berkabung?</textarea>
+                                    <textarea name="6" id="" cols="30" rows="4"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -359,7 +360,7 @@ textarea{
 
                                 <!-- ==== fakta C ==== -->
                                 <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"> EPISODE DEPRESI BERAT</textarea>
+                                    <textarea class="bg-warning" name="" id="" rows="3">EPISODE DEPRESI BERAT</textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -370,7 +371,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 8 || readonly ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Memenuhi kriteria episode manik dan depresi berat hampir setiap hari selama seminggu?</textarea>
+                                    <textarea name="8" id="" cols="30" rows="3"><?php echo $pengetahuan[8]->pertanyaan?></textarea>
                                 </div>
                             </div>
 
@@ -388,7 +389,7 @@ textarea{
                             <!-- ====== pertanyaan 8 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Memenuhi kriteria episode manik dan depresi berat hampir setiap hari selama seminggu?</textarea>
+                                    <textarea name="8" id="" cols="30" rows="3"><?php echo $pengetahuan[8]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -409,7 +410,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 9 || readonly ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Pernah terdapat episode manik atau campuran?</textarea>
+                                    <textarea name="9" id="" cols="30" rows="3"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
                                 </div>
                             </div>
 
@@ -427,7 +428,7 @@ textarea{
                             <!-- ====== pertanyaan 9 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Pernah terdapat episode manik atau campuran?</textarea>
+                                    <textarea name="9" id="" cols="30" rows="3"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -437,7 +438,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 10 ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Gejala psikotik timbul di luar episode manik atau campuran?</textarea>
+                                    <textarea name="10" id="" cols="30" rows="3">10</textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -485,7 +486,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 11 ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Terjadi hanya pada gangguan skizofrenik (lihat silsilah gangguan psikotik)?</textarea>
+                                    <textarea name="11" id="" cols="30" rows="3"><?php echo $pengetahuan[11]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -547,7 +548,7 @@ textarea{
                             <!-- ====== pertanyaan 12 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Pernah mendapat EPISODE HIPOMANIK & sedikitnya 1 EPISODE DEPRESI BERAT?</textarea>
+                                    <textarea name="12" id="" cols="30" rows="3"><?php echo $pengetahuan[12]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -575,7 +576,7 @@ textarea{
                             <!-- ====== pertanyaan 13 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">2 tahun lebih gejala hipomanik & ada saat depresif?</textarea>
+                                    <textarea name="13" id="" cols="30" rows="3"><?php echo $pengetahuan[13]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -604,7 +605,7 @@ textarea{
                             <!-- ====== pertanyaan 14 ======= -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Gejala manik/hipomanik yg bermakna secara klinis & tidak memenuhi kriteria gangguan bipolar spesifik?</textarea>
+                                    <textarea name="14" id="" cols="30" rows="3"><?php echo $pengetahuan[14]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -631,7 +632,7 @@ textarea{
                             <!-- ====== pertanyaan 15 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Pernah mendapat EPISODE DEPRESI BERAT?</textarea>
+                                    <textarea name="15" id="" cols="30" rows="3"><?php echo $pengetahuan[15]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -643,7 +644,7 @@ textarea{
 
                                 <!-- ========= pertanyaan 16 =========== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Gejala psikotik terjadi di luar saat EPISODE DEPRESI BERAT?</textarea>
+                                    <textarea name="16" id="" cols="30" rows="3"><?php echo $pengetahuan[16]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -669,7 +670,7 @@ textarea{
                                 
                                 <!-- ====== pertanyaan 17 ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Terjadi khususnya saat gangguan skizo afektif (lihat silsilah gangguan psikotik)?</textarea>
+                                    <textarea name="17" id="" cols="30" rows="3"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -711,7 +712,7 @@ textarea{
                             <!-- ====== pertanyaan 18 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Afek depresif yg berlangsung beberapa hari, sedikitnya untuk 2 tahun dg gejala terkait?</textarea>
+                                    <textarea name="18" id="" cols="30" rows="3"><?php echo $pengetahuan[18]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -739,7 +740,7 @@ textarea{
                         <!-- ====== pertanyaan 19 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3"> Afek depresif tidak memenuhi kriteria salah satu dari gangguan afektif di atas, timbul sebagai reaksi terhadap stresor?</textarea>
+                                    <textarea name="19" id="" cols="30" rows="3"><?php echo $pengetahuan[19]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -768,7 +769,7 @@ textarea{
                         <!-- ====== pertanyaan 20 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3">Gejala depresif yg bermakna secara klinis namun tidak memenyhi syarat untuk gangguan afektif spesifik?</textarea>
+                                    <textarea name="20" id="" cols="30" rows="3"><?php echo $pengetahuan[20]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -797,6 +798,10 @@ textarea{
                                     <textarea class="bg-warning" name="" id="" rows="3">Bukan gangguan afektif (gejala afektif yang secara klinis tak bermakna)</textarea>
                                 </div>
                             </div>
+
+                            <button class="btn btn-primary">Simpan</button>
+                        
+                        </form>
 
                         </div>
                 </div>
