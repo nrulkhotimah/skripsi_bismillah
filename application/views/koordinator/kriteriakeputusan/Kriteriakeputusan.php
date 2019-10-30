@@ -209,7 +209,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                        <!-- ============================     -->
 
+
+                        <!-- ====== pertanyaan 3 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="4">Akibat fsiologik langsung suatu zat (misal obat yg disalahgunakan,medikasi,toksin)?</textarea>
@@ -220,6 +223,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== hasil 2 ====== -->
                                 <div class="col-md-3">
                                     <textarea class="bg-warning" name="" id="" cols="30" rows="3"> GANGGUAN AFEKTIF AKIBAT ZAT</textarea>
                                 </div>
@@ -233,10 +237,13 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                        <!-- ================================     -->
 
+
+                        <!-- ====== pernyataan 4 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="" id="" cols="30" rows="3"> Tentukan tipe dari episode afektif yang kini dan yang lalu</textarea>
+                                    <textarea name="" id="" cols="30" rows="3">Tentukan tipe dari episode afektif yang kini dan yang lalu</textarea>
                                 </div>
                             </div>
 
@@ -248,7 +255,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                        <!-- ===================================== -->
 
+
+                        <!-- ====== pertanyaan 5 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="4">Afek yang depresif, manik, ekspansif atau iritabel sedikitnya 1 minggu gangguannya hebat atau hospitalisasi?</textarea>
@@ -259,6 +269,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ==== fakta A ==== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">EPISODE MANIK</textarea>
                                 </div>
@@ -267,12 +278,14 @@ textarea{
                                     <p></p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ====================== -->
 
+                                <!-- ====== pertanyaan 6 || readonly ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="4">Sedikitnya 2 minggu afek depresif atau hilangnya minat ditambah gejala terkait dan tidak disebabkan oleh berkabung?</textarea>
                                 </div>
-
                             </div>
+                        
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -282,7 +295,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                        <!-- ============================= -->
 
+
+                        <!-- ====== pertanyaan 7 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="5">Afek yang depresif, manik, ekspansif atau iritabel sedikitnya 4 hari, perubahan tampak oleh orang lain namun lebih ringan daripada episode manik?</textarea>
@@ -293,6 +309,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ==== fakta B ==== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">EPISODE HIPOMANIK</textarea>
                                 </div>
@@ -301,7 +318,9 @@ textarea{
                                     <p></p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ======================== -->
 
+                                <!-- ====== pertanyaan 6 || readonly ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="4">Sedikitnya 2 minggu afek depresif atau hilangnya minat ditambah gejala terkait dan tidak disebabkan oleh berkabung?</textarea>
                                 </div>
@@ -321,11 +340,13 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- =================================== -->
 
                             <div class="row">
                                 
                             </div>
 
+                            <!-- ====== pertanyaan 6 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="4">Sedikitnya 2 minggu afek depresif atau hilangnya minat ditambah gejala terkait dan tidak disebabkan oleh berkabung?</textarea>
@@ -336,6 +357,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ==== fakta C ==== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3"> EPISODE DEPRESI BERAT</textarea>
                                 </div>
@@ -344,12 +366,13 @@ textarea{
                                     <p></p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ========================== -->
 
+                                <!-- ====== pertanyaan 8 || readonly ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Memenuhi kriteria episode manik dan depresi berat hampir setiap hari selama seminggu?</textarea>
                                 </div>
                             </div>
-
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -359,7 +382,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ======================================= -->
 
+
+                            <!-- ====== pertanyaan 8 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Memenuhi kriteria episode manik dan depresi berat hampir setiap hari selama seminggu?</textarea>
@@ -369,7 +395,8 @@ textarea{
                                     <p class="text-center text-child">Ya</p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
-                                
+
+                                <!-- ==== fakta D ==== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">EPISODE CAMPURAN</textarea>
                                 </div>
@@ -378,7 +405,9 @@ textarea{
                                     <p></p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ====================== -->
 
+                                <!-- ====== pertanyaan 9 || readonly ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Pernah terdapat episode manik atau campuran?</textarea>
                                 </div>
@@ -392,7 +421,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ================================== -->
 
+
+                            <!-- ====== pertanyaan 9 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Pernah terdapat episode manik atau campuran?</textarea>
@@ -403,6 +435,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== pertanyaan 10 ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Gejala psikotik timbul di luar episode manik atau campuran?</textarea>
                                 </div>
@@ -411,12 +444,17 @@ textarea{
                                     <p class="text-center text-child">No</p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ================================ -->
 
+
+                                <!-- ====== hasil 3 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan bipolar 1</textarea>
                                 </div>
                             </div>
+                            <!-- ================================ -->
 
+                            <!-- ============ Garis ================ -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="row justify-content-md-center">
@@ -442,9 +480,10 @@ textarea{
 
                                 <div class="col-md-1">
                                     <p ></p>
-
                                 </div>
+                            <!-- ============ Garis ================ -->
 
+                                <!-- ====== pertanyaan 11 ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Terjadi hanya pada gangguan skizofrenik (lihat silsilah gangguan psikotik)?</textarea>
                                 </div>
@@ -454,25 +493,28 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ===== hasil 4 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" cols="30" name="" id="" rows="3">GANGGUAN SKIZOAFEKTIF TIPE BIPOLAR</textarea>
                                 </div>
                             </div>
                             
+                            <!-- ============ Garis ================ -->
                             <div class="row">
-                            <div class="col-md-3">
-                                <div class="row justify-content-md-center">
-                                    <p class="text-center text-child">No</p>
-                                    <img src="../../assets/img/bawah2.png" alt="" width='1.55%' height='100px'>
+                                <div class="col-md-3">
+                                    <div class="row justify-content-md-center">
+                                        <p class="text-center text-child">No</p>
+                                        <img src="../../assets/img/bawah2.png" alt="" width='1.55%' height='100px'>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 offset-md-1">
+                                    <div class="row justify-content-md-center">
+                                        <p class="text-center text-child"></p>
+                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 offset-md-1">
-                                <div class="row justify-content-md-center">
-                                    <p class="text-center text-child"></p>
-                                    <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                </div>
-                            </div>
-                            </div>
+                            
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -481,12 +523,14 @@ textarea{
                                         <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
                                     </div>
                                 </div>
+                                <!-- ============ Garis ================ -->
+
+                                <!-- ====== hasil 5 ====== -->
                                 <div class="col-md-2 offset-md-1">
                                     <div class="row justify-content-md-center">
                                         <textarea class="bg-warning" name="" id="" rows="3">GANGGUAN BIPOLAR YTT</textarea>
                                     </div>
                                 </div>
-                                
                             </div>
 
                             <div class="row">
@@ -497,7 +541,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ============ Garis ================ -->
 
+
+                            <!-- ====== pertanyaan 12 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Pernah mendapat EPISODE HIPOMANIK & sedikitnya 1 EPISODE DEPRESI BERAT?</textarea>
@@ -508,6 +555,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== hasil 6 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan bipolar 2</textarea>
                                 </div>
@@ -521,7 +569,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ============================= -->
 
+
+                            <!-- ====== pertanyaan 13 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">2 tahun lebih gejala hipomanik & ada saat depresif?</textarea>
@@ -532,6 +583,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ===== hasil 7 ===== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan Siklotimik</textarea>
                                 </div>
@@ -546,7 +598,10 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ============================== -->
 
+
+                            <!-- ====== pertanyaan 14 ======= -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Gejala manik/hipomanik yg bermakna secara klinis & tidak memenuhi kriteria gangguan bipolar spesifik?</textarea>
@@ -557,11 +612,11 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ===== hasil 8 ===== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan Bipolar YTT</textarea>
                                 </div>
                             </div>
-
 
                             <div class="row">
                                 <div class="col-md-3">
@@ -571,7 +626,9 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ================================ -->
 
+                            <!-- ====== pertanyaan 15 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Pernah mendapat EPISODE DEPRESI BERAT?</textarea>
@@ -581,7 +638,10 @@ textarea{
                                     <p class="text-center text-child">Ya</p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ============================= -->
 
+
+                                <!-- ========= pertanyaan 16 =========== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Gejala psikotik terjadi di luar saat EPISODE DEPRESI BERAT?</textarea>
                                 </div>
@@ -590,7 +650,9 @@ textarea{
                                     <p class="text-center text-child">Ya</p>
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
+                                <!-- ======================================== -->
 
+                                <!-- ====== hasil 9 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan Depresif Berat</textarea>
                                 </div>
@@ -604,7 +666,8 @@ textarea{
                                 <div class="col-md-1">
 
                                 </div>
-
+                                
+                                <!-- ====== pertanyaan 17 ====== -->
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Terjadi khususnya saat gangguan skizo afektif (lihat silsilah gangguan psikotik)?</textarea>
                                 </div>
@@ -614,6 +677,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== hasil 10 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan Skizo Afektif, tipe depresif</textarea>
                                 </div>
@@ -628,6 +692,7 @@ textarea{
 
                                 </div>
 
+                                <!-- ====== hasil 11 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan depresif YTT</textarea>
                                 </div>                                
@@ -643,6 +708,7 @@ textarea{
                                 </div>
                             </div>
 
+                            <!-- ====== pertanyaan 18 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Afek depresif yg berlangsung beberapa hari, sedikitnya untuk 2 tahun dg gejala terkait?</textarea>
@@ -653,6 +719,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== hasil 12 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan Distimik</textarea>
                                 </div>
@@ -668,6 +735,8 @@ textarea{
                                 </div>
                             </div>
 
+
+                        <!-- ====== pertanyaan 19 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3"> Afek depresif tidak memenuhi kriteria salah satu dari gangguan afektif di atas, timbul sebagai reaksi terhadap stresor?</textarea>
@@ -678,12 +747,14 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== hasil 13 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan Penyesuaian dengan afek depresif</textarea>
                                 </div>
                             </div>
+                            <!-- ============================= -->
 
-
+                            <!-- ============== Garis =============== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="row justify-content-md-center">
@@ -692,7 +763,9 @@ textarea{
                                     </div>
                                 </div>
                             </div>
+                            <!-- ============== Garis =============== -->
 
+                        <!-- ====== pertanyaan 20 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <textarea name="" id="" cols="30" rows="3">Gejala depresif yg bermakna secara klinis namun tidak memenyhi syarat untuk gangguan afektif spesifik?</textarea>
@@ -703,6 +776,7 @@ textarea{
                                     <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
                                 </div>
 
+                                <!-- ====== hasil 14 ====== -->
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Gangguan depresif YTT</textarea>
                                 </div>
@@ -717,16 +791,14 @@ textarea{
                                 </div>
                             </div>
 
+                            <!-- ====== hasil 15 ====== -->
                             <div class="row">
                                 <div class="col-md-2">
                                     <textarea class="bg-warning" name="" id="" rows="3">Bukan gangguan afektif (gejala afektif yang secara klinis tak bermakna)</textarea>
                                 </div>
                             </div>
 
-
-
                         </div>
-
                 </div>
             </div>
 
