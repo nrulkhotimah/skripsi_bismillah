@@ -69,6 +69,16 @@ class Dataklien extends CI_Controller {
             'label' => 'Username',
             'rules' => 'required'
             ],
+
+            ['field' => 'keluhan',
+            'label' => 'Keluhan',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'catatan',
+            'label' => 'Catatan',
+            'rules' => 'required'
+            ],
         ];
     }
 
@@ -146,10 +156,26 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Editcatkonsel', $data);
     }
 
-    public function tambahcat() { //open page tambah catatan konseling
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/klien/Tambahcatkonsel');
+    public function tambahcat() { // tambah catatan konseling - data nya baru sampai di post 
+        $post = $this->input->post();
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $validation = $this->form_validation;
+        $validation->set_rules($this->rules());
+
+        if($validation->run()) {
+            $this->Penjadwalan_m->tambahcat($post);
+            $this->session->set_flashdata('success', 'Berhasil di simpan');
+            redirect('koor/dataklien/catkonsel','refresh');
+        } else {
+            $error = validation_errors();
+            $this->session->set_flashdata('errors', 'Gagal menyimpan');
+            $this->load->view('koordinator/template/header');
+            $this->load->view('koordinator/template/footer');
+            $this->load->view('koordinator/klien/Tambahcatkonsel');
+        }
+        
     }
     public function lihatRiwayat($id_klien) { //open page lihat riwayat perklien berdasarkan klien yang dipilih
         $data['user'] = $this->Dataklien_m->getById($id_klien);

@@ -53,7 +53,7 @@
                         </table>
 
                         <div class="but" style="float:RIGHT">
-                            <a href="<?php echo site_url('Koor/Dataklien/tambahcat') ?>">
+                            <a href="<?php echo site_url('Koor/Dataklien/tambahcat/'.$DataKlien->id) ?>">
                                 <button type="button" class="btn btn-primary">Tambah</button>
                             </a>
                         </div>

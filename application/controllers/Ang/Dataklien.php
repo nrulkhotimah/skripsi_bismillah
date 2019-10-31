@@ -136,8 +136,6 @@ class Dataklien extends CI_Controller {
         $this->load->view('anggota/klien/Catkonsel2', $data);
     }
 
-
-
     public function editcatkonsel() { //open page edit catatan konseling
         $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
 

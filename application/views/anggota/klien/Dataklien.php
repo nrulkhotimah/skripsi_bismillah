@@ -23,9 +23,9 @@
                                     <th class="align-middle col10" >Jenis Kelamin</th>
                                     <th class="align-middle col10" >Hasil Diagnosis</th>
                                     <th class="align-middle col15" >Tanggal</th>
-                                    <th class="align-middle col15" >Waktu</th>
-                                    <th class="align-middle col15" >Catatan Konseling</th>
-                                    <th class="align-middle col15" >Keterangan Konseling</th>
+                                    <th class="align-middle col10" >Waktu</th>
+                                    <th class="align-middle col10" >Catatan Konseling</th>
+                                    <th class="align-middle col10" >Keterangan Konseling</th>
                                 </tr>
                             </thead>
 
@@ -33,8 +33,6 @@
                                 <?php 
                                 $i=0;
                                     foreach($user as $DataKlien):
-                                        // print_r($DataKlien);
-                                        // exit();
                                     $i++;
                                 ?>
                                 <tr>
@@ -45,14 +43,40 @@
                                             class="btn btn-link"><?php echo $DataKlien->nama ?></a>
                                     </td>
                                     <td class="align-middle"><?php echo $DataKlien->jenis_kelamin ?></td>
+
                                     <td class="align-middle">
-                                        bipolar
+                                        <?php 
+                                            if($jadwal[$DataKlien->id]) {
+                                                echo $jadwal[$DataKlien->id]->nama_gangguan;
+                                            } else {
+                                                echo "Belum Melakukan diagnosis";
+                                            }
+                                        ?>
                                     </td>
-                                    <td class="align-middle">23 Januari 2019</td>
-                                    <td class="align-middle">13.00 WIB</td>
+
                                     <td class="align-middle">
-                                    <a href="<?php echo site_url('Ang/Dataklien/catkonsel') ?>">
-                                        <button type="button" class="btn btn-primary">Open</button>
+                                        <?php 
+                                            if($jadwal[$DataKlien->id]) {
+                                                echo $jadwal[$DataKlien->id]->hari;
+                                            } else {
+                                                echo "Belum Melakukan pendaftaran";
+                                            }
+                                        ?>
+                                    </td>
+
+                                    <td class="align-middle">
+                                        <?php 
+                                            if($jadwal[$DataKlien->id]) {
+                                                echo $jadwal[$DataKlien->id]->waktu;
+                                            } else {
+                                                echo "Belum Melakukan pendaftaran";
+                                            }
+                                        ?>
+                                    </td>
+
+                                    <td class="align-middle">
+                                        <a href="<?php echo site_url('Ang/Dataklien/catkonsel/'.$DataKlien->id_user) ?>">
+                                            <button type="button" class="btn btn-primary">Open</button>
                                         </a>
                                     </td>
 
@@ -62,7 +86,7 @@
                                                 <option value="selesai" <?php if($DataKlien->status_konsel == "selesai") {echo "selected";} ?> >selesai</option>
                                                 <option value="belum selesai" <?php if($DataKlien->status_konsel == "belum selesai") {echo "selected";} ?>>belum selesai</option>
                                             </select>
-                                        </form>
+                                            </form>
                                     </td>
 
                                 </tr>

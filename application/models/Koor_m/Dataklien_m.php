@@ -83,7 +83,17 @@ class Dataklien_m extends CI_Model {
             ['field' => 'approve',
             'label' => 'Approve',
             'rules' => 'required'
-        ],
+            ],
+
+            ['field' => 'catatan',
+            'label' => 'Catatan',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'keluhan',
+            'label' => 'Keluhan',
+            'rules' => 'required'
+            ],
 
         ];
     }
@@ -188,6 +198,10 @@ class Dataklien_m extends CI_Model {
     public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum
         $this->db->where('id_user', $id_user);
         $this->db->update('klien', $status_konsel);
+    }
+
+    public function tambahcat($post) {
+        $this->db->insert('diagnosis', $post);
     }
 
     // public function search($keyword, $where) {

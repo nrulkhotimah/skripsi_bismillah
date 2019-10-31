@@ -83,7 +83,6 @@
                 <a href="<?php echo site_url('Koor/Dataklien/catkonsel/'.$DataKlien->id_user) ?>">
                     <button type="button" class="btn btn-primary">Open</button>
                 </a>
-
             </td>
             
             <td>
