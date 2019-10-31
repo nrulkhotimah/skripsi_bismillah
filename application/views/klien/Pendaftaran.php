@@ -102,7 +102,7 @@
             </div>
         </nav>
 
-        <!-- edit -->
+        <!-- pilih jadwal konseling -->
         <section class="page-section" id="profil">
             <div class="container">
                 <div class="row">
@@ -137,7 +137,10 @@
                                     <td><?php echo $i ?></td>
                                     <td><?php echo $jadwal->nama ?></td>
                                     <td class="btn-link">
-                                        <a href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$id_user.'/'.$jadwal->id)?>"> Pilih jadwal </a>
+                                        <a
+                                            href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$id_user.'/'.$jadwal->id)?>">
+                                            Pilih jadwal
+                                        </a>
                                     </td>
                                 </tr>
                                 <?php  endforeach; ?>

@@ -48,9 +48,8 @@
             $waktu = $jadwal[date("D", strtotime($value))]->waktu;
             $kuota = $jadwal[date("D", strtotime($value))]->kuota - $sisa_kuota[date("D", strtotime($value))];
             $id_penjadwalan = $jadwal[date("D", strtotime($value))]->id;
-
             $i++;
-                                    ?>
+     ?>
         <tr>
             <td><?php echo $i ?></td>
             <td><?php echo date("D", strtotime($value)).", ".date("d M Y", strtotime($value)) ?></td>

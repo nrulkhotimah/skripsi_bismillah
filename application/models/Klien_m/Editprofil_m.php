@@ -91,15 +91,6 @@ class Editprofil_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    // public function update_profil($post, $id_user) {
-        
-    //     $this->db->where('id', $id_user);
-    //     $this->db->update('user', $post);
-
-    //     $this->db->where('id', $id_user);
-    //     $this->db->update('klien', $post);
-    // }
-
     public function update($id) {
         $post = $this->input->post();
         // $user = new stdClass(); //ini adalah objek
