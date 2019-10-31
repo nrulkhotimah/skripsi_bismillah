@@ -19,7 +19,7 @@
             rel="stylesheet"
             type="text/css"
             href="<?php echo base_url();?>assets/css/custom.css">
-        
+
         <!-- script bootstrap datatables -->
         <link
             rel="stylesheet"
@@ -33,9 +33,10 @@
         <script
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
-
-        
-
+        <link
+            href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+            rel='stylesheet'
+            type='text/css'>
 
     </head>
 
@@ -46,15 +47,14 @@
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
-                        <li>
-                            <a href="<?php echo site_url('Admin/Home/edit_profil/')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>Profile</span>
+                      
+                            <h2 class="font-h2 ">Diagnosis</h2>
+                            <h2 class="font-h2 ">AFEKTIF</h2>
+
+                            <a href="<?php echo site_url('Admin/Home/editProfil')?>">
+                                <p class="text-center btn-link" style="font:10 px!important;">Hello! <?php echo nama_session() ?></p>
                             </a>
-
-                            <p class="text-center" style="font:12px !important;">Hello! <?php echo nama_session() ?></p>
-
-                        </li>
+                    
                         <hr>
 
                         <li>

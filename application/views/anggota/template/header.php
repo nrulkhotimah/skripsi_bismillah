@@ -27,6 +27,10 @@
         <script
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
+        <link
+            href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+            rel='stylesheet'
+            type='text/css'>
 
         <!-- script bootstrap datatables -->
         <link
@@ -43,14 +47,13 @@
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
-                        <li>
-                            <a href="<?php echo site_url('Ang/Home/editProfil')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>Profile</span>
-                            </a>
-                            <p class="text-center" style="font:10px !important;">Hello! <?php echo nama_session() ?></p>
+                        <h2 class="font-h2 ">Diagnosis</h2>
+                        <h2 class="font-h2 ">AFEKTIF</h2>
 
-                        </li>
+                        <a href="<?php echo site_url('Ang/Home/editProfil')?>">
+                            <p class="text-center btn-link" style="font:10 px!important;">Hello!
+                                <?php echo nama_session() ?></p>
+                        </a>
                         <hr>
 
                         <li>
