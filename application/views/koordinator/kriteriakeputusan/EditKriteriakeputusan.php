@@ -144,6 +144,9 @@ ul ul a {
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+.row{
+    padding: 0 !important
+}
 
 textarea{
     width: 100% !important;
@@ -152,6 +155,9 @@ textarea{
 .text-child{
     font-size: 14px !important;
     margin: 0;
+}
+.text-white{
+    color: white
 }
  
 </style>
@@ -170,14 +176,14 @@ textarea{
                        <!-- ====== pernyataaan 1 ======= -->
                        <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="1" id="" rows="3"><?php echo $pengetahuan[1]->pertanyaan?> </textarea>
+                                    <textarea name="1" id="" rows="3" readonly><?php echo $pengetahuan[1]->pertanyaan?> </textarea>
                                 </div>
                             </div>
                             
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="row justify-content-md-center">
-                                        <p class="text-center text-child"></p>
+                                        <p class="text-center text-child text-white">Ya</p>
                                         <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
                                     </div>
                                 </div>
@@ -312,7 +318,7 @@ textarea{
 
                                 <!-- ==== fakta B ==== -->
                                 <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3">EPISODE HIPOMANIK</textarea>
+                                    <textarea class="bg-warning" name="" id="" rows="5" class="align-middle">EPISODE HIPOMANIK</textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -454,97 +460,58 @@ textarea{
                                 </div>
                             </div>
                             <!-- ================================ -->
-
-                            <!-- ============ Garis ================ -->
+                            
+                            <!-- pertanyaan collapse -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="row justify-content-md-center">
                                         <p>No</p>
-                                        <img src="../../assets/img/bawah2.png" alt="" width='1.55%' height='60px'>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 offset-md-1">
-                                    <div class="row justify-content-md-center">
-                                        <p></p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p>No</p>
-                                        <img src="../../assets/img/bawah2.png" alt="" width='1.55%' height='100px'>
+                                        <img src="../../assets/img/bawah3.png" alt="" width='10%' height='300px'>
                                     </div>
                                 </div>
 
-                                <div class="col-md-1">
-                                    <p ></p>
-                                </div>
-                            <!-- ============ Garis ================ -->
-
-                                <!-- ====== pertanyaan 11 ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="11" id="" cols="30" rows="3"><?php echo $pengetahuan[11]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ===== hasil 4 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" cols="30" name="" id="" rows="3">GANGGUAN SKIZOAFEKTIF TIPE BIPOLAR</textarea>
-                                </div>
-                            </div>
-                            
-                            <!-- ============ Garis ================ -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah2.png" alt="" width='1.55%' height='100px'>
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <div class="row justify-content-md-center">
+                                                <p class="text-center text-child">No</p>
+                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3 offset-md-1">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child"></p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <textarea name="11" id="" cols="30" rows="3"><?php echo $pengetahuan[11]->pertanyaan?></textarea>
+                                        </div>
+
+                                        <div class="col-md-1">
+                                            <p class="text-center text-child">Ya</p>
+                                            <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <textarea class="bg-warning" cols="30" name="" id="" rows="3">GANGGUAN SKIZOAFEKTIF TIPE BIPOLAR</textarea>
+                                        </div>  
                                     </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <div class="row justify-content-md-center">
+                                                <p class="text-center text-child">No</p>
+                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <textarea class="bg-warning" name="" id="" rows="3">GANGGUAN BIPOLAR YTT</textarea>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                             
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                    </div>
-                                </div>
-                                <!-- ============ Garis ================ -->
-
-                                <!-- ====== hasil 5 ====== -->
-                                <div class="col-md-2 offset-md-1">
-                                    <div class="row justify-content-md-center">
-                                        <textarea class="bg-warning" name="" id="" rows="3">GANGGUAN BIPOLAR YTT</textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ============ Garis ================ -->
-
-
                             <!-- ====== pertanyaan 12 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
@@ -659,53 +626,54 @@ textarea{
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-3">
-
-                                </div>
-                                
-                                <div class="col-md-1">
-
-                                </div>
-                                
-                                <!-- ====== pertanyaan 17 ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="17" id="" cols="30" rows="3"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== hasil 10 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3">Gangguan Skizo Afektif, tipe depresif</textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-
-                                </div>
-                                
-                                <div class="col-md-1">
-
-                                </div>
-
-                                <!-- ====== hasil 11 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3">Gangguan depresif YTT</textarea>
-                                </div>                                
-                            </div>
-
-
+                            <!-- row collapse -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+                                        <p>No</p>
+                                        <img src="../../assets/img/bawah3.png" alt="" width='10%' height='300px'>
                                     </div>
+                                </div>
+
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <div class="row justify-content-md-center">
+                                                <p class="text-center text-child">No</p>
+                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                        <textarea name="17" id="" cols="30" rows="3"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
+                                        </div>
+
+                                        <div class="col-md-1">
+                                            <p class="text-center text-child">Ya</p>
+                                            <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <textarea class="bg-warning" cols="30" name="" id="" rows="3">Gangguan Skizo Afektif, tipe depresif</textarea>
+                                        </div>  
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <div class="row justify-content-md-center">
+                                                <p class="text-center text-child">No</p>
+                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3 offset-md-2">
+                                            <textarea class="bg-warning" name="" id="" rows="3">Gangguan depresif YTT</textarea>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -799,9 +767,7 @@ textarea{
                                 </div>
                             </div>
 
-                            <a href="<?php echo site_url('Koor/Kriteria/edit/')?>">
-                            <button class="btn btn-primary">Edit</button>
-                            </a>
+                            <button class="btn btn-primary">Simpan</button>
                         
                         </form>
 

@@ -19,9 +19,4 @@ class Kriteria_m extends CI_Model {
 
 }
 
-/* End of file ModelName.php */
-
-
-
-
 ?>

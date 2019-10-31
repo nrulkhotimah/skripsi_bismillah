@@ -47,14 +47,16 @@
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
-                        <li>
+                        <!-- <li>
                             <a href="<?php echo site_url('Koor/Home/editProfil')?>" class="btn profile">
                                 <img src="../../assets/img/user.png" alt="Avatar"><br>
                                 <span>Profile</span>
                             </a>
                             <p class="text-center" style="font:10 px !important;">Hello!
                                 <?php echo nama_session() ?></p>
-                        </li>
+                        </li> -->
+
+                        <h2 class="text-big">DIAGS.AFEKTIF</h2>
                         <hr>
 
                         <li>
