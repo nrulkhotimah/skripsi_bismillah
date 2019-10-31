@@ -20,11 +20,6 @@
             type="text/css"
             href="<?php echo base_url();?>assets/css/custom.css">
 
-        <!-- <link
-            rel="stylesheet"
-            type="text/css"
-            href="<?php echo base_url();?>assets/css/flowchart.css"> -->
-
         <!-- script bootstrap datatables -->
         <link
             rel="stylesheet"
@@ -38,6 +33,10 @@
         <script
             type='text/javascript'
             src="<?php echo base_url();?>assets/font/js/fontawesome.js"></script>
+        <link
+            href='https://fonts.googleapis.com/css?family=Kaushan+Script'
+            rel='stylesheet'
+            type='text/css'>
 
     </head>
 
@@ -47,60 +46,62 @@
             <nav id="sidebar">
                 <div class="sidebar-header">
                     <ul class="list-unstyled components">
-                        <!-- <li>
-                            <a href="<?php echo site_url('Koor/Home/editProfil')?>" class="btn profile">
-                                <img src="../../assets/img/user.png" alt="Avatar"><br>
-                                <span>Profile</span>
-                            </a>
-                            <p class="text-center" style="font:10 px !important;">Hello!
-                                <?php echo nama_session() ?></p>
-                        </li> -->
+                        <!-- <li> <a href="<?php echo site_url('Koor/Home/editProfil')?>" class="btn
+                        profile"> <img src="../../assets/img/user.png" alt="Avatar"><br>
+                        <span>Profile</span> </a> -->
 
-                        <h2 class="text-big">DIAGS.AFEKTIF</h2>
-                        <hr>
+                        <h2 class="font-h2 ">Diagnosis</h2>
+                        <h2 class="font-h2 ">AFEKTIF</h2>
+                        
+                        <a href="<?php echo site_url('Koor/Home/editProfil')?>">
+                            <p class="text-center btn-link" style="font:10 px!important;">Hello! <?php echo nama_session() ?></p>
+                            
+                        </a>
+                    </li>
+                    <hr>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
+                    </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Dataklien/index')?>">Data klien</a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Dataklien/index')?>">Data klien</a>
+                    </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Diagnosis/pilihKlien')?>">Diagnosis</a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Diagnosis/pilihKlien')?>">Diagnosis</a>
+                    </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Penjadwalan/index')?>">Penjadwalan</a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Penjadwalan/index')?>">Penjadwalan</a>
+                    </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Dataklien/riwayat')?>">Riwayat</a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Dataklien/riwayat')?>">Riwayat</a>
+                    </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Kriteria/index')?>">Kriteria Keputusan</a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Kriteria/index')?>">Kriteria Keputusan</a>
+                    </li>
 
-                        <li>
-                            <a href="<?php echo site_url('Koor/Anggota/index')?>">Anggota Psikolog</a>
-                        </li>
-                        <hr>
+                    <li>
+                        <a href="<?php echo site_url('Koor/Anggota/index')?>">Anggota Psikolog</a>
+                    </li>
+                    <hr>
 
-                        <li>
-                            <a href="<?php echo site_url('Login_controller/logout')?>">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Logout
-                            </a>
-                        </li>
+                    <li>
+                        <a href="<?php echo site_url('Login_controller/logout')?>">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </li>
 
-                    </ul>
-                </nav>
+                </ul>
+            </nav>
 
-                <!-- Page Content -->
-                <div id="content">
-                    <div class="jumbotron">
-                        <button type="button" id="sidebarCollapse" class="btn">
-                            <i class="fas fa-bars"></i>
-                        </button>
+            <!-- Page Content -->
+            <div id="content">
+                <div class="jumbotron">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
