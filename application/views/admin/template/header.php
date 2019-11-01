@@ -52,7 +52,8 @@
                             <h2 class="font-h2 ">AFEKTIF</h2>
 
                             <a href="<?php echo site_url('Admin/Home/editProfil')?>">
-                                <p class="text-center btn-link" style="font:10 px!important;">Hello! <?php echo nama_session() ?></p>
+                                <p class="text-center btn-link" style="font:10 px!important;">Hello! <?php echo nama_session() ?> </p>
+                                
                             </a>
                     
                         <hr>

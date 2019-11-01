@@ -162,6 +162,8 @@ textarea{
  
 </style>
 
+<!-- ===================================================================================== -->
+
                          <div style="float:right">
                             <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
 
@@ -176,7 +178,7 @@ textarea{
                        <!-- ====== pernyataaan 1 ======= -->
                        <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="1" id="" rows="3" readonly><?php echo $pengetahuan[1]->pertanyaan?> </textarea>
+                                    <textarea name="1" id="" rows="3" ><?php echo $pengetahuan[1]->pertanyaan?> </textarea>
                                 </div>
                             </div>
                             
@@ -308,7 +310,7 @@ textarea{
                         <!-- ====== pertanyaan 7 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="7" id="" cols="30" rows="5"><?php echo $pengetahuan[7]->pertanyaan?></textarea>
+                                    <textarea name="6" id="" cols="30" rows="5"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -356,7 +358,7 @@ textarea{
                             <!-- ====== pertanyaan 6 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="6" id="" cols="30" rows="4"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
+                                    <textarea name="7" id="" cols="30" rows="4"><?php echo $pengetahuan[7]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -377,7 +379,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 8 || readonly ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="8" id="" cols="30" rows="3"><?php echo $pengetahuan[8]->pertanyaan?></textarea>
+                                    <textarea name="9" id="" cols="30" rows="3"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
                                 </div>
                             </div>
 
@@ -395,7 +397,7 @@ textarea{
                             <!-- ====== pertanyaan 8 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="8" id="" cols="30" rows="3"><?php echo $pengetahuan[8]->pertanyaan?></textarea>
+                                    <textarea name="10" id="" cols="30" rows="3"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -416,7 +418,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 9 || readonly ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="9" id="" cols="30" rows="3"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
+                                    <textarea name="10" id="" cols="30" rows="3"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
                                 </div>
                             </div>
 
@@ -444,7 +446,7 @@ textarea{
 
                                 <!-- ====== pertanyaan 10 ====== -->
                                 <div class="col-md-3">
-                                    <textarea name="10" id="" cols="30" rows="3">10</textarea>
+                                    <textarea name="11" id="" cols="30" rows="3"><?php echo $pengetahuan[11]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">

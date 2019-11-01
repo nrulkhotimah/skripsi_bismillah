@@ -30,7 +30,7 @@
                                     <td class="align-middle"><?php echo $i ?></td>
                                     <td class="align-middle"><?php echo $Dataklien->nama ?></td>
                                     <td class="align-middle">
-                                        <a href="<?php echo site_url('Koor/Diagnosis/Diag/'.$Dataklien->id_klien) ?>">
+                                        <a href="<?php echo site_url('Koor/Diagnosis/Diag/'.$pendaftaran[$Dataklien->id_klien]->id) ?>">
                                             <button class="btn btn-primary">Diagnosis</button>
                                         </a>
                                         <a href="<?php echo site_url('Koor/Diagnosis/Diag/'.$Dataklien->id_klien) ?>" ><i class="fas fa-redo"></i></a>
