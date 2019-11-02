@@ -57,6 +57,10 @@
                     <hr>
 
                     <li>
+                        <a href="<?php echo site_url('Koor/Home/index')?>">Profil</a>
+                    </li>
+
+                    <li>
                         <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
                     </li>
 

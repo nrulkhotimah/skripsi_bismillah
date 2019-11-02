@@ -206,7 +206,7 @@ textarea{
 
                             <!-- ===== hasil 1 ===== -->
                                 <div class="col-md-3">
-                                    <textarea class="bg-warning" name="" id="" cols="30" rows="3"> GANGGUAN AFEKTIF AKIBAT PENYAKIT UMUM</textarea>
+                                    <textarea class="bg-warning" name="" id="" cols="30" rows="3"><?php echo $gangguan[1]->nama_gangguan?></textarea>
                                 </div>
                             </div>
 
@@ -397,7 +397,7 @@ textarea{
                             <!-- ====== pertanyaan 8 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="10" id="" cols="30" rows="3"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
+                                    <textarea name="9" id="" cols="30" rows="3"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -436,7 +436,7 @@ textarea{
                             <!-- ====== pertanyaan 9 || ini yg di ubah  ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="9" id="" cols="30" rows="3"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
+                                    <textarea name="10" id="" cols="30" rows="3"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -483,7 +483,7 @@ textarea{
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 offset-md-2">
-                                            <textarea name="11" id="" cols="30" rows="3"><?php echo $pengetahuan[11]->pertanyaan?></textarea>
+                                            <textarea name="12" id="" cols="30" rows="3"><?php echo $pengetahuan[12]->pertanyaan?></textarea>
                                         </div>
 
                                         <div class="col-md-1">
@@ -517,7 +517,7 @@ textarea{
                             <!-- ====== pertanyaan 12 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="12" id="" cols="30" rows="3"><?php echo $pengetahuan[12]->pertanyaan?></textarea>
+                                    <textarea name="13" id="" cols="30" rows="3"><?php echo $pengetahuan[13]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -545,7 +545,7 @@ textarea{
                             <!-- ====== pertanyaan 13 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="13" id="" cols="30" rows="3"><?php echo $pengetahuan[13]->pertanyaan?></textarea>
+                                    <textarea name="14" id="" cols="30" rows="3"><?php echo $pengetahuan[14]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -574,7 +574,7 @@ textarea{
                             <!-- ====== pertanyaan 14 ======= -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="14" id="" cols="30" rows="3"><?php echo $pengetahuan[14]->pertanyaan?></textarea>
+                                    <textarea name="15" id="" cols="30" rows="3"><?php echo $pengetahuan[15]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -601,7 +601,7 @@ textarea{
                             <!-- ====== pertanyaan 15 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="15" id="" cols="30" rows="3"><?php echo $pengetahuan[15]->pertanyaan?></textarea>
+                                    <textarea name="16" id="" cols="30" rows="3"><?php echo $pengetahuan[16]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -613,7 +613,7 @@ textarea{
 
                                 <!-- ========= pertanyaan 16 =========== -->
                                 <div class="col-md-3">
-                                    <textarea name="16" id="" cols="30" rows="3"><?php echo $pengetahuan[16]->pertanyaan?></textarea>
+                                    <textarea name="17" id="" cols="30" rows="3"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
                                 </div>
 
                                 <div class="col-md-1">
@@ -648,7 +648,7 @@ textarea{
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 offset-md-2">
-                                        <textarea name="17" id="" cols="30" rows="3"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
+                                        <textarea name="18" id="" cols="30" rows="3"><?php echo $pengetahuan[18]->pertanyaan?></textarea>
                                         </div>
 
                                         <div class="col-md-1">
@@ -682,7 +682,7 @@ textarea{
                             <!-- ====== pertanyaan 18 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="18" id="" cols="30" rows="3"><?php echo $pengetahuan[18]->pertanyaan?></textarea>
+                                    <textarea name="19" id="" cols="30" rows="3"><?php echo $pengetahuan[19]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -710,7 +710,7 @@ textarea{
                         <!-- ====== pertanyaan 19 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="19" id="" cols="30" rows="3"><?php echo $pengetahuan[19]->pertanyaan?></textarea>
+                                    <textarea name="20" id="" cols="30" rows="3"><?php echo $pengetahuan[20]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">
@@ -739,7 +739,7 @@ textarea{
                         <!-- ====== pertanyaan 20 ====== -->
                             <div class="row">
                                 <div class="col-md-3">
-                                    <textarea name="20" id="" cols="30" rows="3"><?php echo $pengetahuan[20]->pertanyaan?></textarea>
+                                    <textarea name="21" id="" cols="30" rows="3"><?php echo $pengetahuan[21]->pertanyaan?></textarea>
                                 </div>
                                 
                                 <div class="col-md-1">

@@ -15,6 +15,24 @@ class Kriteria_m extends CI_Model {
             $this->db->update('pengetahuan', $data_simpan);
         }
     }
+
+    public function tampil_gangguan() {
+        $ambil = $this->db->get('deskripsi_gangguan');
+        $data = $ambil->result();
+        foreach ($data as $key => $value) {
+            $tampil[$value->id] = $value;
+        }
+        return $tampil;
+    }
+
+    public function tampil_fakta() {
+        $ambil = $this->db->get('fakta');
+        $data = $ambil->result();
+        foreach ($data as $key => $value) {
+            $tampil[$value->id] = $value;
+        }
+        return $tampil;
+    }
     
 
 }

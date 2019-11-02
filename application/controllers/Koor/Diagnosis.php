@@ -20,7 +20,15 @@ class Diagnosis extends CI_Controller {
         } else {
             $hasil = $this->Diagnosis_m->pt_selanjutnya();
             if ($hasil['status']=="lanjut") {
-                $data['pertanyaan'] = $hasil['pertanyaan_selanjutnya'];
+                //$data_pertanyaan adalah untuk semua pertanyaan 
+                $data_pertanyaan = $hasil['pertanyaan_selanjutnya'];
+                if (empty($data_pertanyaan->pertanyaan)) {
+                    $inputan[$data_pertanyaan->id] = "Ya";
+                    $this->Diagnosis_m->jawaban($inputan);
+                    redirect('Koor/Diagnosis/Diag/'.$id_pendaftaran,'refresh');
+                } else {
+                 $data['pertanyaan'] = $data_pertanyaan;  
+                }
             } else { 
                 $id_diagnosis = $this->Diagnosis_m->simpan_diagnosis($id_pendaftaran);
                 redirect('Koor/Diagnosis/hasil/'.$id_diagnosis,'refresh');                

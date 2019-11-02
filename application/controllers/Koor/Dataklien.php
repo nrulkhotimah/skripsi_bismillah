@@ -86,9 +86,23 @@ class Dataklien extends CI_Controller {
         $data['user'] = $this->Dataklien_m->getAll();
 
         foreach ($data['user'] as $key => $value) { //untuk menampilkan jadwal konseling klien yang terbaru
-            $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id);
-            $data['jadwal'][$value->id] = $jadwal;
+            $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id_user);
+            $data['jadwal'][$value->id_user] = $jadwal;
+            $data['diagnosis'][$value->id_user] = $this->Penjadwalan_m->get_diagnosis_terbaru($jadwal['id']);
+            $data['gangguan'][$value->id_user] = $this->Penjadwalan_m->get_gangguan_daftar($data['diagnosis'][$value->id_user]['id']);
+            
+            $data['penjadwalan'][$value->id_user] = $this->Penjadwalan_m->get_jadwal_daftar($jadwal['id']);
         }
+        
+        
+        // echo "<pre>";
+        // print_r ($data['jadwal']);
+        // print_r ($data['diagnosis']);
+        // echo "</pre>";
+        // exit();
+        
+        
+        
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Dataklien', $data);
@@ -132,6 +146,8 @@ class Dataklien extends CI_Controller {
 
     public function catkonsel() { //open page catatan konseling
         $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+
+
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');

@@ -91,16 +91,16 @@ class Penjadwalan_m extends CI_Model {
 
     public function getPendaftaranBaru($id_klien) { // untuk mengambil data pendaftaran klien, ketika klien mendaftar konseling dan memilih jadwal
     
-        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
-        $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');
-        $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
-        $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
+        // $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        // $this->db->join('user', 'user.id = penjadwalan.id_user', 'left');
+        // $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
+        // $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
 
         $this->db->order_by('pendaftaran.id', 'desc');
         $this->db->limit(1);
         $this->db->where('pendaftaran.id_klien', $id_klien);
         $query = $this->db->get('pendaftaran');
-        return $query->row();
+        return $query->row_array();
     }
 
     public function getPendaftaranJadwal($id_penjadwalan) { //untuk mengambil data jadwal yang telah di pilih oleh klien
@@ -127,6 +127,31 @@ class Penjadwalan_m extends CI_Model {
     public function delete($id){ //untuk menghapus data jadwal 
         $this->db->where('id', $id);
         return $this->db->delete('penjadwalan', array('id' => $id));
+    }
+
+    public function get_diagnosis_terbaru($id_pendaftaran)
+    {
+        // $this->db->join("deskripsi_gangguan", "deskripsi_gangguan.id=diagnosis.id_gangguan");        
+        $this->db->where("diagnosis.id_pendaftaran", $id_pendaftaran);
+        $this->db->order_by("diagnosis.id", 'desc');
+        $ambil = $this->db->get("diagnosis",1,0);
+        return $ambil->row_array();
+    }
+
+    public function get_gangguan_daftar($id_diagnosis)
+    {    
+        $this->db->join("deskripsi_gangguan", "deskripsi_gangguan.id=diagnosis.id_gangguan");        
+        $this->db->where("diagnosis.id", $id_diagnosis);
+        $ambil = $this->db->get("diagnosis");
+        return $ambil->row_array();
+    }
+
+    public function get_jadwal_daftar($id_pendaftaran)
+    {    
+        $this->db->join("penjadwalan", "penjadwalan.id=pendaftaran.id_penjadwalan");        
+        $this->db->where("pendaftaran.id", $id_pendaftaran);
+        $ambil = $this->db->get("pendaftaran");
+        return $ambil->row_array();
     }
 
 

@@ -68,7 +68,7 @@ class Diagnosis_m extends CI_Model {
         }
 
         $diagnosis['id_pendaftaran'] = $id_pendaftaran;
-        $diagnosis['keluhan'] ="";
+        $diagnosis['keluhan'] = "";
         $diagnosis['catatan'] = "";
 
         $this->db->insert('diagnosis', $diagnosis);

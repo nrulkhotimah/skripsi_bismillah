@@ -28,11 +28,6 @@
             <th class="align-middle col10" >Keterangan Konseling</th>
         </tr>
     </thead>
-
-    <!-- <pre><?php print_r($user) ?></pre>
-    <pre><?php print_r($jadwal) ?></pre> -->
-
-
     <tbody class="text-center">
         <?php 
             $i=0;
@@ -51,8 +46,8 @@
 
             <td class="align-middle">
                 <?php 
-                    if($jadwal[$DataKlien->id]) {
-                        echo $jadwal[$DataKlien->id]->nama_gangguan;
+                    if($jadwal[$DataKlien->id_user]) {
+                        echo $gangguan[$DataKlien->id_user]['nama_gangguan'];
                     } else {
                         echo "Belum Melakukan diagnosis";
                     }
@@ -61,8 +56,8 @@
 
             <td class="align-middle">
             <?php 
-                    if($jadwal[$DataKlien->id]) {
-                        echo $jadwal[$DataKlien->id]->hari;
+                    if($jadwal[$DataKlien->id_user]) {
+                        echo $penjadwalan[$DataKlien->id_user]['hari'];
                     } else {
                         echo "Belum Melakukan pendaftaran";
                     }
@@ -71,8 +66,8 @@
 
             <td class="align-middle">
             <?php 
-                    if($jadwal[$DataKlien->id]) {
-                        echo $jadwal[$DataKlien->id]->waktu;
+                    if($jadwal[$DataKlien->id_user]) {
+                        echo $penjadwalan[$DataKlien->id_user]['waktu'];
                     } else {
                         echo "Belum Melakukan pendaftaran";
                     }
@@ -80,7 +75,7 @@
             </td>
             
             <td class="align-middle">
-                <a href="<?php echo site_url('Koor/Dataklien/catkonsel/'.$DataKlien->id_user) ?>">
+                <a href="<?php echo site_url('Koor/Dataklien/catkonsel/'.$diagnosis[$DataKlien->id_user]['id']) ?>">
                     <button type="button" class="btn btn-primary">Open</button>
                 </a>
             </td>

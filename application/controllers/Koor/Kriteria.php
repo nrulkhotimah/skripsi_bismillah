@@ -17,15 +17,13 @@ class Kriteria extends CI_Controller {
 		foreach ($data_pengetahuan as $key => $value) {
 			$data['pengetahuan'][$value->id] = $value;
 		}
-		$inputan = $this->input->post();
-		if ($inputan) {
-			$this->Kriteria_m->ubah($inputan);
-			redirect('Koor/Kriteria/Index','refresh');
-		}
+
+		$data['gangguan'] = $this->Kriteria_m->tampil_gangguan();
+		$data['fakta'] = $this->Kriteria_m->tampil_fakta();
 
 		$this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-		$this->load->view('koordinator/kriteriakeputusan/EditKriteriakeputusan', $data);
+		$this->load->view('koordinator/kriteriakeputusan/Kriteriakeputusan', $data);
 	}
 	
 	public function edit() {
@@ -33,6 +31,10 @@ class Kriteria extends CI_Controller {
 		foreach ($data_pengetahuan as $key => $value) {
 			$data['pengetahuan'][$value->id] = $value;
 		}
+
+		$data['gangguan'] = $this->Kriteria_m->tampil_gangguan();
+		$data['fakta'] = $this->Kriteria_m->tampil_fakta();
+		
 		$inputan = $this->input->post();
 		if ($inputan) {
 			$this->Kriteria_m->ubah($inputan);

@@ -50,13 +50,18 @@
                       
                             <h2 class="font-h2 ">Diagnosis</h2>
                             <h2 class="font-h2 ">AFEKTIF</h2>
-
+                            <i class="text-center fas fa-user-alt" style="center !important"></i>
+                                
                             <a href="<?php echo site_url('Admin/Home/editProfil')?>">
                                 <p class="text-center btn-link" style="font:10 px!important;">Hello! <?php echo nama_session() ?> </p>
                                 
                             </a>
                     
                         <hr>
+
+                        <li>
+                            <a href="<?php echo site_url('Koor/Home/index')?>">Profil</a>
+                        </li>
 
                         <li>
                             <a href="<?php echo site_url('Admin/Home/index')?>">Home</a>
