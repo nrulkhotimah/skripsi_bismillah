@@ -54,6 +54,10 @@
                         <hr>
 
                         <li>
+                        <a href="<?php echo site_url('Ang/Home/editProfil')?>"> <i class="fas fa-user-edit"></i> Profil</a>
+                        </li>
+
+                        <li>
                             <a href="<?php echo site_url('Ang/Home/index')?>">  <i class="fas fa-home"></i> Home</a>
                         </li>
 
@@ -75,7 +79,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Home/kriteria')?>"> <i class="fas fa-book-medical"></i> Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ang/Kriteria/index')?>"> <i class="fas fa-book-medical"></i> Kriteria Keputusan</a>
                         </li>
                         <hr>
 
