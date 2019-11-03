@@ -22,6 +22,7 @@
             <th class="align-middle col10" >Nama Klien</th>
             <th class="align-middle col10" >Jenis Kelamin</th>
             <th class="align-middle col10" >Hasil Diagnosis</th>
+            <!-- <th class="align-middle col10" >Jadwal</th> -->
             <th class="align-middle col15" >Tanggal</th>
             <th class="align-middle col10" >Waktu</th>
             <th class="align-middle col10" >Catatan Konseling</th>
@@ -57,7 +58,7 @@
             <td class="align-middle">
             <?php 
                     if($jadwal[$DataKlien->id_user]) {
-                        echo $penjadwalan[$DataKlien->id_user]['hari'];
+                        echo $penjadwalan[$DataKlien->id_user]['waktu_daftar'];
                     } else {
                         echo "Belum Melakukan pendaftaran";
                     }

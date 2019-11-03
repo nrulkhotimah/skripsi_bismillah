@@ -12,6 +12,9 @@
         <div class="card-body">
             Berdasarkan diagnosa, maka pasien menderita <b> <?php echo $diagnosis->nama_gangguan ?> </b>
             <br>
+            Deskripsi : <?php echo $diagnosis->deskripsi_gangguan ?>
+            <br>
+            <hr>
             Fakta yang diderita : 
             <ul>
                 <?php foreach ($fakta_diagnosis as $key => $value): ?>

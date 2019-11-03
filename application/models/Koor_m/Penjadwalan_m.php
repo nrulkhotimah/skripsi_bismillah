@@ -129,8 +129,7 @@ class Penjadwalan_m extends CI_Model {
         return $this->db->delete('penjadwalan', array('id' => $id));
     }
 
-    public function get_diagnosis_terbaru($id_pendaftaran)
-    {
+    public function get_diagnosis_terbaru($id_pendaftaran) {
         // $this->db->join("deskripsi_gangguan", "deskripsi_gangguan.id=diagnosis.id_gangguan");        
         $this->db->where("diagnosis.id_pendaftaran", $id_pendaftaran);
         $this->db->order_by("diagnosis.id", 'desc');
@@ -138,21 +137,20 @@ class Penjadwalan_m extends CI_Model {
         return $ambil->row_array();
     }
 
-    public function get_gangguan_daftar($id_diagnosis)
-    {    
+    public function get_gangguan_daftar($id_diagnosis) {    
         $this->db->join("deskripsi_gangguan", "deskripsi_gangguan.id=diagnosis.id_gangguan");        
         $this->db->where("diagnosis.id", $id_diagnosis);
         $ambil = $this->db->get("diagnosis");
         return $ambil->row_array();
     }
 
-    public function get_jadwal_daftar($id_pendaftaran)
-    {    
+    public function get_jadwal_daftar($id_pendaftaran) {    
         $this->db->join("penjadwalan", "penjadwalan.id=pendaftaran.id_penjadwalan");        
         $this->db->where("pendaftaran.id", $id_pendaftaran);
         $ambil = $this->db->get("pendaftaran");
         return $ambil->row_array();
     }
+
 
 
 }
