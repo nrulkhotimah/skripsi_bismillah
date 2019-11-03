@@ -50,33 +50,29 @@
                       
                             <h2 class="font-h2 ">Diagnosis</h2>
                             <h2 class="font-h2 ">AFEKTIF</h2>
-                            <i class="text-center fas fa-user-alt" style="center !important"></i>
-                                
-                            <a href="<?php echo site_url('Admin/Home/editProfil')?>">
-                                <p class="text-center btn-link" style="font:10 px!important;">Hello! <?php echo nama_session() ?> </p>
-                                
-                            </a>
+
+                            <p class="text-center font-weight-bold" style="font:10 px!important;">Hello! <?php echo nama_session() ?> </p>
                     
                         <hr>
 
                         <li>
-                            <a href="<?php echo site_url('Koor/Home/index')?>">Profil</a>
+                            <a href="<?php echo site_url('Admin/Home/edit_profil')?>"> <i class="fas fa-user-edit"></i> </i>  Profil</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/Home/index')?>">Home</a>
+                            <a href="<?php echo site_url('Admin/Home/index')?>"> <i class="fas fa-home"></i> Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/Datapakar/index')?>">Data pakar</a>
+                            <a href="<?php echo site_url('Admin/Datapakar/index')?>"> <i class="fas fa-user-nurse"></i> Data pakar</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/Dataklien/index')?>">Data klien</a>
+                            <a href="<?php echo site_url('Admin/Dataklien/index')?>"> <i class="fas fa-users"></i> Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Admin/Pendaftaran/index')?>">Pendaftaran klien</a>
+                            <a href="<?php echo site_url('Admin/Pendaftaran/index')?>"> <i class="fas fa-calendar-minus"></i> Pendaftaran klien</a>
                         </li>
 
                         <hr>

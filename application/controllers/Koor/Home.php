@@ -77,7 +77,7 @@ class Home extends CI_Controller {
             unset($post['password_baru']);
             unset($post['password_konfirmasi']);
             $this->Editprofil_m->update_profil($post, $id);
-            $this->session->set_flashdata('success', 'data telah diubah');
+            $this->session->set_flashdata('success', 'Perubahan telah disimpan');
             redirect('Koor/Home/editProfil', 'refresh'); 
         } else {
             $data_lama = $this->Editprofil_m->getById($id);

@@ -90,19 +90,8 @@ class Dataklien extends CI_Controller {
             $data['jadwal'][$value->id_user] = $jadwal;
             $data['diagnosis'][$value->id_user] = $this->Penjadwalan_m->get_diagnosis_terbaru($jadwal['id']);
             $data['gangguan'][$value->id_user] = $this->Penjadwalan_m->get_gangguan_daftar($data['diagnosis'][$value->id_user]['id']);
-            
             $data['penjadwalan'][$value->id_user] = $this->Penjadwalan_m->get_jadwal_daftar($jadwal['id']);
         }
-        
-        
-        // echo "<pre>";
-        // print_r ($data['jadwal']);
-        // print_r ($data['diagnosis']);
-        // echo "</pre>";
-        // exit();
-        
-        
-        
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Dataklien', $data);

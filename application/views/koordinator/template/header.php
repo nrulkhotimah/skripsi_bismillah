@@ -49,43 +49,41 @@
                         <h2 class="font-h2 ">Diagnosis</h2>
                         <h2 class="font-h2 ">AFEKTIF</h2>
 
-                        <a href="<?php echo site_url('Koor/Home/editProfil')?>">
-                            <p class="text-center btn-link" style="font:10 px!important;">Hello!
-                                <?php echo nama_session() ?></p>
-                        </a>
+                        <p class="text-center font-weight-bold" style="font:10 px!important;">Hello!<?php echo nama_session() ?></p>
+                   
                     
                     <hr>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Home/index')?>">Profil</a>
+                        <a href="<?php echo site_url('Koor/Home/editProfil')?>"> <i class="fas fa-user-edit"></i> Profil</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
+                        <a href="<?php echo site_url('Koor/Home/index')?>"> <i class="fas fa-home"></i> Home</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Dataklien/index')?>">Data klien</a>
+                        <a href="<?php echo site_url('Koor/Dataklien/index')?>"> <i class="fas fa-users"></i> Data klien</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Diagnosis/pilihKlien')?>">Diagnosis</a>
+                        <a href="<?php echo site_url('Koor/Diagnosis/pilihKlien')?>"> <i class="fas fa-diagnoses"></i> Diagnosis</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Penjadwalan/index')?>">Penjadwalan</a>
+                        <a href="<?php echo site_url('Koor/Penjadwalan/index')?>"> <i class="fas fa-calendar-alt"></i> Penjadwalan</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Dataklien/riwayat')?>">Riwayat</a>
+                        <a href="<?php echo site_url('Koor/Dataklien/riwayat')?>"> <i class="fas fa-file-medical-alt"></i> Riwayat</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Kriteria/index')?>">Kriteria Keputusan</a>
+                        <a href="<?php echo site_url('Koor/Kriteria/index')?>"> <i class="fas fa-book-medical"></i> Kriteria Keputusan</a>
                     </li>
 
                     <li>
-                        <a href="<?php echo site_url('Koor/Anggota/index')?>">Anggota Psikolog</a>
+                        <a href="<?php echo site_url('Koor/Anggota/index')?>"> <i class="fas fa-user-nurse"></i> Anggota Psikolog</a>
                     </li>
                     <hr>
 
