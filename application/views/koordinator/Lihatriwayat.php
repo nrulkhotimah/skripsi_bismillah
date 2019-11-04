@@ -41,7 +41,7 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle col5" >No</th>
-                                    <th class="align-middle col10" >Tanggal</th>
+                                    <th class="align-middle col15" >Tanggal</th>
                                     <th class="align-middle col20" >Hasil Diagnosis</th>
                                     <th class="align-middle col30" >Keluhan</th>
                                     <th class="align-middle col30" >Catatan Konseling</th>
