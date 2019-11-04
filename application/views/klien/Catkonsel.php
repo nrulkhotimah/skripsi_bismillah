@@ -105,8 +105,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Data Diagnosis</h2>
-                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien</h3>
+                        <h2 class="section-heading text-uppercase">Catkel</h2>
+                        <h3 class="section-subheading text-muted">Catatan dan Keluhan</h3>
                     </div>
                 </div>
 
@@ -120,11 +120,8 @@
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle col5" >No</th>
-                                    <th class="align-middle col20">Jadwal</th>
-                                    <th class="align-middle col15" >Nama Psikolog</th>
-                                    <th class="align-middle col5" >Hasil Diagnosis</th>
-                                    <th class="align-middle col30">Catkonsel</th>
+                                    <th class="align-middle col5" >Keluhan</th>
+                                    <th class="align-middle col20">Catatan</th>
                                 </tr>
 
                             </thead>
@@ -133,16 +130,7 @@
         
                                 <tr>
                                     <td class="align-middle">1</td>
-                                    <td class="align-middle">tessddsdt</td>
-                                    <td class="align-middle">test</td>
-                                    <td class="align-middle">test</td>
-
-                                    <td class="align-middle">
-                                        <a href="catkonsel" class="btn btn-primary">Open</a>
-                                        
-                                    </td>
-
-                                 
+                                    <td class="align-middle">tessddsdt</td>                                 
                                 </tr>
 
                             </tbody>

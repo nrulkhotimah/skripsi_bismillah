@@ -135,4 +135,9 @@ class Home extends CI_Controller {
         
     }
 
+    public function catkonsel() {
+        $this->load->view('klien/Catkonsel');
+        
+    }
+
 }
