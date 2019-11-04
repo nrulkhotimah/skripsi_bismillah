@@ -66,7 +66,7 @@
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Diagnosis/index')?>"> <i class="fas fa-diagnoses"></i> Diagnosis</a>
+                            <a href="<?php echo site_url('Ang/Diagnosis/pilihKlien')?>"> <i class="fas fa-diagnoses"></i> Diagnosis</a>
                         </li>
 
                         <li>
