@@ -72,11 +72,7 @@
 
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <label >
-                                            <input type="checkbox" value="remember-me">
-                                            Remember me
-                                        </label>
-
+                                        <label for="" class="btn btn-link" style="float:right;">Lupa Password ?</label>
                                     </div>
                                 </div>
 
@@ -90,7 +86,7 @@
                                     <div class="col-sm-12 daftar">
                                         <a
                                             href="<?php echo site_url('Admin/Register/index')?>"
-                                            class="btn btn-block btn-warning">
+                                            class="btn btn-block btn-secondary">
                                             Belum punya akun? Daftar disini
                                         </a>
 

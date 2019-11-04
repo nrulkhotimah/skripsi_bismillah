@@ -12,11 +12,23 @@ body {
 
 .bg-img {
     min-height : 100vh;
-    max-height : 100vh;
+    max-height : 1400vh;
     padding-top: 20vh;
+    padding-bottom: 20vh;
     background : url("../../assets/img/bg-login.jpg") center;
     background-size: cover;
 }
+
+.bg-regis {
+    padding-top: none !important;
+}
+
+/* .bg-img-regis {
+    min-height : 100vh;
+    max-height : 100vh;
+    background : url("../../assets/img/bg-login.jpg") center;
+    background-size: cover;
+} */
 
 .profil { 
     text-align: center !important;
