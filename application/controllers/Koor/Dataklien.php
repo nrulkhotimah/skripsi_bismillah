@@ -9,6 +9,7 @@ class Dataklien extends CI_Controller {
         $this->load->helper('url_helper');
         $this->load->model('Koor_m/Dataklien_m');
         $this->load->model('Koor_m/Penjadwalan_m');
+        $this->load->model('Koor_m/Diagnosis_m');
         $this->load->library('session');
 
         check_not_login_koordinator();
@@ -83,7 +84,7 @@ class Dataklien extends CI_Controller {
     }
 
     public function index() {
-        $data['user'] = $this->Dataklien_m->getAll();
+        $data['user'] = $this->Dataklien_m->getPendaftaranPsikolog($this->session->userdata('id'));
 
         foreach ($data['user'] as $key => $value) { //untuk menampilkan jadwal konseling klien yang terbaru
             $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id_user);
@@ -134,8 +135,15 @@ class Dataklien extends CI_Controller {
         if(!$data['user']) show_404();
     }
 
-    public function catkonsel() { //open page catatan konseling
-        $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+    public function catkonsel($id_diagnosis) { //open page catatan konseling
+        $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
+        $inputan = $this->input->post();
+        if ($inputan) {
+            $this->Diagnosis_m->ubah_catkonsel($inputan, $id_diagnosis); 
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');  
+            redirect('Koor/Dataklien/catkonsel/'.$id_diagnosis);
+            
+        }
 
 
 

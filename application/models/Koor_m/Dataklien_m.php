@@ -121,10 +121,24 @@ class Dataklien_m extends CI_Model {
     public function getPendaftaranPsikolog($id_psikolog) {  
         $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->join('klien', 'klien.id_user = pendaftaran.id_klien', 'left');
         $this->db->where('penjadwalan.id_user', $id_psikolog);
-        $this->db->group_by('pendaftaran.id_klien');
         $ambil = $this->db->get('pendaftaran');
-        return $ambil->result();
+        $data = $ambil->result();
+
+        foreach ($data as $key => $value) {
+            $pengelompokan[$value->id_klien][] = $value;
+        }
+
+        foreach ($pengelompokan as $id_klien => $value1) {
+            foreach ($value1 as $key => $value2) {
+                $jumlah = count($value1) - 1;
+                if ($key==$jumlah) {
+                    $data_fix[$id_klien] = $value2;
+                }
+            }
+        }
+        return $data_fix;
     }
 
     public function getPendaftaranSemua() {  

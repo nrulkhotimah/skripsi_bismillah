@@ -53,9 +53,26 @@
                                 <tr>
                                     <td class="align-middle"><?php echo $key+1 ?></td>
                                     <td class="align-middle"><?php echo date("d F Y", strtotime($value->waktu_daftar)) ?></td>
-                                    <td class="align-middle"><?php echo $diagnosis[$key]->nama_gangguan ?></td>
-                                    <td class="align-middle"><?php echo $diagnosis[$key]->keluhan ?></td>
-                                    <td class="align-middle"><?php echo $diagnosis[$key]->catatan ?></td>
+
+                                    <td class="align-middle">
+                                    <?php if (!isset($diagnosis[$key]->nama_gangguan)): ?>
+                                        Belum melakukan Diagnosis
+                                    <?php else: ?>
+                                        <?php echo $diagnosis[$key]->nama_gangguan ?>
+                                    <?php endif ?></td>
+                                    <td class="align-middle">
+                                    <?php if (!isset($diagnosis[$key]->keluhan)): ?>
+                                        Belum melakukan Diagnosis
+                                    <?php else: ?>
+                                        <?php echo $diagnosis[$key]->keluhan ?>
+                                    <?php endif ?></td>
+
+                                    <td class="align-middle">
+                                    <?php if (!isset($diagnosis[$key]->catatan)): ?>
+                                        Belum melakukan Diagnosis
+                                    <?php else: ?>
+                                        <?php echo $diagnosis[$key]->catatan ?>
+                                    <?php endif ?></td>
                                 </tr>
                             <?php endforeach ?>
                             </tbody>

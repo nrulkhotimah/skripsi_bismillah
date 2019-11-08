@@ -46,6 +46,10 @@ class Pendaftaran_m extends CI_Model {
         $input['id_penjadwalan'] = $id_penjadwalan;
         $input['waktu_daftar'] = $waktu_daftar;
         $this->db->insert('pendaftaran', $input);
+
+        $data_klien['status_konsel'] = "belum selesai";
+        $this->db->where('id_user', $input['id_klien']);
+        $this->db->update('klien', $data_klien);
         
     }
 

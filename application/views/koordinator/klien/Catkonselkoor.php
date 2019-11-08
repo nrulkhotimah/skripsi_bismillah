@@ -26,17 +26,18 @@
     id="result">
 
     <tbody class="text-center">
+    <?php echo $this->session->flashdata('sukses'); ?>
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan keluhan
                 </label>
-                <textarea class="form-control  <?php echo form_error('keluhan') ? 'is-invalid':'' ?>" id="keluhan" rows="3" name="keluhan" type="text"></textarea>
+                <textarea class="form-control  <?php echo form_error('keluhan') ? 'is-invalid':'' ?>" id="keluhan" rows="3" name="keluhan" ><?php echo $diagnosis->keluhan ?> </textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan catatan konseling
                 </label>
-                <textarea class="form-control  <?php echo form_error('catatan') ? 'is-invalid':'' ?>" id="catatan" rows="3" name="catatan" type="text"></textarea>
+                <textarea class="form-control  <?php echo form_error('catatan') ? 'is-invalid':'' ?>" id="catatan" rows="3" name="catatan" ><?php echo $diagnosis->catatan ?> </textarea>
             </div>
 
             <button class="btn btn-primary" type="submit" style="float:right; width:100px;">Simpan</button>

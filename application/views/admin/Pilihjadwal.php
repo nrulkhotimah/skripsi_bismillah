@@ -57,7 +57,11 @@
             <td><?php echo $kuota ?></td>
 
             <td >
+            <?php if($kuota==0): ?>
+                <a disable="" class="btn btn-primary disabled">Pilih Jadwal</a>
+            <?php else: ?>
                 <a href="<?php echo base_url("admin/pendaftaran/simpan_jadwal/".$id_klien."/".$id_penjadwalan."/".$value) ?>" class="btn btn-primary">Pilih Jadwal</a>
+            <?php endif ?>
             </td>
         </tr>
         <?php  endforeach; ?>

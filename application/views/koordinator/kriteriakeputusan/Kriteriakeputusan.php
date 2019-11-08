@@ -772,13 +772,15 @@ textarea{
                             <!-- ====== hasil 15 ====== -->
                             <div class="row">
                                 <div class="col-md-2">
-                                    <textarea readonly class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[15]->nama_gangguan?></textarea>
+                                    <textarea readonly class="bg-warning" rows="3"><?php echo $gangguan[15]->nama_gangguan?></textarea>
                                 </div>
                             </div>
 
                            <br>
                            <br>
                            <a href="<?php echo base_url("Koor/Kriteria/edit") ?>" class="btn btn-primary" > Ubah </a>
+                           <a href="<?php echo base_url("Koor/Kriteria/editdeskripsi") ?>" class="btn btn-primary" > Ubah Deskripsi </a>
+                           
 
                         </div>
                 </div>

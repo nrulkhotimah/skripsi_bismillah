@@ -113,6 +113,14 @@ class Diagnosis_m extends CI_Model {
         return $ambil->result();
     }
 
+    public function ubah_catkonsel($inputan, $id_diagnosis) {
+        
+        $this->db->where('id', $id_diagnosis);
+        $this->db->update('diagnosis', $inputan);
+
+        
+    }
+
 }
 
 
