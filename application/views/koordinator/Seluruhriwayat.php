@@ -12,6 +12,9 @@
         <li class="breadcrumb-item btn-link">
              <a href="<?php echo site_url('Koor/Dataklien/riwayat') ?>">Riwayat</a>
         </li>
+        <li class="breadcrumb-item btn-link">
+             <a href="<?php echo site_url('Koor/Dataklien/seluruhriwayat') ?>">Lihat Riwayat Seluruh Klien</a>
+        </li>
          <li class="breadcrumb-item active" aria-current="page">Pilih klien</li>
     </ol>
 </nav>
@@ -26,9 +29,8 @@
     <thead class="text-center">
         <tr>
             <th class="align-middle col5">No</th>
-            <th class="align-middle ">Nama Klien</th>
-            <th class="align-middle ">Aksi</th>
-            <th>sdsd</th>
+            <th class="align-middle col30">Nama Klien</th>
+            <th class="align-middle col30">Aksi</th>
         </tr>
     </thead>
 
@@ -43,11 +45,10 @@
             <td class="align-middle"><?php echo $Dataklien->nama ?></td>
             <td class="align-middle">
                 <a
-                    href="<?php echo site_url('Koor/Dataklien/lihatRiwayat/'.$Dataklien->id_user) ?>">
+                    href="<?php echo site_url('Koor/Dataklien/lihatRiwayatAll/'.$Dataklien->id_klien) ?>">
                     <button class="btn btn-primary">Lihat Riwayat</button>
                 </a>
             </td>
-            <td>dsdsds</td>
         </tr>
         <?php endforeach; ?>
     </tbody>

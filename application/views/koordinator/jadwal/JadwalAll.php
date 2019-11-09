@@ -31,8 +31,7 @@
                                     <th class="align-middle" >Nomor Telepon</th>
                                     <th class="align-middle" >Hari</th>
                                     <th class="align-middle" >Waktu</th>                                    
-                                    <th class="align-middle" >Kuota Penuh</th>
-                                    <th class="align-middle" >Sisa Kuota</th>
+                                    <th class="align-middle" >Kuota</th>
                                 </tr>
                             </thead>
 
@@ -49,8 +48,6 @@
                                     <td class="align-middle"><?php echo $Jadwal->hari ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->waktu ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->kuota ?></td>
-                                    <td class="align-middle"><?php echo $sisa[$Jadwal->id] ?></td>
-
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>

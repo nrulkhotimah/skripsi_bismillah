@@ -12,10 +12,7 @@
     <li class="breadcrumb-item btn-link">
         <a href="<?php echo site_url('Koor/Dataklien/index') ?>">Dataklien</a>
     </li>
-    <li class="breadcrumb-item btn-link">
-        <a href="<?php echo site_url('Koor/Dataklien/catkonsel') ?>">Catatan konseling</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">Tambah catatan konseling</li>
+    <li class="breadcrumb-item active" aria-current="page">Edit catatan konseling</li>
 </ol>
 </nav>
 

@@ -4,27 +4,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Diagnosis_m extends CI_Model {
 
-    public function pt_pertama() {
-        
-    $this->db->where('pertanyaan_pertama', 1);
-    $ambil = $this->db->get('pengetahuan');
-    return $ambil->row();
-        
+    public function pt_pertama() { //untuk mengambil pertanyaan pertama
+        $this->db->where('pertanyaan_pertama', 1);
+        $ambil = $this->db->get('pengetahuan');
+        return $ambil->row();
     }
 
-    public function jawaban($inputan) {
+    public function jawaban($inputan) { 
         foreach ($inputan as $id_pengetahuan => $jawaban) {
             // untuk menyimpan jawaban ke dalam session
             $_SESSION['jawaban'][$id_pengetahuan] = $jawaban;
         }
     }
 
-    public function detail_pertanyaan($id_pengetahuan) {
-        
+    public function detail_pertanyaan($id_pengetahuan) { //untuk mengambil pertanyaan 
         $this->db->where('id', $id_pengetahuan);
         $ambil = $this->db->get('pengetahuan');
         return $ambil->row();
-        
     }
 
     public function pt_selanjutnya() {

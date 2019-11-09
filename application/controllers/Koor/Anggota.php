@@ -57,7 +57,7 @@ class Anggota extends CI_Controller {
         ];
     }
 
-	public function index() {
+	public function index() { //untuk menampilkan seluruh data anggota psikolog
         $data['user'] = $this->Angpsi_m->getAll();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
@@ -70,7 +70,7 @@ class Anggota extends CI_Controller {
         $this->load->view('koordinator/angpsi/Tambahangpsi');
     }
 
-    public function save() { //untuk proses menyimpan anggota yang telah di tambahkan
+    public function save() { //untuk proses menyimpan anggota yang telah ditambahkan
         $post = $this->input->post();
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -107,7 +107,8 @@ class Anggota extends CI_Controller {
         $validation->set_rules($user->rules());
 
         $this->Angpsi_m->update($post, $id);
-        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');
+        // $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');  
         $data['user'] = $this->Angpsi_m->getAll();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');

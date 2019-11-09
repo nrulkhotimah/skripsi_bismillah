@@ -14,29 +14,30 @@ class Diagnosis extends CI_Controller {
     }
 
     
-    public function Diag($id_pendaftaran) {
-        if (!$this->session->userdata("jawaban")) {
+    public function Diag($id_pendaftaran) { //proses untuk menampilkan pertanyaan 
+        //ifelse untuk mendapatkan pertanyaan selanjutnya
+        if (!$this->session->userdata("jawaban")) { // if pertanyaan pertama
             $data['pertanyaan'] = $this->Diagnosis_m->pt_pertama();
         } else {
-            $hasil = $this->Diagnosis_m->pt_selanjutnya();
+            $hasil = $this->Diagnosis_m->pt_selanjutnya(); // if pertanyaan selanjutnya
             if ($hasil['status']=="lanjut") {
                 //$data_pertanyaan adalah untuk semua pertanyaan 
                 $data_pertanyaan = $hasil['pertanyaan_selanjutnya'];
-                if (empty($data_pertanyaan->pertanyaan)) {
+                if (empty($data_pertanyaan->pertanyaan)) { // if pertanyaan yang di maksud merupakan pernyataan
                     $inputan[$data_pertanyaan->id] = "Ya";
                     $this->Diagnosis_m->jawaban($inputan);
                     redirect('Koor/Diagnosis/Diag/'.$id_pendaftaran,'refresh');
                 } else {
-                 $data['pertanyaan'] = $data_pertanyaan;  
+                 $data['pertanyaan'] = $data_pertanyaan; //else menampilkan pertanyaan selanjutnya
                 }
             } else { 
-                $id_diagnosis = $this->Diagnosis_m->simpan_diagnosis($id_pendaftaran);
+                $id_diagnosis = $this->Diagnosis_m->simpan_diagnosis($id_pendaftaran); // else untuk menyimpan diagnosis yang di derita
                 redirect('Koor/Diagnosis/hasil/'.$id_diagnosis,'refresh');                
             }
         }
 
-        $inputan = $this->input->post();
-        if ($inputan) {
+        $inputan = $this->input->post(); // untuk mengambil input dari button 
+        if ($inputan) { // if untuk menyimpan jawaban yang dipilih ke dalam session
             $this->Diagnosis_m->jawaban($inputan);
             redirect('Koor/Diagnosis/Diag/'.$id_pendaftaran,'refresh');   
         }

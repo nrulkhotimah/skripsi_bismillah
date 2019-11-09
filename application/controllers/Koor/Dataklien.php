@@ -82,8 +82,8 @@ class Dataklien extends CI_Controller {
             ],
         ];
     }
-
-    public function index() {
+ 
+    public function index() { //untuk menampilkan data klien pada menu dataklien
         $data['user'] = $this->Dataklien_m->getPendaftaranPsikolog($this->session->userdata('id'));
 
         foreach ($data['user'] as $key => $value) { //untuk menampilkan jadwal konseling klien yang terbaru
@@ -97,19 +97,6 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Dataklien', $data);
-    }
-
-    public function lihatseluruh() { //untuk melihat seluruh data klien
-        $data['user'] = $this->Dataklien_m->getAll();
-
-        foreach ($data['user'] as $key => $value) {
-            $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id);
-            $data['jadwal'][$value->id] = $jadwal;
-        }
-        
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/klien/Dataklien2', $data);
     }
 
     public function edit($id) { //open page edit data klien
@@ -127,96 +114,70 @@ class Dataklien extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-            $this->Dataklien_m->update($post,$id);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Dataklien_m->getAll();
-            redirect('Koor/Dataklien/index', 'refresh');
+        $this->Dataklien_m->update($post,$id);
+        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $data['user'] = $this->Dataklien_m->getAll();
+        redirect('Koor/Dataklien/index', 'refresh');
+
         $data['user'] = $user->getById($id);
         if(!$data['user']) show_404();
     }
 
-    public function catkonsel($id_diagnosis) { //open page catatan konseling
+    public function catkonsel($id_diagnosis) { //open page catatan konseling dan proses menyimpan catkonsel yang telah di edit
         $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
         $inputan = $this->input->post();
         if ($inputan) {
             $this->Diagnosis_m->ubah_catkonsel($inputan, $id_diagnosis); 
             $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');  
             redirect('Koor/Dataklien/catkonsel/'.$id_diagnosis);
-            
         }
-
-
-
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Catkonselkoor', $data);
     }
 
-    public function catkonselseluruh() { //open page catatan konseling
-        $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
-
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/klien/Catkonsel2', $data);
-    }
-
-
-
-    public function editcatkonsel() { //open page edit catatan konseling
-        $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
-
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/klien/Editcatkonsel', $data);
-    }
-
-    public function tambahcat() { // tambah catatan konseling - data nya baru sampai di post 
-        $post = $this->input->post();
-        $this->load->helper('form');
-        $this->load->library('form_validation');
-
-        $validation = $this->form_validation;
-        $validation->set_rules($this->rules());
-
-        if($validation->run()) {
-            $this->Penjadwalan_m->tambahcat($post);
-            $this->session->set_flashdata('success', 'Berhasil di simpan');
-            redirect('koor/dataklien/catkonsel','refresh');
-        } else {
-            $error = validation_errors();
-            $this->session->set_flashdata('errors', 'Gagal menyimpan');
-            $this->load->view('koordinator/template/header');
-            $this->load->view('koordinator/template/footer');
-            $this->load->view('koordinator/klien/Tambahcatkonsel');
-        }
-        
-    }
     public function lihatRiwayat($id_klien) { //open page lihat riwayat perklien berdasarkan klien yang dipilih
         $data['user'] = $this->Dataklien_m->getById($id_klien);
         $data['riwayat'] = $this->Dataklien_m->getPendaftaranPsiKlien($this->session->userdata('id'), $id_klien);
-        foreach ($data['riwayat'] as $key => $value) {
+
+        foreach ($data['riwayat'] as $key => $value) { //untuk mendapatkan data pendaftaran dan diagnosis klien
             $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
             $id_pendaftaran = $data_pendaftaran->id;
             $data['diagnosis'][$key] = $this->Dataklien_m->getDiagnosisPendaftaran($id_pendaftaran);
-        
         }
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-		$this->load->view('koordinator/Lihatriwayat', $data);
-	}
+        $this->load->view('koordinator/Lihatriwayat', $data);
+    }
+    
+    public function lihatRiwayatAll($id_klien) { //open page lihatriwayatAll untuk lihat seluruh riwayat klien
+        $data['user'] = $this->Dataklien_m->getById($id_klien);
+        $data['riwayat'] = $this->Dataklien_m->getPendaftaranPsiKlien($this->session->userdata('id'), $id_klien);
 
-	public function riwayat() { //open page riwayat yang di tangani oleh koor
+        foreach ($data['riwayat'] as $key => $value) { //untuk mendapatkan data pendaftaran dan diagnosis klien
+            $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
+            $id_pendaftaran = $data_pendaftaran->id;
+            $data['diagnosis'][$key] = $this->Dataklien_m->getDiagnosisPendaftaran($id_pendaftaran);
+        }
+        
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view('koordinator/LihatriwayatAll', $data);
+    }
+
+    public function riwayat() { //open page riwayat yang di tangani oleh koor
         $data['user'] = $this->Dataklien_m->getPendaftaranPsikolog($this->session->userdata('id'));
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-		$this->load->view("koordinator/Riwayatdiagnosis", $data);
+        $this->load->view("koordinator/Riwayatdiagnosis", $data);
     }
 
     public function seluruhriwayat() { //open page riwayat seluruh klien
         $data['user'] = $this->Dataklien_m->getPendaftaranSemua();
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-		$this->load->view("koordinator/Seluruhriwayat", $data);
+        $this->load->view("koordinator/Seluruhriwayat", $data);
     }
     
     public function ubah_status($id_user) { //proses untuk mengubah status user telah selesai melakukan treatment konseling atau belum
@@ -224,6 +185,58 @@ class Dataklien extends CI_Controller {
         $this->Dataklien_m->ubah_status($id_user, $status_konsel);
         redirect('Koor/Dataklien', 'refresh');
     }
+
+    // public function catkonselseluruh() { //open page catatan konseling
+    //     $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+
+    //     $this->load->view('koordinator/template/header');
+    //     $this->load->view('koordinator/template/footer');
+    //     $this->load->view('koordinator/klien/Catkonsel2', $data);
+    // }
+
+    // public function editcatkonsel() { //open page edit catatan konseling
+    //     $data['diagnosis'] =  $this->Dataklien_m->getKeluhan();
+
+    //     $this->load->view('koordinator/template/header');
+    //     $this->load->view('koordinator/template/footer');
+    //     $this->load->view('koordinator/klien/Editcatkonsel', $data);
+    // }
+
+    // public function tambahcat() { // tambah catatan konseling - data nya baru sampai di post 
+    //     $post = $this->input->post();
+    //     $this->load->helper('form');
+    //     $this->load->library('form_validation');
+
+    //     $validation = $this->form_validation;
+    //     $validation->set_rules($this->rules());
+
+    //     if($validation->run()) {
+    //         $this->Penjadwalan_m->tambahcat($post);
+    //         $this->session->set_flashdata('success', 'Berhasil di simpan');
+    //         redirect('koor/dataklien/catkonsel','refresh');
+    //     } else {
+    //         $error = validation_errors();
+    //         $this->session->set_flashdata('errors', 'Gagal menyimpan');
+    //         $this->load->view('koordinator/template/header');
+    //         $this->load->view('koordinator/template/footer');
+    //         $this->load->view('koordinator/klien/Tambahcatkonsel');
+    //     }
+        
+    // }
+
+    //  public function lihatseluruh() { //untuk melihat seluruh data klien
+    //     $data['user'] = $this->Dataklien_m->getAll();
+
+    //     foreach ($data['user'] as $key => $value) { 
+    //         $jadwal = $this->Penjadwalan_m->getPendaftaranBaru($value->id);
+    //         $data['jadwal'][$value->id] = $jadwal;
+    //     }
+        
+    //     $this->load->view('koordinator/template/header');
+    //     $this->load->view('koordinator/template/footer');
+    //     $this->load->view('koordinator/klien/Dataklien2', $data);
+    // }
+
 
 }
 

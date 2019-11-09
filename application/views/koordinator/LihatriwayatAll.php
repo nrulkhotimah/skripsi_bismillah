@@ -12,6 +12,9 @@
     <li class="breadcrumb-item btn-link">
         <a href="<?php echo site_url('Koor/Dataklien/riwayat') ?>">Riwayat</a>
     </li>
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Koor/Dataklien/seluruhriwayat') ?>">Lihat Riwayat Seluruh Klien</a>
+    </li>
     <li class="breadcrumb-item active" aria-current="page">Lihat riwayat</li>
 </ol>
 </nav>

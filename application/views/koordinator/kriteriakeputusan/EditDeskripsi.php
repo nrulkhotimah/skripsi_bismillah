@@ -3,6 +3,19 @@
 </div>
 </div>
 
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Koor/Home/index')?>">Home</a>
+    </li>
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Koor/Kriteria/index') ?>">Kriteria Keputusan</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Deskripsi</li>
+</ol>
+</nav>
+
 <div class="row">
 <div class="col-md-12">
     <div class="col-md-12 input-group mb-3">
@@ -14,7 +27,7 @@
                 value="DESKRIPSI GANGGUAN"
                 label="<?php echo $value->nama_gangguan ?>"
                 nama="deskripsi[<?php echo $value->id?>]"
-                deskripsi="<?php echo $value->deskripsi_gangguan ?>"><?php echo $value->nama_gangguan ?></option>
+                deskripsi="<?php echo $value->deskripsi_gangguan?>"><?php echo $value->nama_gangguan ?></option>
             <?php endforeach ?>
 
             <?php foreach($fakta as $key => $value): ?>
@@ -26,7 +39,7 @@
             <?php endforeach ?>
         </select>
         <div class="input-group-append">
-            <label class="input-group-text" for="inputGroupSelect02">Search</label>
+            <label class="input-group-text" >Search</label>
         </div>
     </div>
     <div class="col-md-12">
@@ -81,7 +94,7 @@
 </form>
 
 <form method="post">
-<div class="row">
+<div class="row ">
     <div class="col-md-6">
         <div class="col-md-12">
             <span class="font-weight-bold" id="desk_fakt"></span>
@@ -89,11 +102,7 @@
 
             <div class="form-group">
                 <label id="label-filter"></label>
-                <textarea
-                    id="text-filter"
-                    class="form-control"
-                    rows="3"
-                    name=""></textarea>
+                <textarea id="text-filter" class="form-control" rows="3" name=""></textarea>
             </div>
         </div>
     </div>
@@ -108,8 +117,8 @@
 </form>
 
 <script>
-$(document).ready(function(){
-    $("select[name=filter]").on("change", function(){
+$(document).ready(function () {
+    $("select[name=filter]").on("change", function () {
         var val = $("option:selected").val();
         var label = $("option:selected").attr("label");
         var nama = $("option:selected").attr("nama");
@@ -124,10 +133,7 @@ $(document).ready(function(){
         $("#text-filter").attr("name", nama);
         $("#text-filter").val(deskripsi);
 
-
-
     })
 
 })
-
 </script>
