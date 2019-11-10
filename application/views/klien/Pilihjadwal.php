@@ -115,11 +115,7 @@
                 <div class="row text-center">
                     <div class="col-md-12">
 
-                        <?php if($this->session->flashdata('success')): ?>
-                        <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
-                        </div>
-                        <?php endif; ?>
 
                         <!-- data tabel -->
                         <table class="table table-bordered" style="margin-top:20px;" id="klien1">
@@ -148,12 +144,16 @@
                                     <td><?php echo date("D", strtotime($value)).", ".date("d M Y", strtotime($value)) ?></td>
                                     <td><?php echo $waktu ?></td>
                                     <td><?php echo $kuota ?></td>
-
                                     <td >
+                                        <?php if($kuota==0): ?>
+                                        <a disable="" class="btn btn-primary disabled">Pilih Jadwal</a>
+                                    <?php else: ?>
                                         <a
                                             href="<?php echo base_url("klien/pendaftaran/simpan_jadwal/".$id_klien."/".$id_penjadwalan."/".$value) ?>"
                                             class="btn btn-primary">Pilih Jadwal</a>
+                                        <?php endif ?>
                                     </td>
+
                                 </tr>
                                 <?php  endforeach; ?>
                             </tbody>

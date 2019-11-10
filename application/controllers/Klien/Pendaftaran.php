@@ -21,7 +21,7 @@ class Pendaftaran extends CI_Controller {
         $this->load->view('klien/Pendaftaran', $data);
     }
 
-    public function pilih_jadwal($id_user, $id_psikolog) { //untuk memilih jadwal 
+    public function pilih_jadwal($id_psikolog) { //untuk memilih jadwal 
         $data['id_klien'] = $id_user; //untuk mengirimkan id_user dari views
         $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog); //untuk memanggil function getPenjadwalan
         foreach ($data['penjadwalan'] as $key => $value) {

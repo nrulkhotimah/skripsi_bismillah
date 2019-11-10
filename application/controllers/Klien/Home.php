@@ -124,11 +124,6 @@ class Home extends CI_Controller {
 
     }
 
-	public function pendaftaran() 
-	{
-			$this->load->view('klien/Pendaftaran');
-	}
-
     public function datadiagnosis() {
         
         $this->load->view('klien/Datadiagnosis');
