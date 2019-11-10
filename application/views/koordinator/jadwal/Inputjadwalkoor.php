@@ -16,6 +16,8 @@
 </ol>
 </nav>
 
+<?php echo $this->session->flashdata('sukses'); ?>
+
 <div class="col-md-12">
 <form action="save" method="post" enctype="multipart/form-data">
 

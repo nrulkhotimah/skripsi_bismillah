@@ -182,9 +182,8 @@ textarea{
 </ol>
 </nav>
 
-<div class="col-md-12">
 <?php echo $this->session->flashdata('sukses'); ?>
-</div>
+
 
 <div class="container p-5">
 <form method="post">
@@ -331,7 +330,7 @@ textarea{
                 id=""
                 cols="30"
                 rows="5"
-                readonly="readonly"
+                readonly
                 class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
         </div>
     </div>
@@ -349,7 +348,7 @@ textarea{
     <!-- ====== pertanyaan 6 ======  ini yang di ubah -->
     <div class="row">
         <div class="col-md-3">
-            <textarea name="6"  cols="30" rows="5" class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
+            <textarea name="6"  cols="30" rows="5" class="bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
         </div>
 
         <div class="col-md-1">
@@ -385,7 +384,7 @@ textarea{
                 id=""
                 cols="30"
                 rows="5"
-                readonly="readonly"
+                readonly
                 class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
         </div>
     </div>

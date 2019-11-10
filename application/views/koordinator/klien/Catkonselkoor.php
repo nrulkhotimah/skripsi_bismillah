@@ -16,6 +16,8 @@
 </ol>
 </nav>
 
+<?php echo $this->session->flashdata('sukses'); ?>
+
 <div class="col-md-12">
 <table
     class="table table-sm table-bordered"
@@ -23,7 +25,7 @@
     id="result">
 
     <tbody class="text-center">
-    <?php echo $this->session->flashdata('sukses'); ?>
+
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan keluhan

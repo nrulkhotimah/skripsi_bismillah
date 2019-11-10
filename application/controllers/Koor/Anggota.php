@@ -80,8 +80,9 @@ class Anggota extends CI_Controller {
 
         if($validation->run()) {
             $hasil = $this->Angpsi_m->save($post);
-            $this->session->set_flashdata('success', 'Password nya :'.$hasil);
-            redirect('Koor/Anggota/index');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Password :</div>'.$hasil);  
+            // $this->session->set_flashdata('success', 'Password nya :'.$hasil);
+            redirect('Koor/Anggota/index', 'refresh');
         } else {
             $error = validation_errors();
             $this->session->set_flashdata('errors', 'Gagal disimpan');
@@ -107,12 +108,10 @@ class Anggota extends CI_Controller {
         $validation->set_rules($user->rules());
 
         $this->Angpsi_m->update($post, $id);
-        $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');
-        // $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');  
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>');
+
         $data['user'] = $this->Angpsi_m->getAll();
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view("koordinator/angpsi/Angpsikolog", $data);
+        redirect('Koor/Anggota/index', 'refresh');
 
         $data['user'] = $user->getById($id);
         if(!$data['user']) show_404();
@@ -121,11 +120,11 @@ class Anggota extends CI_Controller {
     public function delete($id) { //untuk proses menghapus anggota
         $this->db->where('id', $id);
         $this->db->delete('user');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>');  
         $data['user'] = $this->Angpsi_m->getAll();
 
-        $this->load->view('koordinator/template/header');
-        $this->load->view('koordinator/template/footer');
-        $this->load->view('koordinator/angpsi/Angpsikolog', $data);
+        redirect('Koor/Anggota/index', 'refresh');
+
     }
 
 }

@@ -4,13 +4,11 @@
 
 </div>
 
+<?php echo $this->session->flashdata('sukses'); ?>
+
 <!-- data klien -->
 <div class="col-md-12">
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success" role="alert">
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<?php endif; ?>
+
 
 <!-- data tabel -->
 <table class="table table-bordered" style="margin-top:20px;" id="example">

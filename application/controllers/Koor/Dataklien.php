@@ -94,6 +94,7 @@ class Dataklien extends CI_Controller {
             $data['penjadwalan'][$value->id_user] = $this->Penjadwalan_m->get_jadwal_daftar($jadwal['id']);
             
         }
+
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Dataklien', $data);
@@ -115,7 +116,7 @@ class Dataklien extends CI_Controller {
         $validation->set_rules($user->rules());
 
         $this->Dataklien_m->update($post,$id);
-        $this->session->set_flashdata('success', 'Berhasil disimpan');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>'); 
         $data['user'] = $this->Dataklien_m->getAll();
         redirect('Koor/Dataklien/index', 'refresh');
 
@@ -128,9 +129,10 @@ class Dataklien extends CI_Controller {
         $inputan = $this->input->post();
         if ($inputan) {
             $this->Diagnosis_m->ubah_catkonsel($inputan, $id_diagnosis); 
-            $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');  
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>');  
             redirect('Koor/Dataklien/catkonsel/'.$id_diagnosis);
         }
+        
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/klien/Catkonselkoor', $data);

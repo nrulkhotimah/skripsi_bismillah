@@ -12,30 +12,31 @@ class Home extends CI_Controller {
         check_not_login_admin();
     }
 
-    public function index() {
+    public function index() {  //untuk menampilkan page home
+
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view('admin/Home');
     }
 
-    public function edit_profil() { //open hpage edit profil
-        $id = $this->session->userdata('id');
-        $data['user'] = $this->Editprofil_m->getById($id);
+    public function edit_profil() { //open page edit profil
+        $id = $this->session->userdata('id'); //untuk mengambil data profil dari id user yang login
+        $data['user'] = $this->Editprofil_m->getById($id); //get id user yang login
 
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view('admin/Editprofil', $data);
     }
 
-    public function update($id) { //untuk update edit profil
+    public function update($id) {  //proses update untuk edit profil
         $post = $this->input->post();
-
-        if(empty($post['password_lama'])) {
+ 
+        if(empty($post['password_lama'])) { //jika pass lama kosong ..
             unset($post['password_lama']);
             unset($post['password_baru']);
             unset($post['password_konfirmasi']);
             $this->Editprofil_m->update_profil($post, $id);
-            $this->session->set_flashdata('success', 'Perubahan berhasil disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>');
             redirect('admin/home/edit_profil', 'refresh'); 
         } else {
             $data_lama = $this->Editprofil_m->getById($id);
@@ -49,18 +50,18 @@ class Home extends CI_Controller {
                         unset($post['password_baru']);
                         unset($post['password_konfirmasi']);
                         $this->Editprofil_m->update_profil($post, $id);
-                        $this->session->set_flashdata('success', 'password telah diubah');
+                        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Password telah diubah</div>');
                         redirect('admin/home/edit_profil', 'refresh'); 
                     } else {
-                        $this->session->set_flashdata('success', 'konfirmasi password salah');
+                        $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Konfirmasi password salah</div>');
                         redirect('admin/home/edit_profil', 'refresh'); 
                     }
                 } else {
-                    $this->session->set_flashdata('success', 'password baru tidak boleh kosong');
+                    $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Password baru tidak boleh kosong</div>');
                     redirect('admin/home/edit_profil', 'refresh'); 
                 }
             } else {
-                $this->session->set_flashdata('success', 'password lama salah');
+                $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Password lama salah</div>');
                 redirect('admin/home/edit_profil', 'refresh'); 
             }
         }

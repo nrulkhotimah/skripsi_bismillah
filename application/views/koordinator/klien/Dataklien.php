@@ -3,14 +3,11 @@
 </div>
 </div>
 
-<!-- kolom search -->
-<div class="col-md-12">
-<?php if($this->session->flashdata('success')): ?>
-<div class="alert alert-success" role="alert">
-    <?php echo $this->session->flashdata('success'); ?>
-</div>
-<?php endif; ?>
 
+
+<?php echo $this->session->flashdata('sukses'); ?>
+
+<div class="col-md-12">
 <!-- data tabel -->
 <table
     class="table table-sm table-bordered"

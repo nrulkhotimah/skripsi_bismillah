@@ -13,71 +13,71 @@ class Home extends CI_Controller {
         check_not_login_koordinator();
 	}
 	
-	// public function rules() {
-    //     return [
-    //         ['field' => 'id',
-    //         'label' => 'ID',
-    //         ],
+	public function rules() {
+        return [
+            ['field' => 'id',
+            'label' => 'ID',
+            ],
 
-    //         ['field' => 'nama',
-    //         'label' => 'Nama',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'
+            ],
 
-    //         ['field' => 'nomor_telepon',
-    //         'label' => 'Nomor Telepon',
-    //         'rules' => 'numeric', 'required'
-    //         ],
+            ['field' => 'nomor_telepon',
+            'label' => 'Nomor Telepon',
+            'rules' => 'numeric', 'required'
+            ],
 
-    //         ['field' => 'alamat',
-    //         'label' => 'Alamat',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'alamat',
+            'label' => 'Alamat',
+            'rules' => 'required'
+            ],
 
-    //         ['field' => 'email',
-    //         'label' => 'Email',
-    //         'rules' => 'valid_email', 'required'
-    //         ],
+            ['field' => 'email',
+            'label' => 'Email',
+            'rules' => 'valid_email', 'required'
+            ],
 
-    //         ['field' => 'username',
-    //         'label' => 'Username',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'username',
+            'label' => 'Username',
+            'rules' => 'required'
+            ],
 
-    //         ['field' => 'password',
-    //         'label' => 'Password',
-    //         'rules' => 'required'
-    //         ],
+            ['field' => 'password',
+            'label' => 'Password',
+            'rules' => 'required'
+            ],
 
-    //     ];
-    // }
+        ];
+    }
 
-	public function index()
+	public function index() //untuk menampilkan page home 
 	{
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/Home.php');
 
 	}
-	
-	public function editProfil() {
-		$id = $this->session->userdata('id');
-		$data['user'] = $this->Editprofil_m->getById($id);
+	 
+	public function editProfil() { //untuk open edit profil
+		$id = $this->session->userdata('id'); //untuk mengambil data profil dari id user yang login
+		$data['user'] = $this->Editprofil_m->getById($id); //get id user yang login
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/Editprofil', $data);
 	}
 
-    public function update($id) {
+    public function update($id) { //proses update untuk edit profil
         $post = $this->input->post();
 
-        if(empty($post['password_lama'])) {
+        if(empty($post['password_lama'])) { //jika pass lama kosong ..
             unset($post['password_lama']);
             unset($post['password_baru']);
             unset($post['password_konfirmasi']);
             $this->Editprofil_m->update_profil($post, $id);
-            $this->session->set_flashdata('success', 'Perubahan telah disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>');
             redirect('Koor/Home/editProfil', 'refresh'); 
         } else {
             $data_lama = $this->Editprofil_m->getById($id);
@@ -91,18 +91,18 @@ class Home extends CI_Controller {
                         unset($post['password_baru']);
                         unset($post['password_konfirmasi']);
                         $this->Editprofil_m->update_profil($post, $id);
-                        $this->session->set_flashdata('success', 'password telah diubah');
+                        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Password telah diubah</div>');
                         redirect('Koor/Home/editProfil', 'refresh'); 
                     } else {
-                        $this->session->set_flashdata('success', 'konfirmasi password salah');
+                        $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Konfirmasi password salah</div>');
                         redirect('Koor/Home/editProfil', 'refresh'); 
                     }
                 } else {
-                    $this->session->set_flashdata('success', 'password baru tidak boleh kosong');
+                    $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Password baru tidak boleh kosong</div>');
                     redirect('Koor/Home/editProfil', 'refresh'); 
                 }
             } else {
-                $this->session->set_flashdata('success', 'password lama salah');
+                $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Password lama salah</div>');
                 redirect('Koor/Home/editProfil', 'refresh'); 
             }
         }

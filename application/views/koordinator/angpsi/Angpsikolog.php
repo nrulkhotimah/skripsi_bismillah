@@ -4,9 +4,10 @@
                 </div>
             </div>
 
+
+            <?php echo $this->session->flashdata('sukses'); ?>
             <!-- kolom search -->
             <div class="col-md-12">
-            <?php $this->session->flashdata('sukses') ?>
                 
 
                 <!-- data tabel -->

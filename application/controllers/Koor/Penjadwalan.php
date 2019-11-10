@@ -62,12 +62,12 @@ class Penjadwalan extends CI_Controller {
 
         if($validation->run()) {
             $this->Penjadwalan_m->save($post);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Jadwal berhasil ditambahkan</div>');  
             redirect('koor/penjadwalan/index','refresh');
             
         } else {
             $error=validation_errors();
-            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Jadwal gagal disimpan</div>');  
             $this->load->view('koordinator/template/header');
             $this->load->view('koordinator/template/footer');
             $this->load->view("koordinator/jadwal/Inputjadwalkoor");
@@ -90,10 +90,10 @@ class Penjadwalan extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
 
-            $this->Penjadwalan_m->update($post,$id);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Penjadwalan_m->getAll();
-           redirect('koor/penjadwalan/index','refresh');
+        $this->Penjadwalan_m->update($post,$id);
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>');
+        $data['user'] = $this->Penjadwalan_m->getAll();
+        redirect('koor/penjadwalan/index','refresh');
         
         $data['user'] = $user->getById($id);
 
@@ -103,6 +103,7 @@ class Penjadwalan extends CI_Controller {
     public function delete($id) { //proses menghapus jadwal
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Jadwal berhasil dihapus</div>');
         redirect('koor/penjadwalan/index','refresh');
     }
 

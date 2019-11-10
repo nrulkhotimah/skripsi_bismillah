@@ -139,7 +139,7 @@ class Dataklien extends CI_Controller {
         $validation->set_rules($user->rules());
       
             $this->Dataklien_m->update($post,$id);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>'); 
             $data['user'] = $this->Dataklien_m->getAll();
             foreach ($data['user'] as $key => $value) {
                 $id_klien = $value->id;
@@ -161,6 +161,7 @@ class Dataklien extends CI_Controller {
     public function delete ($id) {  //fungsi untuk delete data klien
         $this->db->where('id', $id);
         $this->db->delete('user');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Dataklien berhasil dihapus</div>'); 
         $data['user'] = $this->Dataklien_m->getAll();
         foreach ($data['user'] as $key => $value) {
             $id_klien = $value->id;

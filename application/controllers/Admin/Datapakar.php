@@ -79,12 +79,9 @@ class Datapakar extends CI_Controller {
         $validation->set_rules($user->rules());
 
         $this->Datapakar_m->update($post, $id);
-        $this->session->set_flashdata('success', 'Berhasil');
-
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>'); 
         $data['user'] = $this->Datapakar_m->getAll();
-        $this->load->view('admin/template/header');
-        $this->load->view('admin/template/footer');
-        $this->load->view("admin/pakar/Datapakar", $data);
+        redirect('Admin/Datapakar/index', 'refresh');
 
         $data['user'] = $user->getById($id);
         if(!$data['user']) show_404();
@@ -98,11 +95,10 @@ class Datapakar extends CI_Controller {
 
         $this->db->where('id', $id);
         $this->db->delete('user');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Datapakar berhasil dihapus</div>'); 
         $data['user'] = $this->Datapakar_m->getAll();
         
-        $this->load->view('admin/template/header');
-        $this->load->view('admin/template/footer');
-        $this->load->view("admin/pakar/Datapakar", $data);
+        redirect('Admin/Datapakar/index', 'refresh');
     }
 
 

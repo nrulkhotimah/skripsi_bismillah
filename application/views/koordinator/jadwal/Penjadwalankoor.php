@@ -3,6 +3,8 @@
 </div>
 </div>
 
+<?php echo $this->session->flashdata('sukses'); ?>
+
 <div class="col-md-12">
 
 <!-- data tabel -->
@@ -15,8 +17,7 @@
             <th class="align-middle col5">No</th>
             <th class="align-middle">Hari</th>
             <th class="align-middle">Waktu</th>
-            <th class="align-middle">Kuota Penuh</th>
-            <!-- <th class="align-middle">Sisa Kuota</th> -->
+            <th class="align-middle">Kuota</th>
             <th class="align-middle">Edit</th>
             <th class="align-middle">Hapus</th>
         </tr>
@@ -33,7 +34,6 @@
             <td class="align-middle"><?php echo $Penjadwalan->hari ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->waktu ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->kuota ?></td>
-            <!-- <td class="align-middle"><?php echo $sisa[$Penjadwalan->id] ?></td> -->
             <td class="align-middle">
                 <a href="<?php echo site_url('Koor/Penjadwalan/edit/'.$Penjadwalan->id) ?>">
                     <i class="fas fa-pen"></i>
