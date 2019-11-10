@@ -37,7 +37,7 @@ class Penjadwalan extends CI_Controller {
         $data['user'] = $this->Penjadwalan_m->getJadwalPsi($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) { 
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id); //proses mengambil jadwal yg dipilih klien
-            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran); //proses perhitungan kuota
+            // $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran); //proses perhitungan kuota
         }
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
@@ -62,12 +62,12 @@ class Penjadwalan extends CI_Controller {
 
         if($validation->run()) {
             $this->Penjadwalan_m->save($post);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Jadwal berhasil ditambahkan</div>');
             redirect('ang/penjadwalan/index','refresh');
             
         } else {
             $error=validation_errors();
-            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Jadwal gagal disimpan</div>');
             $this->load->view('anggota/template/header');
             $this->load->view('anggota/template/footer');
             $this->load->view("anggota/jadwal/Inputjadwalang");
@@ -91,7 +91,7 @@ class Penjadwalan extends CI_Controller {
         $validation->set_rules($user->rules());
 
             $this->Penjadwalan_m->update($post,$id);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil dissimpan</div>');
             $data['user'] = $this->Penjadwalan_m->getAll();
            redirect('ang/penjadwalan/index','refresh');
         
@@ -103,6 +103,7 @@ class Penjadwalan extends CI_Controller {
     public function delete($id) { //proses menghapus jadwal
         $this->db->where('id', $id);
         $this->db->delete('penjadwalan');
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Jadwal berhasil dihapus</div>');
         redirect('ang/penjadwalan/index','refresh');
     }
 

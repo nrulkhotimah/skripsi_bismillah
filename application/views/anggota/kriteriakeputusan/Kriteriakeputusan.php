@@ -162,625 +162,760 @@ textarea{
  
 </style>
 
-<!-- ===================================================================================== -->
-
-                         <div style="float:right">
-                            <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
-
-                        </div>
-
-                    </div>
-
-                    <div id="diagram"></div>
-                        <div class="container p-5">
-                        
-                       <!-- ====== pernyataaan 1 ======= -->
-                       <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="1" id="" rows="3" readonly> <?php echo $pengetahuan[1]->pertanyaan?> </textarea>
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child text-white">Ya</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- ========================================     -->
-                            
-
-                        <!-- ====== pertanyaan 2 ===== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="2" id="" cols="30" rows="3" readonly><?php echo $pengetahuan[2]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                            <!-- ===== hasil 1 ===== -->
-                                <div class="col-md-3">
-                                    <textarea class="bg-warning" cols="30" rows="3" readonly><?php echo $gangguan[1]->nama_gangguan?> </textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- ============================     -->
-
-
-                        <!-- ====== pertanyaan 3 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="3" id="" cols="30" rows="4" readonly><?php echo $pengetahuan[3]->pertanyaan?> </textarea>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== hasil 2 ====== -->
-                                <div class="col-md-3">
-                                    <textarea class="bg-warning" cols="30" rows="3" readonly><?php echo $gangguan[2]->nama_gangguan?> </textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- ================================     -->
-
-
-                        <!-- ====== pernyataan 4 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="4" id="" cols="30" rows="3" readonly><?php echo $pengetahuan[4]->pertanyaan?> </textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child"></p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- ===================================== -->
-
-
-                        <!-- ====== pertanyaan 5 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="5" id="" cols="30" rows="5" readonly><?php echo $pengetahuan[5]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ==== fakta A ==== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3" readonly><?php echo $fakta[1]->nama_fakta?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p></p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ====================== -->
-
-                                <!-- ====== pertanyaan 6 || readonly ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="6" id="" cols="30" rows="5" readonly class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
-                                </div>
-                            </div>
-                        
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                            </div>
-                        <!-- ============================= -->
-
-
-                        <!-- ====== pertanyaan 6 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="6" id="" cols="30" rows="5" readonly class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ==== fakta B ==== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" rows="5" class="align-middle" readonly><?php echo $fakta[2]->nama_fakta?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p></p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ======================== -->
-
-                                <!-- ====== pertanyaan 6 || readonly ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="6" id="" cols="30" rows="5" readonly class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="row justify-content-md-center">
-                                        <p></p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- =================================== -->
-
-                            <div class="row">
-                                
-                            </div>
-
-                            <!-- ====== pertanyaan 7 || ini yg di ubah  ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="7" id="" cols="30" rows="4" readonly><?php echo $pengetahuan[7]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ==== fakta C ==== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" rows="3" readonly><?php echo $fakta[3]->nama_fakta?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p></p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ========================== -->
-
-                                <!-- ====== pertanyaan 9 || readonly ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="9" id="" cols="30" rows="3" readonly class="bg-info"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ======================================= -->
-
-
-                            <!-- ====== pertanyaan 9 || ini yg di ubah  ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="9" id="" cols="30" rows="3" readonly class="bg-info"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ==== fakta D ==== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" rows="3" readonly ><?php echo $fakta[4]->nama_fakta?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p></p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ====================== -->
-
-                                <!-- ====== pertanyaan 10 || readonly ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="10" id="" cols="30" rows="3" readonly class="bg-primary"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ================================== -->
-
-
-                            <!-- ====== pertanyaan 10 || ini yg di ubah  ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="10" id="" cols="30" rows="3" readonly class="bg-primary"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p ></p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== pertanyaan 11 ====== -->
-                                <div class="col-md-3">
-                                    <textarea name="11" id="" cols="30" rows="3" readonly><?php echo $pengetahuan[11]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">No</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ================================ -->
-
-
-                                <!-- ====== hasil 3 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[3]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-                            <!-- ================================ -->
-                            
-                            <!-- pertanyaan collapse -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p>No</p>
-                                        <img src="../../assets/img/bawah3.png" alt="" width='10%' height='300px'>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <div class="row justify-content-md-center">
-                                                <p class="text-center text-child">No</p>
-                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                     <!-- ====== pertanyaan 12 ====== -->
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <textarea name="12" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[12]->pertanyaan?></textarea>
-                                        </div>
-
-                                        <div class="col-md-1">
-                                            <p class="text-center text-child">Ya</p>
-                                            <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                        </div>
-
-                                        <!-- ====== hasil 4 ====== -->
-                                        <div class="col-md-3">
-                                            <textarea class="bg-warning" cols="30" name="" id="" rows="3"><?php echo $gangguan[4]->nama_gangguan?></textarea>
-                                        </div>  
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <div class="row justify-content-md-center">
-                                                <p class="text-center text-child">No</p>
-                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- ====== hasil 5 ====== -->
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[5]->nama_gangguan?></textarea>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            
-                            <!-- ====== pertanyaan 13 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="13" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[13]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== hasil 6 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[6]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ============================= -->
-
-
-                            <!-- ====== pertanyaan 14 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="14" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[14]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ===== hasil 7 ===== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[7]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ============================== -->
-
-
-                            <!-- ====== pertanyaan 15 ======= -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="15" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[15]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ===== hasil 8 ===== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[8]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ================================ -->
-
-                            <!-- ====== pertanyaan 16 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="16" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[16]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ============================= -->
-
-
-                                <!-- ========= pertanyaan 17 =========== -->
-                                <div class="col-md-3">
-                                    <textarea name="17" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
-                                </div>
-
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-                                <!-- ======================================== -->
-
-                                <!-- ====== hasil 9 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[9]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-                            <!-- row collapse -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p>No</p>
-                                        <img src="../../assets/img/bawah3.png" alt="" width='10%' height='300px'>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-9">
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <div class="row justify-content-md-center">
-                                                <p class="text-center text-child">No</p>
-                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                     <!-- ====== pertanyaan 18 ====== -->
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <textarea name="18" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[18]->pertanyaan?></textarea>
-                                        </div>
-
-                                        <div class="col-md-1">
-                                            <p class="text-center text-child">Ya</p>
-                                            <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                        </div>
-
-                                        <!-- ========= hasil 10 =========== -->
-                                        <div class="col-md-3">
-                                            <textarea class="bg-warning" cols="30" name="" id="" rows="3"><?php echo $gangguan[10]->nama_gangguan?></textarea>
-                                        </div>  
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <div class="row justify-content-md-center">
-                                                <p class="text-center text-child">No</p>
-                                                <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                     <!-- ========= hasil 11 =========== -->
-                                    <div class="row">
-                                        <div class="col-md-3 offset-md-2">
-                                            <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[11]->nama_gangguan?></textarea>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- ====== pertanyaan 19 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="19" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[19]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== hasil 12 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[12]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-                            
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        <!-- ====== pertanyaan 20 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="20" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[20]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== hasil 13 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[13]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-                            <!-- ============================= -->
-
-                            <!-- ============== Garis =============== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- ============== Garis =============== -->
-
-                        <!-- ====== pertanyaan 21 ====== -->
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <textarea name="21" id="" cols="30" rows="3 readonly"><?php echo $pengetahuan[21]->pertanyaan?></textarea>
-                                </div>
-                                
-                                <div class="col-md-1">
-                                    <p class="text-center text-child">Ya</p>
-                                    <img class="align-middle" src="../../assets/img/kanan.png" alt="" width='100%' height='30%'>
-                                </div>
-
-                                <!-- ====== hasil 14 ====== -->
-                                <div class="col-md-2">
-                                    <textarea class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[14]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="row justify-content-md-center">
-                                        <p class="text-center text-child">No</p>
-                                        <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ====== hasil 15 ====== -->
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <textarea readonly class="bg-warning" name="" id="" rows="3"><?php echo $gangguan[15]->nama_gangguan?></textarea>
-                                </div>
-                            </div>
-
-                           <br>
-                           <br>
-                           <a href="<?php echo base_url("Ang/Kriteria/edit") ?>" class="btn btn-primary" > Ubah </a>
-
-                        </div>
+<div style="float:right">
+    <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
+
+</div>
+
+</div>
+
+<div id="diagram"></div>
+<div class="container p-5">
+
+<!-- ====== pernyataaan 1 ======= -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="1" id="" rows="3" readonly="readonly"><?php echo $pengetahuan[1]->pertanyaan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child text-white">Ya</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+</div>
+<!-- ======================================== -->
+
+<!-- ====== pertanyaan 2 ===== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="2" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[2]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-2">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ===== hasil 1 ===== -->
+    <div class="col-md-3">
+        <textarea class="bg-warning" cols="30" rows="3" readonly="readonly"><?php echo $gangguan[1]->nama_gangguan?>
+        </textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+</div>
+<!-- ============================ -->
+
+<!-- ====== pertanyaan 3 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="3" id="" cols="30" rows="4" readonly="readonly"><?php echo $pengetahuan[3]->pertanyaan?>
+        </textarea>
+    </div>
+
+    <div class="col-md-2">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ====== hasil 2 ====== -->
+    <div class="col-md-3">
+        <textarea class="bg-warning" cols="30" rows="3" readonly="readonly"><?php echo $gangguan[2]->nama_gangguan?>
+        </textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+</div>
+<!-- ================================ -->
+
+<!-- ====== pernyataan 4 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="4" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[4]->pertanyaan?>
+        </textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child"></p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+</div>
+<!-- ===================================== -->
+
+<!-- ====== pertanyaan 5 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="5" id="" cols="30" rows="5" readonly="readonly"><?php echo $pengetahuan[5]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ==== fakta A ==== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $fakta[1]->nama_fakta?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p></p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ====================== -->
+
+    <!-- ====== pertanyaan 6 || readonly ====== -->
+    <div class="col-md-3">
+        <textarea
+            name="6"
+            id=""
+            cols="30"
+            rows="5"
+            readonly="readonly"
+            class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+</div>
+<!-- ============================= -->
+
+<!-- ====== pertanyaan 6 ====== ini yang di ubah-->
+<div class="row">
+    <div class="col-md-3">
+        <textarea
+            name="6"
+            id=""
+            cols="30"
+            rows="5"
+            readonly="readonly"
+            class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ==== fakta B ==== -->
+    <div class="col-md-2">
+        <textarea class="align-middle bg-warning" rows="5" readonly><?php echo $fakta[2]->nama_fakta?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p></p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ======================== -->
+
+    <!-- ====== pertanyaan 6 || readonly ====== -->
+    <div class="col-md-3">
+        <textarea
+            name="6"
+            id=""
+            cols="30"
+            rows="5"
+            readonly="readonly"
+            class=" bg-secondary"><?php echo $pengetahuan[6]->pertanyaan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row justify-content-md-center">
+            <p></p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+        </div>
+    </div>
+</div>
+<!-- =================================== -->
+
+<div class="row"></div>
+
+<!-- ====== pertanyaan 7 || ini yg di ubah ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="7" id="" cols="30" rows="4" readonly="readonly"><?php echo $pengetahuan[7]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ==== fakta C ==== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" rows="3" readonly="readonly"><?php echo $fakta[3]->nama_fakta?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p></p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ========================== -->
+
+    <!-- ====== pertanyaan 9 || readonly ====== -->
+    <div class="col-md-3">
+        <textarea name="9" id="" cols="30" rows="3" readonly="readonly" class="bg-info"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='50px'>
+        </div>
+    </div>
+</div>
+<!-- ======================================= -->
+
+<!-- ====== pertanyaan 9 || ini yg di ubah ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="9" id="" cols="30" rows="3" readonly="readonly" class="bg-info"><?php echo $pengetahuan[9]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ==== fakta D ==== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" rows="3" readonly="readonly"><?php echo $fakta[4]->nama_fakta?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p></p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ====================== -->
+
+    <!-- ====== pertanyaan 10 || readonly ====== -->
+    <div class="col-md-3">
+        <textarea
+            name="10"
+            id=""
+            cols="30"
+            rows="3"
+            readonly="readonly"
+            class="bg-primary"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+        </div>
+    </div>
+</div>
+<!-- ================================== -->
+
+<!-- ====== pertanyaan 10 || ini yg di ubah ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea
+            name="10"
+            id=""
+            cols="30"
+            rows="3"
+            readonly="readonly"
+            class="bg-primary"><?php echo $pengetahuan[10]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p ></p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ====== pertanyaan 11 ====== -->
+    <div class="col-md-3">
+        <textarea name="11" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[11]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">No</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ================================ -->
+
+    <!-- ====== hasil 3 ====== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[3]->nama_gangguan?></textarea>
+    </div>
+</div>
+<!-- ================================ -->
+
+<!-- pertanyaan collapse -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p>No</p>
+            <img src="../../assets/img/bawah3.png" alt="" width='10%' height='300px'>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <div class="row justify-content-md-center">
+                    <p class="text-center text-child">No</p>
+                    <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
                 </div>
             </div>
+        </div>
 
+        <!-- ====== pertanyaan 12 ====== -->
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <textarea name="12" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[12]->pertanyaan?></textarea>
+            </div>
+
+            <div class="col-md-1">
+                <p class="text-center text-child">Ya</p>
+                <img
+                    class="align-middle"
+                    src="../../assets/img/kanan.png"
+                    alt=""
+                    width='100%'
+                    height='30%'>
+            </div>
+
+            <!-- ====== hasil 4 ====== -->
+            <div class="col-md-3">
+                <textarea
+                    class="bg-warning"
+                    cols="30"
+                    name=""
+                    id=""
+                    rows="3"
+                    readonly="readonly"><?php echo $gangguan[4]->nama_gangguan?></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <div class="row justify-content-md-center">
+                    <p class="text-center text-child">No</p>
+                    <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== hasil 5 ====== -->
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[5]->nama_gangguan?></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ====== pertanyaan 13 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="13" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[13]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ====== hasil 6 ====== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[6]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+        </div>
+    </div>
+</div>
+<!-- ============================= -->
+
+<!-- ====== pertanyaan 14 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="14" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[14]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ===== hasil 7 ===== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[7]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+        </div>
+    </div>
+</div>
+<!-- ============================== -->
+
+<!-- ====== pertanyaan 15 ======= -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="15" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[15]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ===== hasil 8 ===== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[8]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+        </div>
+    </div>
+</div>
+<!-- ================================ -->
+
+<!-- ====== pertanyaan 16 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="16" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[16]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ============================= -->
+
+    <!-- ========= pertanyaan 17 =========== -->
+    <div class="col-md-3">
+        <textarea name="17" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[17]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+    <!-- ======================================== -->
+
+    <!-- ====== hasil 9 ====== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[9]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<!-- row collapse -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p>No</p>
+            <img src="../../assets/img/bawah3.png" alt="" width='10%' height='300px'>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <div class="row justify-content-md-center">
+                    <p class="text-center text-child">No</p>
+                    <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                </div>
+            </div>
+        </div>
+
+        <!-- ====== pertanyaan 18 ====== -->
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <textarea name="18" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[18]->pertanyaan?></textarea>
+            </div>
+
+            <div class="col-md-1">
+                <p class="text-center text-child">Ya</p>
+                <img
+                    class="align-middle"
+                    src="../../assets/img/kanan.png"
+                    alt=""
+                    width='100%'
+                    height='30%'>
+            </div>
+
+            <!-- ========= hasil 10 =========== -->
+            <div class="col-md-3">
+                <textarea
+                    class="bg-warning"
+                    cols="30"
+                    name=""
+                    id=""
+                    rows="3"
+                    readonly="readonly"><?php echo $gangguan[10]->nama_gangguan?></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <div class="row justify-content-md-center">
+                    <p class="text-center text-child">No</p>
+                    <img src="../../assets/img/bawah.png" alt="" width='10%' height='60px'>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========= hasil 11 =========== -->
+        <div class="row">
+            <div class="col-md-3 offset-md-2">
+                <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[11]->nama_gangguan?></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ====== pertanyaan 19 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="19" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[19]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ====== hasil 12 ====== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[12]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+        </div>
+    </div>
+</div>
+
+<!-- ====== pertanyaan 20 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="20" id="" cols="30" rows="4" readonly="readonly"><?php echo $pengetahuan[20]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ====== hasil 13 ====== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[13]->nama_gangguan?></textarea>
+    </div>
+</div>
+<!-- ============================= -->
+
+<!-- ============== Garis =============== -->
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+        </div>
+    </div>
+</div>
+<!-- ============== Garis =============== -->
+
+<!-- ====== pertanyaan 21 ====== -->
+<div class="row">
+    <div class="col-md-3">
+        <textarea name="21" id="" cols="30" rows="3" readonly="readonly"><?php echo $pengetahuan[21]->pertanyaan?></textarea>
+    </div>
+
+    <div class="col-md-1">
+        <p class="text-center text-child">Ya</p>
+        <img
+            class="align-middle"
+            src="../../assets/img/kanan.png"
+            alt=""
+            width='100%'
+            height='30%'>
+    </div>
+
+    <!-- ====== hasil 14 ====== -->
+    <div class="col-md-2">
+        <textarea class="bg-warning" name="" id="" rows="3" readonly="readonly"><?php echo $gangguan[14]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="row justify-content-md-center">
+            <p class="text-center text-child">No</p>
+            <img src="../../assets/img/bawah.png" alt="" width='10%' height='100px'>
+        </div>
+    </div>
+</div>
+
+<!-- ====== hasil 15 ====== -->
+<div class="row">
+    <div class="col-md-2">
+        <textarea readonly="readonly" class="bg-warning" rows="3"><?php echo $gangguan[15]->nama_gangguan?></textarea>
+    </div>
+</div>
+
+<br>
+<br>
+
+</div>
+</div>
+</div>

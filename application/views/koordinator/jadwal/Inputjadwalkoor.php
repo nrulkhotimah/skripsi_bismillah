@@ -57,7 +57,6 @@
     </div>
 
     <div class="form-group">
-        <!-- <label for="exampleFormControlInput1">Hari </label> -->
         <input
             name="hari"
             id="exampleFormControlInput1"

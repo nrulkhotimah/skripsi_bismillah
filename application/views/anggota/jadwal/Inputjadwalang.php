@@ -16,6 +16,8 @@
 </ol>
 </nav>
 
+<?php echo $this->session->flashdata('sukses'); ?>
+
 <div class="col-md-12">
 <form action="save" method="post" enctype="multipart/form-data">
 
@@ -55,7 +57,6 @@
     </div>
 
     <div class="form-group">
-        <!-- <label for="exampleFormControlInput1">Hari </label> -->
         <input
             name="hari"
             id="exampleFormControlInput1"

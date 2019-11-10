@@ -214,9 +214,9 @@ class Dataklien_m extends CI_Model {
         $this->db->update('klien', $status_konsel);
     }
 
-    public function tambahcat($post) {
-        $this->db->insert('diagnosis', $post);
-    }
+    // public function tambahcat($post) {
+    //     $this->db->insert('diagnosis', $post);
+    // }
 
     // public function search($keyword, $where) {
     //    $this->db->select('*');

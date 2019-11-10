@@ -1,7 +1,7 @@
 
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+                            <span class="title font-weight-bold">DIAGNOSIS</span>
                         </div>
                     </div>
 

@@ -83,7 +83,17 @@ class Dataklien_m extends CI_Model {
             ['field' => 'approve',
             'label' => 'Approve',
             'rules' => 'required'
-        ],
+            ],
+
+            ['field' => 'catatan',
+            'label' => 'Catatan',
+            'rules' => 'required'
+            ],
+
+            ['field' => 'keluhan',
+            'label' => 'Keluhan',
+            'rules' => 'required'
+            ],
 
         ];
     }
@@ -108,14 +118,37 @@ class Dataklien_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function getPendaftaranPsikolog($id_psikolog) {   //untuk mengambil data pendaftaran klien yg memilih psikolog tersebut
+    public function getPendaftaranPsikolog($id_psikolog) {  
         $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->join('klien', 'klien.id_user = pendaftaran.id_klien', 'left');
         $this->db->where('penjadwalan.id_user', $id_psikolog);
+        $ambil = $this->db->get('pendaftaran');
+        $data = $ambil->result();
+
+        foreach ($data as $key => $value) {
+            $pengelompokan[$value->id_klien][] = $value;
+        }
+
+        foreach ($pengelompokan as $id_klien => $value1) {
+            foreach ($value1 as $key => $value2) {
+                $jumlah = count($value1) - 1;
+                if ($key==$jumlah) {
+                    $data_fix[$id_klien] = $value2;
+                }
+            }
+        }
+        return $data_fix;
+    }
+
+    public function getPendaftaranSemua() {  
+        $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->group_by('pendaftaran.id_klien');
         $ambil = $this->db->get('pendaftaran');
         return $ambil->result();
     }
+
 
     public function getPendaftaranPsiKlien($id_psikolog, $id_klien) { //mengambil data tanggal aja untuk di bagian lihat riwayat
         $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
@@ -135,6 +168,7 @@ class Dataklien_m extends CI_Model {
         return $ambil->row();
 
     }
+
 
     public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
         $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');

@@ -3,6 +3,8 @@
 </div>
 </div>
 
+<?php echo $this->session->flashdata('sukses'); ?>
+
 <div class="col-md-12">
 
 <!-- data tabel -->
@@ -15,15 +17,14 @@
             <th class="align-middle col5">No</th>
             <th class="align-middle">Hari</th>
             <th class="align-middle">Waktu</th>
-            <th class="align-middle">Kuota Penuh</th>
-            <th class="align-middle">Sisa Kuota</th>
+            <th class="align-middle">Kuota</th>
             <th class="align-middle">Edit</th>
             <th class="align-middle">Hapus</th>
         </tr>
     </thead>
 
     <tbody class="text-center">
-        <?php 
+         <?php 
             $i=0;
                 foreach($user as $Penjadwalan):
                 $i++;
@@ -33,7 +34,6 @@
             <td class="align-middle"><?php echo $Penjadwalan->hari ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->waktu ?></td>
             <td class="align-middle"><?php echo $Penjadwalan->kuota ?></td>
-            <td class="align-middle"><?php echo $sisa[$Penjadwalan->id] ?></td>
             <td class="align-middle">
                 <a href="<?php echo site_url('Ang/Penjadwalan/edit/'.$Penjadwalan->id) ?>">
                     <i class="fas fa-pen"></i>
