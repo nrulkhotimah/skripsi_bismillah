@@ -129,8 +129,19 @@
                             <tbody class="text-center">
         
                                 <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">tessddsdt</td>                                 
+                                    <td class="align-middle"><?php if (empty($diagnosis->keluhan)): ?>
+                                    -
+                                    <?php else: ?>
+                                    <?php echo $diagnosis->keluhan ?>
+                                    <?php endif ?>
+                                    
+                            
+                                    </td>
+                                    <td class="align-middle"><?php if (empty($diagnosis->catatan)): ?>
+                                    -
+                                    <?php else: ?>
+                                    <?php echo $diagnosis->catatan ?>
+                                    <?php endif ?></td>                                 
                                 </tr>
 
                             </tbody>

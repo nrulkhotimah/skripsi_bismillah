@@ -93,7 +93,7 @@
 </div>
 </form>
 
-<form method="post">
+<form method="post" id="form-filter" style="display: none;">
 <div class="row ">
     <div class="col-md-6">
         <div class="col-md-12">

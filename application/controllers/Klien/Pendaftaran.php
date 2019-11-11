@@ -16,13 +16,12 @@ class Pendaftaran extends CI_Controller {
 
     public function index() {
         $data['user'] = $this->Datapakar_m->getAll();
-        $data['id_user'] = $id_user;
         
         $this->load->view('klien/Pendaftaran', $data);
     }
 
     public function pilih_jadwal($id_psikolog) { //untuk memilih jadwal 
-        $data['id_klien'] = $id_user; //untuk mengirimkan id_user dari views
+        $data['id_klien'] = $this->session->userdata('id'); //untuk mengirimkan id_user dari views
         $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog); //untuk memanggil function getPenjadwalan
         foreach ($data['penjadwalan'] as $key => $value) {
             $hari_jadwal[] = $value->hari; //mengambil data hari

@@ -138,7 +138,7 @@
                                     <td><?php echo $jadwal->nama ?></td>
                                     <td class="btn-link">
                                         <a
-                                            href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$id_user.$jadwal->id)?>">
+                                            href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$jadwal->id)?>">
                                             Pilih jadwal
                                         </a>
                                     </td>

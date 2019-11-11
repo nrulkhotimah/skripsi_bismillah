@@ -83,45 +83,34 @@ class Editprofil_m extends CI_Model {
 
     public function getById($id) {
 
-        $this->db->select('*');
-        $this->db->from('user');
         $this->db->join('klien', 'klien.id_user=user.id');
-        $this->db->where('id_user', $id);
+        $this->db->where('user.id', $id);
       
-        return $this->db->get()->first_row();
+        return $this->db->get('user')->row();
     }
 
-    public function update($id) {
-        $post = $this->input->post();
-        // $user = new stdClass(); //ini adalah objek
+    public function update($id, $post) {
+        $id_user = $id;
+        $id_klien = $post['id_klien'];
+
         $user['nama'] = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
         $user['nomor_telepon'] = $post['nomor_telepon'];
         $user['jenis_kelamin'] = $post['jenis_kelamin'];
         $user['alamat'] = $post['alamat'];
         $user['email'] = $post['email'];
         $user['username'] = $post['username'];
-        $user['password'] = md5($post['password_baru']);
-        
-        // $this->db->set($user);
-        $this->db->where('id', $id);
-        $this->db->update("user", $user);
-        // $this->db->query("UPDATE user SET nama='Anton w' WHERE id='$id'");
-        // echo "<pre>";
-        // print_r($user);
-        // echo "<pre>";
-        // echo $id;
-        // exit();
-        
-        // $klien = new stdClass();
-        // $klien->id_user = $id;
-        // $klien->tanggal_lahir = $post['tanggal_lahir'];
-        // $klien->agama = $post['agama'];
-        // $klien->marital_status = $post['marital_status'];
-        // $klien->pekerjaan = $post['pekerjaan'];
+        $user['password'] = $post['password'];
 
-        // $this->db->set($klien);
-        // $this->db->where('id_user', $id);
-        // $this->db->update('klien', $klien);
+        $this->db->where('id', $id_user);
+        $this->db->update('user', $user);
+        
+        $klien['tanggal_lahir'] = $post['tanggal_lahir'];
+        $klien['agama'] = $post['agama'];
+        $klien['marital_status'] = $post['marital_status'];
+        $klien['pekerjaan'] = $post['pekerjaan'];
+
+        $this->db->where('id', $id_klien);
+        $this->db->update('klien', $klien);
 
     }
 

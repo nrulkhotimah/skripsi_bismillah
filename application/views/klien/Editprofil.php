@@ -110,8 +110,9 @@
 
                 <div class="row text-left">
                     <div class="col-md-12">
+                    <?php echo $this->session->flashdata('alert'); ?>
                     <form
-                            action="<?php echo base_url('index.php/Klien/Home/update/'.$user->id) ?>"
+                            action="<?php echo base_url('index.php/Klien/Home/update/'.$user->id_user) ?>"
                             method="post"
                             enctype="multipart/form-data">
                           

@@ -6,7 +6,8 @@ class Home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		
-		$this->load->model('Klien_m/Editprofil_m');
+        $this->load->model('Klien_m/Editprofil_m');
+		$this->load->model('Klien_m/Diagnosis_m');
         $this->load->helper('url_helper');
 		$this->load->library('session');
 		
@@ -91,47 +92,60 @@ class Home extends CI_Controller {
 		$this->load->view('klien/Editprofil', $data);
 	}
 
-	public function update($id) {
+	public function update($id) { //id ini adalah id user
         $post = $this->input->post();
+        $data_lama = $this->Editprofil_m->getById($id);
+        $post['id_klien'] = $data_lama->id;
 
         if(empty($post['password_lama'])) {
-            $this->Editprofil_m->update($id);
-            redirect('Klien/Home/editProfil', 'refresh'); 
+            unset($post['password_lama']);
+            unset($post['password_baru']);
+            unset($post['password_konfirmasi']);
+            $post['password'] = $data_lama->password;
+            $this->Editprofil_m->update($id, $post);
+            $this->session->set_flashdata('alert', '<div class="alert alert-success">data disimpan</div>');
+            redirect('Klien/Home/editProfil'); 
         } else {
-            $data_lama = $this->Editprofil_m->getById($id);
             $password_asli = $data_lama->password;
             $post['password'] = md5($post['password_baru']);
 
             if(md5($post['password_lama'])==$password_asli) {
                 if(!empty($post['password_baru'])) {
                     if($post['password_baru']==$post['password_konfirmasi']) {
-                        $this->Editprofil_m->update($id);
-                        // $this->session->set_flashdata('success', 'password telah diubah');
-                        // redirect('Klien/Home/editProfil', 'refresh'); 
+                        unset($post['password_lama']);
+                        unset($post['password_baru']);
+                        unset($post['password_konfirmasi']);
+                        $this->Editprofil_m->update($id, $post);
+                        $this->session->set_flashdata('alert', '<div class="alert alert-success">password telah diubah</div>');
+                        redirect('Klien/Home/editProfil'); 
                     } else {
-                        // $this->session->set_flashdata('success', 'konfirmasi password salah');
-                        // redirect('Klien/Home/editProfil', 'refresh'); 
+                        $this->session->set_flashdata('alert', '<div class="alert alert-success">konfirmasi password salah</div>');
+                        redirect('Klien/Home/editProfil'); 
                     }
                 } else {
-                    // $this->session->set_flashdata('success', 'password baru tidak boleh kosong');
-                    // redirect('Klien/Home/editProfil', 'refresh'); 
+                    $this->session->set_flashdata('alert', '<div class="alert alert-success">password baru tidak boleh kosong</div>');
+                    redirect('Klien/Home/editProfil'); 
                 }
             } else {
-                // $this->session->set_flashdata('success', 'password lama salah');
-                // redirect('Klien/Home/editProfil', 'refresh'); 
+                $this->session->set_flashdata('alert', '<div class="alert alert-success">password lama salah</div>');
+                redirect('Klien/Home/editProfil'); 
             }
         }
 
     }
 
     public function datadiagnosis() {
-        
-        $this->load->view('klien/Datadiagnosis');
+        $data['diagnosis'] = $this->Diagnosis_m->data_diagnosis();
+        foreach ($data['diagnosis'] as $key => $value) {
+            $data['id_diagnosis'][$value->id_pendaftaran] = $this->Diagnosis_m->getIdDiagnosis($value->id_gangguan, $value->id_pendaftaran);
+        }
+        $this->load->view('klien/Datadiagnosis', $data);
         
     }
 
-    public function catkonsel() {
-        $this->load->view('klien/Catkonsel');
+    public function catkonsel($id_diagnosis) {
+        $data['diagnosis'] = $this->Diagnosis_m->detail_diagnosis($id_diagnosis);
+        $this->load->view('klien/Catkonsel', $data);
         
     }
 

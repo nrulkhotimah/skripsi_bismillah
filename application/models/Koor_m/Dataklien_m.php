@@ -159,6 +159,15 @@ class Dataklien_m extends CI_Model {
         return $ambil->result();
     }
 
+    public function getPendaftaranKlien( $id_klien) { //mengambil data tanggal aja untuk di bagian lihat riwayat
+        $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->where('pendaftaran.id_klien', $id_klien);
+        $this->db->order_by('pendaftaran.waktu_daftar', 'desc');
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->result();
+    }
+
     public function getIdPendaftaran($id_penjadwalan, $id_klien, $waktu_daftar) { //untuk mengambil satu data pendaftaran klien
         $this->db->where('id_penjadwalan', $id_penjadwalan);
         $this->db->where('id_klien', $id_klien);

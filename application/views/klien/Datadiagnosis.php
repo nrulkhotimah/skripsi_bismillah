@@ -130,21 +130,21 @@
                             </thead>
 
                             <tbody class="text-center">
-        
+                            <?php foreach ($diagnosis as $key => $value): ?>
                                 <tr>
-                                    <td class="align-middle">1</td>
-                                    <td class="align-middle">tessddsdt</td>
-                                    <td class="align-middle">test</td>
-                                    <td class="align-middle">test</td>
+                                    <td class="align-middle"><?php echo $key+1 ?></td>
+                                    <td class="align-middle"><?php echo $value->hari.", ".date("d M Y", strtotime($value->waktu_daftar)) ?></td>
+                                    <td class="align-middle"><?php echo $value->nama ?></td>
+                                    <td class="align-middle"><?php echo $value->nama_gangguan ?></td>
 
                                     <td class="align-middle">
-                                        <a href="catkonsel" class="btn btn-primary">Open</a>
+                                        <a href="<?php echo base_url("Klien/Home/catkonsel/".$id_diagnosis[$value->id_pendaftaran]->id) ?>" class="btn btn-primary">Open</a>
                                         
                                     </td>
 
                                  
                                 </tr>
-
+                            <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>
