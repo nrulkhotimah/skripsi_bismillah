@@ -119,15 +119,15 @@ class Home extends CI_Controller {
                         $this->session->set_flashdata('alert', '<div class="alert alert-success">password telah diubah</div>');
                         redirect('Klien/Home/editProfil'); 
                     } else {
-                        $this->session->set_flashdata('alert', '<div class="alert alert-success">konfirmasi password salah</div>');
+                        $this->session->set_flashdata('alert', '<div class="alert alert-danger">konfirmasi password salah</div>');
                         redirect('Klien/Home/editProfil'); 
                     }
                 } else {
-                    $this->session->set_flashdata('alert', '<div class="alert alert-success">password baru tidak boleh kosong</div>');
+                    $this->session->set_flashdata('alert', '<div class="alert alert-danger">password baru tidak boleh kosong</div>');
                     redirect('Klien/Home/editProfil'); 
                 }
             } else {
-                $this->session->set_flashdata('alert', '<div class="alert alert-success">password lama salah</div>');
+                $this->session->set_flashdata('alert', '<div class="alert alert-danger">password lama salah</div>');
                 redirect('Klien/Home/editProfil'); 
             }
         }

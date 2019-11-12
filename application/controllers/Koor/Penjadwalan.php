@@ -107,17 +107,26 @@ class Penjadwalan extends CI_Controller {
         redirect('koor/penjadwalan/index','refresh');
     }
 
+    public function pilihJadwalPsi() {
+        $data['user'] = $this->Penjadwalan_m->getJadwalAng($id_user);
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view("koordinator/jadwal/Pilihjadwalpsi");
+    }
+
     public function seluruhJadwal() { //proses melihat seluruh jadwal anggota psikolog
         $data['user'] = $this->Penjadwalan_m->getJadwalAng($this->session->userdata("id"));
-        foreach ($data['user'] as $key => $value) {
-            $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
-            $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
-        }
+        // foreach ($data['user'] as $key => $value) {
+        //     $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
+        //     $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
+        // }
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/JadwalAll", $data);
     }
+
+
 
     
 }

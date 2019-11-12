@@ -56,15 +56,23 @@
         </div>
     </div>
 
-    <div class="form-group">
-        <input
-            name="hari"
-            id="exampleFormControlInput1"
-            type="text"
-            class="form-control <?php echo form_error('hari') ? 'is-invalid':'' ?>"
-            placeholder="Hari">
-        <div class="invalid-feedback">
-            <?php echo form_error('hari') ?>
+    <div class="form-group row">
+        <div class="col-md-12">
+            <label for="exampleFormControlInput1">Hari</label>
+            <select
+                class="form-control   <?php echo form_error('hari') ? 'is-invalid':'' ?>"
+                name="hari">
+                <option>Sun</option>
+                <option>Mon</option>
+                <option>Tue</option>
+                <option>Wed</option>
+                <option>Thu</option>
+                <option>Fri</option>
+                <option>Sat</option>
+            </select>
+            <div class="invalid-feedback">
+                <?php echo form_error('hari') ?>
+            </div>
         </div>
     </div>
 
@@ -74,7 +82,8 @@
             name="waktu"
             id="exampleFormControlInput1"
             type="text"
-            class="form-control <?php echo form_error('waktu') ? 'is-invalid':'' ?>">
+            class="form-control <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
+            placeholder="14.00 - 13.00">
         <div class="invalid-feedback">
             <?php echo form_error('waktu') ?>
         </div>

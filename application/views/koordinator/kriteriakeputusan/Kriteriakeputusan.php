@@ -170,7 +170,7 @@ textarea{
 </div>
 
 <div id="diagram"></div>
-<div class="container p-5">
+<div class="container pl-5 pr-5">
 
 <!-- ====== pernyataaan 1 ======= -->
 <div class="row">

@@ -28,6 +28,7 @@
         <?php 
             $i=0;
             foreach($user as $DataKlien):
+                // if(isset($DataKlien->nama)): //ini hakaman yg
             $i++;
         ?>
         <tr>
@@ -82,7 +83,8 @@
             </td>
 
         </tr>
-        <?php endforeach; ?>
+    <!-- endif; -->
+            <?php endforeach; ?>
     </tbody>
 </table>
 </div>

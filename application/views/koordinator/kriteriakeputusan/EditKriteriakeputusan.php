@@ -185,7 +185,7 @@ textarea{
 <?php echo $this->session->flashdata('sukses'); ?>
 
 
-<div class="container p-5">
+<div class="container pr-5 pl-5">
 <form method="post">
 
     <!-- ====== pernyataaan 1 ======= -->

@@ -97,7 +97,7 @@
         <header class="masthead" id="home">
             <div class="container">
                 <div class="intro-text">
-                    <div class="intro-lead-in">Selamat Datang di DiagAfektif</div>
+                    <div class="intro-lead-in">Welcome in DiagAfektif</div>
                     <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
                 
                 </div>

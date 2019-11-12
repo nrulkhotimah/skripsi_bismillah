@@ -112,7 +112,18 @@
 
                 <div class="row text-center">
                     <div class="col-md-12">
-
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Klien/Home/index')?>">Home</a>
+    </li>
+    <li class="breadcrumb-item btn-link">
+        <a href="<?php echo site_url('Klien/Home/datadiagnosis') ?>">Data Diagnosis</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Catkonsel</li>
+</ol>
+</nav>
                         <!-- data tabel -->
                         <table
                             class="table table-sm table-bordered"

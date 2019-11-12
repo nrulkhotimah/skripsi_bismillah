@@ -249,7 +249,7 @@
 
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                                        <button type="submit" class="btn btn-block btn-primary">Sign Up</button>
                                     </div>
                                 </div>
 

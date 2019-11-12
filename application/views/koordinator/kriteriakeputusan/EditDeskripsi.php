@@ -94,9 +94,7 @@
 </form>
 
 <form method="post" id="form-filter" style="display: none;">
-<div class="row ">
     <div class="col-md-6">
-        <div class="col-md-12">
             <span class="font-weight-bold" id="desk_fakt"></span>
             <hr>
 
@@ -104,15 +102,11 @@
                 <label id="label-filter"></label>
                 <textarea id="text-filter" class="form-control" rows="3" name=""></textarea>
             </div>
-        </div>
     </div>
 
     <div class="col-md-6">
-        <div class="col-md-12">
             <button class="btn btn-primary">Simpan</button>
-        </div>
     </div>
-</div>
 
 </form>
 

@@ -4,6 +4,9 @@ body {
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
 }
+.text-info{
+  font-size: 13px !important;
+}
 
 p {
   line-height: 1.75;

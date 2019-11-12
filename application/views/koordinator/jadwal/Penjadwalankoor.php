@@ -89,7 +89,7 @@
 <br>
 
 <div class="but" style="float:RIGHT">
-    <a href="<?php echo site_url('Koor/Penjadwalan/seluruhJadwal')?>">
+    <a href="<?php echo site_url('Koor/Penjadwalan/pilihJadwalPsi/')?>">
         <button type="button" class="btn btn-link">Lihat seluruh jadwal disini</button>
     </a>
 
