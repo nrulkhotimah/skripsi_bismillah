@@ -109,6 +109,11 @@ class Dataklien_m extends CI_Model {
         return $query->result();
     }
 
+    public function getIdPsi($id) { // untuk mengambil data seluruh klien 
+        $this->db->where('id', $id);
+        return $this->db->get('user')->row();
+    }
+
     public function getById($id) { //untuk mengambil data klien per id nya 
         $this->db->select('*');
         $this->db->from('klien');

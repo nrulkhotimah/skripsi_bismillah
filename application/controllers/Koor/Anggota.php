@@ -80,8 +80,8 @@ class Anggota extends CI_Controller {
 
         if($validation->run()) {
             $hasil = $this->Angpsi_m->save($post);
-            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Password :</div>'.$hasil);  
-            // $this->session->set_flashdata('success', 'Password nya :'.$hasil);
+            $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Password : '.$hasil.'</div>');  
+
             redirect('Koor/Anggota/index', 'refresh');
         } else {
             $error = validation_errors();

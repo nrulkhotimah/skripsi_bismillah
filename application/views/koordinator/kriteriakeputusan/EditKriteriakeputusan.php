@@ -163,7 +163,7 @@ textarea{
 </style>
 
 <div style="float:right">
-    <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
+    <span class="title font-weight-bold">EDIT KRITERIA KEPUTUSAN</span>
 </div>
 
 </div>

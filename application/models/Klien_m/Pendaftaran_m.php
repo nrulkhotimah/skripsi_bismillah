@@ -53,4 +53,20 @@ class Pendaftaran_m extends CI_Model {
         
     }
 
+    public function pendaftaranKlien($id_klien) { //fungsi untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
+        $this->db->join('penjadwalan', 'pendaftaran.id_penjadwalan = penjadwalan.id', 'left');
+        $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id', 'left');
+        $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
+        $this->db->where('pendaftaran.id_klien', $id_klien); 
+        $this->db->order_by('pendaftaran.id', 'desc');
+
+        $query = $this->db->get('pendaftaran');
+        return $query->result();
+    }
+
+    public function getIdPsi($id) { // untuk mengambil data seluruh klien 
+        $this->db->where('id', $id);
+        return $this->db->get('user')->row();
+    }
+
 }

@@ -31,7 +31,7 @@
 <tr>
     <td>
         <span class="font-weight-bold">Nama Psikolog :
-            <?php echo $this->session->userdata("nama") ?>
+            <?php echo $psikolog->nama ?>
         </span>
     </td>
 </tr>

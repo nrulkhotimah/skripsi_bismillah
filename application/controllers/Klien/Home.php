@@ -7,7 +7,9 @@ class Home extends CI_Controller {
 		parent::__construct();
 		
         $this->load->model('Klien_m/Editprofil_m');
-		$this->load->model('Klien_m/Diagnosis_m');
+        $this->load->model('Klien_m/Diagnosis_m');
+		$this->load->model('Klien_m/Pendaftaran_m');
+        
         $this->load->helper('url_helper');
 		$this->load->library('session');
 		
@@ -135,9 +137,10 @@ class Home extends CI_Controller {
     }
 
     public function datadiagnosis() {
-        $data['diagnosis'] = $this->Diagnosis_m->data_diagnosis();
-        foreach ($data['diagnosis'] as $key => $value) {
-            $data['id_diagnosis'][$value->id_pendaftaran] = $this->Diagnosis_m->getIdDiagnosis($value->id_gangguan, $value->id_pendaftaran);
+        $data['pendaftaran'] = $this->Pendaftaran_m->pendaftaranKlien($this->session->userdata("id"));
+        foreach ($data['pendaftaran'] as $key => $value) {
+            $data['diagnosis'][$value->id_gangguan][$value->id_pendaftaran] = $this->Diagnosis_m->getIdDiagnosis($value->id_gangguan, $value->id_pendaftaran);
+            $data['psikolog'] = $this->Pendaftaran_m->getIdPsi($value->id_user);
         }
         $this->load->view('klien/Datadiagnosis', $data);
         

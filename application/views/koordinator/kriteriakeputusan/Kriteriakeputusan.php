@@ -163,7 +163,7 @@ textarea{
 </style>
 
 <div style="float:right">
-    <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
+    <span class="title font-weight-bold">FLOWCHART DIAGNOSIS BANDING GANGGUAN AFEKTIF</span>
 
 </div>
 
@@ -277,7 +277,7 @@ textarea{
 <!-- ====== pertanyaan 5 ====== -->
 <div class="row">
     <div class="col-md-3">
-        <textarea name="5" id="" cols="30" rows="5" readonly="readonly"><?php echo $pengetahuan[5]->pertanyaan?></textarea>
+        <textarea name="5" id="" cols="30" rows="5" readonly><?php echo $pengetahuan[5]->pertanyaan?></textarea>
     </div>
 
     <div class="col-md-1">

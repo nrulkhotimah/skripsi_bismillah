@@ -108,7 +108,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">Data Diagnosis</h2>
-                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien</h3>
+                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien <br> <br> Psikolog : <?php echo $psikolog->nama ?></h3>
                     </div>
                 </div>
 
@@ -124,7 +124,6 @@
                                 <tr>
                                     <th class="align-middle col5">No</th>
                                     <th class="align-middle col20">Jadwal</th>
-                                    <th class="align-middle col15">Nama Psikolog</th>
                                     <th class="align-middle col5">Hasil Diagnosis</th>
                                     <th class="align-middle col30">Catkonsel</th>
                                 </tr>
@@ -132,32 +131,24 @@
                             </thead>
 
                             <tbody class="text-center">
-                                <?php foreach ($diagnosis as $key => $value): ?>
+                                <?php foreach ($pendaftaran as $key => $value): ?>
                                 <tr>
                                     <td class="align-middle"><?php echo $key+1 ?></td>
                                     <td class="align-middle"><?php echo $value->hari.", ".date("d F Y", strtotime($value->waktu_daftar)) ?></td>
-                                    
-                                    <!-- <td class="align-middle">
-                                        <?php if (!isset($diagnosis[$key]->waktu_daftar)): ?>
-                                        Belum melakukan Diagnosis
-                                    <?php else: ?>
-                                        <?php echo $value->hari.", ".date("d F Y", strtotime($value->waktu_daftar)) ?>
-                                        <?php endif ?></td> -->
-
-                                    <td class="align-middle"><?php echo $value->nama ?></td>
 
                                     <td class="align-middle">
-                                        <?php if (!isset($diagnosis[$key]->nama_gangguan)): ?>
+                                        <?php if (!isset($value->nama_gangguan)): ?>
                                         Belum melakukan Diagnosis
                                     <?php else: ?>
-                                        <?php echo $diagnosis[$key]->nama_gangguan ?>
+                                        <?php echo $value->nama_gangguan ?>
                                         <?php endif ?></td>
 
                                     <td class="align-middle">
-                                        <a
-                                            href="<?php echo base_url("Klien/Home/catkonsel/".$id_diagnosis[$value->id_pendaftaran]->id) ?>"
-                                            class="btn btn-primary">Open</a>
-
+                                    <?php if(!isset($value->id)): ?>
+                                        <a href="" class="btn btn-primary disabled" disabled>Open</a>
+                                    <?php else: ?>
+                                        <a href="<?php echo base_url("Klien/Home/catkonsel/".$diagnosis[$value->id_gangguan][$value->id_pendaftaran]->id) ?>" class="btn btn-primary">Open</a>
+                                    <?php endif ?>
                                     </td>
 
                                 </tr>

@@ -138,6 +138,14 @@ class Dataklien extends CI_Controller {
         $this->load->view('koordinator/klien/Catkonselkoor', $data);
     }
 
+    public function detailcatkonsel($id_diagnosis) { //open page catatan konseling dan proses menyimpan catkonsel yang telah di edit
+        $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
+        
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view('koordinator/klien/Detailcatkonsel', $data);
+    }
+
     public function lihatRiwayat($id_klien) { //open page lihat riwayat perklien berdasarkan klien yang dipilih
         $data['user'] = $this->Dataklien_m->getById($id_klien);
         $data['riwayat'] = $this->Dataklien_m->getPendaftaranPsiKlien($this->session->userdata('id'), $id_klien);
@@ -156,6 +164,10 @@ class Dataklien extends CI_Controller {
     public function lihatRiwayatAll($id_klien) { //open page lihatriwayatAll untuk lihat seluruh riwayat klien
         $data['user'] = $this->Dataklien_m->getById($id_klien);
         $data['riwayat'] = $this->Dataklien_m->getPendaftaranKlien($id_klien);
+
+        foreach ($data['riwayat'] as $key => $value) {
+            $data['psikolog'] = $this->Dataklien_m->getIdPsi($value->id_user);
+        }
 
         foreach ($data['riwayat'] as $key => $value) { //untuk mendapatkan data pendaftaran dan diagnosis klien
             $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
