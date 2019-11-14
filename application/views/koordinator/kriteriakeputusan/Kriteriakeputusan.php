@@ -915,7 +915,7 @@ textarea{
 
 <br>
 <br>
-<a href="<?php echo base_url("Koor/Kriteria/edit") ?>" class="btn btn-primary">Edit</a>
+<a href="<?php echo base_url("Koor/Kriteria/edit") ?>" class="btn btn-primary">Edit Kriteria</a>
 <a
     href="<?php echo base_url("Koor/Kriteria/editdeskripsi") ?>"
     class="btn btn-primary">Edit Deskripsi</a>

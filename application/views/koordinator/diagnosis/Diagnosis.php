@@ -12,11 +12,11 @@
         <div class="card-body">
             <?php echo $pertanyaan->pertanyaan ?>
         </div>
-        <div class="card-footer">
-            <div class="float-right">
+        <div class="card-footer ">
+            <div class="float-left">
             <form method="post">
                 <?php if ($pertanyaan->pernyataan == 1): ?>
-                    <button class="btn btn-primary" value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
+                    <button class="btn btn-primary " value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
                 <?php else: ?>
                     <button class="btn btn-primary" value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
                     <button class="btn btn-secondary" value="Tidak" name="<?php echo $pertanyaan->id?>">Tidak</button>

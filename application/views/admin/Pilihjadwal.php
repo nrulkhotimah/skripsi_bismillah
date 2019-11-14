@@ -1,5 +1,5 @@
 <div style="float:right">
-    <span class="title font-weight-bold">PILIH JADWAL</span>
+    <span class="title font-weight-bold">PENDAFTARAN</span>
 </div>
 
 </div>

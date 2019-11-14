@@ -1,5 +1,5 @@
 <div style="float:right">
-    <span class="title font-weight-bold">TAMBAH CATATAN KONSELING</span>
+    <span class="title font-weight-bold">CATATAN KONSELING</span>
 </div>
 </div>
 
@@ -12,7 +12,7 @@
     <li class="breadcrumb-item btn-link">
         <a href="<?php echo site_url('Koor/Dataklien/index') ?>">Dataklien</a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Edit catatan konseling</li>
+    <li class="breadcrumb-item active" aria-current="page">catatan konseling</li>
 </ol>
 </nav>
 

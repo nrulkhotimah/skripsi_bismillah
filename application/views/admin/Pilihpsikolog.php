@@ -48,6 +48,8 @@
         <?php  endforeach; ?>
     </tbody>
 </table>
+<p class="text-danger text-left text-info"> *) Jika Klien pernah melakukan konseling, harap memilih psikolog yang sama.</p>
+
 
 </div>
 </div>

@@ -1,6 +1,6 @@
 
                         <div style="float:right">
-                            <span class="title font-weight-bold">EDIT KLIEN</span>
+                            <span class="title font-weight-bold">EDIT PAKAR</span>
                         </div>
                     </div>
 

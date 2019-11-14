@@ -1,5 +1,5 @@
 <div style="float:right">
-    <span class="title font-weight-bold">TAMBAH CATATAN KONSELING</span>
+    <span class="title font-weight-bold">CATATAN KONSELING</span>
 </div>
 </div>
 

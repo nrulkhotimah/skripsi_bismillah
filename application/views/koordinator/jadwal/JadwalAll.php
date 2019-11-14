@@ -18,8 +18,8 @@
                     </nav>
 
                     <div class="col-md-12">
-                        <span><?php echo $user->nama ?></span>
-                        <span><?php echo $nomor_telepon ?></span>
+                        <!-- <span><?php echo $user->nama ?></span>
+                        <span><?php echo $nomor_telepon ?></span> -->
 
                         <!-- data tabel -->
                         <table
@@ -29,6 +29,7 @@
                             <thead class="text-center">
                                 <tr>
                                     <th class="align-middle col5">No</th>
+                                    <th class="align-middle" >Nama</th>
                                     <th class="align-middle" >Hari</th>
                                     <th class="align-middle" >Waktu</th>                                    
                                     <th class="align-middle" >Kuota</th>
@@ -49,6 +50,7 @@
                                 ?>
                                 <tr>
                                     <td class="align-middle"><?php echo $i ?></td>
+                                    <td class="align-middle"><?php echo $Jadwal->nama ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->hari ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->waktu ?></td>
                                     <td class="align-middle"><?php echo $Jadwal->kuota ?></td>

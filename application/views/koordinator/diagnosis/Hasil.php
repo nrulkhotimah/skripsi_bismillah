@@ -18,9 +18,9 @@
             Fakta yang diderita : 
             <ul>
                 <?php foreach ($fakta_diagnosis as $key => $value): ?>
-                <li> <?php echo $value->nama_fakta ?></li>
+                <li><b> <?php echo $value->nama_fakta ?></li></b>
+                <li style="list-style-type: none;"> Deskripsi : <?php echo $value->deskripsi_fakta ?></li>
                 <?php endforeach ?>
-            
             </ul>
         </div>
         <div class="card-footer">
