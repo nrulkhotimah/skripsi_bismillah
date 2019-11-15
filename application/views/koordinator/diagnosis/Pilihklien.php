@@ -28,7 +28,9 @@
                                 ?>
                                 <tr>
                                     <td class="align-middle"><?php echo $i ?></td>
+
                                     <td class="align-middle"><?php echo $Dataklien->nama ?></td>
+
                                     <td class="align-middle">
                                     <?php if($Dataklien->status_konsel == "selesai"): ?>
                                         <a class="btn btn-primary disabled" disabled href="<?php echo site_url('Koor/Diagnosis/Diag/'.$pendaftaran[$Dataklien->id_klien]->id) ?>">Diagnosis</a>
@@ -36,6 +38,7 @@
                                         <a class="btn btn-primary" href="<?php echo site_url('Koor/Diagnosis/Diag/'.$pendaftaran[$Dataklien->id_klien]->id) ?>">Diagnosis</a>
                                     <?php endif ?>
                                     </td>
+                                    
                                 </tr>
                                     <?php endforeach; ?>
                             </tbody>

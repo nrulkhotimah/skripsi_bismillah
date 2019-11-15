@@ -139,6 +139,14 @@ class Dataklien extends CI_Controller {
         $this->load->view('anggota/klien/Catkonselkoor', $data);
     }
 
+    public function detailcatkonsel($id_diagnosis) { //open page catatan konseling dan proses menyimpan catkonsel yang telah di edit
+        $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
+        
+        $this->load->view('anggota/template/header');
+        $this->load->view('anggota/template/footer');
+        $this->load->view('anggota/klien/Detailcatkonsel', $data);
+    }
+
     public function lihatRiwayat($id_klien) { //open page lihat riwayat perklien berdasarkan klien yang dipilih
         $data['user'] = $this->Dataklien_m->getById($id_klien);
         $data['riwayat'] = $this->Dataklien_m->getPendaftaranPsiKlien($this->session->userdata('id'), $id_klien);

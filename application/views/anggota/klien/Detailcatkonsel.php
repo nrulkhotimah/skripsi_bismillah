@@ -1,5 +1,5 @@
 <div style="float:right">
-    <span class="title font-weight-bold">EDIT CATATAN KONSELING</span>
+    <span class="title font-weight-bold">CATATAN KONSELING</span>
 </div>
 </div>
 
@@ -12,11 +12,9 @@
     <li class="breadcrumb-item btn-link">
         <a href="<?php echo site_url('Ang/Dataklien/index') ?>">Dataklien</a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Edit catatan konseling</li>
+    <li class="breadcrumb-item active" aria-current="page">catatan konseling</li>
 </ol>
 </nav>
-
-<?php echo $this->session->flashdata('sukses'); ?>
 
 <div class="col-md-12">
 <table
@@ -25,22 +23,20 @@
     id="result">
 
     <tbody class="text-center">
-
-        <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan keluhan
                 </label>
-                <textarea class="form-control  <?php echo form_error('keluhan') ? 'is-invalid':'' ?>" id="keluhan" rows="3" name="keluhan" ><?php echo $diagnosis->keluhan ?> </textarea>
+                <textarea readonly="" class="form-control  <?php echo form_error('keluhan') ? 'is-invalid':'' ?>" id="keluhan" rows="3" name="keluhan" ><?php echo $diagnosis->keluhan ?> </textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan catatan konseling
                 </label>
-                <textarea class="form-control  <?php echo form_error('catatan') ? 'is-invalid':'' ?>" id="catatan" rows="3" name="catatan" ><?php echo $diagnosis->catatan ?> </textarea>
+                <textarea readonly="" class="form-control  <?php echo form_error('catatan') ? 'is-invalid':'' ?>" id="catatan" rows="3" name="catatan" ><?php echo $diagnosis->catatan ?> </textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="float:right; width:100px;">Simpan</button>
-        </form>
+
+
     </tbody>
 </table>
 
