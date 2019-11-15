@@ -916,6 +916,9 @@ textarea{
 <br>
 <br>
 
+<a
+    href="<?php echo base_url("Ang/Kriteria/deskripsi") ?>"
+    class="btn btn-primary">Lihat Deskripsi</a>
 </div>
 </div>
 </div>

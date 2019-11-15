@@ -46,6 +46,26 @@ class Kriteria extends CI_Controller {
 		$this->load->view('anggota/kriteriakeputusan/Editkriteria', $data);
 	}
 
+	public function deskripsi() {
+		// $data_pengetahuan = $this->Kriteria_m->tampil();
+		// foreach ($data_pengetahuan as $key => $value) {
+		// 	$data['pengetahuan'][$value->id] = $value;
+		// }
+
+		$data['gangguan'] = $this->Kriteria_m->tampil_gangguan();
+		$data['fakta'] = $this->Kriteria_m->tampil_fakta();
+		
+		$inputan = $this->input->post();
+		if ($inputan) {
+			$this->Kriteria_m->ubah($inputan);
+			redirect('Ang/Kriteria/Index','refresh');
+		}
+
+		$this->load->view('anggota/template/header');
+        $this->load->view('anggota/template/footer');
+		$this->load->view('anggota/kriteriakeputusan/Deskripsi', $data);
+	}
+
 }
 
 ?>
