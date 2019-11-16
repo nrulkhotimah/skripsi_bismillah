@@ -41,10 +41,11 @@
                         </div>
                         
                         <div class="card-body">
+                            <?php echo $this->session->flashdata('msg'); ?>
+
                             <form
                                 action="<?php echo site_url('Login_controller/user_login'); ?>"
                                 method="post">
-                                <?php echo $this->session->flashdata('msg'); ?>
 
                                 <div class="form-group row">
                                     <div class="col-sm-12">
@@ -72,7 +73,8 @@
 
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <label for="" class="btn btn-link" style="float:right;">Lupa Password ?</label>
+                                        <!-- <label for="" class="btn btn-link" style="float:right;">Lupa Password ?</label> -->
+                                        <a class="btn btn-link" href="<?php echo base_url('Lupa_password')?>" style="float:right;"> Lupa Password</a>
                                     </div>
                                 </div>
 

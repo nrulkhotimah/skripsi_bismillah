@@ -36,25 +36,24 @@
     </div>
 
     <div class="form-group row">
-        <div class="col-md-12">
-            <label for="exampleFormControlInput1">Hari</label>
-            <select
-                class="form-control   <?php echo form_error('hari') ? 'is-invalid':'' ?>"
-                name="hari"
-                value="<?php echo $user->hari ?>">
-                <option>Sun</option>
-                <option>Mon</option>
-                <option>Tue</option>
-                <option>Wed</option>
-                <option>Thu</option>
-                <option>Fri</option>
-                <option>Sat</option>
-            </select>
-            <div class="invalid-feedback">
-                <?php echo form_error('hari') ?>
-            </div>
-        </div>
-    </div>
+                        <div class="col-md-12">
+                            <label for="exampleFormControlInput1">Hari</label>
+                            <select
+                                class="form-control   <?php echo form_error('hari') ? 'is-invalid':'' ?>"
+                                name="hari"s>
+                                <option <?php if($user->hari == 'Sun') { echo 'selected';}?>>Sun</option>
+                                <option <?php if($user->hari == 'Mon') { echo 'selected';}?>>Mon</option>
+                                <option <?php if($user->hari == 'Tue') { echo 'selected';}?>>Tue</option>
+                                <option <?php if($user->hari == 'Wed') { echo 'selected';}?>>Wed</option>
+                                <option <?php if($user->hari == 'Thu') { echo 'selected';}?>>Thu</option>
+                                <option <?php if($user->hari == 'Fri') { echo 'selected';}?>>Fri</option>
+                                <option <?php if($user->hari == 'Sat') { echo 'selected';}?>>Sat</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                <?php echo form_error('hari') ?>
+                            </div>
+                        </div>
+                    </div>
 
     <div class="form-group">
         <label for="exampleFormControlInput1">Waktu Konseling</label>

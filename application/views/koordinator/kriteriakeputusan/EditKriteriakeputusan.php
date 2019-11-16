@@ -326,7 +326,6 @@ textarea{
         <!-- ====== pertanyaan 6 || readonly ====== -->
         <div class="col-md-3">
             <textarea
-                name="6"
                 id=""
                 cols="30"
                 rows="5"
@@ -380,7 +379,6 @@ textarea{
         <!-- ====== pertanyaan 6 || readonly ====== -->
         <div class="col-md-3">
             <textarea
-                name="6"
                 id=""
                 cols="30"
                 rows="5"

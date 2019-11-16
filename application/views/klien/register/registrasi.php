@@ -42,6 +42,8 @@
                         </div>
 
                         <div class="card-body">
+                        <?php echo $this->session->flashdata('msg'); ?>
+
                             <form action="post_register" method="post" enctype="multipart/form-data">
 
                                 <?php echo form_open('Register/post_register'); ?>

@@ -152,7 +152,6 @@ class Dataklien extends CI_Controller {
             }
             redirect('Admin/Dataklien/index','refresh');
             
-       
         $data['user'] = $user->getById($id);
 
         if(!$data['user']) show_404();

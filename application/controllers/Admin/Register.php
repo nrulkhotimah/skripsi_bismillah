@@ -86,15 +86,28 @@ class Register extends CI_Controller {
         
 
         if($validation->run()) {
-            $this->Dataklien_m->tambah_user($post);
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-            $data['user'] = $this->Dataklien_m->getAll();
-            redirect('Login_controller/index', $data);
+
+            $hasil = $this->Dataklien_m->tambah_user($post);
+            if ($hasil=="sukses") {
+            $this->session->set_flashdata('msg', '<div class="alert alert-info">Pendaftaran Anda berhasil. Selanjutnya silahkan cek email Anda untuk mengaktifkan akun. Kemudian silahkan untuk Login</div>');
+            redirect('Login_controller/index');
+            } else {
+                $this->session->set_flashdata('msg', '<div class="alert alert-warning">Pendaftaran Anda gagal. Email Anda salah. </div>');
+                redirect('klien/register/Registrasi/index');
+    
+            }
         } else {
             $error=validation_errors();
-            $this->session->set_flashdata('errors', 'Gagal disimpan');
+            $this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal disimpan</div>');
             $this->load->view("klien/register/Registrasi");
         }
+
+    }
+
+    public function aktivasi($username) {
+        $this->Dataklien_m->approve($username);
+        $this->session->set_flashdata('msg', '<div class="alert alert-info">Aktivasi akun Anda berhasil. Silahkan login sesuai akun Anda </div>');
+        redirect('Login_controller');
 
     }
 
