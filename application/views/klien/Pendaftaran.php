@@ -146,8 +146,6 @@
                                 <?php  endforeach; ?>
                             </tbody>
                         </table>
-
-                        <p class="text-danger text-left text-info"> *) Jika Anda pernah melakukan konseling, harap memilih psikolog yang sama.</p>
                 
                     </div>
 

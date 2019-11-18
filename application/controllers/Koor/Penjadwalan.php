@@ -8,6 +8,8 @@ class Penjadwalan extends CI_Controller {
 
         $this->load->helper('url_helper');
         $this->load->model('Koor_m/Penjadwalan_m');
+        $this->load->model('Koor_m/Angpsi_m');
+
         $this->load->library('session');
 
         check_not_login_koordinator();
@@ -108,10 +110,10 @@ class Penjadwalan extends CI_Controller {
     }
 
     public function pilihJadwalPsi() {
-        $data['user'] = $this->Penjadwalan_m->getJadwalAng($id_user);
+        $data['user'] = $this->Angpsi_m->getByRole(3);
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
-        $this->load->view("koordinator/jadwal/Pilihjadwalpsi");
+        $this->load->view("koordinator/jadwal/Pilihjadwalpsi", $data);
     }
 
     public function seluruhJadwal() { //proses melihat seluruh jadwal anggota psikolog

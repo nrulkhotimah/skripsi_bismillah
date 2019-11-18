@@ -105,7 +105,7 @@ class Home extends CI_Controller {
             unset($post['password_konfirmasi']);
             $post['password'] = $data_lama->password;
             $this->Editprofil_m->update($id, $post);
-            $this->session->set_flashdata('alert', '<div class="alert alert-success">data disimpan</div>');
+            $this->session->set_flashdata('alert', '<div class="alert alert-success">Perubahan berhasil disimpan</div>');
             redirect('Klien/Home/editProfil'); 
         } else {
             $password_asli = $data_lama->password;
@@ -118,18 +118,18 @@ class Home extends CI_Controller {
                         unset($post['password_baru']);
                         unset($post['password_konfirmasi']);
                         $this->Editprofil_m->update($id, $post);
-                        $this->session->set_flashdata('alert', '<div class="alert alert-success">password telah diubah</div>');
+                        $this->session->set_flashdata('alert', '<div class="alert alert-success">Password telah diubah</div>');
                         redirect('Klien/Home/editProfil'); 
                     } else {
-                        $this->session->set_flashdata('alert', '<div class="alert alert-danger">konfirmasi password salah</div>');
+                        $this->session->set_flashdata('alert', '<div class="alert alert-danger">Konfirmasi password salah</div>');
                         redirect('Klien/Home/editProfil'); 
                     }
                 } else {
-                    $this->session->set_flashdata('alert', '<div class="alert alert-danger">password baru tidak boleh kosong</div>');
+                    $this->session->set_flashdata('alert', '<div class="alert alert-danger">Password baru tidak boleh kosong</div>');
                     redirect('Klien/Home/editProfil'); 
                 }
             } else {
-                $this->session->set_flashdata('alert', '<div class="alert alert-danger">password lama salah</div>');
+                $this->session->set_flashdata('alert', '<div class="alert alert-danger">Password lama salah</div>');
                 redirect('Klien/Home/editProfil'); 
             }
         }

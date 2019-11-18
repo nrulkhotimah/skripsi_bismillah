@@ -15,8 +15,16 @@ class Pendaftaran extends CI_Controller {
     }
 
     public function index() {
-        $data['user'] = $this->Datapakar_m->getAll();
-        
+        $id_user = $this->session->userdata("id");
+
+        $data_pendaftaran = $this->Pendaftaran_m->pendaftaran_terbaru($id_user);
+        if (empty($data_pendaftaran)) {
+            $data['user'] = $this->Datapakar_m->getAll();
+        } else {
+
+            $data['user'][] = $this->Datapakar_m->getById($data_pendaftaran->id_user);
+        }
+
         $this->load->view('klien/Pendaftaran', $data);
     }
 
@@ -55,7 +63,8 @@ class Pendaftaran extends CI_Controller {
 
     public function simpan_jadwal($id_klien, $id_penjadwalan, $tanggal_daftar) { //untuk menyimpan jadwal yang telah di pilih klien
         $this->Pendaftaran_m->simpan_pendaftaran($id_klien, $id_penjadwalan, $tanggal_daftar);
-        redirect('klien/pendaftaran/index','refresh');
+        $this->session->set_flashdata('alert', '<div class="alert alert-success">Jadwal Berhasil disimpan</div>');
+        redirect('klien/Home/datadiagnosis','refresh');
         
     }
 

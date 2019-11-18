@@ -136,7 +136,7 @@ class Dataklien_m extends CI_Model {
 
         $body = '
         <h3>Selamat bergabung di Sistem Diagnosis Banding Gangguan Afektif</h3>
-        <p>Silahkan klik tombol di link ini untuk </p>
+        <p>Silahkan klik link dibawah ini untuk mengaktivasi akun Anda </p>
         <a href="http://localhost/skripsi/Admin/Register/aktivasi/'.$post["username"].'" type:button; style=color: #fff; background-color: #42a4f5; display: inline-block; padding: 6px 12px; font-size:14px; font-weight:400; border-radius: 25px;
         border: 2px solid #42a4f5;> Aktivasi Akun</a> 
         ';
@@ -151,7 +151,7 @@ class Dataklien_m extends CI_Model {
             )
         );
         $mail->Host = "smtp.gmail.com"; // SMTP server 
-        $mail->SMTPDebug = 1; // enables SMTP debug information (for testing) // 1 = errors and messages // 2 = messages only 
+        //$mail->SMTPDebug = 1; // enables SMTP debug information (for testing) // 1 = errors and messages // 2 = messages only 
         $mail->SMTPAuth = true; // enable SMTP authentication 
         $mail->SMTPSecure = "tls"; // sets the prefix to the servier 
         $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server 

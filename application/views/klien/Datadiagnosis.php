@@ -114,6 +114,7 @@
 
                 <div class="row text-center">
                     <div class="col-md-12">
+                    <?php echo $this->session->flashdata('alert'); ?>
 
                         <!-- data tabel -->
                         <table

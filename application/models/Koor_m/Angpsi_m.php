@@ -75,6 +75,12 @@ class Angpsi_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
+    public function getByRole($role) { // untuk mengambil data jadwal anggota psikolog
+        $this->db->where('role', $role);
+        $query = $this->db->get('user');
+        return $query->result();
+    }
+
     public function save($post) { //untuk menyimpan data anggota psikolog yang baru ditambahkan (membuat akun untuk ang psikolog)
         $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'; 
         $password = array(); //untuk password random

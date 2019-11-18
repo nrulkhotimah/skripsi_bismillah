@@ -46,7 +46,7 @@
             <td><?php echo $jadwal->nama ?></td>
             <td class="btn-link">
                 <a
-                    href="<?php echo site_url('Koor/Penjadwalan/seluruhJadwal/'.$id_user)?>">Pilih jadwal</a>
+                    href="<?php echo site_url('Koor/Penjadwalan/seluruhJadwal/'.$jadwal->id)?>">Pilih jadwal</a>
             </td>
         </tr>
         <?php  endforeach; ?>

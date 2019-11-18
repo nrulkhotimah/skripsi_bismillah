@@ -127,6 +127,7 @@ class Anggota extends CI_Controller {
 
     }
 
+
 }
 
 ?>
