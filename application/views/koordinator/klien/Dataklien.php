@@ -20,7 +20,7 @@
             <th class="align-middle col10" >Jenis Kelamin</th>
             <th class="align-middle col10" >Hasil Diagnosis</th>
             <th class="align-middle col10" >Jadwal</th>
-            <th class="align-middle col10" >Catatan Konseling</th>
+            <th class="align-middle col10" >Catatan Konsel</th>
             <th class="align-middle col10" >Keterangan Konseling</th>
         </tr>
     </thead>

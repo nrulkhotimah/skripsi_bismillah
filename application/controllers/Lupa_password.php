@@ -19,10 +19,10 @@ class Lupa_password extends CI_Controller {
        if ($inputan) {
            $hasil = $this->Lupa_password_m->kirim($inputan);
            if ($hasil=="sukses") {
-               $this->session->set_flashdata('msg', '<div class="alert alert-info"> Permintaan anda berhasil. Silahkan cek inbox email anda  </div> ');
+               $this->session->set_flashdata('msg', '<div class="alert alert-info"> Permintaan Anda berhasil. Silahkan cek inbox email anda  </div> ');
                redirect('Login_controller/index');
            } else {
-            $this->session->set_flashdata('msg', '<div class="alert alert-warning"> email yang anda masukkan salah </div> ');
+            $this->session->set_flashdata('msg', '<div class="alert alert-warning"> Email yang Anda masukkan salah </div> ');
             redirect('Lupa_password');
                
            }

@@ -108,14 +108,27 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">Pendaftaran</h2>
-                        <h3 class="section-subheading text-muted">Pilih jadwal konseling</h3>
+                        <h3 class="section-subheading text-muted">Pilih jadwal psikolog : <big><?php echo $psikolog->nama ?></big></h3>
+
                     </div>
                 </div>
 
                 <div class="row text-center">
                     <div class="col-md-12">
+                        <!-- breadcrumb -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item btn-link">
+                                    <a href="<?php echo site_url('Klien/Home/index')?>">Home</a>
+                                </li>
+                                <li class="breadcrumb-item btn-link">
+                                    <a href="<?php echo site_url('Klien/Pendaftaran/index') ?>">Pendaftaran</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Pilih Jadwal</li>
+                            </ol>
+                        </nav>
 
-                            <?php echo $this->session->flashdata('success'); ?>
+                        <?php echo $this->session->flashdata('success'); ?>
 
                         <!-- data tabel -->
                         <table class="table table-bordered" style="margin-top:20px;" id="klien1">

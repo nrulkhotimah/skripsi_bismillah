@@ -26,6 +26,13 @@ class Diagnosis_m extends CI_Model {
         return $this->db->get('diagnosis')->row();
     }
 
+    public function tampil_fakta_diagnosis($id_diagnosis) {
+        $this->db->join('fakta', 'fakta.id = fakta_diagnosis.id_fakta_fd', 'left');
+        $this->db->where('fakta_diagnosis.id_diagnosis_fd', $id_diagnosis);
+        $ambil = $this->db->get('fakta_diagnosis');
+        return $ambil->result();
+    }
+
 
 
 }

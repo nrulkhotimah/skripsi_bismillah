@@ -34,9 +34,21 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Masukkan catatan konseling
+                <label for="exampleFormControlTextarea1">Masukkan intervensi konseling
                 </label>
                 <textarea class="form-control  <?php echo form_error('catatan') ? 'is-invalid':'' ?>" id="catatan" rows="3" name="catatan" ><?php echo $diagnosis->catatan ?> </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Masukkan tugas rumah
+                </label>
+                <textarea class="form-control  <?php echo form_error('tugas_rumah') ? 'is-invalid':'' ?>" id="tugas_rumah" rows="3" name="tugas_rumah" ><?php echo $diagnosis->tugas_rumah ?> </textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Masukkan saran
+                </label>
+                <textarea class="form-control  <?php echo form_error('saran') ? 'is-invalid':'' ?>" id="saran" rows="3" name="saran" ><?php echo $diagnosis->saran ?> </textarea>
             </div>
 
             <button class="btn btn-primary" type="submit" style="float:right; width:100px;">Simpan</button>

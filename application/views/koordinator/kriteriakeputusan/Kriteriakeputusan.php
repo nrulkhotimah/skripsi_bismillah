@@ -169,8 +169,10 @@ textarea{
 
 </div>
 
+<?php echo $this->session->flashdata('sukses'); ?>
 <div id="diagram"></div>
 <div class="container pl-5 pr-5">
+
 
 <!-- ====== pernyataaan 1 ======= -->
 <div class="row">

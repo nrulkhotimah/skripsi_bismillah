@@ -74,6 +74,7 @@ class Pendaftaran extends CI_Controller {
 
     public function simpan_jadwal($id_klien, $id_penjadwalan, $tanggal_daftar) { //untuk menyimpan jadwal yang telah di pilih klien
         $this->Pendaftaran_m->simpan_pendaftaran($id_klien, $id_penjadwalan, $tanggal_daftar);
+        $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Jadwal berhasil disimpan</div>'); 
         redirect('admin/Dataklien/index','refresh');
         
     }

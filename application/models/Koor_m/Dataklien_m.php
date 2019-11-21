@@ -182,11 +182,25 @@ class Dataklien_m extends CI_Model {
 
     }
 
+//     public function getFakta_diag($id_diagnosis_fd) {   
+//         $this->db->join('diagnosis', 'diagnosis.id = fakta_diagnosis.id_diagnosis_fd', 'left');
+//         $this->db->join('fakta', 'fakta.id = fakta_diagnosis.id_fakta_fd', 'left');
+//         $this->db->where('fakta_diagnosis.id_diagnosis_fd', $id_diagnosis_fd);
+//         $ambil = $this->db->get('fakta_diagnosis');
+//         return $ambil->result();
+
+// echo "<pre>";
+// print_r ($ambil);
+// echo "</pre>";
+// exit();        
+//     }
+
     public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
         $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
         $this->db->where('diagnosis.id_pendaftaran', $id_pendaftaran);
         $ambil = $this->db->get('diagnosis');
         return $ambil->row();
+
     }
 
     public function getKeluhan() { //untuk mengambil data keluhan dan catatan konseling klien
@@ -227,23 +241,6 @@ class Dataklien_m extends CI_Model {
         $this->db->where('id_user', $id_user);
         $this->db->update('klien', $status_konsel);
     }
-
-    // public function tambahcat($post) {
-    //     $this->db->insert('diagnosis', $post);
-    // }
-
-    // public function search($keyword, $where) {
-    //    $this->db->select('*');
-    //    $this->db->from('user');
-    //    $this->db->join('klien','klien.id_user=user.id');
-    //    $this->db->where($where);
-    //    $this->db->like('nama', $keyword);
-    //    return $this->db->get()->result();   
-    // }
-
- 
-
-
 
 }
 

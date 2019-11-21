@@ -23,6 +23,12 @@ class Diagnosis_m extends CI_Model {
         return $ambil->row();
     }
 
+    public function getIdDiagnosis($id_gangguan, $id_pendaftaran) { //untuk mengambil pertanyaan 
+        $this->db->where('id_gangguan', $id_gangguan);
+        $this->db->where('id_pendaftaran', $id_pendaftaran);
+        return $this->db->get('diagnosis')->row();
+    }
+
     public function pt_selanjutnya() {
         //pertanyaan selanjutnya berdasarkan session terakhir 
         //menjadikan index (id_pengetahuan menjadi value)
@@ -102,14 +108,14 @@ class Diagnosis_m extends CI_Model {
         return $ambil->row();
     }
 
-    public function tampil_fakta_diagnosis($id_diagnosis) {
+    public function tampil_fakta_diagnosis($id_diagnosis) { //untuk menampilkan fakta diagnosis
         $this->db->join('fakta', 'fakta.id = fakta_diagnosis.id_fakta_fd', 'left');
         $this->db->where('fakta_diagnosis.id_diagnosis_fd', $id_diagnosis);
         $ambil = $this->db->get('fakta_diagnosis');
         return $ambil->result();
     }
 
-    public function ubah_catkonsel($inputan, $id_diagnosis) {
+    public function ubah_catkonsel($inputan, $id_diagnosis) { //untuk mengubah catatan konseling di menu dataklien
         
         $this->db->where('id', $id_diagnosis);
         $this->db->update('diagnosis', $inputan);

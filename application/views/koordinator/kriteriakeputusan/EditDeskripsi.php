@@ -42,6 +42,7 @@
             <label class="input-group-text" >Search</label>
         </div>
     </div>
+
     <div class="col-md-12">
         <?php echo $this->session->flashdata('sukses'); ?>
     </div>
@@ -60,7 +61,7 @@
                 <label ><?php echo $value->nama_gangguan ?></label>
                 <textarea
                     class="form-control"
-                    rows="3"
+                    rows="4"
                     name="deskripsi[<?php echo $value->id ?>]"><?php echo $value->deskripsi_gangguan ?></textarea>
             </div>
             <hr>
@@ -71,13 +72,13 @@
 
     <div class="col-md-6">
         <div class="col-md-12">
-            <span class="font-weight-bold">FAKTA</span>
+            <span class="font-weight-bold">GEJALA</span>
             <hr>
             <!-- ============= Gangguan 1 ============ -->
             <?php  foreach ($fakta as $key => $value): ?>
             <div class="form-group">
                 <label ><?php echo $value->nama_fakta ?></label>
-                <textarea class="form-control" rows="3" name="fakta[<?php echo $value->id ?>]"><?php echo $value->deskripsi_fakta ?></textarea>
+                <textarea class="form-control" rows="4" name="fakta[<?php echo $value->id ?>]"><?php echo $value->deskripsi_fakta ?></textarea>
             </div>
             <hr>
             <?php endforeach ?>
@@ -100,7 +101,7 @@
 
             <div class="form-group">
                 <label id="label-filter"></label>
-                <textarea id="text-filter" class="form-control" rows="3" name=""></textarea>
+                <textarea id="text-filter" class="form-control" rows="4" name=""></textarea>
             </div>
     </div>
 

@@ -108,13 +108,17 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">Data Diagnosis</h2>
-                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien <br> <br> Psikolog : <?php echo $psikolog->nama ?></h3>
+                        <h3 class="section-subheading text-muted">Riwayat diagnosis klien
+                            <br>
+                            <br>
+                            Psikolog :
+                            <?php echo $psikolog->nama ?></h3>
                     </div>
                 </div>
 
                 <div class="row text-center">
                     <div class="col-md-12">
-                    <?php echo $this->session->flashdata('alert'); ?>
+                        <?php echo $this->session->flashdata('alert'); ?>
 
                         <!-- data tabel -->
                         <table
@@ -125,8 +129,9 @@
                                 <tr>
                                     <th class="align-middle col5">No</th>
                                     <th class="align-middle col20">Jadwal</th>
-                                    <th class="align-middle col5">Hasil Diagnosis</th>
-                                    <th class="align-middle col30">Catkonsel</th>
+                                    <!-- <th class="align-middle col5">Hasil Diagnosis</th>
+                                    <th class="align-middle col20">Gejala Diagnosis</th> -->
+                                    <th class="align-middle col30">Catatan</th>
                                 </tr>
 
                             </thead>
@@ -137,7 +142,7 @@
                                     <td class="align-middle"><?php echo $key+1 ?></td>
                                     <td class="align-middle"><?php echo $value->hari.", ".date("d F Y", strtotime($value->waktu_daftar)) ?></td>
 
-                                    <td class="align-middle">
+                                    <!-- <td class="align-middle">
                                         <?php if (!isset($value->nama_gangguan)): ?>
                                         Belum melakukan Diagnosis
                                     <?php else: ?>
@@ -145,11 +150,24 @@
                                         <?php endif ?></td>
 
                                     <td class="align-middle">
-                                    <?php if(!isset($value->id)): ?>
-                                        <a href="" class="btn btn-primary disabled" disabled>Open</a>
+                                        <?php if (!isset($fakta[$key])): ?>
+                                        Belum melakukan Diagnosis
                                     <?php else: ?>
-                                        <a href="<?php echo base_url("Klien/Home/catkonsel/".$diagnosis[$value->id_gangguan][$value->id_pendaftaran]->id) ?>" class="btn btn-primary">Open</a>
-                                    <?php endif ?>
+                                        <ul>
+                                            <?php foreach($fakta[$key] as $key_fakta => $value_fakta): ?>
+                                            <li><?php echo $value_fakta->nama_fakta ?></li>
+                                            <?php endforeach ?>
+                                        </ul>
+                                        <?php endif ?></td> -->
+
+                                    <td class="align-middle">
+                                        <?php if(!isset($value->id)): ?>
+                                        <a href="" class="btn btn-primary disabled" disabled="disabled">Open</a>
+                                    <?php else: ?>
+                                        <a
+                                            href="<?php echo base_url("Klien/Home/catkonsel/".$diagnosis[$value->id_gangguan][$value->id_pendaftaran]->id) ?>"
+                                            class="btn btn-primary">Open</a>
+                                        <?php endif ?>
                                     </td>
 
                                 </tr>

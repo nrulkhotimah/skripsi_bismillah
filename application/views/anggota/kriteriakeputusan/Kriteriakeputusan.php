@@ -163,7 +163,7 @@ textarea{
 </style>
 
 <div style="float:right">
-    <span class="title font-weight-bold">KRITERIA KEPUTUSAN</span>
+    <span class="title font-weight-bold">FLOWCHART DIAGNOSIS BANDING GANGGUAN AFEKTIF</span>
 
 </div>
 

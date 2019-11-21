@@ -61,7 +61,7 @@
                 <textarea
                     readonly=""
                     class="form-control disabled"
-                    rows="3"
+                    rows="4"
                     name="deskripsi[<?php echo $value->id ?>]"><?php echo $value->deskripsi_gangguan ?></textarea>
             </div>
             <hr>
@@ -78,7 +78,7 @@
             <?php  foreach ($fakta as $key => $value): ?>
             <div class="form-group">
                 <label ><?php echo $value->nama_fakta ?></label>
-                <textarea readonly="" class="form-control disabled" rows="3" name="fakta[<?php echo $value->id ?>]"><?php echo $value->deskripsi_fakta ?></textarea>
+                <textarea readonly="" class="form-control disabled" rows="4" name="fakta[<?php echo $value->id ?>]"><?php echo $value->deskripsi_fakta ?></textarea>
             </div>
             <hr>
             <?php endforeach ?>
@@ -96,7 +96,7 @@
 
     <div class="form-group">
         <label id="label-filter"></label>
-        <textarea readonly="" id="text-filter" class="form-control disabled" rows="3" name=""></textarea>
+        <textarea readonly="" id="text-filter" class="form-control disabled" rows="4" name=""></textarea>
     </div>
 </div>
 

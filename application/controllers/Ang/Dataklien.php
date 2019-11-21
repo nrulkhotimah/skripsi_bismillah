@@ -155,6 +155,12 @@ class Dataklien extends CI_Controller {
             $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
             $id_pendaftaran = $data_pendaftaran->id;
             $data['diagnosis'][$key] = $this->Dataklien_m->getDiagnosisPendaftaran($id_pendaftaran);
+
+            if (!empty($data['diagnosis'][$key])) {
+                $data_id = $this->Diagnosis_m->getIdDiagnosis($data['diagnosis'][$key]->id_gangguan, $data['diagnosis'][$key]->id_pendaftaran);
+                $id_diagnosis = $data_id->id;
+                $data['fakta'][$key] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);  
+            } 
         }
 
         $this->load->view('anggota/template/header');

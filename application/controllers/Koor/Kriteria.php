@@ -39,7 +39,7 @@ class Kriteria extends CI_Controller {
 		if ($inputan) {
 			$this->Kriteria_m->ubah($inputan);
             $this->session->set_flashdata('sukses', '<div class= "alert alert-info">Data Berhasil di Ubah</div>');  
-			redirect('Koor/Kriteria/edit');
+			redirect('Koor/Kriteria/index');
 		}
 
 		$this->load->view('koordinator/template/header');

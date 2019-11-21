@@ -182,9 +182,6 @@ textarea{
 </ol>
 </nav>
 
-<?php echo $this->session->flashdata('sukses'); ?>
-
-
 <div class="container pr-5 pl-5">
 <form method="post">
 

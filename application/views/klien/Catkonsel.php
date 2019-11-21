@@ -81,7 +81,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Datadiagnosis</a>
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Datadiagnosis</a>
                         </li>
 
                         <li class="nav-item">
@@ -105,25 +107,25 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Catkel</h2>
-                        <h3 class="section-subheading text-muted">Catatan dan Keluhan</h3>
+                        <h2 class="section-heading text-uppercase">Catatan</h2>
+                        <h3 class="section-subheading text-muted">Tugas Rumah dan Saran</h3>
                     </div>
                 </div>
 
                 <div class="row text-center">
                     <div class="col-md-12">
-<!-- breadcrumb -->
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb">
-    <li class="breadcrumb-item btn-link">
-        <a href="<?php echo site_url('Klien/Home/index')?>">Home</a>
-    </li>
-    <li class="breadcrumb-item btn-link">
-        <a href="<?php echo site_url('Klien/Home/datadiagnosis') ?>">Data Diagnosis</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">Catkonsel</li>
-</ol>
-</nav>
+                        <!-- breadcrumb -->
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item btn-link">
+                                    <a href="<?php echo site_url('Klien/Home/index')?>">Home</a>
+                                </li>
+                                <li class="breadcrumb-item btn-link">
+                                    <a href="<?php echo site_url('Klien/Home/datadiagnosis') ?>">Data Diagnosis</a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Catatan</li>
+                            </ol>
+                        </nav>
                         <!-- data tabel -->
                         <table
                             class="table table-sm table-bordered"
@@ -131,28 +133,27 @@
                             id="result">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle col5" >Keluhan</th>
-                                    <th class="align-middle col20">Catatan</th>
+                                    <th class="align-middle col5">Tugas Rumah</th>
+                                    <th class="align-middle col20">Saran</th>
                                 </tr>
 
                             </thead>
 
                             <tbody class="text-center">
-        
+
                                 <tr>
-                                    <td class="align-middle"><?php if (empty($diagnosis->keluhan)): ?>
-                                    -
+                                    <td class="align-middle"><?php if (empty($diagnosis->tugas_rumah)): ?>
+                                        -
                                     <?php else: ?>
-                                    <?php echo $diagnosis->keluhan ?>
-                                    <?php endif ?>
-                                    
-                            
+                                        <?php echo $diagnosis->tugas_rumah ?>
+                                        <?php endif ?>
+
                                     </td>
-                                    <td class="align-middle"><?php if (empty($diagnosis->catatan)): ?>
-                                    -
+                                    <td class="align-middle"><?php if (empty($diagnosis->saran)): ?>
+                                        -
                                     <?php else: ?>
-                                    <?php echo $diagnosis->catatan ?>
-                                    <?php endif ?></td>                                 
+                                        <?php echo $diagnosis->saran ?>
+                                        <?php endif ?></td>
                                 </tr>
 
                             </tbody>

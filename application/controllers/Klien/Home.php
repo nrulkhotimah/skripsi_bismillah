@@ -141,6 +141,12 @@ class Home extends CI_Controller {
         foreach ($data['pendaftaran'] as $key => $value) {
             $data['diagnosis'][$value->id_gangguan][$value->id_pendaftaran] = $this->Diagnosis_m->getIdDiagnosis($value->id_gangguan, $value->id_pendaftaran);
             $data['psikolog'] = $this->Pendaftaran_m->getIdPsi($value->id_user);
+
+            if (!empty($data['diagnosis'][$key])) {
+                $data_id = $this->Diagnosis_m->getIdDiagnosis($data['diagnosis'][$key]->id_gangguan, $data['diagnosis'][$key]->id_pendaftaran);
+                $id_diagnosis = $data_id->id;
+                $data['fakta'][$key] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);  
+            } 
         }
         $this->load->view('klien/Datadiagnosis', $data);
         

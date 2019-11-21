@@ -41,10 +41,13 @@
     <thead class="text-center">
         <tr>
             <th class="align-middle col5">No</th>
-            <th class="align-middle col15">Tanggal</th>
-            <th class="align-middle col20">Hasil Diagnosis</th>
-            <th class="align-middle col30">Keluhan</th>
-            <th class="align-middle col30">Catatan Konseling</th>
+            <th class="align-middle col10">Tanggal</th>
+            <th class="align-middle col15">Hasil Diagnosis</th>
+            <th class="align-middle col15">Gejala Diagnosis</th>
+            <th class="align-middle col15">Keluhan</th>
+            <th class="align-middle col15">Catatan Konseling</th>
+            <th class="align-middle col15">PR</th>
+            <th class="align-middle col15">Saran</th>
         </tr>
     </thead>
 
@@ -62,6 +65,21 @@
                 <?php endif ?></td>
 
             <td class="align-middle">
+                <?php if (!isset($fakta[$key])): ?>
+                Belum melakukan Diagnosis
+            <?php else: ?>
+                <?php if (!empty($fakta[$key])):  ?>
+                <ul>
+                    <?php foreach($fakta[$key] as $key_fakta => $value_fakta): ?>
+                    <li><?php echo $value_fakta->nama_fakta ?></li>
+                    <?php endforeach ?>
+                </ul>
+            <?php else: ?>
+                -
+                <?php endif ?>
+                <?php endif ?></td>
+
+            <td class="align-middle">
                 <?php if (!isset($diagnosis[$key]->keluhan)): ?>
                 Belum melakukan Diagnosis
             <?php else: ?>
@@ -73,6 +91,20 @@
                 Belum melakukan Diagnosis
             <?php else: ?>
                 <?php echo $diagnosis[$key]->catatan ?>
+                <?php endif ?></td>
+
+            <td class="align-middle">
+                <?php if (!isset($diagnosis[$key]->tugas_rumah)): ?>
+                Belum melakukan Diagnosis
+            <?php else: ?>
+                <?php echo $diagnosis[$key]->tugas_rumah ?>
+                <?php endif ?></td>
+
+            <td class="align-middle">
+                <?php if (!isset($diagnosis[$key]->saran)): ?>
+                Belum melakukan Diagnosis
+            <?php else: ?>
+                <?php echo $diagnosis[$key]->saran ?>
                 <?php endif ?></td>
         </tr>
         <?php endforeach ?>

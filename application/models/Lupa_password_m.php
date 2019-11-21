@@ -23,8 +23,8 @@ class Lupa_password_m extends CI_Model {
 
             $body = "
             <h3>Lupa Password Sistem Diagnosis Afektif</h3>
-            <p> Password anda adalah ".$randomString." </p>
-            <p> Setelah login, silahkan ubah password sesuai keinginan anda </p>
+            <p> Password baru Anda adalah ".$randomString." </p>
+            <p> Setelah login, segera ubah password sesuai keinginan anda </p>
             ";
 
             $mail->IsSMTP();

@@ -17,6 +17,12 @@ class Diagnosis_m extends CI_Model {
         }
     }
 
+    public function getIdDiagnosis($id_gangguan, $id_pendaftaran) { //untuk mengambil pertanyaan 
+        $this->db->where('id_gangguan', $id_gangguan);
+        $this->db->where('id_pendaftaran', $id_pendaftaran);
+        return $this->db->get('diagnosis')->row();
+    }
+
     public function detail_pertanyaan($id_pengetahuan) { //untuk mengambil pertanyaan 
         $this->db->where('id', $id_pengetahuan);
         $ambil = $this->db->get('pengetahuan');

@@ -13,10 +13,7 @@
     <li class="breadcrumb-item btn-link">
         <a href="<?php echo site_url('Koor/Penjadwalan/index') ?>">Penjadwalan</a>
     </li>
-    <li class="breadcrumb-item btn-link">
-        <a href="<?php echo site_url('Koor/Penjadwalan/pilihJadwalPsi') ?>">Pilih Jadwal Psikolog</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">Seluruh jadwal</li>
+    <li class="breadcrumb-item active" aria-current="page">Lihat Jadwal Psikolog</li>
 </ol>
 </nav>
 
@@ -46,7 +43,7 @@
             <td><?php echo $jadwal->nama ?></td>
             <td class="btn-link">
                 <a
-                    href="<?php echo site_url('Koor/Penjadwalan/seluruhJadwal/'.$jadwal->id)?>">Pilih jadwal</a>
+                    href="<?php echo site_url('Koor/Penjadwalan/seluruhJadwal/'.$jadwal->id)?>">Lihat jadwal</a>
             </td>
         </tr>
         <?php  endforeach; ?>

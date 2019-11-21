@@ -35,7 +35,7 @@ class Penjadwalan extends CI_Controller {
         ];
     }
 
-	public function index() {
+	public function index() { //fungsi penjadwalan di koor
         $data['user'] = $this->Penjadwalan_m->getJadwalPsi($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) { 
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id); //proses mengambil jadwal yg dipilih klien
@@ -109,19 +109,16 @@ class Penjadwalan extends CI_Controller {
         redirect('koor/penjadwalan/index','refresh');
     }
 
-    public function pilihJadwalPsi() {
+    public function pilihJadwalPsi() { //fungsi untuk melihat jadwal anggota psikolog berdasarkan namanya
         $data['user'] = $this->Angpsi_m->getByRole(3);
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/jadwal/Pilihjadwalpsi", $data);
     }
 
-    public function seluruhJadwal() { //proses melihat seluruh jadwal anggota psikolog
-        $data['user'] = $this->Penjadwalan_m->getJadwalAng($this->session->userdata("id"));
-        // foreach ($data['user'] as $key => $value) {
-        //     $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id);
-        //     $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran);
-        // }
+    public function seluruhJadwal($id_user) { //proses melihat seluruh jadwal anggota psikolog
+        $data['user'] = $this->Penjadwalan_m->getJadwalAng($id_user);
+
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
