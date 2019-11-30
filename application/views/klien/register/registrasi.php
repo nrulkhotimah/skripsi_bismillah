@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="card-body">
-                        <?php echo $this->session->flashdata('msg'); ?>
+                            <?php echo $this->session->flashdata('msg'); ?>
 
                             <form action="post_register" method="post" enctype="multipart/form-data">
 
@@ -54,7 +54,6 @@
                                             name="nama"
                                             type="text"
                                             class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                            id="inputnama"
                                             placeholder="Nama"></div>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama') ?>
@@ -171,7 +170,6 @@
                                             name="alamat"
                                             type="text"
                                             class="form-control  <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
-                                            id="inputPassword3"
                                             placeholder="Alamat">
                                         <div class="invalid-feedback">
                                             <?php echo form_error('alamat') ?>
@@ -185,7 +183,6 @@
                                             name="pekerjaan"
                                             type="text"
                                             class="form-control  <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
-                                            id="inputPassword3"
                                             placeholder="Pekerjaan">
                                         <div class="invalid-feedback">
                                             <?php echo form_error('pekerjaan') ?>
@@ -196,10 +193,9 @@
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <input
-                                            name="nomor telepon"
+                                            name="nomor_telepon"
                                             type="number"
                                             class="form-control  <?php echo form_error('nomor telepon') ? 'is-invalid':'' ?>"
-                                            id="inputPassword3"
                                             placeholder="Nomor Telepon">
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nomor telepon') ?>
@@ -213,7 +209,6 @@
                                             name="email"
                                             type="email"
                                             class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
-                                            id="inputPassword3"
                                             placeholder="Email">
                                         <div class="invalid-feedback">
                                             <?php echo form_error('email') ?>
@@ -227,7 +222,6 @@
                                             name="username"
                                             type="type"
                                             class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
-                                            id="inputPassword3"
                                             placeholder="Username">
                                         <div class="invalid-feedback">
                                             <?php echo form_error('username') ?>
@@ -241,8 +235,9 @@
                                             name="password"
                                             type="password"
                                             class="form-control  <?php echo form_error('password') ? 'is-invalid':'' ?>"
-                                            id="inputPassword"
-                                            placeholder="Password">
+                                            placeholder="Password"
+                                            maxlength="8">
+                                        <small id="emailHelp" class="form-text text-muted">Password baru maksimal 8 karakter</small>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('password') ?>
                                         </div>

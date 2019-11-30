@@ -74,7 +74,8 @@
             class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
             id="password"
             name="password_lama"
-            placeholder="Password Lama">
+            placeholder="Password Lama"
+            maxlength="8">
     </div>
 
     <div class="form-group">
@@ -83,8 +84,9 @@
             class="form-control <?php echo form_error('password') ? 'is-invalid':'' ?>"
             id="password-baru"
             name="password_baru"
-            placeholder="Password Baru">
-        <small id="emailHelp" class="form-text text-muted">Password minimal 6-8 karakter</small>
+            placeholder="Password Baru"
+            maxlength="8">
+        <small id="emailHelp" class="form-text text-muted">Password baru maksimal 8 karakter</small>
     </div>
 
     <div class="form-group">
@@ -94,7 +96,8 @@
             id="password-konfirmasi"
             onchange="checkPassword()"
             name="password_konfirmasi"
-            placeholder="Confirm Password Baru">
+            placeholder="Confirm Password Baru"
+            maxlength="8">
         <small id="alert-password-konfirmasi" style="color:red"></small>
     </div>
     <button
