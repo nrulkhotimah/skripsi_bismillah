@@ -183,7 +183,7 @@
                                             name="pekerjaan"
                                             type="text"
                                             class="form-control  <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
-                                            placeholder="Pekerjaan">
+                                            placeholder="Pekerjaan" required>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('pekerjaan') ?>
                                         </div>
@@ -209,7 +209,7 @@
                                             name="email"
                                             type="email"
                                             class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
-                                            placeholder="Email">
+                                            placeholder="Email" required>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('email') ?>
                                         </div>
@@ -222,7 +222,7 @@
                                             name="username"
                                             type="type"
                                             class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
-                                            placeholder="Username">
+                                            placeholder="Username" required>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('username') ?>
                                         </div>

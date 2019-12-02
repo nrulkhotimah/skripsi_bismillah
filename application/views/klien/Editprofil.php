@@ -19,10 +19,11 @@
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
-        <link
+        <!-- <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css">
+            href="<?php echo base_url();?>assets/css/all.min.css"> -->
+
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -121,8 +122,7 @@
                                 <input
                                     name="nama"
                                     type="text"
-                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
+                                    class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>" 
                                     value="<?php echo $user->nama ?>">
                             </div>
 
@@ -132,9 +132,7 @@
                                     name="tanggal_lahir"
                                     type="date"
                                     class="form-control <?php echo form_error('tanggal_lahir') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
-                                    value="<?php echo $user->tanggal_lahir ?>"
-                                    >
+                                    value="<?php echo $user->tanggal_lahir ?>">
                             </div>
 
                             <fieldset class="form-group">
@@ -173,7 +171,6 @@
                                     name="alamat"
                                     type="text"
                                     class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
                                     value="<?php echo $user->alamat ?>">
                             </div>
 
@@ -229,7 +226,6 @@
                                     name="pekerjaan"
                                     type="text"
                                     class="form-control <?php echo form_error('pekerjaan') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
                                     value="<?php echo $user->pekerjaan ?>">
                             </div>
 
@@ -239,7 +235,6 @@
                                     name="nomor_telepon"
                                     type="number"
                                     class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
                                     value="<?php echo  $user->nomor_telepon?>">
                             </div>
 
@@ -249,7 +244,6 @@
                                     name="email"
                                     type="email"
                                     class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
                                     value="<?php echo $user->email ?>">
                             </div>
 
@@ -259,7 +253,6 @@
                                     name="username"
                                     type="text"
                                     class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
-                                    id="exampleFormControlInput1"
                                     value="<?php echo  $user->username ?>">
                             </div>
 
@@ -316,15 +309,15 @@
             src="<?php echo base_url();?>assets/font/js/solid.js"></script>
         <script
             type='text/javascript'
-            src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
-        <script
+            src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
+        <!-- <script
             type='text/javascript'
-            src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            src="<?php echo base_url();?>assets/jquery/bootstrap.bundle.min.js"></script> -->
 
         <!-- Plugin JavaScript -->
-        <script
+        <!-- <script
             type='text/javascript'
-            src="<?php echo base_url();?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+            src="<?php echo base_url();?>assets/jquery/jquery.easing.min.js"></script> -->
 
         <!-- Contact form JavaScript -->
         <script

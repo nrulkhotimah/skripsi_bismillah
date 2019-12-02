@@ -19,10 +19,10 @@
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
-        <link
+        <!-- <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/vendor/fontawesome-free/css/all.min.css">
+            href="<?php echo base_url();?>assets/css/all.min.css"> -->
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -159,15 +159,15 @@
             src="<?php echo base_url();?>assets/font/js/solid.js"></script>
         <script
             type='text/javascript'
-            src="<?php echo base_url();?>assets/vendor/jquery/jquery.min.js"></script>
-        <script
+            src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
+        <!-- <script
             type='text/javascript'
-            src="<?php echo base_url();?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+            src="<?php echo base_url();?>assets/jquery/bootstrap.bundle.min.js"></script> -->
 
         <!-- Plugin JavaScript -->
-        <script
+        <!-- <script
             type='text/javascript'
-            src="<?php echo base_url();?>assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+            src="<?php echo base_url();?>assets/jquery/jquery.easing.min.js"></script> -->
 
         <!-- Contact form JavaScript -->
         <script
