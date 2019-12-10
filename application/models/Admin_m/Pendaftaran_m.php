@@ -3,7 +3,7 @@
 class Pendaftaran_m extends CI_Model {
 
 
-    public function getAll() { //fungsi untuk mengambil semua data
+    public function getAll() { //fungsi untuk mengambil semua data 
         $this->load->database();
 
         $this->db->select('*');

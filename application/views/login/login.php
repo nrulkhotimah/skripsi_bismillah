@@ -64,6 +64,7 @@
                                         <input
                                             type="password"
                                             name="password"
+                                            maxlength="8"
                                             class="form-control"
                                             id="inputPassword3"
                                             placeholder="Password"

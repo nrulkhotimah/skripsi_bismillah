@@ -54,7 +54,7 @@
                                             name="nama"
                                             type="text"
                                             class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
-                                            placeholder="Nama"></div>
+                                            placeholder="Nama" required></div>
                                     <div class="invalid-feedback">
                                         <?php echo form_error('nama') ?>
                                     </div>
@@ -67,7 +67,8 @@
                                             name="tanggal_lahir"
                                             type="date"
                                             class="form-control  <?php echo form_error('tanggal_lahir') ? 'is-invalid':'' ?>"
-                                            id="exampleFormControlInput1">
+                                            id="exampleFormControlInput1"
+                                            required>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('tanggal_lahir') ?>
                                         </div>
@@ -170,7 +171,7 @@
                                             name="alamat"
                                             type="text"
                                             class="form-control  <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
-                                            placeholder="Alamat">
+                                            placeholder="Alamat" required>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('alamat') ?>
                                         </div>
@@ -195,8 +196,9 @@
                                         <input
                                             name="nomor_telepon"
                                             type="number"
+                                            maxlength="12"
                                             class="form-control  <?php echo form_error('nomor telepon') ? 'is-invalid':'' ?>"
-                                            placeholder="Nomor Telepon">
+                                            placeholder="Nomor Telepon" required>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('nomor telepon') ?>
                                         </div>
@@ -236,7 +238,7 @@
                                             type="password"
                                             class="form-control  <?php echo form_error('password') ? 'is-invalid':'' ?>"
                                             placeholder="Password"
-                                            maxlength="8">
+                                            maxlength="8" required>
                                         <small id="emailHelp" class="form-text text-muted">Password baru maksimal 8 karakter</small>
                                         <div class="invalid-feedback">
                                             <?php echo form_error('password') ?>

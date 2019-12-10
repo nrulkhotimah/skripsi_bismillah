@@ -14,8 +14,8 @@ class Pendaftaran extends CI_Controller {
         
     }
 
-    public function index() {
-        $data['user'] = $this->Pendaftaran_m->getAll();
+    public function index() { //untuk menampilkan halaman pendaftaran
+        $data['user'] = $this->Pendaftaran_m->getAll(); //menampilkan seluruh klien yang ada
         
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
@@ -24,12 +24,11 @@ class Pendaftaran extends CI_Controller {
 
     public function pilih_psikolog($id_user) { //untuk memilih psikolog
         $data['id_user'] = $id_user;
-        $data_pendaftaran = $this->Pendaftaran_m->pendaftaran_terbaru($id_user);
+        $data_pendaftaran = $this->Pendaftaran_m->pendaftaran_terbaru($id_user); //untuk mengambil data nama psikolog yang pernah diambil sebelumnya
         if (empty($data_pendaftaran)) {
-            $data['user'] = $this->Datapakar_m->getAll();
+            $data['user'] = $this->Datapakar_m->getAll(); //menampilkan seluruh nama psikolog
         } else {
-
-            $data['user'][] = $this->Datapakar_m->getById($data_pendaftaran->id_user);
+            $data['user'][] = $this->Datapakar_m->getById($data_pendaftaran->id_user); //menampilkan nama psikolog yang pernah diambil sebelumnya
         }
 
         $this->load->view('admin/template/header');

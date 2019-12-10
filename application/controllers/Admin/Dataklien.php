@@ -80,7 +80,7 @@ class Dataklien extends CI_Controller {
         $data['user'] = $this->Dataklien_m->getAll();
         foreach ($data['user'] as $key => $value) {
             $id_klien = $value->id_user;
-            $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien);
+            $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien); //untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
             if(!empty($pendaftaran[$id_klien])) {
                 $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
             } else {
@@ -99,8 +99,6 @@ class Dataklien extends CI_Controller {
         $this->load->helper('form');
         $this->load->library('form_validation');
 
-        // untuk pengaksesan atribut maupun metode dari objek model yang telah dimuat
-        // maka dibuatlah variabel $klien untuk menunjuk ke objek dari model yang dimaksud
         $validation = $this->form_validation;
         $validation->set_rules($this->rules());
 
@@ -138,10 +136,11 @@ class Dataklien extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($user->rules());
       
-            $this->Dataklien_m->update($post,$id);
+            $this->Dataklien_m->update($post,$id); //memanggil fungsi update yang ada pada modal dataklien_m
             $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Perubahan berhasil disimpan</div>'); 
-            $data['user'] = $this->Dataklien_m->getAll();
-            foreach ($data['user'] as $key => $value) {
+            $data['user'] = $this->Dataklien_m->getAll(); //memanggil fungsi untuk mendapatkan seluruh data klien
+           
+            foreach ($data['user'] as $key => $value) { //perulangan untuk menampilkan jadwal konseling klien
                 $id_klien = $value->id;
                 $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien);
                 if(!empty($pendaftaran[$id_klien])) {
@@ -162,7 +161,8 @@ class Dataklien extends CI_Controller {
         $this->db->delete('user');
         $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Dataklien berhasil dihapus</div>'); 
         $data['user'] = $this->Dataklien_m->getAll();
-        foreach ($data['user'] as $key => $value) {
+
+        foreach ($data['user'] as $key => $value) { //perulangan untuk menampilkan jadwal konseling klien
             $id_klien = $value->id;
             $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien);
             if(!empty($pendaftaran[$id_klien])) {
@@ -171,6 +171,7 @@ class Dataklien extends CI_Controller {
                 $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
             }
         }
+        
         redirect('Admin/Dataklien/index','refresh');
     }
 

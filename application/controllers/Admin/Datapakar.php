@@ -47,19 +47,20 @@ class Datapakar extends CI_Controller {
     }
 
     public function index() {
-        $data['status'][1] = "admin"; //untuk menampilkan status hak akses pakar
-        $data['status'][2] = "koordinator";
-        $data['status'][3] = "anggota";
-        $data['status'][4] = "klien";
+        $data['status'][1] = "admin"; //untuk menampilkan status hak akses admin
+        $data['status'][2] = "koordinator"; //untuk status role koordinator 
+        $data['status'][3] = "anggota"; //untuk status role anggota
+        $data['status'][4] = "klien"; //untuk status role klien
         
-        $data['user'] = $this->Datapakar_m->getAll();
+        $data['user'] = $this->Datapakar_m->getAll(); //untuk mengambil data seluruh pakar dengan menggunakan fungsi getAll
+        
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/pakar/Datapakar", $data);
     }
 
     public function edit($id) { //open page edit data pakar
-        $data['user'] = $this->Datapakar_m->getById($id);
+        $data['user'] = $this->Datapakar_m->getById($id); //melakukan edit berdasarkan id setiap pakar
 
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');

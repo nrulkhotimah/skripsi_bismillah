@@ -70,9 +70,7 @@ class Penjadwalan extends CI_Controller {
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('sukses', '<div class= "alert alert-danger">Jadwal gagal disimpan</div>');  
-            $this->load->view('koordinator/template/header');
-            $this->load->view('koordinator/template/footer');
-            $this->load->view("koordinator/jadwal/Inputjadwalkoor");
+            redirect('koor/penjadwalan/add','refresh');
         }
     }
 
@@ -118,7 +116,6 @@ class Penjadwalan extends CI_Controller {
 
     public function seluruhJadwal($id_user) { //proses melihat seluruh jadwal anggota psikolog
         $data['user'] = $this->Penjadwalan_m->getJadwalAng($id_user);
-
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');

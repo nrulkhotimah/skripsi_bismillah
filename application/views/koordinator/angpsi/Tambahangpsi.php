@@ -30,7 +30,8 @@
                             type="text"
                             class="form-control <?php echo form_error('nama') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            placeholder="Masukkan nama . . . ">
+                            placeholder="Masukkan nama" 
+                            required>
                         <div class="invalid-feedback">
                             <?php echo form_error('nama') ?>
                         </div>
@@ -74,7 +75,8 @@
                             type="text"
                             class="form-control <?php echo form_error('alamat') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            placeholder="alamat . . . ">
+                            placeholder="alamat"
+                            required>
                         <div class="invalid-feedback">
                             <?php echo form_error('alamat') ?>
                         </div>
@@ -85,9 +87,11 @@
                         <input
                             name="nomor_telepon"
                             type="numeric"
+                            maxlength="12"
                             class="form-control <?php echo form_error('nomor_telepon') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            placeholder="nomor telepon . . . ">
+                            placeholder="nomor telepon"
+                            required>
                         <div class="invalid-feedback">
                             <?php echo form_error('nomor_telepon') ?>
                         </div>
@@ -113,7 +117,8 @@
                             type="text"
                             class="form-control  <?php echo form_error('username') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            placeholder="username . . .">
+                            placeholder="username"
+                            required>
                         <div class="invalid-feedback">
                             <?php echo form_error('username') ?>
                         </div>

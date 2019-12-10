@@ -50,8 +50,7 @@
                                         type="radio"
                                         name="jenis_kelamin"
                                         id="gridRadios1"
-                                        value="pria <?php echo ($user->jenis_kelamin=='pria' ? 'checked':''); ?>"
-                                        checked="checked">
+                                        value="pria" <?php echo ($user->jenis_kelamin=='pria' ? 'checked':''); ?>>
                                     <label class="form-check-label" for="gridRadios1">
                                         Pria
                                     </label>
@@ -62,7 +61,7 @@
                                         type="radio"
                                         name="jenis_kelamin"
                                         id="gridRadios2"
-                                        value="wanita <?php echo ($user->jenis_kelamin=='wanita' ? 'checked':''); ?>">
+                                        value="wanita" <?php echo ($user->jenis_kelamin=='wanita' ? 'checked':''); ?>>
                                     <label class="form-check-label" for="gridRadios2">
                                         Wanita
                                     </label>
