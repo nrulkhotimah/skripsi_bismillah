@@ -50,7 +50,7 @@
             id="exampleFormControlInput1"
             type="text"
             class="form-control <?php echo form_error('kuota') ? 'is-invalid':'' ?>"
-            placeholder="Kuota Klien">
+            placeholder="Kuota Klien" required>
         <div class="invalid-feedback">
             <?php echo form_error('kuota') ?>
         </div>
@@ -83,7 +83,7 @@
             id="exampleFormControlInput1"
             type="text"
             class="form-control <?php echo form_error('waktu') ? 'is-invalid':'' ?>"
-            placeholder="14.00 - 13.00">
+            placeholder="14.00 - 13.00" required>
         <div class="invalid-feedback">
             <?php echo form_error('waktu') ?>
         </div>

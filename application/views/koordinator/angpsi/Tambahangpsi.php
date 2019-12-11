@@ -104,7 +104,7 @@
                             type="email"
                             class="form-control  <?php echo form_error('email') ? 'is-invalid':'' ?>"
                             id="exampleFormControlInput1"
-                            placeholder="email . . . ">
+                            placeholder="email" required>
                         <div class="invalid-feedback">
                             <?php echo form_error('email') ?>
                         </div>
