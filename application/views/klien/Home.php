@@ -18,12 +18,6 @@
             type="text/css"
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
-        <!-- Custom fonts for this template -->
-        <!-- <link
-            rel="stylesheet"
-            type="text/css"
-            href="<?php echo base_url('assets/css/all.min.css');?>"> -->
-
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -69,19 +63,34 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" id="#home" href="<?php echo site_url('Klien/Home/index')?>">Home</a>
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                id="#home"
+                                href="<?php echo site_url('Klien/Home/index')?>">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/editProfil')?>">Profil</a>
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/Home/editProfil')?>">Profil</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Datadiagnosis</a>
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Datadiagnosis</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Konseling</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/inbox/index')?>">Kotak Masuk</a>
                         </li>
 
                         <li class="nav-item">
@@ -100,11 +109,10 @@
                 <div class="intro-text">
                     <div class="intro-lead-in">Welcome in DiagAfektif</div>
                     <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-                
+
                 </div>
             </div>
         </header>
-
 
         <!-- Bootstrap core JavaScript -->
         <script
@@ -113,14 +121,6 @@
         <script
             type='text/javascript'
             src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
-        <!-- <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/jquery/bootstrap.bundle.min.js"></script> -->
-
-        <!-- Plugin JavaScript -->
-        <!-- <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/jquery/jquery.easing.min.js"></script> -->
 
         <!-- Contact form JavaScript -->
         <script

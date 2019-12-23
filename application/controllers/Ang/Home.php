@@ -6,7 +6,8 @@ class Home extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		
-		$this->load->model('Admin_m/Editprofil_m');
+        $this->load->model('Admin_m/Editprofil_m');
+		$this->load->model('Ang_m/Dataklien_m');
         $this->load->helper('url_helper');
 		$this->load->library('session');
 		
@@ -54,9 +55,12 @@ class Home extends CI_Controller {
 
 	public function index() { //untuk menampilkan page home
 
+        $data['baru_mendaftar'] = $this->Dataklien_m->klien_blm_mendaftar($this->session->userdata("id"));
+        $data['belum_diagnosis'] = $this->Dataklien_m->klien_blm_diagnosis($this->session->userdata("id"));
+
 		$this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
-		$this->load->view('anggota/Home');
+		$this->load->view('anggota/Home', $data);
 	}
 
 	public function editProfil() { //untuk open edit profil

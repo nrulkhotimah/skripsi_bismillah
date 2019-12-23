@@ -95,7 +95,6 @@ class Dataklien extends CI_Controller {
             
         }
 
-
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
         $this->load->view('anggota/klien/Dataklien', $data);
@@ -150,6 +149,9 @@ class Dataklien extends CI_Controller {
     public function lihatRiwayat($id_klien) { //open page lihat riwayat perklien berdasarkan klien yang dipilih
         $data['user'] = $this->Dataklien_m->getById($id_klien);
         $data['riwayat'] = $this->Dataklien_m->getPendaftaranPsiKlien($this->session->userdata('id'), $id_klien);
+
+        $pendaftaran_terbaru = $this->Penjadwalan_m->getPendaftaranBaru($id_klien);
+        $data['id_pendaftaran_terbaru'] = $pendaftaran_terbaru['id'];
 
         foreach ($data['riwayat'] as $key => $value) { //untuk mendapatkan data pendaftaran dan diagnosis klien
             $data_pendaftaran =  $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);

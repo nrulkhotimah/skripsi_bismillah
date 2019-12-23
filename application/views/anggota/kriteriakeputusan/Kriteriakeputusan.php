@@ -159,6 +159,13 @@ textarea{
 .text-white{
     color: white
 }
+
+.flow{
+    padding: 0 20rem 0 3rem !important;
+}
+textarea{
+    font-size: 11px !important;
+}
  
 </style>
 
@@ -170,7 +177,7 @@ textarea{
 </div>
 
 <div id="diagram"></div>
-<div class="container pl-5 pr-5">
+<div class="container pl-5 pr-5 flow">
 
 <!-- ====== pernyataaan 1 ======= -->
 <div class="row">

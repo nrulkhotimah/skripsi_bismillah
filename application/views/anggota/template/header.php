@@ -50,36 +50,57 @@
                         <h2 class="font-h2 ">Diagnosis</h2>
                         <h2 class="font-h2 ">AFEKTIF</h2>
 
-                        <p class="text-center font-weight-bold" style="font:10 px!important;">Hello! <?php echo nama_session() ?></p>
+                        <p class="text-center font-weight-bold" style="font:10 px!important;">Hello!
+                            <?php echo nama_session() ?></p>
                         <hr>
 
                         <li>
-                        <a href="<?php echo site_url('Ang/Home/editProfil')?>"> <i class="fas fa-user-edit"></i> Profil</a>
+                            <a href="<?php echo site_url('Ang/Home/editProfil')?>">
+                                <i class="fas fa-user-edit"></i>
+                                Profil</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Home/index')?>">  <i class="fas fa-home"></i> Home</a>
+                            <a href="<?php echo site_url('Ang/Home/index')?>">
+                                <i class="fas fa-home"></i>
+                                Home</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Dataklien/index')?>"> <i class="fas fa-users"></i> Data klien</a>
+                            <a href="<?php echo site_url('Ang/Dataklien/index')?>">
+                                <i class="fas fa-users"></i>
+                                Data klien</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Diagnosis/pilihKlien')?>"> <i class="fas fa-diagnoses"></i> Diagnosis</a>
+                            <a href="<?php echo site_url('Ang/Diagnosis/pilihKlien')?>">
+                                <i class="fas fa-diagnoses"></i>
+                                Diagnosis</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Penjadwalan/index')?>"> <i class="fas fa-calendar-alt"></i> Penjadwalan
+                            <a href="<?php echo site_url('Ang/Penjadwalan/index')?>">
+                                <i class="fas fa-calendar-alt"></i>
+                                Penjadwalan
                             </a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Dataklien/riwayat')?>"> <i class="fas fa-file-medical-alt"></i> Riwayat</a>
+                            <a href="<?php echo site_url('Ang/Dataklien/riwayat')?>">
+                                <i class="fas fa-file-medical-alt"></i>
+                                Riwayat</a>
                         </li>
 
                         <li>
-                            <a href="<?php echo site_url('Ang/Kriteria/index')?>"> <i class="fas fa-book-medical"></i> Kriteria Keputusan</a>
+                            <a href="<?php echo site_url('Ang/Kriteria/index')?>">
+                                <i class="fas fa-book-medical"></i>
+                                Kriteria Keputusan</a>
+                        </li>
+
+                        <li>
+                            <a href="<?php echo site_url('Ang/Inbox/index')?>">
+                                <i class="fas fa-inbox"></i>
+                                Kotak Masuk</a>
                         </li>
                         <hr>
 

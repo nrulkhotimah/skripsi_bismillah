@@ -19,10 +19,8 @@
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
-        <!-- <link
-            rel="stylesheet"
-            type="text/css"
-            href="<?php echo base_url();?>assets/css/all.min.css"> -->
+        <!-- <link rel="stylesheet" type="text/css" href="<?php echo
+        base_url();?>assets/css/all.min.css"> -->
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -89,7 +87,13 @@
                         <li class="nav-item">
                             <a
                                 class="nav-link js-scroll-trigger"
-                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
+                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Konseling</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/inbox/index')?>">Kotak Masuk</a>
                         </li>
 
                         <li class="nav-item">
@@ -108,7 +112,9 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">Pendaftaran</h2>
-                        <h3 class="section-subheading text-muted">Pilih jadwal psikolog : <big><?php echo $psikolog->nama ?></big></h3>
+                        <h3 class="section-subheading text-muted">Pilih jadwal psikolog :
+                            <big><?php echo $psikolog->nama ?></big>
+                        </h3>
 
                     </div>
                 </div>
@@ -154,16 +160,24 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $i ?></td>
+
                                     <td><?php echo date("D", strtotime($value)).", ".date("d M Y", strtotime($value)) ?></td>
+
                                     <td><?php echo $waktu ?></td>
+
                                     <td><?php echo $kuota ?></td>
+
                                     <td >
-                                        <?php if($kuota==0): ?>
+                                    <?php if($kuota==0): ?>
                                         <a disable="" class="btn btn-primary disabled">Pilih Jadwal</a>
                                     <?php else: ?>
+                                        <?php if(empty($cek_pendaftaran[$id_penjadwalan])): ?>
                                         <a
-                                            href="<?php echo base_url("klien/pendaftaran/simpan_jadwal/".$id_klien."/".$id_penjadwalan."/".$value) ?>"
-                                            class="btn btn-primary">Pilih Jadwal</a>
+                                        href="<?php echo base_url("klien/pendaftaran/simpan_jadwal/".$id_klien."/".$id_penjadwalan."/".$value) ?>"
+                                        class="btn btn-primary">Pilih Jadwal</a>
+                                        <?php else: ?>
+                                            <a class="btn btn-primary disabled" disabled="">Pilih Jadwal</a>
+                                        <?php endif ?>
                                         <?php endif ?>
                                     </td>
 
@@ -185,14 +199,6 @@
         <script
             type='text/javascript'
             src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
-        <!-- <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/jquery/bootstrap.bundle.min.js"></script> -->
-
-        <!-- Plugin JavaScript -->
-        <!-- <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/jquery/jquery.easing.min.js"></script> -->
 
         <!-- Contact form JavaScript -->
         <script

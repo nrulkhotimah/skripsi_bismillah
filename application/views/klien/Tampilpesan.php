@@ -19,10 +19,7 @@
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
-        <!-- <link
-            rel="stylesheet"
-            type="text/css"
-            href="<?php echo base_url();?>assets/css/all.min.css"> -->
+
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -41,15 +38,13 @@
             type='text/css'>
 
         <!-- Custom styles for this template -->
-        <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
         <link
             rel="stylesheet"
             type="text/css"
-            href="<?php echo base_url();?>assets/css/agency.css">
+            href="<?php echo base_url('assets/css/agency.css');?>">
     </head>
 
     <body id="page-top">
-
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -65,6 +60,7 @@
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item">
@@ -108,54 +104,47 @@
             </div>
         </nav>
 
-        <!-- pilih jadwal konseling -->
-        <section class="page-section" id="profil">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Pendaftaran</h2>
-                        <h3 class="section-subheading text-muted">Pilih jadwal konseling</h3>
-                    </div>
-                </div>
-
-                <div class="row text-center">
-                    <div class="col-md-12">
-
-                        <!-- data tabel -->
-                        <table class="table table-bordered" style="margin-top:20px;" id="klien1">
-                            <thead class="text-center">
-                                <tr>
-                                    <th class="align-middle col5">No</th>
-                                    <th class="align-middle">Nama Psikolog</th>
-                                    <th class="align-middle">Aksi</th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="text-center">
-                                <?php
-                                    $i=0;
-                                    foreach($user as $jadwal):
-                                    $i++;
-                                ?>
-                                <tr>
-                                    <td><?php echo $i ?></td>
-                                    <td><?php echo $jadwal->nama ?></td>
-                                    <td class="btn-link">
-                                        <a
-                                            href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$jadwal->id)?>">
-                                            Pilih jadwal
-                                        </a>
-                                    </td>
-                                </tr>
-                                <?php  endforeach; ?>
-                            </tbody>
-                        </table>
-                
-                    </div>
-
+        <div class="col-md-12 px-md-3 mt-n1 textchat" >
+            <div class="clearfix"></div>
+            <?php foreach ($pesan as $key => $value): ?>
+            <?php if($value->dari_user==$id_login): ?>
+            <div class="card text-dark bg-info mb-3 float-right font-weight-light" style="max-width: 40rem;">
+                <div class="card-body">
+                    <p class="card-text text-dark float-left">
+                        <?php echo $value->tanggal_kirim_pesan?>
+                    </p>
+                    <p class="card-text text-dark float-right">
+                        <?php echo $value->status_pesan?></p>
+                    <div class="clearfix"></div>
+                    <h5 class="card-title">
+                        <?php echo $value->isi_pesan?></h5>
                 </div>
             </div>
-        </section>
+            <div class="clearfix"></div>
+
+            <?php else: ?>
+            <div class="card text-dark bg-light mb-3 " style="max-width: 40rem;">
+                <div class="card-body">
+                    <p class="card-text text-dark float-left">
+                        <?php echo $value->tanggal_kirim_pesan?>
+                    </p>
+                    <div class="clearfix"></div>
+                    <h5 class="card-title">
+                        <?php echo $value->isi_pesan?></h5>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <?php endif ?>
+            <?php endforeach ?>
+
+            <form method="post" action="<?php echo base_url("klien/inbox/tambah_pesan") ?>">
+                <input type="hidden" name="kepada_user" value="<?php echo $kepada_user ?>">
+                <div class="form-group">
+                    <textarea class="form-control" name="isi_pesan" placeholder="tulis disini"></textarea>
+                </div>
+                <button class="btn btn-primary">Kirim</button>
+            </form>
+        </div>
 
         <!-- Bootstrap core JavaScript -->
         <script

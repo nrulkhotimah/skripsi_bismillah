@@ -85,6 +85,10 @@
                     <li>
                         <a href="<?php echo site_url('Koor/Anggota/index')?>"> <i class="fas fa-user-nurse"></i> Anggota Psikolog</a>
                     </li>
+
+                    <li>
+                        <a href="<?php echo site_url('Koor/Inbox/index')?>"> <i class="fas fa-inbox"></i> Kotak Masuk</a>
+                    </li>
                     <hr>
 
                     <li>

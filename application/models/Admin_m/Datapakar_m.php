@@ -85,11 +85,4 @@ class Datapakar_m extends CI_Model {
         return $this->db->delete($this->_table, array('id' => $id));
     }
 
-
-
-
-
-
-
-
 }

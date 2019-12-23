@@ -18,11 +18,6 @@
             type="text/css"
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
-        <!-- Custom fonts for this template -->
-        <!-- <link
-            rel="stylesheet"
-            type="text/css"
-            href="<?php echo base_url('assets/css/all.min.css');?>"> -->
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -89,7 +84,13 @@
                         <li class="nav-item">
                             <a
                                 class="nav-link js-scroll-trigger"
-                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
+                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Konseling</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/inbox/index')?>">Kotak Masuk</a>
                         </li>
 
                         <li class="nav-item">
@@ -140,27 +141,9 @@
                                     <td class="align-middle"><?php echo $key+1 ?></td>
                                     <td class="align-middle"><?php echo $value->hari.", ".date("d F Y", strtotime($value->waktu_daftar)) ?></td>
 
-                                    <!-- <td class="align-middle">
-                                        <?php if (!isset($value->nama_gangguan)): ?>
-                                        Belum melakukan Diagnosis
-                                    <?php else: ?>
-                                        <?php echo $value->nama_gangguan ?>
-                                        <?php endif ?></td>
-
-                                    <td class="align-middle">
-                                        <?php if (!isset($fakta[$key])): ?>
-                                        Belum melakukan Diagnosis
-                                    <?php else: ?>
-                                        <ul>
-                                            <?php foreach($fakta[$key] as $key_fakta => $value_fakta): ?>
-                                            <li><?php echo $value_fakta->nama_fakta ?></li>
-                                            <?php endforeach ?>
-                                        </ul>
-                                        <?php endif ?></td> -->
-
                                     <td class="align-middle">
                                         <?php if(!isset($value->id)): ?>
-                                        <a href="" class="btn btn-primary disabled" disabled="disabled">Open</a>
+                                        <a href="" class="btn btn-secondary disabled" disabled="disabled">Open</a>
                                     <?php else: ?>
                                         <a
                                             href="<?php echo base_url("Klien/Home/catkonsel/".$diagnosis[$value->id_gangguan][$value->id_pendaftaran]->id) ?>"

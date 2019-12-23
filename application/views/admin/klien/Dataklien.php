@@ -42,7 +42,6 @@
             <td class="align-middle"><?php echo $jadwal_konseling[$DataKlien->id_user] ?></td>
             <td class="align-middle">
                 <a href="<?php echo site_url('Admin/Dataklien/edit/'.$DataKlien->id_user) ?>">
-                    <!-- edit data klien -->
                     <i class="fas fa-pen"></i> 
                 </a>
             </td>

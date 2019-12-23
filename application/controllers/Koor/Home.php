@@ -8,6 +8,8 @@ class Home extends CI_Controller {
 		
         $this->load->helper('url_helper');
         $this->load->model('Admin_m/Editprofil_m');
+        $this->load->model('Koor_m/Dataklien_m');
+
 		$this->load->library('session');
 		
         check_not_login_koordinator();
@@ -54,7 +56,11 @@ class Home extends CI_Controller {
 
 	public function index() //untuk menampilkan page home 
 	{
-        $this->load->view('koordinator/template/header');
+
+        $data['baru_mendaftar'] = $this->Dataklien_m->klien_blm_mendaftar($this->session->userdata("id"));
+        $data['belum_diagnosis'] = $this->Dataklien_m->klien_blm_diagnosis($this->session->userdata("id"));
+
+        $this->load->view('koordinator/template/header', $data);
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/Home.php');
 

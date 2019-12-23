@@ -1,10 +1,11 @@
 <div style="float:right">
-    <span class="title font-weight-bold">RIWAYAT DIAGNOSIS KLIEN</span>
+    <span class="title font-weight-bold">DATA KLIEN</span>
 </div>
 </div>
+
+<?php echo $this->session->flashdata('sukses'); ?>
 
 <div class="col-md-12">
-
 <!-- data tabel -->
 <table
     class="table table-sm table-bordered"
@@ -13,36 +14,36 @@
     <thead class="text-center">
         <tr>
             <th class="align-middle col5">No</th>
-            <th class="align-middle ">Nama Klien</th>
-            <th class="align-middle ">Aksi</th>
+            <th class="align-middle col10">Nama Klien</th>
+            <th class="align-middle col10">Chat</th>
+
         </tr>
     </thead>
-
     <tbody class="text-center">
         <?php 
             $i=0;
-                foreach($user as $Dataklien):
-                $i++;
-            ?>
+            foreach($user as $DataKlien):
+            $i++;
+        ?>
         <tr>
             <td class="align-middle"><?php echo $i ?></td>
-            <td class="align-middle"><?php echo $Dataklien->nama ?></td>
             <td class="align-middle">
-                <a
-                    href="<?php echo site_url('Koor/Dataklien/lihatRiwayat/'.$Dataklien->id_klien) ?>">
-                    <button class="btn btn-primary">Lihat Riwayat</button>
-                </a>
+                <?php echo $DataKlien->nama ?>
             </td>
+
+            <td>
+                <a
+                    href="<?php echo site_url('Koor/inbox/pesan/'.$DataKlien->id_user) ?>"
+                    class="btn btn-primary">
+                    Pesan</a>
+            </td>
+
         </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
-<div>
-    <a
-        href="<?php echo site_url('Koor/Dataklien/seluruhriwayat')?>"
-        class="btn btn-link">Lihat riwayat seluruh klien</a>
 </div>
-</div>
+
 </div>
 </div>
 

@@ -33,6 +33,15 @@
     </td>
 </tr>
 
+<br>
+<br>
+
+     <?php if($user->status_konsel == "selesai"): ?>
+        <a class="btn btn-secondary disabled" disabled">Diagnosis</a>
+     <?php else: ?>
+         <a class="btn btn-primary" href="<?php echo site_url('Ang/Diagnosis/Diag/'.$id_pendaftaran_terbaru) ?>">Diagnosis</a>
+    <?php endif ?>
+
 <!-- data tabel -->
 <table
     class="table table-sm table-bordered"

@@ -90,7 +90,13 @@
                         <li class="nav-item">
                             <a
                                 class="nav-link js-scroll-trigger"
-                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
+                                href="<?php echo site_url('Klien/Pendaftaran/index')?>">Konseling</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/inbox/index')?>">Kotak Masuk</a>
                         </li>
 
                         <li class="nav-item">

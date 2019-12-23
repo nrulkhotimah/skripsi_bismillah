@@ -128,6 +128,7 @@ class Dataklien_m extends CI_Model {
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->join('klien', 'klien.id_user = pendaftaran.id_klien', 'left');
         $this->db->where('penjadwalan.id_user', $id_psikolog);
+        $this->db->order_by('pendaftaran.waktu_daftar','asc');
         $ambil = $this->db->get('pendaftaran');
         $data = $ambil->result();
 
@@ -150,6 +151,7 @@ class Dataklien_m extends CI_Model {
         $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->group_by('pendaftaran.id_klien');
+
         $ambil = $this->db->get('pendaftaran');
         return $ambil->result();
     }
@@ -160,6 +162,7 @@ class Dataklien_m extends CI_Model {
         $this->db->where('penjadwalan.id_user', $id_psikolog);
         $this->db->where('pendaftaran.id_klien', $id_klien);
         $this->db->order_by('pendaftaran.waktu_daftar', 'desc');
+
         $ambil = $this->db->get('pendaftaran');
         return $ambil->result();
     }
@@ -169,6 +172,7 @@ class Dataklien_m extends CI_Model {
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->where('pendaftaran.id_klien', $id_klien);
         $this->db->order_by('pendaftaran.waktu_daftar', 'desc');
+
         $ambil = $this->db->get('pendaftaran');
         return $ambil->result();
     }
@@ -198,9 +202,9 @@ class Dataklien_m extends CI_Model {
     public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
         $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
         $this->db->where('diagnosis.id_pendaftaran', $id_pendaftaran);
+        
         $ambil = $this->db->get('diagnosis');
         return $ambil->row();
-
     }
 
     public function getKeluhan() { //untuk mengambil data keluhan dan catatan konseling klien
@@ -241,6 +245,55 @@ class Dataklien_m extends CI_Model {
         $this->db->where('id_user', $id_user);
         $this->db->update('klien', $status_konsel);
     }
+
+    public function klien_blm_mendaftar($id_psikolog) { //
+        $data = array();
+        $this->db->where('role', 4);
+        $ambil_user = $this->db->get('user')->result();
+        foreach ($ambil_user as $key => $value) { 
+            $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+            $this->db->where('penjadwalan.id_user', $id_psikolog);
+            $this->db->where('pendaftaran.id_klien', $value->id);
+            $ambil_pendaftaran = $this->db->get('pendaftaran')->result();
+
+            foreach ($ambil_pendaftaran as $key2 => $value2) {
+                $this->db->join('pendaftaran', 'pendaftaran.id = diagnosis.id_pendaftaran', 'left');
+                $this->db->where('pendaftaran.id_klien', $value2->id_klien);
+                $ambil_diagnosis = $this->db->get('diagnosis')->result();
+
+                if (empty($ambil_diagnosis)) {
+                    $data[$value->id] = $value;
+                }
+            }
+        }
+        return $data;
+    }
+
+    public function klien_blm_diagnosis($id_psikolog) {
+        $data = array();
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->where('penjadwalan.id_user', $id_psikolog);
+        $ambil_pendaftaran = $this->db->get('pendaftaran')->result();
+
+        foreach ($ambil_pendaftaran as $key => $value) {
+            //mengambil data diagnosis berdasarkan id_klien 
+            $this->db->join('pendaftaran', 'pendaftaran.id = diagnosis.id_pendaftaran', 'left');
+            $this->db->where('pendaftaran.id_klien', $value->id_klien);
+            $cek_diagnosis_klien = $this->db->get('diagnosis')->result();
+
+            $id_pendaftaran = $this->getIdPendaftaran($value->id, $value->id_klien, $value->waktu_daftar);
+            $this->db->where('id_pendaftaran', $id_pendaftaran->id);
+            $cek_diagnosis_pendaftaran = $this->db->get('diagnosis')->result();
+            
+                if (!empty($cek_diagnosis_klien) AND empty($cek_diagnosis_pendaftaran)){
+                        $data[] = $this->getIdPsi($value->id_klien);
+                }
+        }
+        return $data;
+
+    }
+
+    
 
 }
 

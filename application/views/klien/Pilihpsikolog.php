@@ -19,10 +19,6 @@
             href="<?php echo base_url('assets/css/bootstrap.css');?>">
 
         <!-- Custom fonts for this template -->
-        <!-- <link
-            rel="stylesheet"
-            type="text/css"
-            href="<?php echo base_url();?>assets/css/all.min.css"> -->
         <link
             href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
             rel="stylesheet"
@@ -41,7 +37,6 @@
             type='text/css'>
 
         <!-- Custom styles for this template -->
-        <!-- <link href="css/agency.min.css" rel="stylesheet"> -->
         <link
             rel="stylesheet"
             type="text/css"
@@ -113,8 +108,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <h2 class="section-heading text-uppercase">Pendaftaran</h2>
-                        <h3 class="section-subheading text-muted">Pilih jadwal konseling</h3>
+                        <h2 class="section-heading text-uppercase">Kotak Masuk</h2>
+                        <h3 class="section-subheading text-muted">Chat Psikolog Anda</h3>
                     </div>
                 </div>
 
@@ -125,9 +120,9 @@
                         <table class="table table-bordered" style="margin-top:20px;" id="klien1">
                             <thead class="text-center">
                                 <tr>
-                                    <th class="align-middle col5">No</th>
                                     <th class="align-middle">Nama Psikolog</th>
-                                    <th class="align-middle">Aksi</th>
+                                    <th class="align-middle">Chat</th>
+
                                 </tr>
                             </thead>
 
@@ -138,19 +133,19 @@
                                     $i++;
                                 ?>
                                 <tr>
-                                    <td><?php echo $i ?></td>
                                     <td><?php echo $jadwal->nama ?></td>
+
                                     <td class="btn-link">
-                                        <a
-                                            href="<?php echo site_url('Klien/Pendaftaran/pilih_jadwal/'.$jadwal->id)?>">
-                                            Pilih jadwal
+                                        <a href="<?php echo site_url('klien/inbox/pesan/'.$jadwal->id)?>">
+                                            Pesan
                                         </a>
                                     </td>
+
                                 </tr>
                                 <?php  endforeach; ?>
                             </tbody>
                         </table>
-                
+
                     </div>
 
                 </div>

@@ -8,22 +8,6 @@
         }
     }
 
-    // function check_not_login() {
-    //     $cek =& get_instance();
-    //     $user_session = $cek->session->userdata('id');
-    //     if(!$user_session) {
-    //         redirect('Login_controller/index');
-    //     }
-    // }
-
-    // function check_admin() {
-    //     $cek =& get_instance();
-    //     $cek->load->library('Fungsi');
-    //     if($cek->fungsi->user_login()->role != 1) {
-    //         redirect('Admin/Home/index');
-    //     }
-    // }
-
     //buat cek not login koordinator dkknya
     function check_not_login_admin() {
         $cek =& get_instance();
@@ -65,6 +49,26 @@
         $CI =& get_instance();
         $data = $CI->session->userdata("nama");
         return $data;
+    }
+
+    function hari_indonesia($hari_inggris) {
+        if ($hari_inggris == "Sun") {
+            $hari_indonesia = "Minggu";
+        } elseif($hari_inggris == "Mon") {
+            $hari_indonesia = "Senin";
+        } elseif($hari_inggris == "Tue") {
+            $hari_indonesia = "Selasa";
+        } elseif($hari_inggris == "Wed") {
+            $hari_indonesia = "Rabu";
+        } elseif($hari_inggris == "Thu") {
+            $hari_indonesia = "Kamis";
+        } elseif($hari_inggris == "Fri") {
+            $hari_indonesia = "Jumat";
+        } elseif($hari_inggris == "Sat") {
+            $hari_indonesia = "Sabtu";
+        }
+    
+        return $hari_indonesia;
     }
 
 

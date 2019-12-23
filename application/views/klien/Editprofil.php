@@ -86,8 +86,14 @@
 
                 <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
-                        href="<?php echo site_url('Klien/Pendaftaran/index')?>">Pendaftaran</a>
+                        href="<?php echo site_url('Klien/Pendaftaran/index')?>">Konseling</a>
                 </li>
+
+                <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="<?php echo site_url('Klien/inbox/index')?>">Kotak Masuk</a>
+                        </li>
 
                 <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
@@ -310,14 +316,6 @@
         <script
             type='text/javascript'
             src="<?php echo base_url();?>assets/jquery/jquery.min.js"></script>
-        <!-- <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/jquery/bootstrap.bundle.min.js"></script> -->
-
-        <!-- Plugin JavaScript -->
-        <!-- <script
-            type='text/javascript'
-            src="<?php echo base_url();?>assets/jquery/jquery.easing.min.js"></script> -->
 
         <!-- Contact form JavaScript -->
         <script

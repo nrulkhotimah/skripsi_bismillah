@@ -58,6 +58,12 @@ class Pendaftaran extends CI_Controller {
             }
         }
 
+        foreach ($data['jadwal'] as $hari => $value) {
+            $id_penjadwalan = $value->id;
+            $data['cek_pendaftaran'][$id_penjadwalan] = $this->Pendaftaran_m->cek_pendaftaran_klien($id_penjadwalan, $data['id_klien']);
+        }
+
+
         $this->load->view('klien/Pilihjadwal', $data);
 
     }

@@ -8,6 +8,10 @@ body {
   font-size: 13px !important;
 }
 
+.textchat {
+  font-size: 10px !important;
+}
+
 p {
   line-height: 1.75;
 }

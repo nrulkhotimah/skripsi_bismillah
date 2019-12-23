@@ -63,21 +63,17 @@
 
             <td class="align-middle">
                 <?php if(!$diagnosis[$DataKlien->id_user]): ?>
-                <a disable="" class="btn btn-primary disabled">Open</a>
+                <a disable="" class="btn btn-secondary disabled">Open</a>
                 <?php else: ?>
                     <?php if ($DataKlien->status_konsel == "selesai"): ?>
-                    <a
-                    class="btn btn-primary"
-                    href="<?php echo site_url('Ang/Dataklien/detailcatkonsel/'.$diagnosis[$DataKlien->id_user]['id']) ?>">Open</a>
+                    <a class="btn btn-primary" href="<?php echo site_url('Ang/Dataklien/detailcatkonsel/'.$diagnosis[$DataKlien->id_user]['id']) ?>">Open</a>
                     <?php else: ?>
-                    <a
-                    class="btn btn-primary"
-                    href="<?php echo site_url('Ang/Dataklien/catkonsel/'.$diagnosis[$DataKlien->id_user]['id']) ?>">Open</a>
+                    <a class="btn btn-primary" href="<?php echo site_url('Ang/Dataklien/catkonsel/'.$diagnosis[$DataKlien->id_user]['id']) ?>">Open</a>
                     <?php endif ?>
                 <?php endif ?>
             </td>
 
-                <td>
+                <td class="align-middle  <?php if($DataKlien->status_konsel == "selesai") {echo "bg-info";} ?>" >
                     <?php if ($DataKlien->status_konsel == "selesai"): ?>
                         Selesai
                         <?php else: ?>

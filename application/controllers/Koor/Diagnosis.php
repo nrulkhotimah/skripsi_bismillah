@@ -15,6 +15,7 @@ class Diagnosis extends CI_Controller {
 
     
     public function Diag($id_pendaftaran) { //proses untuk menampilkan pertanyaan 
+        $data['id_pendaftaran'] = $id_pendaftaran;
         //ifelse untuk mendapatkan pertanyaan selanjutnya
         if (!$this->session->userdata("jawaban")) { // if pertanyaan pertama
             $data['pertanyaan'] = $this->Diagnosis_m->pt_pertama();
@@ -45,6 +46,15 @@ class Diagnosis extends CI_Controller {
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/diagnosis/Diagnosis', $data);
+    }
+
+    public function tombol_back($id_pendaftaran) {
+        $data_jawaban = $this->session->userdata("jawaban");
+        $pertanyaan_terakhir = array_keys($_SESSION['jawaban']);
+        $id_pengetahuan_terakhir = end($pertanyaan_terakhir);
+        unset($_SESSION['jawaban'][$id_pengetahuan_terakhir]);
+        redirect('Koor/Diagnosis/Diag/'.$id_pendaftaran,'refresh');   
+
     }
 
     public function hasil($id_diagnosis) {

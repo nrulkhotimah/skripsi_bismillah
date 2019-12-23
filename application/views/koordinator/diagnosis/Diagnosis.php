@@ -21,6 +21,9 @@
                     <button class="btn btn-primary" value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
                     <button class="btn btn-secondary" value="Tidak" name="<?php echo $pertanyaan->id?>">Tidak</button>
                 <?php endif ?>
+                <?php if($this->session->userdata("jawaban")): ?>
+                    <a href="<?php echo base_url("koor/diagnosis/tombol_back/".$id_pendaftaran)?> " class="btn btn-warning">Back</a>
+                <?php endif ?>
             </form>
             </div>
         </div>
