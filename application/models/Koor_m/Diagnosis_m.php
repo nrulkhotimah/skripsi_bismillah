@@ -103,6 +103,7 @@ class Diagnosis_m extends CI_Model {
 
     public function ambil_diagnosis($id_diagnosis) {
         $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
+        $this->db->join('pendaftaran', 'pendaftaran.id = diagnosis.id_pendaftaran');
         $this->db->where('diagnosis.id', $id_diagnosis);
         $ambil = $this->db->get('diagnosis');
         return $ambil->row();

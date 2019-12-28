@@ -104,7 +104,7 @@
             </div>
         </nav>
 
-        <div class="col-md-12 px-md-3 mt-n1 textchat" >
+        <div class="col-md-12" style="margin-top: 8% !important; font-size: 10px !important;">
             <div class="clearfix"></div>
             <?php foreach ($pesan as $key => $value): ?>
             <?php if($value->dari_user==$id_login): ?>
@@ -113,10 +113,10 @@
                     <p class="card-text text-dark float-left">
                         <?php echo $value->tanggal_kirim_pesan?>
                     </p>
-                    <p class="card-text text-dark float-right">
+                    <p class="card-text text-dark float-right" >
                         <?php echo $value->status_pesan?></p>
                     <div class="clearfix"></div>
-                    <h5 class="card-title">
+                    <h5 class="card-title" style="font-size: 15px !important;">
                         <?php echo $value->isi_pesan?></h5>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                         <?php echo $value->tanggal_kirim_pesan?>
                     </p>
                     <div class="clearfix"></div>
-                    <h5 class="card-title">
+                    <h5 class="card-title" style="font-size: 15px !important;">
                         <?php echo $value->isi_pesan?></h5>
                 </div>
             </div>
@@ -140,7 +140,7 @@
             <form method="post" action="<?php echo base_url("klien/inbox/tambah_pesan") ?>">
                 <input type="hidden" name="kepada_user" value="<?php echo $kepada_user ?>">
                 <div class="form-group">
-                    <textarea class="form-control" name="isi_pesan" placeholder="tulis disini"></textarea>
+                    <textarea class="form-control" style="font-size: 13px !important;" name="isi_pesan" placeholder="tulis disini"></textarea>
                 </div>
                 <button class="btn btn-primary">Kirim</button>
             </form>

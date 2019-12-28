@@ -123,12 +123,12 @@ class Dataklien_m extends CI_Model {
         return $this->db->get()->first_row();
     }
 
-    public function getPendaftaranPsikolog($id_psikolog) {  
+    public function getPendaftaranPsikolog($id_psikolog) { 
         $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
         $this->db->join('klien', 'klien.id_user = pendaftaran.id_klien', 'left');
         $this->db->where('penjadwalan.id_user', $id_psikolog);
-        $this->db->order_by('pendaftaran.waktu_daftar','asc');
+        $this->db->order_by('pendaftaran.waktu_daftar','desc');
         $ambil = $this->db->get('pendaftaran');
         $data = $ambil->result();
 

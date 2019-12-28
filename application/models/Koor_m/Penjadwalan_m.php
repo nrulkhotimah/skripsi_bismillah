@@ -111,6 +111,8 @@ class Penjadwalan_m extends CI_Model {
     public function get_jadwal_daftar($id_pendaftaran) { //untuk mengambil jadwal terbaru klien
         $this->db->join("penjadwalan", "penjadwalan.id=pendaftaran.id_penjadwalan");        
         $this->db->where("pendaftaran.id", $id_pendaftaran);
+        // $this->db->order_by('pendaftaran.id', 'desc');
+        
         $ambil = $this->db->get("pendaftaran");
         return $ambil->row_array();
     }

@@ -8,6 +8,7 @@ class Diagnosis extends CI_Controller {
         $this->load->helper('url_helper');
         $this->load->model('Koor_m/Diagnosis_m');
         $this->load->model('Koor_m/Dataklien_m');
+        $this->load->model('Koor_m/Penjadwalan_m');
 		$this->load->library('session');
 		
         check_not_login_koordinator();
@@ -58,12 +59,22 @@ class Diagnosis extends CI_Controller {
     }
 
     public function hasil($id_diagnosis) {
+        $data['id_diagnosis'] = $id_diagnosis;
         $data['diagnosis'] = $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
-            $data['fakta_diagnosis'] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);
+        $data['fakta_diagnosis'] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);
+        // $data['diagnosis'] = $this->Penjadwalan_m->get_diagnosis_terbaru($id_diagnosis);
+
         
-            $this->load->view('koordinator/template/header');
-            $this->load->view('koordinator/template/footer');
-            $this->load->view('koordinator/diagnosis/Hasil', $data);
+        // echo "<pre>";
+        // print_r ($data[]);
+        // echo "</pre>";
+        // exit();
+        
+
+
+        $this->load->view('koordinator/template/header');
+        $this->load->view('koordinator/template/footer');
+        $this->load->view('koordinator/diagnosis/Hasil', $data);
         
     }
 

@@ -124,19 +124,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="password">Password</label>
-                        <input
-                            name="password"
-                            type="password"
-                            class="form-control  <?php echo form_error('password') ? 'is-invalid':'' ?>"
-                            id="inputpassword"
-                            placeholder="password . . .">
-                        <div class="invalid-feedback">
-                            <?php echo form_error('password') ?>
-                        </div>
-                    </div> -->
-
                     <input
                         type="submit"
                         class="btn btn-primary"

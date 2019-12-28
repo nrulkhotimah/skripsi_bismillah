@@ -26,32 +26,57 @@
 
     <tbody class="text-center">
 
-        <form method="post" enctype="multipart/form-data">
+        <form name="catatan" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan keluhan
                 </label>
-                <textarea class="form-control  <?php echo form_error('keluhan') ? 'is-invalid':'' ?>" id="keluhan" rows="3" name="keluhan" ><?php echo $diagnosis->keluhan ?> </textarea>
+                <textarea
+                    class="form-control"
+                    id="keluhan"
+                    rows="3"
+                    name="keluhan"
+                    required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan intervensi konseling
                 </label>
-                <textarea class="form-control  <?php echo form_error('catatan') ? 'is-invalid':'' ?>" id="catatan" rows="3" name="catatan" ><?php echo $diagnosis->catatan ?> </textarea>
+                <textarea
+                    class="form-control <?php echo form_error('catatan') ? 'is-invalid':'' ?>"
+                    id="catatan"
+                    rows="3"
+                    name="catatan"
+                    required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan tugas rumah
                 </label>
-                <textarea class="form-control  <?php echo form_error('tugas_rumah') ? 'is-invalid':'' ?>" id="tugas_rumah" rows="3" name="tugas_rumah" ><?php echo $diagnosis->tugas_rumah ?> </textarea>
+                <textarea
+                    class="form-control <?php echo form_error('tugas_rumah') ? 'is-invalid':'' ?>"
+                    id="tugas_rumah"
+                    rows="3"
+                    name="tugas_rumah"
+                    required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Masukkan saran
                 </label>
-                <textarea class="form-control  <?php echo form_error('saran') ? 'is-invalid':'' ?>" id="saran" rows="3" name="saran" ><?php echo $diagnosis->saran ?> </textarea>
+                <textarea
+                    class="form-control <?php echo form_error('saran') ? 'is-invalid':'' ?>"
+                    id="saran"
+                    rows="3"
+                    name="saran"
+                    required></textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="float:right; width:100px;">Simpan</button>
+            <button class="btn btn-primary m-1" type="submit" style="float:right; width:100px;">Simpan</button> 
+            <button href="<?=base_url("Koor/Dataklien/ubah_status/".$diagnosis->id_klien.'/selesai')?>" class="btn btn-warning m-1" style="float:right;">Selesai Konseling</button>
+
+           
+
+
         </form>
     </tbody>
 </table>
