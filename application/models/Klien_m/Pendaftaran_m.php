@@ -40,8 +40,6 @@ class Pendaftaran_m extends CI_Model {
         $this->db->where('id_klien', $id_klien);
         $ambil = $this->db->get('pendaftaran');
         return $ambil->row();
-
-        
     }
 
     public function cek_pendaftaran_kliens($waktu_daftar, $id_klien) { 
@@ -49,11 +47,7 @@ class Pendaftaran_m extends CI_Model {
         $this->db->where('id_klien', $id_klien);
         $ambil = $this->db->get('pendaftaran');
         return $ambil->row();
-
-        
     }
-
-
 
     public function pendaftaran_terbaru($id_klien) { //fungsi untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
         $this->db->join('penjadwalan', 'pendaftaran.id_penjadwalan = penjadwalan.id', 'left');

@@ -16,7 +16,7 @@ class Lupa_password_m extends CI_Model {
             $length = 8;
             $randomString = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, $length);
 
-            //menyimoan ke DB
+            //menyimpan ke DB
             $data_inputan['password'] = md5($randomString);
             $this->db->where('email', $inputan['email']);
             $this->db->update('user', $data_inputan);
@@ -64,15 +64,10 @@ class Lupa_password_m extends CI_Model {
 			{
 				return "sukses";
 			}
-
-            
         } else {
             return "email salah";
         }
-
-        
     }
-
 }
 
 ?>

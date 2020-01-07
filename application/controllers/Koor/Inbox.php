@@ -12,7 +12,6 @@ class Inbox extends CI_Controller {
         $this->load->model('Koor_m/Penjadwalan_m');
         $this->load->model('Koor_m/Diagnosis_m');
         $this->load->model('Koor_m/Inbox_m');
-
         $this->load->library('session');
 
         check_not_login_koordinator();
@@ -57,8 +56,6 @@ class Inbox extends CI_Controller {
         $this->Inbox_m->tambah_pesan($this->input->post());
         redirect('koor/inbox/pesan/'.$this->input->post('kepada_user'), 'refresh');
     }
-
-
 }
 
 ?>

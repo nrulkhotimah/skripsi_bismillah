@@ -75,7 +75,7 @@ class Home extends CI_Controller {
 	public function update($id) {  //proses update untuk edit profil
         $post = $this->input->post();
 
-        if(empty($post['password_lama'])) { //jika pass lama kosong ..
+        if(empty($post['password_lama'])) { //jika pass lama kosong maka, 
             unset($post['password_lama']);
             unset($post['password_baru']);
             unset($post['password_konfirmasi']);

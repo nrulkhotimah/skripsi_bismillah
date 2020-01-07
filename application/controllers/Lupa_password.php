@@ -7,8 +7,10 @@ class Lupa_password extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Lupa_password_m');
+
         $this->load->helper('form');
         $this->load->helper('url');
+
         $this->load->library('form_validation');
         $this->load->library('session');
 
@@ -30,10 +32,6 @@ class Lupa_password extends CI_Controller {
 
        $this->load->view('login/Lupapassword');
     }
-
-
-    
 }
-
 
 ?>

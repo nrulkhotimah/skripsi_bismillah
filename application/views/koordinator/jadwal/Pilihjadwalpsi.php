@@ -34,8 +34,6 @@
         <?php
             $i=0;
             foreach($user as $jadwal):
-            // print_r($DataKlien);
-             // exit();
             $i++;
         ?>
         <tr>

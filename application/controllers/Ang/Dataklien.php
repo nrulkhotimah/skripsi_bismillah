@@ -92,7 +92,6 @@ class Dataklien extends CI_Controller {
             $data['diagnosis'][$value->id_user] = $this->Penjadwalan_m->get_diagnosis_terbaru($jadwal['id']);
             $data['gangguan'][$value->id_user] = $this->Penjadwalan_m->get_gangguan_daftar($data['diagnosis'][$value->id_user]['id']);
             $data['penjadwalan'][$value->id_user] = $this->Penjadwalan_m->get_jadwal_daftar($jadwal['id']);
-            
         }
 
         $this->load->view('anggota/template/header');
@@ -102,6 +101,7 @@ class Dataklien extends CI_Controller {
 
     public function edit($id) { //open page edit data klien
         $data['user'] = $this->Dataklien_m->getById($id);
+
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
         $this->load->view("anggota/klien/Editdataklien", $data);
@@ -125,7 +125,7 @@ class Dataklien extends CI_Controller {
     }
 
     public function catkonsel($id_diagnosis) { //open page catatan konseling
-         $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
+        $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
         $inputan = $this->input->post();
         if ($inputan) {
             $this->Diagnosis_m->ubah_catkonsel($inputan, $id_diagnosis); 

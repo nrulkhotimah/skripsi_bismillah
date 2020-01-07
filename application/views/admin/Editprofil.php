@@ -1,12 +1,9 @@
 <div style="float:right">
     <span class="title font-weight-bold">EDIT PROFIL</span>
 </div>
-
 </div>
 
-
 <?php echo $this->session->flashdata('sukses'); ?>
-
 
 <div class="col-md-12">
 <form

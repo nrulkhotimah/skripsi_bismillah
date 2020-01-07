@@ -39,11 +39,11 @@ class Pendaftaran extends CI_Controller {
     }
 
     public function pilih_jadwal($id_user, $id_psikolog) { //untuk memilih jadwal 
-        $data['id_klien'] = $id_user; //untuk mengirimkan id_user dari views
+        $data['id_klien'] = $id_user; //untuk mengirimkan id_user dari view
         $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog); //untuk memanggil function getPenjadwalan
         foreach ($data['penjadwalan'] as $key => $value) {
             $hari_jadwal[] = $value->hari; //mengambil data hari
-            $data['jadwal'][$value->hari] = $value; // ?
+            $data['jadwal'][$value->hari] = $value;
         }
 
         date_default_timezone_set("Asia/Jakarta");
@@ -87,7 +87,6 @@ class Pendaftaran extends CI_Controller {
             $id_klien = $value->id_user;
             $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbarus($id_klien);
             
-            
              //untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
             if(!empty($pendaftaran[$id_klien])) {
                 $dataDiagnosis =  $this->Pendaftaran_m->check_data_diagnosis($pendaftaran[$id_klien]->id_pendaftarans);
@@ -95,8 +94,6 @@ class Pendaftaran extends CI_Controller {
                 $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
                 $data['id_pendaftaran'][$id_klien] = $pendaftaran[$id_klien]->id_pendaftarans;
                 endif;
-            } else {
-                // $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
             }
 
         }
@@ -106,7 +103,7 @@ class Pendaftaran extends CI_Controller {
         $this->load->view('admin/Hapuspendaftaran', $data);
     }
 
-    public function hapus_daftar($id) {
+    public function hapus_daftar($id) { //untuk menghapus pendaftaran terakhir klien yang sudah lama tidak melakukan diagnosis
         
         $this->db->where('id', $id);
         $this->db->delete('pendaftaran');

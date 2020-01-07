@@ -22,7 +22,6 @@ class Inbox extends CI_Controller {
         if (empty($data_pendaftaran)) {
             $data['user'] = $this->Datapakar_m->getAll();
         } else {
-
             $data['user'][] = $this->Datapakar_m->getById($data_pendaftaran->id_user);
         }
 
@@ -30,7 +29,6 @@ class Inbox extends CI_Controller {
     }
  
     public function pesan($id_user) {
-
         $data['id_login'] = $this->session->userdata("id");
         $data['kepada_user'] = $id_user;
         $id_psikolog = $this->session->userdata("id");
@@ -53,7 +51,6 @@ class Inbox extends CI_Controller {
         $this->db->where('id', $id);
         $this->db->delete('pesan');
         $this->session->set_flashdata('sukses', '<div class= "alert alert-success">Pesan berhasil dibersihkan</div>'); 
-        // $data['user'] = $this->Datapakar_m->getAll();
         
         redirect('klien/inbox/index', 'refresh');
     }

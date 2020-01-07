@@ -74,10 +74,7 @@ class Diagnosis extends CI_Controller {
         $data['user'] = $this->Dataklien_m->getPendaftaranPsikologs($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) {
             $data['pendaftaran'][$value->id_klien] = $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
-            // var_dump($value->waktu_daftar);
-            // echo '<br>';
         }
-        // die;
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
@@ -85,7 +82,7 @@ class Diagnosis extends CI_Controller {
         
     }
 
-    public function Pertanyaan() {
+    public function Pertanyaan() { //untuk menampilkan pertanyaan 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/diagnosis/PertanyaanDiagnosis');

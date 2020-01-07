@@ -208,7 +208,6 @@ class Dataklien_m extends CI_Model {
         $this->db->where('waktu_daftar', $waktu_daftar);
         $ambil = $this->db->get('pendaftaran');
         return $ambil->row();
-
     }
 
     public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
@@ -255,7 +254,6 @@ class Dataklien_m extends CI_Model {
 
     public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum
         $this->db->where('id_user', $id_user);
-        // $this->db->set($status_konsel);
         $this->db->set('status_konsel', 'NOW()', FALSE);
         $this->db->update('klien', $status_konsel);
     }
@@ -304,11 +302,7 @@ class Dataklien_m extends CI_Model {
                 }
         }
         return $data;
-
     }
-
-    
-
 }
 
 ?>

@@ -54,16 +54,13 @@ class Home extends CI_Controller {
         ];
     }
 
-	public function index() //untuk menampilkan page home 
-	{
-
+	public function index() { //untuk menampilkan page home 
         $data['baru_mendaftar'] = $this->Dataklien_m->klien_blm_mendaftar($this->session->userdata("id"));
         $data['belum_diagnosis'] = $this->Dataklien_m->klien_blm_diagnosis($this->session->userdata("id"));
 
         $this->load->view('koordinator/template/header', $data);
         $this->load->view('koordinator/template/footer');
 		$this->load->view('koordinator/Home.php');
-
 	}
 	 
 	public function editProfil() { //untuk open edit profil
@@ -78,7 +75,7 @@ class Home extends CI_Controller {
     public function update($id) { //proses update untuk edit profil
         $post = $this->input->post();
 
-        if(empty($post['password_lama'])) { //jika pass lama kosong ..
+        if(empty($post['password_lama'])) { //jika pass lama kosong maka, 
             unset($post['password_lama']);
             unset($post['password_baru']);
             unset($post['password_konfirmasi']);
@@ -114,9 +111,5 @@ class Home extends CI_Controller {
         }
 
     }
-    
-
-	
-
-    
+        
 }

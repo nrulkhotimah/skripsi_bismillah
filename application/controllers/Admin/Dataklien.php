@@ -75,8 +75,7 @@ class Dataklien extends CI_Controller {
         ];
     }
   
-    public function index() {
-        // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
+    public function index() { // membuat data yang akan dikirim ke view dalam bentuk array asosiatif
         $data['user'] = $this->Dataklien_m->getAll();
         foreach ($data['user'] as $key => $value) {
             $id_klien = $value->id_user;

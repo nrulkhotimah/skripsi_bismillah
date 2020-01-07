@@ -3,7 +3,7 @@
 </div>
 </div>
 
-<!-- ========== pertanyaan 1 =========== -->
+<!-- ========== pertanyaan  =========== -->
 <div class="col-md-12 satu">
 <div class="card">
     <div class="card-header">

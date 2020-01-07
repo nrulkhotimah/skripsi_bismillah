@@ -93,7 +93,7 @@ class Editprofil_m extends CI_Model {
         $id_user = $id;
         $id_klien = $post['id_klien'];
 
-        $user['nama'] = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
+        $user['nama'] = $post['nama'];
         $user['nomor_telepon'] = $post['nomor_telepon'];
         $user['jenis_kelamin'] = $post['jenis_kelamin'];
         $user['alamat'] = $post['alamat'];

@@ -65,9 +65,7 @@ class Home extends CI_Controller {
                 redirect('admin/home/edit_profil', 'refresh'); 
             }
         }
-
     }
-
 }
 
 

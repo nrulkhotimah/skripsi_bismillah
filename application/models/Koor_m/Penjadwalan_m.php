@@ -92,7 +92,6 @@ class Penjadwalan_m extends CI_Model {
         $query = $this->db->get("pendaftaran");
         return $query->result();
     }
-
     
     public function get_diagnosis_terbaru($id_pendaftaran) { //untuk mengambil diagnosis yang paling terbaru di menu dataklien       
         $this->db->where("diagnosis.id_pendaftaran", $id_pendaftaran);
@@ -136,7 +135,6 @@ class Penjadwalan_m extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->delete('penjadwalan', array('id' => $id));
     }
-    
     
 }
 

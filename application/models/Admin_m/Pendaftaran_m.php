@@ -35,9 +35,8 @@ class Pendaftaran_m extends CI_Model {
         return $query->row();
     }
 
-    public function pendaftaran_terbarus($id_klien) { //fungsi untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
+    public function pendaftaran_terbarus($id_klien) { //fungsi untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru. hanya di pakai di bagian hapus pendaftaran
         $this->db->select('penjadwalan.* ,pendaftaran.*,pendaftaran.id as id_pendaftarans');
-        // $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id');
         $this->db->join('penjadwalan', 'pendaftaran.id_penjadwalan = penjadwalan.id', 'left');
         $this->db->where('pendaftaran.id_klien', $id_klien); 
         $this->db->order_by('id_pendaftarans', 'desc');

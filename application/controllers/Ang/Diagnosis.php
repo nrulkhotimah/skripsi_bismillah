@@ -56,7 +56,6 @@ class Diagnosis extends CI_Controller {
         unset($_SESSION['jawaban'][$id_pengetahuan_terakhir]);
         redirect('Ang/Diagnosis/Diag/'.$id_pendaftaran,'refresh');   
 
-
     }
 
     public function hasil($id_diagnosis) {
@@ -83,7 +82,7 @@ class Diagnosis extends CI_Controller {
         
     }
 
-    public function Pertanyaan() {
+    public function Pertanyaan() { //untuk menampilkan pertanyaan diagnosis
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');
 		$this->load->view('anggota/diagnosis/PertanyaanDiagnosis');

@@ -37,7 +37,6 @@ class Penjadwalan extends CI_Controller {
         $data['user'] = $this->Penjadwalan_m->getJadwalPsi($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) { 
             $data_pendaftaran = $this->Penjadwalan_m->getPendaftaranJadwal($value->id); //proses mengambil jadwal yg dipilih klien
-            // $data['sisa'][$value->id] = $value->kuota - count($data_pendaftaran); //proses perhitungan kuota
         }
         $this->load->view('anggota/template/header');
         $this->load->view('anggota/template/footer');

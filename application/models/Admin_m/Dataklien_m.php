@@ -138,8 +138,7 @@ class Dataklien_m extends CI_Model {
         <h3>Selamat bergabung di Sistem Diagnosis Banding Gangguan Afektif</h3>
         <p>Silahkan klik link dibawah ini untuk mengaktivasi akun Anda </p>
         <a href="http://localhost/skripsi/Admin/Register/aktivasi/'.$post["username"].'" type:button; style=color: #fff; background-color: #42a4f5; display: inline-block; padding: 6px 12px; font-size:14px; font-weight:400; border-radius: 25px;
-        border: 2px solid #42a4f5;> Aktivasi Akun</a> 
-        ';
+        border: 2px solid #42a4f5;> Aktivasi Akun</a>';
 
         $mail->IsSMTP();
 
@@ -156,16 +155,14 @@ class Dataklien_m extends CI_Model {
         $mail->SMTPSecure = "tls"; // sets the prefix to the servier 
         $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server 
         $mail->Port = 587; // set the SMTP port for the GMAIL server 
-        $mail->Username = "nrulkhotimh@gmail.com"; // GMAIL username 
-        $mail->Password = "nurul0910"; // GMAIL password
+        $mail->Username = "nrulkhotimh@gmail.com"; // GMAIL username .. pakai gmail pribadi
+        $mail->Password = "nurul09"; // GMAIL password .. pass email gmail pribadi
         $mail->SetFrom('nrulkhotimh@gmail.com', 'Admin');
         $mail->AddReplyTo("nrulkhotimh@gmail.com","Admin");
         $mail->Subject = "Aktivasi";
         $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
 
         $mail->MsgHTML($body);
-
-
 
         $address = $post['email']; 
         $mail->AddAddress($address, "");
@@ -201,14 +198,11 @@ class Dataklien_m extends CI_Model {
 
             return "sukses";
         }
-        
-        
-
     }
 
     public function update($post,$id) { //fungsi untuk menyimpan data klien yang di edit
-        $user = new stdClass(); //ini adalah objek
-        $user->nama = $post['nama']; //ini adalah variabel. dimana variabelnya ada dua $user dengn atribut nama dan $post dg atribut 'nama'
+        $user = new stdClass(); 
+        $user->nama = $post['nama'];
         $user->nomor_telepon = $post['nomor_telepon'];
         $user->jenis_kelamin = $post['jenis_kelamin'];
         $user->alamat = $post['alamat'];
@@ -239,7 +233,6 @@ class Dataklien_m extends CI_Model {
 
     
     public function approve($username) {
-
         $inputan['approve'] = "1";
         $data_user = $this->getByUsername($username);
         $this->db->where('id_user', $data_user->id_user);

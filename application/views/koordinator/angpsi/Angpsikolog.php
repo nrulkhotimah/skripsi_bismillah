@@ -48,14 +48,6 @@
 
                             </td>
 
-                            <!-- <td class="align-middle">
-                                <form action="">
-                                    <a href="<?php echo site_url('Koor/Anggota/delete/'.$DataKlien->id) ?>">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                </form>
-                            </td> -->
-
                             <td class="align-middle">
                                         <a
                                             onclick="deleteConfirm('<?php echo site_url('Koor/Anggota/delete/'.$DataKlien->id) ?>')"

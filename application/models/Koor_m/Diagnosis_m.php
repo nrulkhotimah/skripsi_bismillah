@@ -117,16 +117,11 @@ class Diagnosis_m extends CI_Model {
     }
 
     public function ubah_catkonsel($inputan, $id_diagnosis) { //untuk mengubah catatan konseling di menu dataklien
-        
         $this->db->where('id', $id_diagnosis);
         $this->db->update('diagnosis', $inputan);
-
-        
     }
 
 }
-
-
 
 /* End of file ModelName.php */
 

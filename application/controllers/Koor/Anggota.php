@@ -53,7 +53,7 @@ class Anggota extends CI_Controller {
             ['field' => 'password',
             'label' => 'Password',
             'rules' => 'rules'
-        ],
+            ],
         ];
     }
 
@@ -124,9 +124,7 @@ class Anggota extends CI_Controller {
         $data['user'] = $this->Angpsi_m->getAll();
 
         redirect('Koor/Anggota/index', 'refresh');
-
     }
-
 
 }
 

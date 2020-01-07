@@ -9,7 +9,6 @@ class Home extends CI_Controller {
         $this->load->model('Klien_m/Editprofil_m');
         $this->load->model('Klien_m/Diagnosis_m');
 		$this->load->model('Klien_m/Pendaftaran_m');
-        
         $this->load->helper('url_helper');
 		$this->load->library('session');
 		
@@ -81,15 +80,12 @@ class Home extends CI_Controller {
     }
 
 	public function index() {
-
 		$this->load->view('klien/Home.php');
 	}
 
     public function editProfil() {
-
 		$id = $this->session->userdata('id');
 		$data['user'] = $this->Editprofil_m->getById($id);
-		// print_r($data); exit();
 
 		$this->load->view('klien/Editprofil', $data);
 	}
@@ -138,16 +134,9 @@ class Home extends CI_Controller {
 
     public function datadiagnosis() {
         $data['pendaftaran'] = $this->Pendaftaran_m->pendaftaranKlien($this->session->userdata("id"));
-        // var_dump($data['pendaftaran']);die;
-        
-        // echo "<pre>";
-        // print_r ($data['pendaftaran']);
-        // echo "</pre>";
-        // exit();
         
         foreach ($data['pendaftaran'] as $key => $value) {
             $data['diagnosis'][$value->id_gangguan][$value->id_pendaftaran] = $this->Diagnosis_m->getIdDiagnosis($value->id_gangguan, $value->id_pendaftaran);
-            // var_dump($value->id_gangguan, $value->id_pendaftaran);die;
             $data['psikolog'] = $this->Pendaftaran_m->getIdPsi($value->id_user);
 
             if (isset($data['diagnosis'][$key]->id_gangguan)) {

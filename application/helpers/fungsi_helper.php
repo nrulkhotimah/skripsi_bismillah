@@ -13,7 +13,6 @@
         $cek =& get_instance();
         $user_session = $cek->session->userdata('role');
         if($user_session != 1) {
-           // $cek->session->unset_userdata();
             redirect('Login_controller/index');
         }
     }
@@ -22,7 +21,6 @@
         $cek =& get_instance();
         $user_session = $cek->session->userdata('role');
         if($user_session != 2) {
-           // $cek->session->unset_userdata();
             redirect('Login_controller/index');
         }
     }
@@ -31,7 +29,6 @@
         $cek =& get_instance();
         $user_session = $cek->session->userdata('role');
         if($user_session != 3) {
-           // $cek->session->unset_userdata();
             redirect('Login_controller/index');
         }
     }
@@ -40,7 +37,6 @@
         $cek =& get_instance();
         $user_session = $cek->session->userdata('role');
         if($user_session != 4) {
-           // $cek->session->unset_userdata();
             redirect('Login_controller/index');
         }
     }
@@ -70,7 +66,5 @@
     
         return $hari_indonesia;
     }
-
-
 
 ?>

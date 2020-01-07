@@ -27,7 +27,6 @@ class Inbox extends CI_Controller {
             $data['diagnosis'][$value->id_user] = $this->Penjadwalan_m->get_diagnosis_terbaru($jadwal['id']);
             $data['gangguan'][$value->id_user] = $this->Penjadwalan_m->get_gangguan_daftar($data['diagnosis'][$value->id_user]['id']);
             $data['penjadwalan'][$value->id_user] = $this->Penjadwalan_m->get_jadwal_daftar($jadwal['id']);
-            
         }
 
         $this->load->view('anggota/template/header');
@@ -35,7 +34,7 @@ class Inbox extends CI_Controller {
         $this->load->view('anggota/inbox/Pilihklien', $data);
     }
 
-    public function pesan($id_user) {
+    public function pesan($id_user) { //untuk menampilkan pesan 
 
         $data['id_login'] = $this->session->userdata("id");
         $data['kepada_user'] = $id_user;
@@ -52,7 +51,7 @@ class Inbox extends CI_Controller {
         $this->load->view('anggota/inbox/Tampilpesan', $data);
     }
 
-    public function tambah_pesan() {
+    public function tambah_pesan() { //untuk tambah pesan
         $this->Inbox_m->tambah_pesan($this->input->post());
         redirect('ang/inbox/pesan/'.$this->input->post('kepada_user'), 'refresh');
     }

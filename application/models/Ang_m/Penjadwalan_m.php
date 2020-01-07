@@ -135,8 +135,6 @@ class Penjadwalan_m extends CI_Model {
         $this->db->where('id', $id);
         return $this->db->delete('penjadwalan', array('id' => $id));
     }
-    
-    
 }
 
 ?>

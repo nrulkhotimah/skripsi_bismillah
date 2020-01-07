@@ -16,11 +16,6 @@ class Inbox_m extends CI_Model {
         $this->db->insert("pesan", $data);
     }
 
-    // public function delete($id) { //fungsi untuk menghapus data pakar
-    //     $this->db->where('id', $id);
-    //     return $this->db->delete($this->_table, array('id' => $id));
-    // }
-
     public function ubah_pesan($id_pesan, $id_dari, $id_kepada) {
         $data['status_pesan'] = "terbaca";
         $this->db->where('id', $id_pesan);

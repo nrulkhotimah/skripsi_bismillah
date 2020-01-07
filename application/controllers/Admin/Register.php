@@ -72,7 +72,7 @@ class Register extends CI_Controller {
         ];
     }
 
-    public function index() {
+    public function index() { 
         $this->load->view('klien/register/registrasi');
     }
 
@@ -84,7 +84,6 @@ class Register extends CI_Controller {
         $validation = $this->form_validation;
         $validation->set_rules($this->rules());
         
-
         if($validation->run()) {
 
             $hasil = $this->Dataklien_m->tambah_user($post);
@@ -94,17 +93,15 @@ class Register extends CI_Controller {
             } else {
                 $this->session->set_flashdata('msg', '<div class="alert alert-warning">Pendaftaran Anda gagal. Email Anda salah. </div>');
                 redirect('klien/register/Registrasi/index');
-    
             }
         } else {
             $error=validation_errors();
             $this->session->set_flashdata('msg', '<div class="alert alert-warning">Gagal disimpan</div>');
             $this->load->view("klien/register/Registrasi");
         }
-
     }
 
-    public function aktivasi($username) {
+    public function aktivasi($username) { //untuk melakukan aktivasi user yang baru melakukan registrasi
         $this->Dataklien_m->approve($username);
         $this->session->set_flashdata('msg', '<div class="alert alert-info">Aktivasi akun Anda berhasil. Silahkan login sesuai akun Anda </div>');
         redirect('Login_controller');

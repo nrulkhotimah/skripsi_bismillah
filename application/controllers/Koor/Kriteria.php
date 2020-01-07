@@ -6,10 +6,9 @@ class Kriteria extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		check_not_login_koordinator();
-
 		$this->load->model('Koor_m/Kriteria_m');
-		
+
+		check_not_login_koordinator();
 	}
 	
 	public function index() {

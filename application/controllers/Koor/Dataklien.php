@@ -103,8 +103,6 @@ class Dataklien extends CI_Controller {
     public function edit($id) { //open page edit data klien
         $data['user'] = $this->Dataklien_m->getById($id);
 
-        
-
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/klien/Editdataklien", $data);
@@ -201,6 +199,7 @@ class Dataklien extends CI_Controller {
 
     public function riwayat() { //open page riwayat yang di tangani oleh koor
         $data['user'] = $this->Dataklien_m->getPendaftaranPsikolog($this->session->userdata('id'));
+        
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/Riwayatdiagnosis", $data);
@@ -208,6 +207,7 @@ class Dataklien extends CI_Controller {
 
     public function seluruhriwayat() { //open page riwayat seluruh klien
         $data['user'] = $this->Dataklien_m->getPendaftaranSemua();
+        
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view("koordinator/Seluruhriwayat", $data);

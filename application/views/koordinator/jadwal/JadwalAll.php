@@ -20,8 +20,6 @@
 </nav>
 
 <div class="col-md-12">
-<!-- <span><?php echo $user->nama ?></span> <span><?php echo $nomor_telepon
-?></span> -->
 
 <!-- data tabel -->
 <table

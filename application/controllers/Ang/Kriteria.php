@@ -26,7 +26,7 @@ class Kriteria extends CI_Controller {
 		$this->load->view('anggota/kriteriakeputusan/Kriteriakeputusan', $data);
 	}
 	
-	public function edit() {
+	public function edit() { //untuk mengedit pertanyaan pada flowchart yang ada
 		$data_pengetahuan = $this->Kriteria_m->tampil();
 		foreach ($data_pengetahuan as $key => $value) {
 			$data['pengetahuan'][$value->id] = $value;
@@ -47,11 +47,6 @@ class Kriteria extends CI_Controller {
 	}
 
 	public function deskripsi() {
-		// $data_pengetahuan = $this->Kriteria_m->tampil();
-		// foreach ($data_pengetahuan as $key => $value) {
-		// 	$data['pengetahuan'][$value->id] = $value;
-		// }
-
 		$data['gangguan'] = $this->Kriteria_m->tampil_gangguan();
 		$data['fakta'] = $this->Kriteria_m->tampil_fakta();
 		

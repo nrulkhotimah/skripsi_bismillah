@@ -30,7 +30,6 @@ class Kriteria_m extends CI_Model {
         }
     }
 
-
     public function tampil_gangguan() { //kenapa ini pakai foreach
         $ambil = $this->db->get('deskripsi_gangguan');
         $data = $ambil->result();
@@ -49,7 +48,6 @@ class Kriteria_m extends CI_Model {
         return $tampil;
     }
     
-
 }
 
 ?>

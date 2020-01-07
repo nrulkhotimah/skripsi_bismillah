@@ -21,7 +21,6 @@ class Pendaftaran extends CI_Controller {
         if (empty($data_pendaftaran)) {
             $data['user'] = $this->Datapakar_m->getAll();
         } else {
-
             $data['user'][] = $this->Datapakar_m->getById($data_pendaftaran->id_user);
         }
 
@@ -63,14 +62,10 @@ class Pendaftaran extends CI_Controller {
         }
 
         foreach ($data['waktu_daftar'] as $hari => $value) {
-            // $id_penjadwalan = $value->id;
             $data['cek_pendaftaran'][$id_penjadwalan] = $this->Pendaftaran_m->cek_pendaftaran_kliens($value, $data['id_klien']);
         }
 
-
-
         $this->load->view('klien/Pilihjadwal', $data);
-
     }
 
     public function simpan_jadwal($id_klien, $id_penjadwalan, $tanggal_daftar) { //untuk menyimpan jadwal yang telah di pilih klien
