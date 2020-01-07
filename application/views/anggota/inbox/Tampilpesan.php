@@ -1,5 +1,5 @@
 <div style="float:right">
-    <span class="title font-weight-bold">HOME</span>
+    <span class="title font-weight-bold">KOTAK MASUK</span>
 </div>
 </div>
 

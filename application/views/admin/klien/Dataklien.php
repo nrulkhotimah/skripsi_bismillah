@@ -1,14 +1,12 @@
 <div style="float:right">
     <span class="title font-weight-bold">DATA KLIEN</span>
 </div>
-
 </div>
 
 <?php echo $this->session->flashdata('sukses'); ?>
 
 <!-- data klien -->
 <div class="col-md-12">
-
 
 <!-- data tabel -->
 <table class="table table-bordered" style="margin-top:20px;" id="example">
@@ -31,7 +29,7 @@
             $i=0;
             foreach($user as $DataKlien):
             $i++;
-                                    ?>
+        ?>
         <tr>
             <td class="align-middle"><?php echo $i ?></td>
             <td class="align-middle"><?php echo $DataKlien->nama ?></td>
@@ -39,10 +37,12 @@
             <td class="align-middle"><?php echo $DataKlien->marital_status ?></td>
             <td class="align-middle"><?php echo $DataKlien->tanggal_lahir ?></td>
             <td class="align-middle"><?php echo $DataKlien->nomor_telepon ?></td>
-            <td class="align-middle"><?php echo $jadwal_konseling[$DataKlien->id_user] ?></td>
+
+            <td class="align-middle "><?php echo $jadwal_konseling[$DataKlien->id_user] ?></td>
+            
             <td class="align-middle">
                 <a href="<?php echo site_url('Admin/Dataklien/edit/'.$DataKlien->id_user) ?>">
-                    <i class="fas fa-pen"></i> 
+                    <i class="fas fa-pen"></i>
                 </a>
             </td>
 

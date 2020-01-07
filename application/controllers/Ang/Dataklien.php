@@ -177,10 +177,12 @@ class Dataklien extends CI_Controller {
 		$this->load->view("anggota/Riwayatdiagnosis", $data);
     }
     
-    public function ubah_status($id_user) { //proses untuk mengubah status user telah selesai melakukan treatment konseling atau belum
-        $status_konsel = $this->input->get();
+    public function ubah_status($id_user, $status_konsel=null) { //proses untuk mengubah status user telah selesai melakukan treatment konseling atau belum
+        if($status_konsel == NULL) $status_konsel = $this->input->get();
+        else $status_konsel = array('status_konsel' => $status_konsel);
+
         $this->Dataklien_m->ubah_status($id_user, $status_konsel);
-        redirect('Ang/Dataklien', 'refresh');
+        redirect('Ang/Dataklien/index', 'refresh');
     }
 
 }

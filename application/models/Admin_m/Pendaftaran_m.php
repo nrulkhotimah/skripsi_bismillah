@@ -25,12 +25,31 @@ class Pendaftaran_m extends CI_Model {
     }
 
     public function pendaftaran_terbaru($id_klien) { //fungsi untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
+        $this->db->select('penjadwalan.* ,pendaftaran.*,pendaftaran.id as id_pendaftarans');
         $this->db->join('penjadwalan', 'pendaftaran.id_penjadwalan = penjadwalan.id', 'left');
         $this->db->where('pendaftaran.id_klien', $id_klien); 
         $this->db->order_by('pendaftaran.id', 'desc');
         $this->db->limit(1);
 
         $query = $this->db->get('pendaftaran');
+        return $query->row();
+    }
+
+    public function pendaftaran_terbarus($id_klien) { //fungsi untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
+        $this->db->select('penjadwalan.* ,pendaftaran.*,pendaftaran.id as id_pendaftarans');
+        // $this->db->join('diagnosis', 'diagnosis.id_pendaftaran = pendaftaran.id');
+        $this->db->join('penjadwalan', 'pendaftaran.id_penjadwalan = penjadwalan.id', 'left');
+        $this->db->where('pendaftaran.id_klien', $id_klien); 
+        $this->db->order_by('id_pendaftarans', 'desc');
+        $this->db->limit(1);
+
+        $query = $this->db->get('pendaftaran');
+        return $query->row();
+    }
+
+    public function check_data_diagnosis($data){
+        $this->db->where('id_pendaftaran', $data); 
+        $query = $this->db->get('diagnosis');
         return $query->row();
     }
 
@@ -50,7 +69,11 @@ class Pendaftaran_m extends CI_Model {
         $data_klien['status_konsel'] = "belum selesai";
         $this->db->where('id_user', $input['id_klien']);
         $this->db->update('klien', $data_klien);
-        
+    }
+
+    public function hapus_pendaftaran($id) {
+        $this->db->where('id', $id);
+        return $this->db->delete($this->_table, array('id' => $id));
     }
 
 }

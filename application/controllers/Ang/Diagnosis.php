@@ -8,6 +8,7 @@ class Diagnosis extends CI_Controller {
         $this->load->helper('url_helper');
         $this->load->model('Ang_m/Diagnosis_m');
         $this->load->model('Ang_m/Dataklien_m');
+        $this->load->model('Ang_m/Penjadwalan_m');
 		$this->load->library('session');
 		
         check_not_login_anggota();
@@ -15,7 +16,8 @@ class Diagnosis extends CI_Controller {
 
     
     public function Diag($id_pendaftaran) { //proses untuk menampilkan pertanyaan 
-         //ifelse untuk mendapatkan pertanyaan selanjutnya
+        $data['id_pendaftaran'] = $id_pendaftaran;
+        //ifelse untuk mendapatkan pertanyaan selanjutnya
         if (!$this->session->userdata("jawaban")) { // if pertanyaan pertama
             $data['pertanyaan'] = $this->Diagnosis_m->pt_pertama();
         } else {
@@ -32,14 +34,14 @@ class Diagnosis extends CI_Controller {
                 }
             } else { 
                 $id_diagnosis = $this->Diagnosis_m->simpan_diagnosis($id_pendaftaran); // else untuk menyimpan diagnosis yang di derita
-                redirect('Ang/Diagnosis/hasil/'.$id_diagnosis,'refresh');                
+                redirect('Ang/Diagnosis/hasil/'.$id_diagnosis,'refresh');                                
             }
         }
 
         $inputan = $this->input->post(); // untuk mengambil input dari button 
         if ($inputan) { // if untuk menyimpan jawaban yang dipilih ke dalam session
             $this->Diagnosis_m->jawaban($inputan);
-            redirect('Ang/Diagnosis/Diag/'.$id_pendaftaran,'refresh');   
+            redirect('Ang/Diagnosis/Diag/'.$id_pendaftaran,'refresh');    
         }
 
         $this->load->view('anggota/template/header');
@@ -47,13 +49,24 @@ class Diagnosis extends CI_Controller {
 		$this->load->view('anggota/diagnosis/Diagnosis', $data);
     }
 
+    public function tombol_back($id_pendaftaran) {
+        $data_jawaban = $this->session->userdata("jawaban");
+        $pertanyaan_terakhir = array_keys($_SESSION['jawaban']);
+        $id_pengetahuan_terakhir = end($pertanyaan_terakhir);
+        unset($_SESSION['jawaban'][$id_pengetahuan_terakhir]);
+        redirect('Ang/Diagnosis/Diag/'.$id_pendaftaran,'refresh');   
+
+
+    }
+
     public function hasil($id_diagnosis) {
+        $data['id_diagnosis'] = $id_diagnosis;
         $data['diagnosis'] = $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
-            $data['fakta_diagnosis'] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);
+        $data['fakta_diagnosis'] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);
         
-            $this->load->view('anggota/template/header');
-            $this->load->view('anggota/template/footer');
-            $this->load->view('anggota/diagnosis/Hasil', $data);
+        $this->load->view('anggota/template/header');
+        $this->load->view('anggota/template/footer');
+        $this->load->view('anggota/diagnosis/Hasil', $data);
         
     }
 

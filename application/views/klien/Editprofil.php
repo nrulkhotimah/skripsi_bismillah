@@ -81,12 +81,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Datadiagnosis</a>
+                    <a class="nav-link js-scroll-trigger" href="<?php echo site_url('Klien/Home/datadiagnosis')?>">Data Diagnosis</a>
                 </li>
 
                 <li class="nav-item">
                     <a  class="nav-link js-scroll-trigger"
-                        href="<?php echo site_url('Klien/Pendaftaran/index')?>">Konseling</a>
+                        href="<?php echo site_url('Klien/Pendaftaran/index')?>">Daftar Konsel</a>
                 </li>
 
                 <li class="nav-item">

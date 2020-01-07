@@ -17,16 +17,16 @@ class Diagnosis_m extends CI_Model {
         }
     }
 
-    public function getIdDiagnosis($id_gangguan, $id_pendaftaran) { //untuk mengambil pertanyaan 
-        $this->db->where('id_gangguan', $id_gangguan);
-        $this->db->where('id_pendaftaran', $id_pendaftaran);
-        return $this->db->get('diagnosis')->row();
-    }
-
     public function detail_pertanyaan($id_pengetahuan) { //untuk mengambil pertanyaan 
         $this->db->where('id', $id_pengetahuan);
         $ambil = $this->db->get('pengetahuan');
         return $ambil->row();
+    }
+
+    public function getIdDiagnosis($id_gangguan, $id_pendaftaran) { //untuk mengambil pertanyaan 
+        $this->db->where('id_gangguan', $id_gangguan);
+        $this->db->where('id_pendaftaran', $id_pendaftaran);
+        return $this->db->get('diagnosis')->row();
     }
 
     public function pt_selanjutnya() {
@@ -103,19 +103,20 @@ class Diagnosis_m extends CI_Model {
 
     public function ambil_diagnosis($id_diagnosis) {
         $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
+        $this->db->join('pendaftaran', 'pendaftaran.id = diagnosis.id_pendaftaran');
         $this->db->where('diagnosis.id', $id_diagnosis);
         $ambil = $this->db->get('diagnosis');
         return $ambil->row();
     }
 
-    public function tampil_fakta_diagnosis($id_diagnosis) {
+    public function tampil_fakta_diagnosis($id_diagnosis) { //untuk menampilkan fakta diagnosis
         $this->db->join('fakta', 'fakta.id = fakta_diagnosis.id_fakta_fd', 'left');
         $this->db->where('fakta_diagnosis.id_diagnosis_fd', $id_diagnosis);
         $ambil = $this->db->get('fakta_diagnosis');
         return $ambil->result();
     }
 
-    public function ubah_catkonsel($inputan, $id_diagnosis) {
+    public function ubah_catkonsel($inputan, $id_diagnosis) { //untuk mengubah catatan konseling di menu dataklien
         
         $this->db->where('id', $id_diagnosis);
         $this->db->update('diagnosis', $inputan);

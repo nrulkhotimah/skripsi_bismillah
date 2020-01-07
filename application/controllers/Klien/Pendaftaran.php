@@ -31,10 +31,13 @@ class Pendaftaran extends CI_Controller {
     public function pilih_jadwal($id_psikolog) { //untuk memilih jadwal 
         $data['id_klien'] = $this->session->userdata('id'); //untuk mengirimkan id_user dari views
         $data['psikolog'] = $this->Datapakar_m->getById($id_psikolog);
-        $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalan($id_psikolog); //untuk memanggil function getPenjadwalan
+        $data['penjadwalan'] = $this->Pendaftaran_m->getPenjadwalans($id_psikolog); //untuk memanggil function getPenjadwalan
+        
+
         foreach ($data['penjadwalan'] as $key => $value) {
             $hari_jadwal[] = $value->hari; //mengambil data hari
-            $data['jadwal'][$value->hari] = $value; // ?
+            $data['jadwal'][$value->hari] = $value;
+            $data['waktu_daftar'][$value->hari] = $value->waktu_daftar; // ?
         }
 
         date_default_timezone_set("Asia/Jakarta");
@@ -55,13 +58,15 @@ class Pendaftaran extends CI_Controller {
             if(isset($data['jadwal'][$hari])) { 
                 $id_penjadwalan = $data['jadwal'][$hari]->id;
                 $data['sisa_kuota'][$hari] = count($this->Pendaftaran_m->sisa_kuota($id_penjadwalan, $tanggal)); //untuk memanggil function sisa_kuota
+              
             }
         }
 
-        foreach ($data['jadwal'] as $hari => $value) {
-            $id_penjadwalan = $value->id;
-            $data['cek_pendaftaran'][$id_penjadwalan] = $this->Pendaftaran_m->cek_pendaftaran_klien($id_penjadwalan, $data['id_klien']);
+        foreach ($data['waktu_daftar'] as $hari => $value) {
+            // $id_penjadwalan = $value->id;
+            $data['cek_pendaftaran'][$id_penjadwalan] = $this->Pendaftaran_m->cek_pendaftaran_kliens($value, $data['id_klien']);
         }
+
 
 
         $this->load->view('klien/Pilihjadwal', $data);

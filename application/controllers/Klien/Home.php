@@ -138,11 +138,19 @@ class Home extends CI_Controller {
 
     public function datadiagnosis() {
         $data['pendaftaran'] = $this->Pendaftaran_m->pendaftaranKlien($this->session->userdata("id"));
+        // var_dump($data['pendaftaran']);die;
+        
+        // echo "<pre>";
+        // print_r ($data['pendaftaran']);
+        // echo "</pre>";
+        // exit();
+        
         foreach ($data['pendaftaran'] as $key => $value) {
             $data['diagnosis'][$value->id_gangguan][$value->id_pendaftaran] = $this->Diagnosis_m->getIdDiagnosis($value->id_gangguan, $value->id_pendaftaran);
+            // var_dump($value->id_gangguan, $value->id_pendaftaran);die;
             $data['psikolog'] = $this->Pendaftaran_m->getIdPsi($value->id_user);
 
-            if (!empty($data['diagnosis'][$key])) {
+            if (isset($data['diagnosis'][$key]->id_gangguan)) {
                 $data_id = $this->Diagnosis_m->getIdDiagnosis($data['diagnosis'][$key]->id_gangguan, $data['diagnosis'][$key]->id_pendaftaran);
                 $id_diagnosis = $data_id->id;
                 $data['fakta'][$key] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);  

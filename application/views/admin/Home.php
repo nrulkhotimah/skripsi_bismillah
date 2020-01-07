@@ -13,18 +13,14 @@
     </div>
 </div>
 <br>
-<hr>
-
-<div class="card text-center">
-  <div class="card-header bg-info">
-    SELAMAT DATANG
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">SISTEM PENDUKUNG KEPUTUSAN</h5>
-    <h2 class="card-title">DIAGNOSIS BANDING GANGGUAN AFEKTIF</h2>
-    <p class="card-text">“There is hope, even when your brain tells you there isn't.”― John Green, Turtles All the Way Down</p>
-  </div>
-</div>
-
-    </div>
-</div>
+    <hr>
+        <div class="card text-center">
+            <div class="card-header bg-info">
+                ALUR PROSES DIAGNOSIS
+            </div>
+            <div class="card-body">
+                <img
+                    src="../../assets/img/alur-admin.png"
+                    alt=""
+                    style="max-width: 55%; height: auto;"></div>
+            </div>

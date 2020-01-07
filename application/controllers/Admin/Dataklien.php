@@ -81,11 +81,11 @@ class Dataklien extends CI_Controller {
         foreach ($data['user'] as $key => $value) {
             $id_klien = $value->id_user;
             $pendaftaran[$id_klien] = $this->Pendaftaran_m->pendaftaran_terbaru($id_klien); //untuk dapat mengambil jadwal pendaftaran konseling klien yang paling terbaru
-            if(!empty($pendaftaran[$id_klien])) {
-                $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
-            } else {
-                $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
-            }
+                if(!empty($pendaftaran[$id_klien])) {
+                    $data['jadwal_konseling'][$id_klien] = $pendaftaran[$id_klien]->hari.", ".date("d M Y", strtotime($pendaftaran[$id_klien]->waktu_daftar))." pukul ".$pendaftaran[$id_klien]->waktu;
+                } else {
+                    $data['jadwal_konseling'][$id_klien] = "Belum mendaftar konseling";
+                }
         }
 
         $this->load->view('admin/template/header');

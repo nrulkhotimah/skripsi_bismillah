@@ -24,8 +24,28 @@ class Pendaftaran_m extends CI_Model {
         return $query->result();
     }
 
+    public function getPenjadwalans($id_psikolog) { //fungsi untuk mengambil jadwal psikolog
+        $this->db->select('user.*,penjadwalan.*, pendaftaran.waktu_daftar as waktu_daftar');
+        $this->db->from('user');
+        $this->db->join('penjadwalan','penjadwalan.id_user=user.id');
+        $this->db->join('pendaftaran','pendaftaran.id_penjadwalan=penjadwalan.id','left');
+        $this->db->where('penjadwalan.id_user', $id_psikolog);
+        
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     public function cek_pendaftaran_klien($id_penjadwalan, $id_klien) { 
         $this->db->where('id_penjadwalan', $id_penjadwalan);
+        $this->db->where('id_klien', $id_klien);
+        $ambil = $this->db->get('pendaftaran');
+        return $ambil->row();
+
+        
+    }
+
+    public function cek_pendaftaran_kliens($waktu_daftar, $id_klien) { 
+        $this->db->where('waktu_daftar !=', $waktu_daftar);
         $this->db->where('id_klien', $id_klien);
         $ambil = $this->db->get('pendaftaran');
         return $ambil->row();

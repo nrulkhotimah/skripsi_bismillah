@@ -62,16 +62,7 @@ class Diagnosis extends CI_Controller {
         $data['id_diagnosis'] = $id_diagnosis;
         $data['diagnosis'] = $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
         $data['fakta_diagnosis'] = $this->Diagnosis_m->tampil_fakta_diagnosis($id_diagnosis);
-        // $data['diagnosis'] = $this->Penjadwalan_m->get_diagnosis_terbaru($id_diagnosis);
-
         
-        // echo "<pre>";
-        // print_r ($data[]);
-        // echo "</pre>";
-        // exit();
-        
-
-
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');
         $this->load->view('koordinator/diagnosis/Hasil', $data);
@@ -80,10 +71,13 @@ class Diagnosis extends CI_Controller {
 
     public function pilihKlien() {
         unset($_SESSION['jawaban']);
-        $data['user'] = $this->Dataklien_m->getPendaftaranPsikolog($this->session->userdata('id'));
+        $data['user'] = $this->Dataklien_m->getPendaftaranPsikologs($this->session->userdata('id'));
         foreach ($data['user'] as $key => $value) {
             $data['pendaftaran'][$value->id_klien] = $this->Dataklien_m->getIdPendaftaran($value->id_penjadwalan, $value->id_klien, $value->waktu_daftar);
+            // var_dump($value->waktu_daftar);
+            // echo '<br>';
         }
+        // die;
 
         $this->load->view('koordinator/template/header');
         $this->load->view('koordinator/template/footer');

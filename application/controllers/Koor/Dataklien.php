@@ -129,7 +129,6 @@ class Dataklien extends CI_Controller {
 
     public function catkonsel($id_diagnosis) { //open page catatan konseling dan proses menyimpan catkonsel yang telah di edit
         $data['diagnosis'] =  $this->Diagnosis_m->ambil_diagnosis($id_diagnosis);
-        // var_dump($data['diagnosis']);die;
         $inputan = $this->input->post();
         if ($inputan) {
             $this->Diagnosis_m->ubah_catkonsel($inputan, $id_diagnosis); 
@@ -214,12 +213,12 @@ class Dataklien extends CI_Controller {
         $this->load->view("koordinator/Seluruhriwayat", $data);
     }
     
-    public function ubah_status($id_user,$status_konsel=null) { //proses untuk mengubah status user telah selesai melakukan treatment konseling atau belum
+    public function ubah_status($id_user, $status_konsel=null) { //proses untuk mengubah status user telah selesai melakukan treatment konseling atau belum
         if($status_konsel == NULL) $status_konsel = $this->input->get();
         else $status_konsel = array('status_konsel' => $status_konsel);
 
         $this->Dataklien_m->ubah_status($id_user, $status_konsel);
-        redirect('Koor/Dataklien', 'refresh');
+        redirect('Koor/Dataklien/index', 'refresh');
     }
 
 }

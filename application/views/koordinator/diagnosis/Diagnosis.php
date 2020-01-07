@@ -16,15 +16,14 @@
         <div class="float-left">
             <form method="post">
                 <?php if ($pertanyaan->pernyataan == 1): ?>
-                <button class="btn btn-primary " value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
-            <?php else: ?>
-                <?php if($this->session->userdata("jawaban")): ?>
-                    <a href="<?php echo base_url("koor/diagnosis/tombol_back/".$id_pendaftaran)?> " class="btn btn-warning">Back</a>
+                    <button class="btn btn-primary " value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
+                <?php else: ?>
+                    <?php if($this->session->userdata("jawaban")): ?>
+                        <a href="<?php echo base_url("koor/diagnosis/tombol_back/".$id_pendaftaran)?> " class="btn btn-warning">Kembali</a>
+                    <?php endif ?>
+                        <button class="btn btn-danger" value="Tidak" name="<?php echo $pertanyaan->id?>">Tidak</button>
+                        <button class="btn btn-primary" value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
                 <?php endif ?>
-                    <button class="btn btn-danger" value="Tidak" name="<?php echo $pertanyaan->id?>">Tidak</button>
-                    <button class="btn btn-primary" value="Ya" name="<?php echo $pertanyaan->id?>">Ya</button>
-                <?php endif ?>
-
             </form>
         </div>
     </div>

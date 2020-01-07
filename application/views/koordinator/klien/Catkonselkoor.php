@@ -19,63 +19,52 @@
 <?php echo $this->session->flashdata('sukses'); ?>
 
 <div class="col-md-12">
-<table
-    class="table table-sm table-bordered"
-    style="margin-top:20px;"
-    id="result">
-
+<table class="table table-sm table-bordered" style="margin-top:20px;" id="result">
     <tbody class="text-center">
-
         <form name="catatan" method="post" enctype="multipart/form-data">
+
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Masukkan keluhan
-                </label>
+                <label for="exampleFormControlTextarea1">Masukkan keluhan</label>
                 <textarea
                     class="form-control"
                     id="keluhan"
                     rows="3"
                     name="keluhan"
-                    required></textarea>
+                    required><?php echo $diagnosis->keluhan ?></textarea>
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Masukkan intervensi konseling
-                </label>
+                <label for="exampleFormControlTextarea1">Masukkan intervensi konseling</label>
                 <textarea
                     class="form-control <?php echo form_error('catatan') ? 'is-invalid':'' ?>"
                     id="catatan"
                     rows="3"
                     name="catatan"
-                    required></textarea>
+                    required><?php echo $diagnosis->catatan ?></textarea>
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Masukkan tugas rumah
-                </label>
+                <label for="exampleFormControlTextarea1">Masukkan tugas rumah</label>
                 <textarea
                     class="form-control <?php echo form_error('tugas_rumah') ? 'is-invalid':'' ?>"
                     id="tugas_rumah"
                     rows="3"
                     name="tugas_rumah"
-                    required></textarea>
+                    required><?php echo $diagnosis->tugas_rumah ?></textarea>
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Masukkan saran
-                </label>
+                <label for="exampleFormControlTextarea1">Masukkan saran</label>
                 <textarea
                     class="form-control <?php echo form_error('saran') ? 'is-invalid':'' ?>"
                     id="saran"
                     rows="3"
                     name="saran"
-                    required></textarea>
+                    required><?php echo $diagnosis->saran ?></textarea>
             </div>
 
             <button class="btn btn-primary m-1" type="submit" style="float:right; width:100px;">Simpan</button> 
-            <button href="<?=base_url("Koor/Dataklien/ubah_status/".$diagnosis->id_klien.'/selesai')?>" class="btn btn-warning m-1" style="float:right;">Selesai Konseling</button>
-
-           
-
+            <a href="<?=base_url("Koor/Dataklien/ubah_status/".$diagnosis->id_klien.'/selesai')?>" class="btn btn-warning m-1" style="float:right;">Selesai Konseling</a>
 
         </form>
     </tbody>

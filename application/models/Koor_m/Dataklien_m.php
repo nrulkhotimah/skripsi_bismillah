@@ -147,6 +147,31 @@ class Dataklien_m extends CI_Model {
         return $data_fix;
     }
 
+    public function getPendaftaranPsikologs($id_psikolog) { 
+        $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
+        $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
+        $this->db->join('klien', 'klien.id_user = pendaftaran.id_klien', 'left');
+        $this->db->where('penjadwalan.id_user', $id_psikolog);
+        $this->db->order_by('pendaftaran.waktu_daftar','desc');
+        $this->db->group_by('id_klien');
+        $ambil = $this->db->get('pendaftaran');
+        $data = $ambil->result();
+
+        foreach ($data as $key => $value) {
+            $pengelompokan[$value->id_klien][] = $value;
+        }
+
+        foreach ($pengelompokan as $id_klien => $value1) {
+            foreach ($value1 as $key => $value2) {
+                $jumlah = count($value1) - 1;
+                if ($key==$jumlah) {
+                    $data_fix[$id_klien] = $value2;
+                }
+            }
+        }
+        return $data_fix;
+    }
+
     public function getPendaftaranSemua() {  
         $this->db->join('user', 'user.id = pendaftaran.id_klien', 'left');
         $this->db->join('penjadwalan', 'penjadwalan.id = pendaftaran.id_penjadwalan', 'left');
@@ -185,19 +210,6 @@ class Dataklien_m extends CI_Model {
         return $ambil->row();
 
     }
-
-//     public function getFakta_diag($id_diagnosis_fd) {   
-//         $this->db->join('diagnosis', 'diagnosis.id = fakta_diagnosis.id_diagnosis_fd', 'left');
-//         $this->db->join('fakta', 'fakta.id = fakta_diagnosis.id_fakta_fd', 'left');
-//         $this->db->where('fakta_diagnosis.id_diagnosis_fd', $id_diagnosis_fd);
-//         $ambil = $this->db->get('fakta_diagnosis');
-//         return $ambil->result();
-
-// echo "<pre>";
-// print_r ($ambil);
-// echo "</pre>";
-// exit();        
-//     }
 
     public function getDiagnosisPendaftaran($id_pendaftaran) { //untuk mengambil diagnosis berdasarkan id pendaftaran
         $this->db->join('deskripsi_gangguan', 'deskripsi_gangguan.id = diagnosis.id_gangguan', 'left');
@@ -243,6 +255,8 @@ class Dataklien_m extends CI_Model {
 
     public function ubah_status($id_user, $status_konsel) { //untuk mengubah status sudah selesai konseling atau belum
         $this->db->where('id_user', $id_user);
+        // $this->db->set($status_konsel);
+        $this->db->set('status_konsel', 'NOW()', FALSE);
         $this->db->update('klien', $status_konsel);
     }
 

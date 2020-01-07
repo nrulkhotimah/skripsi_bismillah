@@ -57,6 +57,24 @@
                                 </div>
                             </div>
 
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Usia</label>
+                               
+                                    <?php
+                                        $diff = (date('Y') - date('Y',strtotime($user->tanggal_lahir)));
+                                    ?>
+                                     <input
+                                    name="tanggal_lahir"
+                                    type=""
+                                    class="form-control "
+                                    id="exampleFormControlInput1"
+                                    value="<?php echo $diff ?>"
+                                    >
+                                <div class="invalid-feedback">
+                                    <?php echo form_error('tanggal_lahir') ?>
+                                </div>
+                            </div>
+
                             <fieldset class="form-group">
                                 <div class="row">
                                     <legend class="col-form-label col-sm-2 pt-0">Jenis Kelamin</legend>

@@ -51,7 +51,9 @@
                 <textarea class="form-control  <?php echo form_error('saran') ? 'is-invalid':'' ?>" id="saran" rows="3" name="saran" ><?php echo $diagnosis->saran ?> </textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit" style="float:right; width:100px;">Simpan</button>
+            <button class="btn btn-primary m-1" type="submit" style="float:right; width:100px;">Simpan</button>
+            <a href="<?=base_url("Ang/Dataklien/ubah_status/".$diagnosis->id_klien.'/selesai')?>" class="btn btn-warning m-1" style="float:right;">Selesai Konseling</a>
+
         </form>
     </tbody>
 </table>

@@ -20,7 +20,10 @@
         ALUR PROSES DIAGNOSIS
     </div>
     <div class="card-body">
-        <img src="../../assets/img/alur.png" alt="" style="max-width: 55%; height: auto;">
+        <img
+            src="../../assets/img/alur.png"
+            alt=""
+            style="max-width: 55%; height: auto;">
     </div>
 </div>
 
@@ -34,15 +37,15 @@
     </p>
     <ul>
         <?php if(!empty($baru_mendaftar)): ?>
-        <?php  foreach ($baru_mendaftar as $key => $value): ?>
-        <li>
-            <a href="<?php echo site_url('Koor/Dataklien/index/') ?>" class="btn btn-link">
-                <?php echo $value->nama ?>
-            </a>
-        </li>
-        <?php endforeach ?>
-    <?php else: ?>
-        <li>-</li>
+            <?php  foreach ($baru_mendaftar as $key => $value): ?>
+                <li>
+                    <a href="<?php echo site_url('Koor/Dataklien/index/') ?>" class="btn btn-link">
+                        <?php echo $value->nama ?>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        <?php else: ?>
+                <li>-</li>
         <?php endif ?>
 
     </ul>
@@ -52,19 +55,19 @@
     </p>
     <ul>
         <?php if(!empty($belum_diagnosis)): ?>
-        <?php  foreach ($belum_diagnosis as $key => $value): ?>
-        <li>
-            <a href="<?php echo site_url('Koor/Dataklien/index/') ?>" class="btn btn-link">
-                <?php echo $value->nama ?>
-            </a>
-        </li>
-        <?php endforeach ?>
-    <?php else: ?>
-        <li>-</li>
+            <?php  foreach ($belum_diagnosis as $key => $value): ?>
+                <li>
+                    <a href="<?php echo site_url('Koor/Dataklien/index/') ?>" class="btn btn-link">
+                        <?php echo $value->nama ?>
+                    </a>
+                </li>
+            <?php endforeach ?>
+        <?php else: ?>
+                <li>-</li>
         <?php endif ?>
     </ul>
 
-</div>
+
 
 <?php endif ?>
 
