@@ -74,7 +74,6 @@
 
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <!-- <label for="" class="btn btn-link" style="float:right;">Lupa Password ?</label> -->
                                         <a class="btn btn-link" href="<?php echo base_url('Lupa_password')?>" style="float:right;"> Lupa Password</a>
                                     </div>
                                 </div>

@@ -150,15 +150,15 @@ class Dataklien_m extends CI_Model {
             )
         );
         $mail->Host = "smtp.gmail.com"; // SMTP server 
-        //$mail->SMTPDebug = 1; // enables SMTP debug information (for testing) // 1 = errors and messages // 2 = messages only 
+        // $mail->SMTPDebug = 1; // enables SMTP debug information (for testing) // 1 = errors and messages // 2 = messages only 
         $mail->SMTPAuth = true; // enable SMTP authentication 
         $mail->SMTPSecure = "tls"; // sets the prefix to the servier 
         $mail->Host = "smtp.gmail.com"; // sets GMAIL as the SMTP server 
         $mail->Port = 587; // set the SMTP port for the GMAIL server 
-        $mail->Username = "nrulkhotimh@gmail.com"; // GMAIL username .. pakai gmail pribadi
-        $mail->Password = "nurul09"; // GMAIL password .. pass email gmail pribadi
-        $mail->SetFrom('nrulkhotimh@gmail.com', 'Admin');
-        $mail->AddReplyTo("nrulkhotimh@gmail.com","Admin");
+        $mail->Username = "diagnosis121@gmail.com"; // GMAIL username .. pakai gmail pribadi
+        $mail->Password = "diagnosisuii12"; // GMAIL password .. pass email gmail pribadi
+        $mail->SetFrom('diagnosis121@gmail.com', 'Admin');
+        $mail->AddReplyTo("diagnosis121@gmail.com","Admin");
         $mail->Subject = "Aktivasi";
         $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
 
