@@ -115,12 +115,12 @@ class Dataklien extends CI_Controller {
             $this->load->view('admin/template/footer');
             $this->load->view("admin/klien/Tambahklien");
         }
-
     }
 
     public function edit($id) { //open page edit klien
         $data['user'] = $this->Dataklien_m->getById($id);
 
+        
         $this->load->view('admin/template/header');
         $this->load->view('admin/template/footer');
         $this->load->view("admin/klien/Editdataklien", $data);

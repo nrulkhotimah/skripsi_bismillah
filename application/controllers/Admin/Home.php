@@ -43,6 +43,7 @@ class Home extends CI_Controller {
             $password_asli = $data_lama->password; //mengambil password lama dari data yang sudah ada
             $post['password'] = md5($post['password_baru']); //mengambil pass baru yang diinputkan melalui $post
 
+            
             if(md5($post['password_lama'])==$password_asli) { // password lama harus benar, jika pass lama salah maka muncul alert
                 if(!empty($post['password_baru'])) { //pass baru harus diinputkan dan tidak boleh kosong
                     if($post['password_baru']==$post['password_konfirmasi']) { //konfirmasi pass harus sama dengan pass baru yang diinputkan
